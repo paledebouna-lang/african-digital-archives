@@ -1,730 +1,144 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr-FR">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>African Digital Archives</title>
-<meta name="description" content="ADA accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques en un patrimoine documentaire sécurisé, organisé et durable.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2313254A'/%3E%3Cpath d='M9 23 16 8l7 15M11.5 18h9' stroke='%23C9A24B' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<style>
-:root{
-  --night:#13254A; --night-2:#1C3363; --ink:#1A2233; --muted:#566074;
-  --paper:#FFFFFF; --mist:#F2F4F8; --line:#D9DEE8;
-  --gold:#A9822F; --gold-soft:#E9DDBF; --green:#1E6A4E; --green-soft:#DCEBE4;
-  --on-night:#EEF1F7; --on-night-muted:#A9B4CB;
-  --serif:"Spectral",Georgia,serif; --sans:"Public Sans",system-ui,sans-serif;
-  --wrap:1160px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-img,svg{display:block;max-width:100%}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-@media (max-width:560px){.wrap{padding:0 16px}}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;margin:0;letter-spacing:-.01em}
-h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
-h3{font-size:1.35rem}
-p{margin:0}
-.lede{font-size:1.15rem;color:var(--muted);max-width:60ch}
-.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:#fff;padding:8px 14px;z-index:99}
-.skip:focus{left:8px}
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<title>African Digital Archives (ADA) — Gestion documentaire, archivage et préservation en Afrique</title>
+<meta name="description" content="ADA accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques : conseil, numérisation, plateforme ARCHIVA360, archivage électronique et préservation.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://paledebouna-lang.github.io/african-digital-archives/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="African Digital Archives (ADA) — Gestion documentaire, archivage et préservation en Afrique">
+<meta property="og:description" content="ADA accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques : conseil, numérisation, plateforme ARCHIVA360, archivage électronique et préservation.">
+<meta property="og:url" content="https://paledebouna-lang.github.io/african-digital-archives/">
+<meta property="og:site_name" content="African Digital Archives">
+<meta property="og:image" content="https://paledebouna-lang.github.io/african-digital-archives/wp-content/uploads/2026/09/og-ada.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json" class="yoast-schema-graph">{"@context": "https://schema.org", "@type": "Organization", "name": "African Digital Archives", "alternateName": "ADA", "url": "https://paledebouna-lang.github.io/african-digital-archives/", "slogan": "La mémoire numérique de l'Afrique", "address": {"@type": "PostalAddress", "addressLocality": "Abidjan", "addressCountry": "CI"}}</script>
+<link rel="preload" href="./wp-content/themes/ada-archives/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" id="ada-archives-style-css" href="./wp-content/themes/ada-archives/style.css?ver=1.4.2" media="all">
+<link rel="icon" href="./wp-content/uploads/2026/09/cropped-ada-icon-32x32.png" sizes="32x32">
+<link rel="icon" href="./wp-content/uploads/2026/09/cropped-ada-icon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="./wp-content/uploads/2026/09/cropped-ada-icon-180x180.png">
 
-/* header */
-header.site{position:sticky;top:0;z-index:20;background:rgba(19,37,74,.97);color:var(--on-night);backdrop-filter:blur(6px)}
-.bar{display:flex;align-items:center;gap:28px;height:68px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand svg{width:34px;height:34px}
-.brand b{font:600 1.35rem/1 var(--serif);letter-spacing:.02em}
-.brand span{display:block;font-size:.72rem;color:var(--on-night-muted);margin-top:3px}
-nav.main{margin-left:auto;display:flex;gap:22px;font-size:.93rem}
-nav.main a{text-decoration:none;color:var(--on-night-muted);padding:6px 0;border-bottom:2px solid transparent}
-nav.main a:hover{color:#fff;border-color:var(--gold)}
-.lang{display:flex;border:1px solid rgba(255,255,255,.25);border-radius:6px;overflow:hidden}
-.lang button{background:none;border:0;color:var(--on-night-muted);font:600 .8rem var(--sans);padding:7px 10px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--gold);color:#fff}
-.menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:7px 11px;font:600 .85rem var(--sans);cursor:pointer}
-@media (max-width:900px){
-  nav.main{display:none;position:absolute;top:68px;left:0;right:0;background:var(--night);flex-direction:column;gap:0;padding:8px 16px 16px}
-  nav.main.open{display:flex}
-  nav.main a{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-  .menu-btn{display:block}
-  .lang{margin-left:0}
-}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem var(--sans);text-decoration:none;padding:14px 22px;border-radius:6px;border:2px solid transparent;cursor:pointer}
-.btn.gold{background:var(--gold);color:#fff}
-.btn.gold:hover{background:#96732a}
-.btn.ghost{border-color:rgba(255,255,255,.45);color:#fff}
-.btn.ghost:hover{border-color:#fff}
-.btn.dark{background:var(--night);color:#fff}
-.btn.dark:hover{background:var(--night-2)}
-
-/* hero */
-.hero{background:var(--night);color:var(--on-night);padding:72px 0 88px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(2.6rem,5.6vw,4.3rem);font-weight:400}
-.hero h1 span{display:block}
-.hero .lede{color:var(--on-night-muted);margin:24px 0 36px}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
-.motto{margin-top:40px;font:italic 400 1.1rem var(--serif);color:var(--gold-soft);border-left:2px solid var(--gold);padding-left:14px}
-@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding:48px 0 64px}}
-
-/* the record card */
-.record{background:#FCFBF7;color:var(--ink);border-radius:4px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);position:relative;transform:rotate(-1.2deg)}
-.record::before{content:"";position:absolute;inset:auto 18px -10px 18px;height:10px;background:#E6E1D4;border-radius:0 0 4px 4px;z-index:-1}
-.rec-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:18px 22px 14px;border-bottom:2px solid var(--night)}
-.rec-head small{display:block;font-size:.72rem;color:var(--muted)}
-.rec-id{font:600 1.05rem/1.2 var(--sans);letter-spacing:.03em;color:var(--night);word-break:break-all}
-.qr{width:58px;height:58px;flex:none}
-.rec-body{padding:16px 22px 20px;display:grid;gap:14px}
-.rec-body label,.rec-body .lbl{font-size:.75rem;color:var(--muted);display:block;margin-bottom:4px}
-.rec-body input{width:100%;font:500 1rem var(--serif);color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:4px;padding:9px 11px}
-.rec-body input:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px var(--gold-soft)}
-.loc{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);border-radius:4px;overflow:hidden}
-.loc div{padding:7px 8px;border-right:1px solid var(--line);text-align:center}
-.loc div:last-child{border-right:0}
-.loc small{display:block;font-size:.66rem;color:var(--muted)}
-.loc b{font-weight:600;font-size:.92rem}
-@media (max-width:420px){.loc{grid-template-columns:repeat(3,1fr)}.loc div:nth-child(3){border-right:0}.loc div:nth-child(-n+3){border-bottom:1px solid var(--line)}}
-.hash{background:var(--mist);border-radius:4px;padding:10px 12px}
-.hash code{display:block;font:500 .78rem/1.5 ui-monospace,Consolas,monospace;color:var(--night);word-break:break-all;min-height:2.4em}
-.hash code.flash{animation:flash .5s ease}
-@keyframes flash{from{background:var(--gold-soft)}to{background:transparent}}
-.hash-note{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--green);margin-top:6px}
-.hash-note.changed{color:#9A4A12}
-.dot{width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
-.stamp{position:absolute;right:18px;bottom:-22px;background:var(--green);color:#fff;font:600 .78rem var(--sans);padding:6px 12px;border-radius:3px;transform:rotate(2deg)}
-
-/* sections */
-section.block{padding:96px 0}
-section.tint{background:var(--mist)}
-.head{max-width:720px;margin-bottom:48px}
-.head p{margin-top:16px}
-@media (max-width:700px){section.block{padding:64px 0}}
-
-/* problem */
-.chaos{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center}
-.scatter{display:flex;flex-wrap:wrap;gap:10px}
-.scatter span{background:#fff;border:1px dashed #B7BFCE;border-radius:4px;padding:8px 12px;font-size:.93rem;color:var(--muted)}
-.scatter span:nth-child(3n){transform:rotate(-2deg)}
-.scatter span:nth-child(4n+1){transform:rotate(1.5deg)}
-.arrow{font:400 2.4rem var(--serif);color:var(--gold)}
-.order{background:var(--night);color:var(--on-night);border-radius:6px;padding:28px}
-.order h3{color:#fff;margin-bottom:14px}
-.order ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.order li{display:flex;gap:10px;align-items:baseline;color:var(--on-night-muted)}
-.order li::before{content:"";width:10px;height:10px;border:2px solid var(--gold);border-radius:2px;flex:none;transform:translateY(1px)}
-@media (max-width:900px){.chaos{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}}
-
-/* chain */
-.chain{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(9,1fr);counter-reset:s;position:relative}
-.chain::before{content:"";position:absolute;top:19px;left:5%;right:5%;height:2px;background:linear-gradient(90deg,var(--night),var(--gold))}
-.chain li{counter-increment:s;position:relative;text-align:center;padding:0 6px}
-.chain li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;margin:0 auto 14px;border-radius:50%;background:#fff;border:2px solid var(--night);font:600 .95rem var(--sans);color:var(--night);position:relative}
-.chain li:last-child::before{background:var(--gold);border-color:var(--gold);color:#fff}
-.chain b{display:block;font:600 .95rem/1.3 var(--sans)}
-.chain small{display:block;font-size:.82rem;color:var(--muted);margin-top:4px;line-height:1.4}
-@media (max-width:1000px){
-  .chain{grid-template-columns:1fr;gap:0}
-  .chain::before{top:0;bottom:0;left:19px;right:auto;width:2px;height:auto;background:linear-gradient(180deg,var(--night),var(--gold))}
-  .chain li{display:grid;grid-template-columns:40px 1fr;column-gap:16px;text-align:left;padding:0 0 22px}
-  .chain li::before{margin:0;grid-row:span 2}
-  .chain b{align-self:end}
-}
-
-/* poles */
-.poles{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--night)}
-.pole{padding:28px 24px 8px 0;border-right:1px solid var(--line)}
-.pole+.pole{padding-left:24px}
-.pole:last-child{border-right:0}
-.pole h3{margin-bottom:10px}
-.pole p{color:var(--muted);font-size:.97rem}
-.pole ul{margin:14px 0 0;padding:0;list-style:none;font-size:.92rem}
-.pole li{padding:6px 0;border-top:1px solid var(--line)}
-@media (max-width:900px){.poles{grid-template-columns:1fr 1fr}.pole{padding:24px 16px 16px 0}.pole:nth-child(2n){border-right:0}.pole:nth-child(2n+1){padding-left:0}}
-@media (max-width:560px){.poles{grid-template-columns:1fr}.pole{border-right:0;padding-left:0!important;border-bottom:1px solid var(--line)}}
-
-/* archiva360 */
-.product{background:var(--night);color:var(--on-night)}
-.product .lede{color:var(--on-night-muted)}
-.product h2{color:#fff}
-.stack{display:grid;gap:14px}
-.layer{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center;padding:18px 22px;border:1px solid rgba(255,255,255,.14);border-radius:6px}
-.layer h3{font-size:1.15rem;color:#fff}
-.layer .tags{display:flex;flex-wrap:wrap;gap:8px}
-.layer .tags span{font-size:.86rem;padding:5px 10px;border-radius:4px;background:rgba(255,255,255,.07);color:var(--on-night)}
-.layer.ai{border-color:var(--gold)}
-.layer.ai h3{color:var(--gold-soft)}
-.layer.vault{background:rgba(30,106,78,.25);border-color:rgba(30,106,78,.8)}
-.pillars3{margin-top:64px;display:grid;grid-template-columns:1fr;gap:10px}
-.pillars3 .title{font-family:var(--serif);color:#fff;font-size:1.5rem;margin-bottom:18px}
-.editions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.edition{background:rgba(255,255,255,.05);border-top:3px solid var(--gold);padding:24px;border-radius:0 0 6px 6px}
-.edition h3{color:#fff;font-size:1.25rem}
-.edition p{color:var(--on-night-muted);font-size:.95rem;margin-top:8px}
-.edition ul{margin:14px 0 0;padding-left:18px;color:var(--on-night);font-size:.93rem}
-.ai-rule{margin-top:40px;display:flex;gap:16px;align-items:flex-start;background:rgba(169,130,47,.14);border-left:3px solid var(--gold);padding:18px 22px;border-radius:0 6px 6px 0;max-width:780px}
-.ai-rule p{color:var(--on-night)}
-@media (max-width:900px){.layer{grid-template-columns:1fr;gap:10px}.editions{grid-template-columns:1fr}}
-
-/* physical */
-.phys{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.box{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.box-top{background:#C9B48A;padding:22px;display:flex;gap:18px;align-items:center}
-.box-label{background:#FCFBF7;flex:1;padding:14px 16px;border-radius:3px}
-.box-label small{font-size:.72rem;color:var(--muted)}
-.box-label b{display:block;font:600 1rem var(--sans);color:var(--night);letter-spacing:.03em;word-break:break-all}
-.box dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
-.box dt,.box dd{margin:0;padding:11px 20px;border-top:1px solid var(--line);font-size:.95rem}
-.box dt{color:var(--muted)}
-.box dd{font-weight:600}
-.checks{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
-.checks li{display:flex;gap:12px}
-.checks li::before{content:"";width:18px;height:18px;flex:none;border-radius:50%;background:var(--green-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5 7 11l5-6' stroke='%231E6A4E' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/14px no-repeat;transform:translateY(3px)}
-@media (max-width:900px){.phys{grid-template-columns:1fr}}
-
-/* sectors */
-.sectors{display:flex;flex-wrap:wrap;gap:12px}
-.sectors span{font:500 1.05rem var(--serif);padding:12px 18px;border:1px solid var(--line);border-radius:40px;background:#fff}
-
-/* pilot */
-.pilot{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
-.quote{font:italic 400 1.4rem/1.45 var(--serif);color:var(--night);border-left:3px solid var(--gold);padding-left:20px;margin-top:28px}
-.steps{list-style:none;margin:0;padding:0;counter-reset:p}
-.steps li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
-.steps li:last-child{border-bottom:1px solid var(--line)}
-.steps li::before{content:counter(p,decimal-leading-zero);font:600 .95rem var(--sans);color:var(--gold);padding-top:2px}
-.steps b{display:block;font-weight:600}
-.steps span{color:var(--muted);font-size:.95rem}
-@media (max-width:900px){.pilot{grid-template-columns:1fr}}
-
-/* standards */
-.std{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.std h3{margin-bottom:18px}
-.std table{width:100%;border-collapse:collapse;font-size:.95rem}
-.std th,.std td{text-align:left;padding:10px 0;border-top:1px solid var(--line);vertical-align:top}
-.std th{font-weight:600;white-space:nowrap;padding-right:18px;color:var(--night)}
-.std td{color:var(--muted)}
-.caution{margin-top:32px;font-size:.93rem;color:var(--muted);max-width:760px}
-@media (max-width:900px){.std{grid-template-columns:1fr}}
-
-/* expansion */
-.route{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px}
-.leg{padding:22px 20px 22px 0;border-top:4px solid var(--line)}
-.leg:first-child{border-color:var(--green)}
-.leg+.leg{padding-left:20px}
-.leg small{display:block;color:var(--muted);font-size:.85rem;margin-bottom:6px}
-.leg b{font:500 1.3rem var(--serif);color:var(--night)}
-.leg p{color:var(--muted);font-size:.93rem;margin-top:8px}
-@media (max-width:800px){.route{grid-template-columns:1fr 1fr}.leg{padding-left:0!important;padding-right:16px}}
-
-/* contact */
-.contact{background:var(--night);color:var(--on-night)}
-.contact h2{color:#fff}
-.contact .lede{color:var(--on-night-muted)}
-.cgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-form .full{grid-column:1/-1}
-form label{display:block;font-size:.85rem;color:var(--on-night-muted);margin-bottom:6px}
-form input,form select,form textarea{width:100%;font:400 1rem var(--sans);color:var(--ink);background:#fff;border:1px solid transparent;border-radius:5px;padding:11px 12px}
-form textarea{min-height:120px;resize:vertical}
-form input:focus,form select:focus,form textarea:focus{outline:none;box-shadow:0 0 0 3px var(--gold)}
-.form-note{font-size:.85rem;color:var(--on-night-muted)}
-@media (max-width:900px){.cgrid{grid-template-columns:1fr}}
-@media (max-width:560px){form{grid-template-columns:1fr}}
-
-footer{background:#0E1C39;color:var(--on-night-muted);padding:40px 0;font-size:.9rem}
-.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
-.foot b{color:#fff;font:600 1.05rem var(--serif)}
-
-/* hero load: one orchestrated moment */
-.hero .reveal{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
-.hero .reveal.d2{animation-delay:.15s}.hero .reveal.d3{animation-delay:.3s}.hero .record-wrap{opacity:0;animation:card 1s .35s cubic-bezier(.2,.7,.2,1) forwards}
-@keyframes rise{to{opacity:1;transform:none}}
-@keyframes card{from{opacity:0;transform:translateY(30px) rotate(3deg)}to{opacity:1;transform:none}}
-</style>
 </head>
-<body>
-<a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
-
-<header class="site">
-  <div class="wrap bar">
-    <a class="brand" href="#top" aria-label="African Digital Archives">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#1C3363"/><path d="M9 23 16 8l7 15M11.5 18h9" stroke="#C9A24B" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <div><b>ADA</b><span>African Digital Archives</span></div>
-    </a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav" data-i18n="menu">Menu</button>
-    <nav class="main" id="nav" aria-label="Navigation principale">
-      <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
-      <a href="#archiva360">ARCHIVA360</a>
-      <a href="#secteurs" data-i18n="nav.sectors">Secteurs</a>
-      <a href="#methode" data-i18n="nav.method">Méthode</a>
-      <a href="#cadre" data-i18n="nav.framework">Cadre</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
+<body class="home page-template-front-page page-id-187 wp-custom-logo wp-embed-responsive">
+<div id="page" class="site">
+<a class="skip-link screen-reader-text" href="#primary">Aller au contenu</a>
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar__left">
+      <span class="top-bar__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Abidjan, Côte d'Ivoire</span>
+      <a class="top-bar__item" href="mailto:contact@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>contact@example.com</a>
+      <span class="top-bar__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Lun – Ven, 8 h – 17 h (GMT)</span>
+    </div>
+    <div class="top-bar__right">
+      <a class="top-bar__item" href="./ressources/document-health-check/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Document Health Check</a>
+      <a class="top-bar__item" href="./espace-client/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Espace client</a>
+      <div class="lang-switcher" aria-label="Langue">
+        <span class="current-lang" lang="fr" aria-current="true">FR</span>
+        <span class="lang-soon" lang="en" title="English version coming soon">EN</span>
+      </div>
+    </div>
+  </div>
+</div>
+<header id="masthead" class="site-header">
+  <div class="container">
+    <div class="site-branding">
+      <a href="./" class="custom-logo-link" rel="home" aria-label="African Digital Archives — accueil">
+        <svg class="custom-logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="10" fill="#0A1541"/><path d="M13 35 24 11l11 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.4 26.5h13.2" stroke="#006EEF" stroke-width="3.4" stroke-linecap="round"/><rect x="31" y="31" width="6" height="6" rx="1.2" fill="#006EEF"/></svg>
+        <span class="site-title-wrap"><span class="site-title">ADA</span><span class="site-description">African Digital Archives</span></span>
+      </a>
+    </div>
+    <nav id="site-navigation" class="main-navigation" aria-label="Menu principal">
+      <ul id="primary-menu" class="menu nav-menu"><li class="menu-item menu-item-type-post_type menu-item-has-children menu-item-mega"><a href="./solutions/" aria-haspopup="true" aria-expanded="false">Solutions<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub-menu-wrap"><div class="container"><div class="mega-menu"><div class="mega-menu__intro"><h3>Solutions</h3><p>De la numérisation à la préservation longue durée : une chaîne complète pour vos documents papier et numériques.</p><a class="more-link" href="./solutions/">Toutes les solutions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><ul class="sub-menu"><li class="menu-item menu-item-type-post_type"><a href="./solutions/ged/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span><span class="menu-item-title">GED</span><span class="menu-item-description">Gérer et partager au quotidien</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./solutions/sae/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9M10 13h4"/></svg></span><span><span class="menu-item-title">Archivage électronique (SAE)</span><span class="menu-item-description">Conserver avec valeur probante</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./solutions/records-management/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M7 3c0 5 10 6 10 9s-10 4-10 9M17 3c0 5-10 6-10 9s10 4 10 9"/></svg></span><span><span class="menu-item-title">Records management</span><span class="menu-item-description">Règles, cycle de vie, sort final</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./solutions/capture-numerisation/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M4 12h16"/></svg></span><span><span class="menu-item-title">Capture et numérisation</span><span class="menu-item-description">Scan, OCR, indexation</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./solutions/archives-physiques/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span><span><span class="menu-item-title">Archives physiques</span><span class="menu-item-description">Boîtes, rayonnages, QR codes</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./solutions/ia-documentaire/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><span><span class="menu-item-title">IA documentaire</span><span class="menu-item-description">Lire, classer, extraire, résumer</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./solutions/securite/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span><span class="menu-item-title">Sécurité et coffre-fort</span><span class="menu-item-description">Chiffrement, MFA, audit</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./solutions/preservation-numerique/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><span><span class="menu-item-title">Préservation numérique</span><span class="menu-item-description">Lisible dans 30 ans (OAIS)</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./solutions/workflow-courrier/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9v3a3 3 0 0 0 3 3h6"/></svg></span><span><span class="menu-item-title">Workflow et courrier</span><span class="menu-item-description">Circuits de validation, signature</span></span></a></li></ul></div></div></div></li><li class="menu-item menu-item-type-post_type menu-item-has-children menu-item-mega"><a href="./archiva360/" aria-haspopup="true" aria-expanded="false">ARCHIVA360<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub-menu-wrap"><div class="container"><div class="mega-menu"><div class="mega-menu__intro"><h3>ARCHIVA360</h3><p>La plateforme africaine de gestion documentaire et d'archivage, en SaaS, en cloud privé ou sur site.</p><a class="more-link" href="./archiva360/">Découvrir la plateforme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><ul class="sub-menu cols-2"><li class="menu-item menu-item-type-post_type"><a href="./archiva360/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span><span><span class="menu-item-title">Vue d'ensemble</span><span class="menu-item-description">Capture, gestion, archivage, IA</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./archiva360/modules/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><span><span class="menu-item-title">Les 20 modules</span><span class="menu-item-description">Du tableau de bord au portail public</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./archiva360/archiva-ai/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><span><span class="menu-item-title">ARCHIVA AI</span><span class="menu-item-description">L'assistant documentaire</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./archiva360/archiva-go/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span><span><span class="menu-item-title">ARCHIVA GO</span><span class="menu-item-description">L'application mobile</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./archiva360/offres-et-tarifs/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><span><span class="menu-item-title">Offres et tarifs</span><span class="menu-item-description">Start, Business, Enterprise, Government</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./archiva360/demo/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/></svg></span><span><span class="menu-item-title">Demander une démonstration</span><span class="menu-item-description">Sur vos propres documents</span></span></a></li></ul></div></div></div></li><li class="menu-item menu-item-type-post_type menu-item-has-children menu-item-mega"><a href="./secteurs/" aria-haspopup="true" aria-expanded="false">Secteurs<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub-menu-wrap"><div class="container"><div class="mega-menu"><div class="mega-menu__intro"><h3>Secteurs</h3><p>Des réponses adaptées aux obligations et aux documents de chaque métier.</p><a class="more-link" href="./secteurs/">Tous les secteurs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><ul class="sub-menu"><li class="menu-item menu-item-type-post_type"><a href="./secteurs/gouvernement/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M4 10h16M12 3l9 5H3zM6 10v8M10 10v8M14 10v8M18 10v8"/></svg></span><span><span class="menu-item-title">Gouvernement</span><span class="menu-item-description">Ministères, mairies, collectivités</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/banque/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M3 10l9-6 9 6M5 10v8M19 10v8M9.5 10v8M14.5 10v8"/></svg></span><span><span class="menu-item-title">Banque</span><span class="menu-item-description">Dossiers clients, crédits, conformité</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/assurance/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v7a2 2 0 0 1-4 0"/></svg></span><span><span class="menu-item-title">Assurance</span><span class="menu-item-description">Polices, sinistres, pièces</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/sante/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 8.5A5 5 0 0 0 12 5.6 5 5 0 0 0 3.5 8.5C3.5 14 12 20 12 20s8.5-6 8.5-11.5z"/><path d="M4 12h4l2-3 3 5 2-2h5"/></svg></span><span><span class="menu-item-title">Santé</span><span class="menu-item-description">Hôpitaux, cliniques, laboratoires</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/education/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6"/></svg></span><span><span class="menu-item-title">Éducation</span><span class="menu-item-description">Universités, écoles, diplômes</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/industrie/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21V10l6 4V10l6 4V6l6 3v12z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg></span><span><span class="menu-item-title">Industrie et énergie</span><span class="menu-item-description">Plans, maintenance, inspections</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/immobilier/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10M10 20v-6h4v6"/></svg></span><span><span class="menu-item-title">Immobilier</span><span class="menu-item-description">Titres, actes, permis, plans</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/juridique/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M7 21h10M4 7h16"/><path d="M4 7l-2.5 6a3 3 0 0 0 5 0zM20 7l-2.5 6a3 3 0 0 0 5 0z"/></svg></span><span><span class="menu-item-title">Juridique</span><span class="menu-item-description">Cabinets, contentieux, actes</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/ong/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21l-7-6.5a4.5 4.5 0 0 1 6.4-6.3L12 9l.6-.8a4.5 4.5 0 0 1 6.4 6.3z"/></svg></span><span><span class="menu-item-title">ONG et organismes internationaux</span><span class="menu-item-description">Projets, bailleurs, audits</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./secteurs/patrimoine/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16M8 4v16M12 6l4 14M16 5l4 14"/></svg></span><span><span class="menu-item-title">Patrimoine</span><span class="menu-item-description">Bibliothèques, musées, archives</span></span></a></li></ul></div></div></div></li><li class="menu-item menu-item-type-post_type menu-item-has-children menu-item-mega"><a href="./services/" aria-haspopup="true" aria-expanded="false">Services<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub-menu-wrap"><div class="container"><div class="mega-menu"><div class="mega-menu__intro"><h3>Services</h3><p>Nos équipes interviennent chez vous ou dans notre centre de numérisation d'Abidjan.</p><a class="more-link" href="./services/">Tous les services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><ul class="sub-menu cols-2"><li class="menu-item menu-item-type-post_type"><a href="./services/audit-documentaire/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><span><span class="menu-item-title">Audit documentaire</span><span class="menu-item-description">Diagnostic, inventaire, plan d'action</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./services/numerisation/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M4 12h16"/></svg></span><span><span class="menu-item-title">Numérisation</span><span class="menu-item-description">Centre de numérisation d'Abidjan</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./services/migration/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 11A8 8 0 0 0 5.3 7M4 13a8 8 0 0 0 14.7 4"/><path d="M5 3v4h4M19 21v-4h-4"/></svg></span><span><span class="menu-item-title">Migration</span><span class="menu-item-description">Reprise de fonds et de systèmes</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./services/conseil/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span><span class="menu-item-title">Conseil</span><span class="menu-item-description">Plan de classement, politique d'archivage</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./services/formation/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 4h18M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4M12 16v5M8 21h8"/><path d="M8 12l3-3 2 2 3-3"/></svg></span><span><span class="menu-item-title">Formation</span><span class="menu-item-description">Archivistes, IT, utilisateurs</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./services/hebergement/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><span><span class="menu-item-title">Hébergement</span><span class="menu-item-description">Cloud, cloud privé, sur site, hybride</span></span></a></li></ul></div></div></div></li><li class="menu-item menu-item-type-post_type menu-item-has-children menu-item-mega"><a href="./ressources/" aria-haspopup="true" aria-expanded="false">Ressources<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub-menu-wrap"><div class="container"><div class="mega-menu"><div class="mega-menu__intro"><h3>Ressources</h3><p>Guides, articles et outils pour mieux gérer, conserver et protéger vos documents.</p><a class="more-link" href="./ressources/">Toutes les ressources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><ul class="sub-menu cols-2"><li class="menu-item menu-item-type-post_type"><a href="./blog/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><span><span class="menu-item-title">Blog</span><span class="menu-item-description">Actualités et analyses</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./ressources/guides/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M19 19v2H6"/></svg></span><span><span class="menu-item-title">Guides</span><span class="menu-item-description">Méthodes pas à pas</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./ressources/livres-blancs/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M4 20h16"/></svg></span><span><span class="menu-item-title">Livres blancs</span><span class="menu-item-description">Dossiers approfondis</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./ressources/webinars/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/></svg></span><span><span class="menu-item-title">Webinars</span><span class="menu-item-description">Programme des sessions</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./ressources/glossaire/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16M8 4v16M12 6l4 14M16 5l4 14"/></svg></span><span><span class="menu-item-title">Glossaire</span><span class="menu-item-description">Le vocabulaire de l'archivage</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./ressources/document-health-check/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span><span class="menu-item-title">Document Health Check</span><span class="menu-item-description">Évaluez votre maturité en 5 minutes</span></span></a></li></ul></div></div></div></li><li class="menu-item menu-item-type-post_type menu-item-has-children menu-item-mega"><a href="./entreprise/" aria-haspopup="true" aria-expanded="false">Entreprise<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub-menu-wrap"><div class="container"><div class="mega-menu"><div class="mega-menu__intro"><h3>African Digital Archives</h3><p>Une infrastructure africaine de confiance documentaire, née à Abidjan.</p><a class="more-link" href="./entreprise/">Qui sommes-nous ? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><ul class="sub-menu cols-2"><li class="menu-item menu-item-type-post_type"><a href="./entreprise/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/></svg></span><span><span class="menu-item-title">Qui sommes-nous ?</span><span class="menu-item-description">Vision, mission, valeurs</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./entreprise/notre-approche/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span><span class="menu-item-title">Notre approche</span><span class="menu-item-description">Commencer par un pilote</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./entreprise/equipe/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><span><span class="menu-item-title">Équipe et carrières</span><span class="menu-item-description">Les métiers qui font ADA</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./entreprise/afrique/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><span class="menu-item-title">Expansion africaine</span><span class="menu-item-description">De la Côte d'Ivoire au continent</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./academy/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6"/></svg></span><span><span class="menu-item-title">ARCHIVA Academy</span><span class="menu-item-description">Formations et certificats</span></span></a></li><li class="menu-item menu-item-type-post_type"><a href="./contact/"><span class="menu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><span class="menu-item-title">Contact</span><span class="menu-item-description">Demander un audit</span></span></a></li></ul></div></div></div></li></ul>
     </nav>
-    <div class="lang" role="group" aria-label="Langue / Language">
-      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <div class="header-actions">
+      <button class="search-toggle" aria-expanded="false" aria-controls="header-search" aria-label="Rechercher"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <div class="wp-block-button is-small"><a class="wp-block-button__link wp-element-button" href="./contact/?sujet=audit">Demander un audit</a></div>
+      <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+  <div class="header-search" id="header-search">
+    <div class="container">
+      <form role="search" method="get" class="search-form" action="./recherche/">
+        <label class="screen-reader-text" for="header-search-field">Rechercher :</label>
+        <input type="search" id="header-search-field" class="search-field" placeholder="Rechercher une solution, un secteur, un article…" name="s">
+        <button type="submit" class="button">Rechercher</button>
+      </form>
     </div>
   </div>
 </header>
-
-<main id="main">
-<section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <h1 class="reveal"><span data-i18n="hero.t1">Préserver aujourd'hui.</span><span data-i18n="hero.t2">Transmettre demain.</span></h1>
-      <p class="lede reveal d2" data-i18n="hero.lede">La plateforme africaine de gestion, d'archivage et de préservation documentaire. Nous transformons vos archives papier et numériques en un patrimoine organisé, sécurisé et durable.</p>
-      <div class="ctas reveal d3">
-        <a class="btn gold" href="#contact" data-i18n="cta.audit">Demander un audit</a>
-        <a class="btn ghost" href="#archiva360" data-i18n="cta.product">Découvrir ARCHIVA360</a>
-      </div>
-      <p class="motto reveal d3" data-i18n="hero.motto">Nous ne stockons pas vos documents. Nous préservons votre mémoire.</p>
-    </div>
-
-    <div class="record-wrap">
-      <article class="record" aria-labelledby="rec-title">
-        <div class="rec-head">
-          <div>
-            <small id="rec-title" data-i18n="rec.label">Identifiant d'archive</small>
-            <div class="rec-id">CI-ABJ-PLT-2026-000457</div>
-          </div>
-          <svg class="qr" viewBox="0 0 21 21" role="img" aria-label="QR code" shape-rendering="crispEdges" id="qr"></svg>
-        </div>
-        <div class="rec-body">
-          <div>
-            <label for="doc-title" data-i18n="rec.title">Titre du document (essayez de le modifier)</label>
-            <input id="doc-title" value="Contrat fournisseur 2026-0045" autocomplete="off" spellcheck="false">
-          </div>
-          <div>
-            <span class="lbl" data-i18n="rec.location">Localisation de l'original</span>
-            <div class="loc">
-              <div><small data-i18n="loc.site">Site</small><b>Abidjan</b></div>
-              <div><small data-i18n="loc.building">Bât.</small><b>B</b></div>
-              <div><small data-i18n="loc.room">Salle</small><b>03</b></div>
-              <div><small data-i18n="loc.aisle">Rayon</small><b>12</b></div>
-              <div><small data-i18n="loc.shelf">Étag.</small><b>04</b></div>
-              <div><small data-i18n="loc.box">Boîte</small><b>457</b></div>
-            </div>
-          </div>
-          <div class="hash">
-            <span class="lbl" data-i18n="rec.hash">Empreinte SHA-256</span>
-            <code id="hash-out" aria-live="polite">…</code>
-            <div class="hash-note" id="hash-note"><span class="dot"></span><span data-i18n="rec.ok">Intègre : empreinte identique à l'original</span></div>
-          </div>
-        </div>
-        <div class="stamp" data-i18n="rec.stamp">Conservation : 10 ans</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="block" aria-labelledby="pb-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="pb-h" data-i18n="pb.h">Vos documents sont partout. Votre mémoire, nulle part.</h2>
-      <p class="lede" data-i18n="pb.p">La plupart des organisations accumulent en même temps des dossiers papier, des fichiers éparpillés et des documents introuvables. Personne ne sait combien de temps les garder, ni qui peut les consulter.</p>
-    </div>
-    <div class="chaos">
-      <div class="scatter" data-i18n-list="pb.scatter">
-        <span>Cartons de dossiers papier</span><span>Pièces jointes d'e-mails</span><span>Fichiers WhatsApp</span><span>Clés USB</span><span>Disques externes</span><span>Serveurs multiples</span><span>Doublons</span><span>Archives mal classées</span><span>Durées de conservation inconnues</span><span>Documents confidentiels trop exposés</span>
-      </div>
-      <div class="arrow" aria-hidden="true">→</div>
-      <div class="order">
-        <h3 data-i18n="pb.order">Un patrimoine documentaire organisé</h3>
-        <ul data-i18n-list="pb.orderlist">
-          <li>Chaque document classé selon un plan clair</li>
-          <li>Retrouvé en quelques secondes</li>
-          <li>Accessible aux bonnes personnes seulement</li>
-          <li>Conservé le temps qu'il faut, prouvé intact</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block tint" id="solutions" aria-labelledby="ch-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="ch-h" data-i18n="ch.h">Une seule chaîne, du carton à la préservation</h2>
-      <p class="lede" data-i18n="ch.p">Au lieu de juxtaposer un scanner, un logiciel et un hébergeur, ADA prend en charge chaque étape de la vie de vos documents.</p>
-    </div>
-    <ol class="chain" data-i18n-steps="ch.steps">
-      <li><b>Archives papier</b><small>Inventaire et préparation</small></li>
-      <li><b>Numérisation</b><small>Scan et contrôle qualité</small></li>
-      <li><b>Organisation</b><small>Plan de classement</small></li>
-      <li><b>GED</b><small>Travail sur les documents</small></li>
-      <li><b>Archivage électronique</b><small>Règles et traçabilité</small></li>
-      <li><b>Conservation</b><small>Cycle de vie maîtrisé</small></li>
-      <li><b>Recherche</b><small>Plein texte et métadonnées</small></li>
-      <li><b>Preuve</b><small>Empreinte et horodatage</small></li>
-      <li><b>Préservation longue durée</b><small>Formats lisibles dans 30 ans</small></li>
-    </ol>
-  </div>
-</section>
-
-<section class="block" aria-labelledby="po-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="po-h" data-i18n="po.h">Quatre métiers, un seul interlocuteur</h2>
-      <p class="lede" data-i18n="po.p">Nous ne vendons pas qu'un logiciel. Nous associons conseil archivistique, numérisation, technologie et conservation de confiance.</p>
-    </div>
-    <div class="poles">
-      <div class="pole">
-        <h3 data-i18n="po.1.h">Conseil</h3>
-        <p data-i18n="po.1.p">Comprendre vos fonds et fixer les règles.</p>
-        <ul data-i18n-list="po.1.l"><li>Audit documentaire</li><li>Plan de classement</li><li>Politique d'archivage</li><li>Accompagnement conformité</li></ul>
-      </div>
-      <div class="pole">
-        <h3 data-i18n="po.2.h">Numérisation</h3>
-        <p data-i18n="po.2.p">Transformer le papier en information exploitable.</p>
-        <ul data-i18n-list="po.2.l"><li>Scan A4, A3, livres, plans</li><li>OCR et indexation</li><li>Contrôle qualité</li><li>Migration de fonds</li></ul>
-      </div>
-      <div class="pole">
-        <h3 data-i18n="po.3.h">Logiciel</h3>
-        <p data-i18n="po.3.p">Gérer, retrouver et archiver au quotidien.</p>
-        <ul data-i18n-list="po.3.l"><li>Plateforme ARCHIVA360</li><li>GED et SAE</li><li>Workflows et courrier</li><li>Application mobile</li></ul>
-      </div>
-      <div class="pole">
-        <h3 data-i18n="po.4.h">Confiance et préservation</h3>
-        <p data-i18n="po.4.p">Garantir l'intégrité sur la durée.</p>
-        <ul data-i18n-list="po.4.l"><li>Coffre-fort numérique</li><li>Empreinte et horodatage</li><li>Sauvegarde 3-2-1</li><li>Préservation des formats</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block product" id="archiva360" aria-labelledby="ar-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="ar-h" data-i18n="ar.h">ARCHIVA360, la plateforme</h2>
-      <p class="lede" data-i18n="ar.p">Un seul outil pour capturer, gérer, archiver et préserver, conçu pour les organisations africaines et leurs réalités : archives physiques et numériques, plusieurs pays, français et anglais.</p>
-    </div>
-    <div class="stack">
-      <div class="layer"><h3 data-i18n="ar.cap">Capture</h3><div class="tags" data-i18n-list="ar.cap.l"><span>Scanner</span><span>OCR</span><span>E-mail</span><span>Mobile</span><span>API</span></div></div>
-      <div class="layer"><h3 data-i18n="ar.man">Gestion</h3><div class="tags" data-i18n-list="ar.man.l"><span>GED</span><span>Dossiers</span><span>Workflows</span><span>Recherche</span><span>Partage</span><span>Courrier</span></div></div>
-      <div class="layer"><h3 data-i18n="ar.arc">Archivage</h3><div class="tags" data-i18n-list="ar.arc.l"><span>SAE</span><span>Règles de conservation</span><span>Cycle de vie</span><span>Preuve</span><span>Intégrité</span></div></div>
-      <div class="layer ai"><h3>ARCHIVA AI</h3><div class="tags" data-i18n-list="ar.ai.l"><span>Lecture OCR</span><span>Classement automatique</span><span>Extraction de données</span><span>Recherche en langage naturel</span><span>Résumés</span><span>Détection des doublons</span></div></div>
-      <div class="layer vault"><h3>ARCHIVE VAULT</h3><div class="tags" data-i18n-list="ar.vault.l"><span>Chiffrement</span><span>MFA</span><span>Journal d'audit</span><span>Sauvegarde et réplication</span><span>Reprise après sinistre</span></div></div>
-    </div>
-
-    <div class="ai-rule">
-      <p data-i18n="ar.rule"><strong>Une règle non négociable :</strong> l'IA assiste, elle ne décide pas. Destruction, classement définitif et droits d'accès restent toujours validés par une personne habilitée, avec traçabilité.</p>
-    </div>
-
-    <div class="pillars3">
-      <p class="title" data-i18n="ar.ed">Trois éditions</p>
-      <div class="editions">
-        <div class="edition"><h3>Cloud</h3><p data-i18n="ed.1.p">PME, associations, cabinets, écoles et petites administrations. 100 % en ligne.</p></div>
-        <div class="edition"><h3>Enterprise</h3><p data-i18n="ed.2.p">Banques, assurances, grands groupes, industries et universités.</p><ul data-i18n-list="ed.2.l"><li>SSO et API</li><li>Intégration ERP</li><li>Stockage privé, haute disponibilité</li></ul></div>
-        <div class="edition"><h3>Government</h3><p data-i18n="ed.3.p">Ministères, mairies, collectivités et établissements publics.</p><ul data-i18n-list="ed.3.l"><li>Cloud souverain ou on-premise</li><li>Déploiement hybride</li><li>Portail d'archives publiques</li></ul></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" aria-labelledby="ph-h">
-  <div class="wrap phys">
-    <div>
-      <h2 id="ph-h" data-i18n="ph.h">Le papier compte aussi</h2>
-      <p class="lede" style="margin-top:16px" data-i18n="ph.p">Beaucoup de dossiers sont hybrides : une partie sur papier, une partie en numérique. ARCHIVA360 suit les deux. Chaque boîte, dossier et étagère reçoit un identifiant et un QR code.</p>
-      <ul class="checks" data-i18n-list="ph.l">
-        <li>L'archiviste scanne le QR code et voit le contenu, le propriétaire et la durée de conservation</li>
-        <li>Le document numérique indique où se trouve son original</li>
-        <li>Chaque consultation et chaque déplacement sont tracés</li>
-      </ul>
-    </div>
-    <div class="box" aria-label="Exemple de boîte d'archives">
-      <div class="box-top">
-        <div class="box-label"><small data-i18n="ph.box">Boîte d'archives</small><b>CI-ABJ-PLT-2026-000457</b></div>
-        <svg class="qr" viewBox="0 0 21 21" aria-hidden="true" shape-rendering="crispEdges" id="qr2"></svg>
-      </div>
-      <dl>
-        <dt data-i18n="ph.dt1">Contenu</dt><dd data-i18n="ph.dd1">Contrats fournisseurs, 2024</dd>
-        <dt data-i18n="ph.dt2">Service</dt><dd data-i18n="ph.dd2">Direction juridique</dd>
-        <dt data-i18n="ph.dt3">Emplacement</dt><dd data-i18n="ph.dd3">Abidjan, bât. B, salle 03, rayon 12</dd>
-        <dt data-i18n="ph.dt4">Conservation</dt><dd data-i18n="ph.dd4">Jusqu'en 2034, puis examen</dd>
-        <dt data-i18n="ph.dt5">Statut</dt><dd data-i18n="ph.dd5">Numérisée, originaux conservés</dd>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="block tint" id="secteurs" aria-labelledby="se-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="se-h" data-i18n="se.h">Pour les organisations qui ne peuvent pas perdre un document</h2>
-    </div>
-    <div class="sectors" data-i18n-list="se.l">
-      <span>Administrations et ministères</span><span>Mairies et collectivités</span><span>Banques</span><span>Assurances</span><span>Universités et écoles</span><span>Hôpitaux et cliniques</span><span>Cabinets juridiques</span><span>Industrie et énergie</span><span>Immobilier</span><span>ONG et organismes internationaux</span><span>Bibliothèques et musées</span>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="methode" aria-labelledby="me-h">
-  <div class="wrap pilot">
-    <div>
-      <h2 id="me-h" data-i18n="me.h">Commencer par un pilote</h2>
-      <p class="lede" style="margin-top:16px" data-i18n="me.p">Pas de grand projet à l'aveugle. Nous commençons par un audit et un fonds pilote pour que vous jugiez sur pièces.</p>
-      <p class="quote" data-i18n="me.q">« Nous analysons 10 000 dossiers de votre organisation, proposons un plan de classement et numérisons un fonds pilote de 1 000 dossiers. »</p>
-    </div>
-    <ol class="steps" data-i18n-steps="me.steps">
-      <li><div><b>Diagnostic</b><span>Un premier échange pour comprendre vos fonds et vos contraintes.</span></div></li>
-      <li><div><b>Audit documentaire</b><span>Volumes, lieux de stockage, accès, risques et sauvegardes.</span></div></li>
-      <li><div><b>Plan d'archivage</b><span>Plan de classement et règles de conservation, établis avec archiviste et juriste.</span></div></li>
-      <li><div><b>Projet pilote</b><span>Numérisation, OCR et indexation d'un premier fonds.</span></div></li>
-      <li><div><b>Démonstration ARCHIVA360</b><span>Vos propres documents, retrouvés en quelques secondes.</span></div></li>
-      <li><div><b>Déploiement et formation</b><span>Mise en service, formation des équipes et accompagnement.</span></div></li>
-    </ol>
-  </div>
-</section>
-
-<section class="block tint" id="cadre" aria-labelledby="ca-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="ca-h" data-i18n="ca.h">Construit sur des références reconnues</h2>
-      <p class="lede" data-i18n="ca.p">Notre méthode s'appuie sur les normes internationales de l'archivage et sur le cadre ivoirien de l'archivage électronique, premier marché d'ADA.</p>
-    </div>
-    <div class="std">
-      <div>
-        <h3 data-i18n="ca.int">Normes internationales</h3>
-        <table>
-          <tr><th>ISO 15489</th><td data-i18n="std.15489">Records management</td></tr>
-          <tr><th>ISO 14721 (OAIS)</th><td data-i18n="std.14721">Préservation numérique à long terme</td></tr>
-          <tr><th>ISO 23081</th><td data-i18n="std.23081">Métadonnées des documents d'activité</td></tr>
-          <tr><th>ISO 19005 (PDF/A)</th><td data-i18n="std.19005">Format de préservation électronique</td></tr>
-          <tr><th>ISO 27001</th><td data-i18n="std.27001">Sécurité de l'information</td></tr>
-          <tr><th>ISO 22301</th><td data-i18n="std.22301">Continuité d'activité</td></tr>
-        </table>
-      </div>
-      <div>
-        <h3 data-i18n="ca.ci">Cadre ivoirien</h3>
-        <table>
-          <tr><th data-i18n="law.1">Loi n°2013-546</th><td data-i18n="law.1d">Transactions électroniques et archivage électronique sécurisé</td></tr>
-          <tr><th data-i18n="law.2">Loi n°2013-450</th><td data-i18n="law.2d">Protection des données à caractère personnel</td></tr>
-          <tr><th data-i18n="law.3">Décret n°2014-106</th><td data-i18n="law.3d">Écrit et signature électroniques</td></tr>
-          <tr><th data-i18n="law.4">Décret n°2016-851</th><td data-i18n="law.4d">Mise en œuvre de l'archivage électronique</td></tr>
-        </table>
-      </div>
-    </div>
-    <p class="caution" data-i18n="ca.note">Les durées de conservation et les exigences de conformité propres à votre secteur sont toujours définies avec un archiviste et un juriste. Nous ne les inventons pas.</p>
-  </div>
-</section>
-
-<section class="block" aria-labelledby="ex-h">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="ex-h" data-i18n="ex.h">Né en Côte d'Ivoire, pensé pour l'Afrique</h2>
-      <p class="lede" data-i18n="ex.p">Un même cœur logiciel, adapté à chaque pays : règles, métadonnées, durées, langues et hébergement.</p>
-    </div>
-    <div class="route" data-i18n-route="ex.route">
-      <div class="leg"><small>Étape 1</small><b>Côte d'Ivoire</b><p>Abidjan, premier centre de numérisation</p></div>
-      <div class="leg"><small>Étape 2</small><b>UEMOA</b><p>Sénégal, Bénin, Togo, Burkina Faso</p></div>
-      <div class="leg"><small>Étape 3</small><b>Afrique centrale</b><p>Cameroun, RDC, Gabon, Congo</p></div>
-      <div class="leg"><small>Étape 4</small><b>Afrique anglophone</b><p>Ghana, Nigeria, Kenya</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="block contact" id="contact" aria-labelledby="co-h">
-  <div class="wrap cgrid">
-    <div>
-      <h2 id="co-h" data-i18n="co.h">Demander un audit</h2>
-      <p class="lede" style="margin-top:16px" data-i18n="co.p">Parlez-nous de vos archives. Nous revenons vers vous pour organiser un premier diagnostic.</p>
-    </div>
-    <form id="audit-form" novalidate>
-      <div><label for="f-name" data-i18n="f.name">Nom et prénom</label><input id="f-name" name="name" autocomplete="name" required></div>
-      <div><label for="f-org" data-i18n="f.org">Organisation</label><input id="f-org" name="org" autocomplete="organization" required></div>
-      <div><label for="f-email" data-i18n="f.email">E-mail professionnel</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-      <div><label for="f-phone" data-i18n="f.phone">Téléphone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-      <div class="full"><label for="f-sector" data-i18n="f.sector">Secteur</label>
-        <select id="f-sector" name="sector" data-i18n-options="f.sectors">
-          <option>Administration publique</option><option>Banque ou assurance</option><option>Entreprise privée</option><option>Éducation</option><option>Santé</option><option>ONG</option><option>Patrimoine et culture</option><option>Autre</option>
-        </select></div>
-      <div class="full"><label for="f-msg" data-i18n="f.msg">Vos archives en quelques mots</label><textarea id="f-msg" name="msg" data-i18n-ph="f.msgph" placeholder="Volumes, types de documents, lieux de stockage, urgence…"></textarea></div>
-      <div class="full" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-        <button class="btn gold" type="submit" data-i18n="f.send">Envoyer la demande</button>
-        <p class="form-note" id="form-note" data-i18n="f.note">Votre messagerie s'ouvre avec la demande prête à envoyer.</p>
-      </div>
-    </form>
-  </div>
-</section>
+<div id="content" class="site-content">
+<section class="home-hero"><div class="container">
+<div class="home-hero__copy"><span class="eyebrow">Gestion documentaire · Archivage · Préservation</span>
+<h1>Préserver aujourd'hui. <em>Transmettre demain.</em></h1>
+<p class="home-hero__lead">La plateforme africaine de gestion, d'archivage et de préservation documentaire. ADA transforme vos archives papier et numériques en un patrimoine organisé, sécurisé et durable.</p>
+<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="./contact/?sujet=audit">Demander un audit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="./archiva360/">Découvrir ARCHIVA360<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+<p class="home-hero__note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Hébergement en Côte d'Ivoire, en cloud privé ou dans vos locaux.</p></div>
+<div class="home-hero__media"><figure class="wp-block-image size-large "><div class="browser-frame"><div class="browser-frame__bar"><i></i><i></i><i></i><span>app.archiva360.africa</span></div><img width="1600" height="1000" src="./wp-content/uploads/2026/09/archiva360-tableau-de-bord.png" alt="Tableau de bord de la plateforme ARCHIVA360" class="wp-image-879" fetchpriority="high"></div></figure></div>
+</div></section>
+<div class="standards-strip"><div class="container"><p class="standards-strip__label">Une démarche fondée sur les références reconnues</p><ul>
+<li><b>ISO 15489</b><span>Records management</span></li><li><b>ISO 14721</b><span>Préservation (OAIS)</span></li><li><b>ISO 23081</b><span>Métadonnées</span></li>
+<li><b>PDF/A</b><span>ISO 19005</span></li><li><b>ISO 27001</b><span>Sécurité</span></li><li><b>Loi 2013-546</b><span>Côte d'Ivoire</span></li></ul></div></div>
+<main id="primary" class="site-main">
+<div class="wp-block-group section has-white-background-color "><div class="container"><div class="wp-block-columns cols-2 gap-lg is-vertically-aligned-center" style="--cols:2"><div class="wp-block-column"><div class="section-intro"><span class="eyebrow">Le constat</span><h2 class="wp-block-heading">Vos documents sont partout. Votre mémoire, nulle part.</h2><p>La plupart des organisations accumulent des tonnes de dossiers papier, des fichiers dispersés et des documents introuvables. Personne ne sait combien de temps les garder, ni qui peut les consulter.</p></div><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="./ressources/document-health-check/">Évaluer ma situation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="wp-block-column"><div class="chaos-order" style="grid-template-columns:1fr"><div class="chaos-order__box is-chaos"><h3>Aujourd'hui</h3><ul class="chips"><li>Dossiers papier</li><li>Fichiers sur les ordinateurs</li><li>Pièces jointes d'e-mails</li><li>Fichiers WhatsApp</li><li>Clés USB</li><li>Disques externes</li><li>Plusieurs serveurs</li><li>Doublons</li><li>Archives mal classées</li><li>Durées de conservation inconnues</li><li>Documents confidentiels trop exposés</li></ul></div><div class="chaos-order__arrow" style="transform:rotate(90deg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="chaos-order__box is-order"><h3>Avec ADA : un patrimoine documentaire organisé</h3><ul class="wp-block-list is-style-check "><li>Chaque document classé selon un plan clair</li><li>Retrouvé en quelques secondes</li><li>Accessible aux seules bonnes personnes</li><li>Conservé le temps qu’il faut, prouvé intact</li></ul></div></div></div></div></div></div><div class="wp-block-group section has-mist-background-color "><div class="container"><div class="section-intro has-text-align-center"><span class="eyebrow">Notre approche</span><h2 class="wp-block-heading">Une seule chaîne, du carton à la préservation</h2><p>Au lieu de juxtaposer un scanner, un logiciel et un hébergeur, ADA prend en charge chaque étape de la vie de vos documents.</p></div><ol class="chain"><li><b>Archives papier</b><span>Inventaire et préparation</span></li><li><b>Numérisation</b><span>Scan et contrôle qualité</span></li><li><b>Organisation</b><span>Plan de classement</span></li><li><b>GED</b><span>Travail au quotidien</span></li><li><b>Archivage électronique</b><span>Règles et traçabilité</span></li><li><b>Conservation</b><span>Cycle de vie maîtrisé</span></li><li><b>Recherche</b><span>Plein texte et métadonnées</span></li><li><b>Preuve</b><span>Empreinte et horodatage</span></li><li><b>Préservation</b><span>Lisible dans 30 ans</span></li></ol></div></div><div class="wp-block-group section has-white-background-color "><div class="container"><div class="section-intro"><span class="eyebrow">Ce que nous faisons</span><h2 class="wp-block-heading">Quatre métiers, un seul interlocuteur</h2><p>Nous ne vendons pas qu'un logiciel. Nous associons conseil archivistique, numérisation, technologie et préservation de confiance.</p></div><div class="ada-tabs"><div class="ada-tabs__nav" role="tablist" aria-label="Nos pôles"><button role="tab" id="tab-consulting" aria-controls="panel-consulting" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Consulting</button><button role="tab" id="tab-digitalisation" aria-controls="panel-digitalisation" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M4 12h16"/></svg>Digitalisation</button><button role="tab" id="tab-software" aria-controls="panel-software" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>Software</button><button role="tab" id="tab-trust" aria-controls="panel-trust" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Trust & Preservation</button></div><div class="ada-tabs__panel" role="tabpanel" id="panel-consulting" aria-labelledby="tab-consulting"><div class="wp-block-media-text is-stacked-on-mobile"><div class="wp-block-media-text__media"><figure class="wp-block-image size-large "><div class="browser-frame"><div class="browser-frame__bar"><i></i><i></i><i></i><span>app.archiva360.africa</span></div><img width="1600" height="1000" src="./wp-content/uploads/2026/09/archiva360-plan-de-classement.png" alt="Comprendre vos fonds et fixer les règles" class="wp-image-178" loading="lazy" decoding="async"></div></figure></div><div class="wp-block-media-text__content"><h3 style="font-size:1.7rem">Comprendre vos fonds et fixer les règles</h3><p class="lead">Audit documentaire, plan de classement, politique d'archivage et conformité. Nos archivistes et juristes posent les règles avant de choisir l'outil.</p><ul class="wp-block-list is-style-check "><li>Audit documentaire et cartographie des fonds</li><li>Plan de classement et référentiel de conservation</li><li>Politique d'archivage</li><li>Accompagnement à la conformité</li></ul><a class="more-link" href="./services/conseil/">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></div><div class="ada-tabs__panel" role="tabpanel" id="panel-digitalisation" aria-labelledby="tab-digitalisation" hidden><div class="wp-block-media-text is-stacked-on-mobile"><div class="wp-block-media-text__media"><figure class="wp-block-image size-large "><div class="browser-frame"><div class="browser-frame__bar"><i></i><i></i><i></i><span>app.archiva360.africa</span></div><img width="1600" height="1000" src="./wp-content/uploads/2026/09/archiva360-document-ocr.png" alt="Transformer le papier en information exploitable" class="wp-image-876" loading="lazy" decoding="async"></div></figure></div><div class="wp-block-media-text__content"><h3 style="font-size:1.7rem">Transformer le papier en information exploitable</h3><p class="lead">Notre centre de numérisation d'Abidjan prend en charge vos fonds : préparation, scan, OCR, indexation, contrôle qualité et import dans ARCHIVA360.</p><ul class="wp-block-list is-style-check "><li>Scan A4, A3, livres, plans et grands formats</li><li>OCR et indexation</li><li>Contrôle qualité</li><li>Migration de fonds existants</li></ul><a class="more-link" href="./services/numerisation/">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></div><div class="ada-tabs__panel" role="tabpanel" id="panel-software" aria-labelledby="tab-software" hidden><div class="wp-block-media-text is-stacked-on-mobile"><div class="wp-block-media-text__media"><figure class="wp-block-image size-large "><div class="browser-frame"><div class="browser-frame__bar"><i></i><i></i><i></i><span>app.archiva360.africa</span></div><img width="1600" height="1000" src="./wp-content/uploads/2026/09/archiva360-recherche-intelligente.png" alt="ARCHIVA360, la plateforme" class="wp-image-703" loading="lazy" decoding="async"></div></figure></div><div class="wp-block-media-text__content"><h3 style="font-size:1.7rem">ARCHIVA360, la plateforme</h3><p class="lead">GED, archivage électronique, records management, archives physiques et IA documentaire dans un seul outil, en SaaS ou sur site.</p><ul class="wp-block-list is-style-check "><li>20 modules, de la capture au portail public</li><li>Recherche en langage naturel</li><li>Workflows, courrier et signature</li><li>Application mobile ARCHIVA GO</li></ul><a class="more-link" href="./archiva360/">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></div><div class="ada-tabs__panel" role="tabpanel" id="panel-trust" aria-labelledby="tab-trust" hidden><div class="wp-block-media-text is-stacked-on-mobile"><div class="wp-block-media-text__media"><figure class="wp-block-image size-large "><div class="browser-frame"><div class="browser-frame__bar"><i></i><i></i><i></i><span>app.archiva360.africa</span></div><img width="1600" height="1000" src="./wp-content/uploads/2026/09/archiva360-compliance-center.png" alt="Garantir l&#x27;intégrité dans la durée" class="wp-image-132" loading="lazy" decoding="async"></div></figure></div><div class="wp-block-media-text__content"><h3 style="font-size:1.7rem">Garantir l'intégrité dans la durée</h3><p class="lead">Coffre-fort numérique, empreinte et horodatage, sauvegarde 3-2-1, plan de reprise et préservation des formats selon le modèle OAIS.</p><ul class="wp-block-list is-style-check "><li>Chiffrement, MFA, journal d'audit</li><li>Empreinte SHA-256 et horodatage</li><li>Sauvegarde 3-2-1 et reprise d'activité</li><li>Préservation numérique OAIS</li></ul><a class="more-link" href="./solutions/preservation-numerique/">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></div></div></div></div><div class="wp-block-group section has-navy-background-color "><div class="container"><div class="wp-block-columns cols-2 gap-lg is-vertically-aligned-center" style="--cols:2"><div class="wp-block-column"><div class="section-intro"><span class="eyebrow">La plateforme</span><h2 class="wp-block-heading">ARCHIVA360 : capturer, gérer, archiver, préserver</h2><p>Un seul outil pensé pour les réalités africaines : archives physiques et numériques, plusieurs pays, français et anglais, cloud ou sur site.</p></div><div class="wp-block-columns cols-2 gap-sm" style="--cols:2"><div class="wp-block-column"><div class="feature"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M4 12h16"/></svg></div><div><h4>Capture et OCR</h4><p>Scanner, importer, lire et extraire les données.</p></div></div></div><div class="wp-block-column"><div class="feature"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></div><div><h4>Recherche intelligente</h4><p>« Factures supérieures à 5 millions FCFA ».</p></div></div></div><div class="wp-block-column"><div class="feature"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h12M6 21h12M7 3c0 5 10 6 10 9s-10 4-10 9M17 3c0 5-10 6-10 9s10 4 10 9"/></svg></div><div><h4>Records management</h4><p>Règles de conservation et échéances automatiques.</p></div></div></div><div class="wp-block-column"><div class="feature"><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></div><div><h4>Archives physiques</h4><p>Boîtes localisées et QR codes.</p></div></div></div></div><div class="wp-block-buttons mt-l"><div class="wp-block-button is-style-white"><a class="wp-block-button__link wp-element-button" href="./archiva360/">Découvrir ARCHIVA360<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="./archiva360/modules/">Les 20 modules<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></div><div class="wp-block-column"><figure class="wp-block-image size-large "><div class="browser-frame"><div class="browser-frame__bar"><i></i><i></i><i></i><span>app.archiva360.africa</span></div><img width="1600" height="1000" src="./wp-content/uploads/2026/09/archiva360-archives-physiques.png" alt="Fiche d&#x27;une boîte d&#x27;archives dans ARCHIVA360" class="wp-image-622" loading="lazy" decoding="async"></div></figure></div></div><div class="notice mt-l"><p><strong>Une règle non négociable :</strong> l'IA assiste, elle ne décide pas. Destruction, classement définitif et droits d'accès sont toujours validés par une personne habilitée, avec traçabilité.</p></div></div></div><div class="wp-block-group section has-white-background-color is-compact"><div class="container"><div class="wp-block-columns cols-4" style="--cols:4"><div class="wp-block-column"><div class="stat"><span class="stat__value">9</span><span class="stat__label">étapes de la chaîne documentaire couvertes</span></div></div><div class="wp-block-column"><div class="stat"><span class="stat__value">20</span><span class="stat__label">modules dans ARCHIVA360</span></div></div><div class="wp-block-column"><div class="stat"><span class="stat__value">4</span><span class="stat__label">modes de déploiement : SaaS, privé, sur site, hybride</span></div></div><div class="wp-block-column"><div class="stat"><span class="stat__value">1</span><span class="stat__label">interlocuteur, du carton à la préservation</span></div></div></div></div></div><div class="wp-block-group section has-white-background-color "><div class="container"><div class="section-intro split"><div><span class="eyebrow">Secteurs</span><h2 class="wp-block-heading">Pour les organisations qui ne peuvent pas perdre un document</h2></div><div><p>Administrations, banques, assurances, hôpitaux, universités, industries : chaque secteur a ses documents et ses obligations.</p></div></div><div class="tiles"><a class="sector-tile" href="./secteurs/gouvernement/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M4 10h16M12 3l9 5H3zM6 10v8M10 10v8M14 10v8M18 10v8"/></svg></span>Gouvernement<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sector-tile" href="./secteurs/banque/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M3 10l9-6 9 6M5 10v8M19 10v8M9.5 10v8M14.5 10v8"/></svg></span>Banque<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sector-tile" href="./secteurs/assurance/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v7a2 2 0 0 1-4 0"/></svg></span>Assurance<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sector-tile" href="./secteurs/sante/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 8.5A5 5 0 0 0 12 5.6 5 5 0 0 0 3.5 8.5C3.5 14 12 20 12 20s8.5-6 8.5-11.5z"/><path d="M4 12h4l2-3 3 5 2-2h5"/></svg></span>Santé<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sector-tile" href="./secteurs/education/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6"/></svg></span>Éducation<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sector-tile" href="./secteurs/industrie/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21V10l6 4V10l6 4V6l6 3v12z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg></span>Industrie et énergie<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sector-tile" href="./secteurs/immobilier/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10M10 20v-6h4v6"/></svg></span>Immobilier<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sector-tile" href="./secteurs/juridique/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18M7 21h10M4 7h16"/><path d="M4 7l-2.5 6a3 3 0 0 0 5 0zM20 7l-2.5 6a3 3 0 0 0 5 0z"/></svg></span>Juridique<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sector-tile" href="./secteurs/ong/"><span class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21l-7-6.5a4.5 4.5 0 0 1 6.4-6.3L12 9l.6-.8a4.5 4.5 0 0 1 6.4 6.3z"/></svg></span>ONG et organismes internationaux<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><p class="mt-m"><a class="more-link" href="./secteurs/">Tous les secteurs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p></div></div><div class="wp-block-group section has-mist-background-color "><div class="container"><div class="wp-block-columns cols-2 gap-lg" style="--cols:2"><div class="wp-block-column"><div class="section-intro"><span class="eyebrow">Méthode</span><h2 class="wp-block-heading">Commencer par un pilote</h2><p>Pas de grand projet à l'aveugle. Nous commençons par un audit et un fonds pilote pour que vous jugiez sur pièces.</p></div><blockquote class="wp-block-quote"><p>« Nous analysons 10 000 dossiers de votre organisation, vous proposons un plan de classement et numérisons un fonds pilote de 1 000 dossiers. »</p><cite>Notre offre de démarrage : Audit + digitalisation pilote</cite></blockquote><a class="card" href="./ressources/document-health-check/"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><h3>Document Health Check</h3><p>Répondez à 20 questions et obtenez un premier score de maturité documentaire, avec trois priorités d'action.</p><span class="more-link">Faire le test gratuit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div><div class="wp-block-column"><ol class="steps"><li><div><h3>Diagnostic</h3><p>Un premier échange gratuit pour comprendre vos fonds et vos contraintes.</p></div></li><li><div><h3>Audit documentaire</h3><p>Volumes, lieux de stockage, accès, risques et sauvegardes.</p></div></li><li><div><h3>Plan d'archivage</h3><p>Plan de classement et règles de conservation, définis avec un archiviste et un juriste.</p></div></li><li><div><h3>Projet pilote</h3><p>Numérisation, OCR et indexation d'un premier fonds.</p></div></li><li><div><h3>Démonstration ARCHIVA360</h3><p>Vos propres documents, retrouvés en quelques secondes.</p></div></li><li><div><h3>Déploiement et formation</h3><p>Mise en service, formation des équipes et accompagnement.</p></div></li></ol></div></div></div></div><div class="wp-block-group section has-navy-background-color "><div class="container"><div class="wp-block-columns cols-2 gap-lg is-vertically-aligned-center" style="--cols:2"><div class="wp-block-column"><div class="section-intro"><span class="eyebrow">Expansion</span><h2 class="wp-block-heading">Né en Côte d'Ivoire, pensé pour l'Afrique</h2><p>Un même cœur logiciel, adapté à chaque pays : règles, métadonnées, durées, langues et hébergement se configurent par pays.</p></div><a class="more-link" href="./entreprise/afrique/">Notre feuille de route africaine <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="wp-block-column"><div class="roadmap" style="grid-template-columns:repeat(2,1fr);border:0;gap:28px 24px"><div class="roadmap__step is-current" style="border-top:2px solid rgba(255,255,255,.14)"><small>Étape 1</small><h4>Côte d'Ivoire</h4><p>Abidjan, premier centre de numérisation</p></div><div class="roadmap__step" style="border-top:2px solid rgba(255,255,255,.14)"><small>Étape 2</small><h4>UEMOA</h4><p>Sénégal, Bénin, Togo, Burkina Faso</p></div><div class="roadmap__step" style="border-top:2px solid rgba(255,255,255,.14)"><small>Étape 3</small><h4>Afrique centrale</h4><p>Cameroun, RDC, Gabon, Congo</p></div><div class="roadmap__step" style="border-top:2px solid rgba(255,255,255,.14)"><small>Étape 4</small><h4>Afrique anglophone</h4><p>Ghana, Kenya, Nigeria</p></div></div></div></div></div></div><div class="wp-block-group section has-white-background-color "><div class="container"><div class="section-intro split"><div><span class="eyebrow">Blog</span><h2 class="wp-block-heading">Ressources et analyses</h2></div><div style="text-align:right"><a class="more-link" href="./blog/">Tous les articles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="posts-grid cols-3"><article class="post-card post type-post status-publish category-guides" data-cat="guides"><a class="post-thumbnail" href="./blog/ged-sae-records-management-difference/" tabindex="-1" aria-hidden="true"><img width="1200" height="675" src="./wp-content/uploads/2026/09/cover-ged-sae-records.png" alt="" loading="lazy" decoding="async"></a><div class="entry-wrap"><div class="entry-meta"><span class="cat-links"><a href="./blog/categorie/guides/">Guides</a></span><span class="posted-on"><time datetime="2026-09-28">28 septembre 2026</time></span></div><h3 class="entry-title"><a href="./blog/ged-sae-records-management-difference/" rel="bookmark">GED, SAE, records management : ne plus confondre</a></h3><div class="entry-summary"><p>Trois notions souvent mélangées, trois besoins différents. Comprendre la différence évite d'acheter le mauvais outil.</p></div><a class="read-more" href="./blog/ged-sae-records-management-difference/">Lire l'article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article><article class="post-card post type-post status-publish category-securite" data-cat="securite"><a class="post-thumbnail" href="./blog/regle-3-2-1-sauvegarde-archives/" tabindex="-1" aria-hidden="true"><img width="1200" height="675" src="./wp-content/uploads/2026/09/cover-regle-3-2-1.png" alt="" loading="lazy" decoding="async"></a><div class="entry-wrap"><div class="entry-meta"><span class="cat-links"><a href="./blog/categorie/securite/">Sécurité</a></span><span class="posted-on"><time datetime="2026-09-24">24 septembre 2026</time></span></div><h3 class="entry-title"><a href="./blog/regle-3-2-1-sauvegarde-archives/" rel="bookmark">La règle 3-2-1 : protéger vos archives contre l'incendie et le ransomware</a></h3><div class="entry-summary"><p>Trois copies, deux supports, une copie hors site : une règle simple qui sauve des décennies d'archives.</p></div><a class="read-more" href="./blog/regle-3-2-1-sauvegarde-archives/">Lire l'article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article><article class="post-card post type-post status-publish category-conformite" data-cat="conformite"><a class="post-thumbnail" href="./blog/archivage-electronique-cote-divoire-cadre-juridique/" tabindex="-1" aria-hidden="true"><img width="1200" height="675" src="./wp-content/uploads/2026/09/cover-cadre-ivoirien.png" alt="" loading="lazy" decoding="async"></a><div class="entry-wrap"><div class="entry-meta"><span class="cat-links"><a href="./blog/categorie/conformite/">Conformité</a></span><span class="posted-on"><time datetime="2026-09-21">21 septembre 2026</time></span></div><h3 class="entry-title"><a href="./blog/archivage-electronique-cote-divoire-cadre-juridique/" rel="bookmark">Archivage électronique en Côte d'Ivoire : ce que disent les textes</a></h3><div class="entry-summary"><p>Transactions électroniques, signature, archivage, données personnelles, sécurité des systèmes : les repères du cadre ivoirien.</p></div><a class="read-more" href="./blog/archivage-electronique-cote-divoire-cadre-juridique/">Lire l'article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article></div></div></div><div class="wp-block-group section has-mist-background-color "><div class="container"><div class="wp-block-columns cols-2 gap-lg" style="--cols:2"><div class="wp-block-column"><div class="section-intro"><span class="eyebrow">FAQ</span><h2 class="wp-block-heading">Questions fréquentes</h2><p>Les questions que nous posent le plus souvent les directions générales, les DSI et les archivistes.</p></div><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="./contact/">Nous contacter<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="wp-block-column"><details class="wp-block-details"><summary>ADA est-il un éditeur de logiciel ou un prestataire de services ?</summary><div><p>Les deux. ADA commence comme une société de transformation documentaire (conseil, numérisation, migration) et édite la plateforme ARCHIVA360. Vous pouvez faire appel à nos services, à la plateforme, ou aux deux.</p></div></details><details class="wp-block-details"><summary>Nos données restent-elles en Côte d'Ivoire ?</summary><div><p>Vous choisissez : hébergement par ADA, cloud privé, installation dans vos locaux ou architecture hybride. Pour les administrations, nous privilégions la souveraineté des données.</p></div></details><details class="wp-block-details"><summary>Combien coûte un projet ?</summary><div><p>Cela dépend des volumes, du nombre d'utilisateurs et du niveau de sécurité. Les abonnements démarrent à partir de 25 000 FCFA par mois ; la numérisation est facturée à la page ou au projet. Un audit permet de chiffrer précisément.</p></div></details><details class="wp-block-details"><summary>Faut-il tout numériser ?</summary><div><p>Non. L'audit identifie les fonds prioritaires : les documents les plus consultés, les plus précieux ou les plus menacés. Les autres peuvent rester sur papier, inventoriés et localisés grâce aux QR codes.</p></div></details><details class="wp-block-details"><summary>La plateforme est-elle conforme à la réglementation ivoirienne ?</summary><div><p>ARCHIVA360 est conçue à partir du cadre ivoirien (transactions électroniques, archivage électronique, protection des données) et des normes internationales. Nous faisons valider chaque dispositif par un juriste et ne revendiquons aucune conformité sans validation indépendante.</p></div></details></div></div></div></div>
 </main>
-
-<footer>
-  <div class="wrap foot">
-    <div><b>African Digital Archives</b><br><span data-i18n="ft.tag">La mémoire numérique de l'Afrique.</span></div>
-    <div>© <span id="yr"></span> ADA · Abidjan, Côte d'Ivoire</div>
-  </div>
+</div>
+<footer id="colophon" class="site-footer">
+  <div class="footer-cta"><div class="container">
+    <div><h2>Parlons de vos archives.</h2><p>Diagnostic gratuit, audit documentaire, projet pilote : commençons par un premier échange.</p></div>
+    <div class="wp-block-buttons"><div class="wp-block-button is-style-white"><a class="wp-block-button__link wp-element-button" href="./contact/?sujet=audit">Demander un audit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="./archiva360/">Voir ARCHIVA360<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+  </div></div>
+  <div class="footer-widgets"><div class="container">
+    <section class="widget widget_about">
+      <a href="./" class="custom-logo-link" rel="home"><svg class="custom-logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="10" fill="#1A2B6D"/><path d="M13 35 24 11l11 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.4 26.5h13.2" stroke="#006EEF" stroke-width="3.4" stroke-linecap="round"/><rect x="31" y="31" width="6" height="6" rx="1.2" fill="#006EEF"/></svg><span class="site-title-wrap"><span class="site-title">ADA</span><span class="site-description">African Digital Archives</span></span></a>
+      <p>ADA accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques en un patrimoine documentaire sécurisé, organisé, accessible et durable.</p>
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2.5 2.5 0 0 1 5 0v4M12 10v7"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 21v-8h3l.5-3.5H14V7.8c0-1 .3-1.8 1.8-1.8h1.8V3a24 24 0 0 0-2.6-.1c-2.6 0-4.4 1.6-4.4 4.5v2.1H7.7V13h2.9v8"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9v6l5-3z"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 1a4 4 0 0 1-2.4-2.4l1-1-1-2z"/></svg></a>
+      </div>
+    </section>
+    <section class="widget widget_nav_menu"><h2 class="widget-title">Solutions</h2><ul class="menu"><li><a href="./solutions/ged/">GED</a></li><li><a href="./solutions/sae/">Archivage électronique (SAE)</a></li><li><a href="./solutions/records-management/">Records management</a></li><li><a href="./solutions/capture-numerisation/">Capture et numérisation</a></li><li><a href="./solutions/archives-physiques/">Archives physiques</a></li><li><a href="./solutions/ia-documentaire/">IA documentaire</a></li><li><a href="./solutions/securite/">Sécurité et coffre-fort</a></li></ul></section>
+    <section class="widget widget_nav_menu"><h2 class="widget-title">Secteurs</h2><ul class="menu"><li><a href="./secteurs/gouvernement/">Gouvernement</a></li><li><a href="./secteurs/banque/">Banque</a></li><li><a href="./secteurs/assurance/">Assurance</a></li><li><a href="./secteurs/sante/">Santé</a></li><li><a href="./secteurs/education/">Éducation</a></li><li><a href="./secteurs/industrie/">Industrie et énergie</a></li><li><a href="./secteurs/immobilier/">Immobilier</a></li></ul></section>
+    <section class="widget widget_nav_menu"><h2 class="widget-title">ADA</h2><ul class="menu"><li><a href="./entreprise/">Qui sommes-nous ?</a></li><li><a href="./archiva360/">ARCHIVA360</a></li><li><a href="./services/">Services</a></li><li><a href="./academy/">ARCHIVA Academy</a></li><li><a href="./blog/">Blog</a></li><li><a href="./entreprise/equipe/">Carrières</a></li><li><a href="./contact/">Contact</a></li></ul></section>
+    <section class="widget widget_newsletter">
+      <h2 class="widget-title">Lettre d'information</h2>
+      <p>Un e-mail par mois : méthodes d'archivage, cadre réglementaire, nouveautés ARCHIVA360.</p>
+      <form class="newsletter-form" novalidate>
+        <label class="screen-reader-text" for="nl-email-187">Adresse e-mail</label>
+        <input type="email" id="nl-email-187" name="email" placeholder="Votre e-mail professionnel" autocomplete="email">
+        <button type="submit" class="button">S'inscrire</button>
+        <p class="nl-msg" aria-live="polite"></p>
+      </form>
+    </section>
+  </div></div>
+  <div class="site-info"><div class="container">
+    <span>© <span class="current-year">2026</span> African Digital Archives (ADA). Tous droits réservés.</span>
+    <ul>
+      <li><a href="./mentions-legales/">Mentions légales</a></li>
+      <li><a href="./politique-de-confidentialite/">Politique de confidentialité</a></li>
+      <li><a href="./politique-de-confidentialite/#cookies">Cookies</a></li>
+      <li><a href="./plan-du-site/">Plan du site</a></li>
+    </ul>
+  </div></div>
 </footer>
+<div id="cookie-notice" role="dialog" aria-live="polite" aria-label="Cookies">
+  <p class="cn-title">Votre vie privée</p>
+  <p>Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement et, avec votre accord, des cookies de mesure d'audience. <a href="./politique-de-confidentialite/#cookies">En savoir plus</a></p>
+  <div class="cn-buttons">
+    <button class="button cn-button" data-cookie-set="accept">Accepter</button>
+    <button class="button cn-button cn-refuse" data-cookie-set="refuse">Refuser</button>
+  </div>
+</div>
+<button id="scroll-up" aria-label="Retour en haut de page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+</div>
+<script id="ada-theme-js-extra">var adaSettings = {"contactEmail": "contact@example.com", "root": "./"};</script>
 
-<script>
-/* ---------- config ---------- */
-const CONTACT_EMAIL = "contact@example.com"; // TODO: replace with ADA's real address
-
-/* ---------- translations (FR is the markup default) ---------- */
-const EN = {
-  "skip":"Skip to content","menu":"Menu",
-  "nav.solutions":"Solutions","nav.sectors":"Sectors","nav.method":"Approach","nav.framework":"Standards","nav.contact":"Contact",
-  "hero.t1":"Preserve today.","hero.t2":"Pass it on tomorrow.",
-  "hero.lede":"The African platform for document management, archiving and preservation. We turn your paper and digital archives into organized, secure and lasting heritage.",
-  "cta.audit":"Request an audit","cta.product":"Discover ARCHIVA360",
-  "hero.motto":"We don't just store your documents. We preserve your memory.",
-  "rec.label":"Archive ID","rec.title":"Document title (try editing it)","rec.location":"Location of the original","rec.hash":"SHA-256 fingerprint",
-  "rec.ok":"Intact: fingerprint matches the original","rec.changed":"Changed: fingerprint no longer matches the original","rec.stamp":"Retention: 10 years",
-  "loc.site":"Site","loc.building":"Bldg","loc.room":"Room","loc.aisle":"Aisle","loc.shelf":"Shelf","loc.box":"Box",
-  "pb.h":"Your documents are everywhere. Your memory, nowhere.",
-  "pb.p":"Most organizations pile up paper files, scattered digital files and documents nobody can find. No one knows how long to keep them, or who may see them.",
-  "pb.scatter":["Boxes of paper files","Email attachments","WhatsApp files","USB drives","External disks","Several servers","Duplicates","Misfiled archives","Unknown retention periods","Over-exposed confidential files"],
-  "pb.order":"Organized documentary heritage",
-  "pb.orderlist":["Every document filed under a clear plan","Found in seconds","Open only to the right people","Kept as long as needed, proven intact"],
-  "ch.h":"One chain, from the cardboard box to preservation",
-  "ch.p":"Instead of stitching together a scanner, a software and a host, ADA takes care of every stage of your documents' life.",
-  "ch.steps":[["Paper archives","Inventory and preparation"],["Digitization","Scanning and quality control"],["Organization","Filing plan"],["Document management","Day-to-day work"],["Electronic archiving","Rules and traceability"],["Retention","Managed life cycle"],["Search","Full text and metadata"],["Proof","Fingerprint and timestamp"],["Long-term preservation","Formats still readable in 30 years"]],
-  "po.h":"Four trades, one partner",
-  "po.p":"We don't only sell software. We combine archival consulting, digitization, technology and trusted preservation.",
-  "po.1.h":"Consulting","po.1.p":"Understand your holdings and set the rules.","po.1.l":["Records audit","Filing plan","Archiving policy","Compliance support"],
-  "po.2.h":"Digitization","po.2.p":"Turn paper into usable information.","po.2.l":["A4, A3, book and plan scanning","OCR and indexing","Quality control","Collection migration"],
-  "po.3.h":"Software","po.3.p":"Manage, find and archive every day.","po.3.l":["ARCHIVA360 platform","DMS and archiving system","Workflows and mail","Mobile app"],
-  "po.4.h":"Trust and preservation","po.4.p":"Guarantee integrity over time.","po.4.l":["Digital vault","Fingerprint and timestamp","3-2-1 backup","Format preservation"],
-  "ar.h":"ARCHIVA360, the platform",
-  "ar.p":"One tool to capture, manage, archive and preserve, designed for African organizations and their realities: physical and digital archives, several countries, French and English.",
-  "ar.cap":"Capture","ar.man":"Management","ar.arc":"Archiving",
-  "ar.cap.l":["Scanner","OCR","Email","Mobile","API"],
-  "ar.man.l":["Documents","Folders","Workflows","Search","Sharing","Mail"],
-  "ar.arc.l":["Archiving system","Retention rules","Life cycle","Proof","Integrity"],
-  "ar.ai.l":["OCR reading","Automatic filing","Data extraction","Natural-language search","Summaries","Duplicate detection"],
-  "ar.vault.l":["Encryption","MFA","Audit log","Backup and replication","Disaster recovery"],
-  "ar.rule":"<strong>One non-negotiable rule:</strong> AI assists, it does not decide. Destruction, final classification and access rights are always approved by an authorized person, with a full trail.",
-  "ar.ed":"Three editions",
-  "ed.1.p":"SMEs, associations, firms, schools and small administrations. Fully online.",
-  "ed.2.p":"Banks, insurers, large groups, industry and universities.","ed.2.l":["SSO and API","ERP integration","Private storage, high availability"],
-  "ed.3.p":"Ministries, city halls, local and public bodies.","ed.3.l":["Sovereign cloud or on-premise","Hybrid deployment","Public archives portal"],
-  "ph.h":"Paper counts too",
-  "ph.p":"Many files are hybrid: part paper, part digital. ARCHIVA360 tracks both. Every box, folder and shelf gets an ID and a QR code.",
-  "ph.l":["The archivist scans the QR code and sees contents, owner and retention period","The digital document shows where its original is kept","Every consultation and move is logged"],
-  "ph.box":"Archive box","ph.dt1":"Contents","ph.dd1":"Supplier contracts, 2024","ph.dt2":"Department","ph.dd2":"Legal department","ph.dt3":"Location","ph.dd3":"Abidjan, bldg B, room 03, aisle 12","ph.dt4":"Retention","ph.dd4":"Until 2034, then review","ph.dt5":"Status","ph.dd5":"Digitized, originals kept",
-  "se.h":"For organizations that cannot afford to lose a document",
-  "se.l":["Administrations and ministries","City halls and local government","Banks","Insurers","Universities and schools","Hospitals and clinics","Law firms","Industry and energy","Real estate","NGOs and international bodies","Libraries and museums"],
-  "me.h":"Start with a pilot",
-  "me.p":"No big project in the dark. We start with an audit and a pilot collection so you can judge on evidence.",
-  "me.q":"“We review 10,000 of your organization's files, propose a filing plan and digitize a pilot collection of 1,000 files.”",
-  "me.steps":[["Diagnosis","A first conversation to understand your holdings and constraints."],["Records audit","Volumes, storage locations, access, risks and backups."],["Archiving plan","Filing plan and retention rules, set with an archivist and a lawyer."],["Pilot project","Digitization, OCR and indexing of a first collection."],["ARCHIVA360 demo","Your own documents, found in seconds."],["Rollout and training","Go-live, team training and ongoing support."]],
-  "ca.h":"Built on recognized references",
-  "ca.p":"Our approach rests on international archiving standards and on the Ivorian electronic archiving framework, ADA's first market.",
-  "ca.int":"International standards","ca.ci":"Ivorian framework",
-  "std.15489":"Records management","std.14721":"Long-term digital preservation","std.23081":"Metadata for records","std.19005":"Electronic preservation format","std.27001":"Information security","std.22301":"Business continuity",
-  "law.1":"Law no. 2013-546","law.1d":"Electronic transactions and secure electronic archiving",
-  "law.2":"Law no. 2013-450","law.2d":"Personal data protection",
-  "law.3":"Decree no. 2014-106","law.3d":"Electronic writing and signatures",
-  "law.4":"Decree no. 2016-851","law.4d":"Implementation of electronic archiving",
-  "ca.note":"Retention periods and compliance requirements for your sector are always set with an archivist and a lawyer. We never make them up.",
-  "ex.h":"Born in Côte d'Ivoire, built for Africa",
-  "ex.p":"One software core, adapted to each country: rules, metadata, retention periods, languages and hosting.",
-  "ex.route":[["Stage 1","Côte d'Ivoire","Abidjan, first digitization center"],["Stage 2","WAEMU","Senegal, Benin, Togo, Burkina Faso"],["Stage 3","Central Africa","Cameroon, DRC, Gabon, Congo"],["Stage 4","English-speaking Africa","Ghana, Nigeria, Kenya"]],
-  "co.h":"Request an audit","co.p":"Tell us about your archives. We'll get back to you to set up a first diagnosis.",
-  "f.name":"Full name","f.org":"Organization","f.email":"Work email","f.phone":"Phone","f.sector":"Sector",
-  "f.sectors":["Public administration","Bank or insurer","Private company","Education","Health","NGO","Heritage and culture","Other"],
-  "f.msg":"Your archives in a few words","f.msgph":"Volumes, document types, storage locations, urgency…",
-  "f.send":"Send request","f.note":"Your email app opens with the request ready to send.",
-  "f.err":"Fill in your name, organization and a valid email.",
-  "ft.tag":"Africa's digital memory."
-};
-const FR = {"rec.changed":"Modifié : l'empreinte ne correspond plus à l'original","f.err":"Renseignez votre nom, votre organisation et un e-mail valide."};
-
-/* snapshot French defaults from the markup */
-const q = (s, r=document) => [...r.querySelectorAll(s)];
-q("[data-i18n]").forEach(el => FR[el.dataset.i18n] ??= el.innerHTML);
-q("[data-i18n-list]").forEach(el => FR[el.dataset.i18nList] = [...el.children].map(c => c.textContent));
-q("[data-i18n-steps]").forEach(el => FR[el.dataset.i18nSteps] = [...el.children].map(li => [...li.querySelectorAll("b,small,span")].map(n => n.textContent)));
-q("[data-i18n-route]").forEach(el => FR[el.dataset.i18nRoute] = [...el.children].map(d => [...d.children].map(n => n.textContent)));
-q("[data-i18n-options]").forEach(el => FR[el.dataset.i18nOptions] = [...el.options].map(o => o.textContent));
-q("[data-i18n-ph]").forEach(el => FR[el.dataset.i18nPh] = el.placeholder);
-
-let lang = "fr";
-function t(k){ return (lang === "en" ? EN : FR)[k]; }
-function applyLang(l){
-  lang = l;
-  const D = l === "en" ? EN : FR;
-  document.documentElement.lang = l;
-  q("[data-i18n]").forEach(el => { if (D[el.dataset.i18n] != null) el.innerHTML = D[el.dataset.i18n]; });
-  q("[data-i18n-list]").forEach(el => (D[el.dataset.i18nList]||[]).forEach((txt,i) => el.children[i] && (el.children[i].textContent = txt)));
-  q("[data-i18n-steps]").forEach(el => (D[el.dataset.i18nSteps]||[]).forEach((pair,i) => { const n = el.children[i] && [...el.children[i].querySelectorAll("b,small,span")]; if (n) pair.forEach((txt,j) => n[j] && (n[j].textContent = txt)); }));
-  q("[data-i18n-route]").forEach(el => (D[el.dataset.i18nRoute]||[]).forEach((row,i) => row.forEach((txt,j) => el.children[i].children[j].textContent = txt)));
-  q("[data-i18n-options]").forEach(el => (D[el.dataset.i18nOptions]||[]).forEach((txt,i) => el.options[i].textContent = txt));
-  q("[data-i18n-ph]").forEach(el => el.placeholder = D[el.dataset.i18nPh]);
-  q(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === l)));
-  document.getElementById("nav").setAttribute("aria-label", l === "en" ? "Main navigation" : "Navigation principale");
-  if (typeof updateHash === "function") updateHash(false);
-  try { localStorage.setItem("ada-lang", l); } catch(e) {}
-}
-q(".lang button").forEach(b => b.addEventListener("click", () => applyLang(b.dataset.lang)));
-let saved = null;
-try { saved = localStorage.getItem("ada-lang"); } catch(e) {}
-if (!saved && (navigator.language||"").toLowerCase().startsWith("en")) saved = "en";
-
-/* ---------- mobile menu ---------- */
-const menuBtn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
-menuBtn.addEventListener("click", () => { const o = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); });
-q("#nav a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); }));
-
-/* ---------- decorative QR-style marks ---------- */
-function drawQR(svg, seed){
-  let s = seed, rnd = () => (s = (s * 16807) % 2147483647) / 2147483647, cells = "";
-  const finder = (x,y) => `<rect x="${x}" y="${y}" width="7" height="7" fill="#13254A"/><rect x="${x+1}" y="${y+1}" width="5" height="5" fill="#fff"/><rect x="${x+2}" y="${y+2}" width="3" height="3" fill="#13254A"/>`;
-  for (let y=0;y<21;y++) for (let x=0;x<21;x++){
-    const inF = (x<8&&y<8)||(x>12&&y<8)||(x<8&&y>12);
-    if (!inF && rnd() > .52) cells += `<rect x="${x}" y="${y}" width="1" height="1" fill="#13254A"/>`;
-  }
-  svg.innerHTML = `<rect width="21" height="21" fill="#fff"/>${cells}${finder(0,0)}${finder(14,0)}${finder(0,14)}`;
-}
-drawQR(document.getElementById("qr"), 457);
-drawQR(document.getElementById("qr2"), 457);
-
-/* ---------- live SHA-256 integrity demo ---------- */
-const input = document.getElementById("doc-title"), out = document.getElementById("hash-out"), note = document.getElementById("hash-note");
-const ORIGINAL = input.value;
-let originalHash = null;
-async function sha256(txt){
-  if (!(window.crypto && crypto.subtle)) return null;
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(txt));
-  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,"0")).join("").toUpperCase();
-}
-async function updateHash(animate = true){
-  const h = await sha256(input.value);
-  if (h === null) { out.textContent = "—"; return; }
-  if (originalHash === null) originalHash = await sha256(ORIGINAL);
-  out.textContent = h.replace(/(.{8})/g, "$1 ").trim();
-  if (animate) { out.classList.remove("flash"); void out.offsetWidth; out.classList.add("flash"); }
-  const same = h === originalHash;
-  note.classList.toggle("changed", !same);
-  note.lastElementChild.textContent = t(same ? "rec.ok" : "rec.changed");
-}
-input.addEventListener("input", () => updateHash(true));
-
-/* ---------- audit form → mailto ---------- */
-document.getElementById("audit-form").addEventListener("submit", e => {
-  e.preventDefault();
-  const f = e.target, v = n => f.elements[n].value.trim();
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("email"));
-  const noteEl = document.getElementById("form-note");
-  if (!v("name") || !v("org") || !emailOk) { noteEl.textContent = t("f.err"); noteEl.style.color = "#F3C98B"; (!v("name") ? f.elements.name : !v("org") ? f.elements.org : f.elements.email).focus(); return; }
-  noteEl.textContent = t("f.note"); noteEl.style.color = "";
-  const subject = (lang === "en" ? "Audit request: " : "Demande d'audit : ") + v("org");
-  const body = [`${t("f.name")}: ${v("name")}`, `${t("f.org")}: ${v("org")}`, `${t("f.email")}: ${v("email")}`, `${t("f.phone")}: ${v("phone")}`, `${t("f.sector")}: ${f.elements.sector.value}`, "", v("msg")].join("\n");
-  location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
-
-document.getElementById("yr").textContent = new Date().getFullYear();
-applyLang(saved === "en" ? "en" : "fr");
-updateHash(false);
-</script>
+<script src="./wp-content/themes/ada-archives/assets/js/theme.js?ver=1.4.2" id="ada-theme-js"></script>
 </body>
 </html>
