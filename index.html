@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>African Digital Archives</title>
+<meta name="description" content="ADA accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques en un patrimoine documentaire sécurisé, organisé et durable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2313254A'/%3E%3Cpath d='M9 23 16 8l7 15M11.5 18h9' stroke='%23C9A24B' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --night:#13254A; --night-2:#1C3363; --ink:#1A2233; --muted:#566074;
+  --paper:#FFFFFF; --mist:#F2F4F8; --line:#D9DEE8;
+  --gold:#A9822F; --gold-soft:#E9DDBF; --green:#1E6A4E; --green-soft:#DCEBE4;
+  --on-night:#EEF1F7; --on-night-muted:#A9B4CB;
+  --serif:"Spectral",Georgia,serif; --sans:"Public Sans",system-ui,sans-serif;
+  --wrap:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:560px){.wrap{padding:0 16px}}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+h3{font-size:1.35rem}
+p{margin:0}
+.lede{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:#fff;padding:8px 14px;z-index:99}
+.skip:focus{left:8px}
+
+/* header */
+header.site{position:sticky;top:0;z-index:20;background:rgba(19,37,74,.97);color:var(--on-night);backdrop-filter:blur(6px)}
+.bar{display:flex;align-items:center;gap:28px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:34px;height:34px}
+.brand b{font:600 1.35rem/1 var(--serif);letter-spacing:.02em}
+.brand span{display:block;font-size:.72rem;color:var(--on-night-muted);margin-top:3px}
+nav.main{margin-left:auto;display:flex;gap:22px;font-size:.93rem}
+nav.main a{text-decoration:none;color:var(--on-night-muted);padding:6px 0;border-bottom:2px solid transparent}
+nav.main a:hover{color:#fff;border-color:var(--gold)}
+.lang{display:flex;border:1px solid rgba(255,255,255,.25);border-radius:6px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--on-night-muted);font:600 .8rem var(--sans);padding:7px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold);color:#fff}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:7px 11px;font:600 .85rem var(--sans);cursor:pointer}
+@media (max-width:900px){
+  nav.main{display:none;position:absolute;top:68px;left:0;right:0;background:var(--night);flex-direction:column;gap:0;padding:8px 16px 16px}
+  nav.main.open{display:flex}
+  nav.main a{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .menu-btn{display:block}
+  .lang{margin-left:0}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem var(--sans);text-decoration:none;padding:14px 22px;border-radius:6px;border:2px solid transparent;cursor:pointer}
+.btn.gold{background:var(--gold);color:#fff}
+.btn.gold:hover{background:#96732a}
+.btn.ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn.ghost:hover{border-color:#fff}
+.btn.dark{background:var(--night);color:#fff}
+.btn.dark:hover{background:var(--night-2)}
+
+/* hero */
+.hero{background:var(--night);color:var(--on-night);padding:72px 0 88px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.3rem);font-weight:400}
+.hero h1 span{display:block}
+.hero .lede{color:var(--on-night-muted);margin:24px 0 36px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
+.motto{margin-top:40px;font:italic 400 1.1rem var(--serif);color:var(--gold-soft);border-left:2px solid var(--gold);padding-left:14px}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding:48px 0 64px}}
+
+/* the record card */
+.record{background:#FCFBF7;color:var(--ink);border-radius:4px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);position:relative;transform:rotate(-1.2deg)}
+.record::before{content:"";position:absolute;inset:auto 18px -10px 18px;height:10px;background:#E6E1D4;border-radius:0 0 4px 4px;z-index:-1}
+.rec-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:18px 22px 14px;border-bottom:2px solid var(--night)}
+.rec-head small{display:block;font-size:.72rem;color:var(--muted)}
+.rec-id{font:600 1.05rem/1.2 var(--sans);letter-spacing:.03em;color:var(--night);word-break:break-all}
+.qr{width:58px;height:58px;flex:none}
+.rec-body{padding:16px 22px 20px;display:grid;gap:14px}
+.rec-body label,.rec-body .lbl{font-size:.75rem;color:var(--muted);display:block;margin-bottom:4px}
+.rec-body input{width:100%;font:500 1rem var(--serif);color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:4px;padding:9px 11px}
+.rec-body input:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px var(--gold-soft)}
+.loc{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.loc div{padding:7px 8px;border-right:1px solid var(--line);text-align:center}
+.loc div:last-child{border-right:0}
+.loc small{display:block;font-size:.66rem;color:var(--muted)}
+.loc b{font-weight:600;font-size:.92rem}
+@media (max-width:420px){.loc{grid-template-columns:repeat(3,1fr)}.loc div:nth-child(3){border-right:0}.loc div:nth-child(-n+3){border-bottom:1px solid var(--line)}}
+.hash{background:var(--mist);border-radius:4px;padding:10px 12px}
+.hash code{display:block;font:500 .78rem/1.5 ui-monospace,Consolas,monospace;color:var(--night);word-break:break-all;min-height:2.4em}
+.hash code.flash{animation:flash .5s ease}
+@keyframes flash{from{background:var(--gold-soft)}to{background:transparent}}
+.hash-note{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--green);margin-top:6px}
+.hash-note.changed{color:#9A4A12}
+.dot{width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.stamp{position:absolute;right:18px;bottom:-22px;background:var(--green);color:#fff;font:600 .78rem var(--sans);padding:6px 12px;border-radius:3px;transform:rotate(2deg)}
+
+/* sections */
+section.block{padding:96px 0}
+section.tint{background:var(--mist)}
+.head{max-width:720px;margin-bottom:48px}
+.head p{margin-top:16px}
+@media (max-width:700px){section.block{padding:64px 0}}
+
+/* problem */
+.chaos{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center}
+.scatter{display:flex;flex-wrap:wrap;gap:10px}
+.scatter span{background:#fff;border:1px dashed #B7BFCE;border-radius:4px;padding:8px 12px;font-size:.93rem;color:var(--muted)}
+.scatter span:nth-child(3n){transform:rotate(-2deg)}
+.scatter span:nth-child(4n+1){transform:rotate(1.5deg)}
+.arrow{font:400 2.4rem var(--serif);color:var(--gold)}
+.order{background:var(--night);color:var(--on-night);border-radius:6px;padding:28px}
+.order h3{color:#fff;margin-bottom:14px}
+.order ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.order li{display:flex;gap:10px;align-items:baseline;color:var(--on-night-muted)}
+.order li::before{content:"";width:10px;height:10px;border:2px solid var(--gold);border-radius:2px;flex:none;transform:translateY(1px)}
+@media (max-width:900px){.chaos{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}}
+
+/* chain */
+.chain{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(9,1fr);counter-reset:s;position:relative}
+.chain::before{content:"";position:absolute;top:19px;left:5%;right:5%;height:2px;background:linear-gradient(90deg,var(--night),var(--gold))}
+.chain li{counter-increment:s;position:relative;text-align:center;padding:0 6px}
+.chain li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;margin:0 auto 14px;border-radius:50%;background:#fff;border:2px solid var(--night);font:600 .95rem var(--sans);color:var(--night);position:relative}
+.chain li:last-child::before{background:var(--gold);border-color:var(--gold);color:#fff}
+.chain b{display:block;font:600 .95rem/1.3 var(--sans)}
+.chain small{display:block;font-size:.82rem;color:var(--muted);margin-top:4px;line-height:1.4}
+@media (max-width:1000px){
+  .chain{grid-template-columns:1fr;gap:0}
+  .chain::before{top:0;bottom:0;left:19px;right:auto;width:2px;height:auto;background:linear-gradient(180deg,var(--night),var(--gold))}
+  .chain li{display:grid;grid-template-columns:40px 1fr;column-gap:16px;text-align:left;padding:0 0 22px}
+  .chain li::before{margin:0;grid-row:span 2}
+  .chain b{align-self:end}
+}
+
+/* poles */
+.poles{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--night)}
+.pole{padding:28px 24px 8px 0;border-right:1px solid var(--line)}
+.pole+.pole{padding-left:24px}
+.pole:last-child{border-right:0}
+.pole h3{margin-bottom:10px}
+.pole p{color:var(--muted);font-size:.97rem}
+.pole ul{margin:14px 0 0;padding:0;list-style:none;font-size:.92rem}
+.pole li{padding:6px 0;border-top:1px solid var(--line)}
+@media (max-width:900px){.poles{grid-template-columns:1fr 1fr}.pole{padding:24px 16px 16px 0}.pole:nth-child(2n){border-right:0}.pole:nth-child(2n+1){padding-left:0}}
+@media (max-width:560px){.poles{grid-template-columns:1fr}.pole{border-right:0;padding-left:0!important;border-bottom:1px solid var(--line)}}
+
+/* archiva360 */
+.product{background:var(--night);color:var(--on-night)}
+.product .lede{color:var(--on-night-muted)}
+.product h2{color:#fff}
+.stack{display:grid;gap:14px}
+.layer{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center;padding:18px 22px;border:1px solid rgba(255,255,255,.14);border-radius:6px}
+.layer h3{font-size:1.15rem;color:#fff}
+.layer .tags{display:flex;flex-wrap:wrap;gap:8px}
+.layer .tags span{font-size:.86rem;padding:5px 10px;border-radius:4px;background:rgba(255,255,255,.07);color:var(--on-night)}
+.layer.ai{border-color:var(--gold)}
+.layer.ai h3{color:var(--gold-soft)}
+.layer.vault{background:rgba(30,106,78,.25);border-color:rgba(30,106,78,.8)}
+.pillars3{margin-top:64px;display:grid;grid-template-columns:1fr;gap:10px}
+.pillars3 .title{font-family:var(--serif);color:#fff;font-size:1.5rem;margin-bottom:18px}
+.editions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.edition{background:rgba(255,255,255,.05);border-top:3px solid var(--gold);padding:24px;border-radius:0 0 6px 6px}
+.edition h3{color:#fff;font-size:1.25rem}
+.edition p{color:var(--on-night-muted);font-size:.95rem;margin-top:8px}
+.edition ul{margin:14px 0 0;padding-left:18px;color:var(--on-night);font-size:.93rem}
+.ai-rule{margin-top:40px;display:flex;gap:16px;align-items:flex-start;background:rgba(169,130,47,.14);border-left:3px solid var(--gold);padding:18px 22px;border-radius:0 6px 6px 0;max-width:780px}
+.ai-rule p{color:var(--on-night)}
+@media (max-width:900px){.layer{grid-template-columns:1fr;gap:10px}.editions{grid-template-columns:1fr}}
+
+/* physical */
+.phys{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.box{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.box-top{background:#C9B48A;padding:22px;display:flex;gap:18px;align-items:center}
+.box-label{background:#FCFBF7;flex:1;padding:14px 16px;border-radius:3px}
+.box-label small{font-size:.72rem;color:var(--muted)}
+.box-label b{display:block;font:600 1rem var(--sans);color:var(--night);letter-spacing:.03em;word-break:break-all}
+.box dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
+.box dt,.box dd{margin:0;padding:11px 20px;border-top:1px solid var(--line);font-size:.95rem}
+.box dt{color:var(--muted)}
+.box dd{font-weight:600}
+.checks{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.checks li{display:flex;gap:12px}
+.checks li::before{content:"";width:18px;height:18px;flex:none;border-radius:50%;background:var(--green-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5 7 11l5-6' stroke='%231E6A4E' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/14px no-repeat;transform:translateY(3px)}
+@media (max-width:900px){.phys{grid-template-columns:1fr}}
+
+/* sectors */
+.sectors{display:flex;flex-wrap:wrap;gap:12px}
+.sectors span{font:500 1.05rem var(--serif);padding:12px 18px;border:1px solid var(--line);border-radius:40px;background:#fff}
+
+/* pilot */
+.pilot{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.quote{font:italic 400 1.4rem/1.45 var(--serif);color:var(--night);border-left:3px solid var(--gold);padding-left:20px;margin-top:28px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:p}
+.steps li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(p,decimal-leading-zero);font:600 .95rem var(--sans);color:var(--gold);padding-top:2px}
+.steps b{display:block;font-weight:600}
+.steps span{color:var(--muted);font-size:.95rem}
+@media (max-width:900px){.pilot{grid-template-columns:1fr}}
+
+/* standards */
+.std{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.std h3{margin-bottom:18px}
+.std table{width:100%;border-collapse:collapse;font-size:.95rem}
+.std th,.std td{text-align:left;padding:10px 0;border-top:1px solid var(--line);vertical-align:top}
+.std th{font-weight:600;white-space:nowrap;padding-right:18px;color:var(--night)}
+.std td{color:var(--muted)}
+.caution{margin-top:32px;font-size:.93rem;color:var(--muted);max-width:760px}
+@media (max-width:900px){.std{grid-template-columns:1fr}}
+
+/* expansion */
+.route{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px}
+.leg{padding:22px 20px 22px 0;border-top:4px solid var(--line)}
+.leg:first-child{border-color:var(--green)}
+.leg+.leg{padding-left:20px}
+.leg small{display:block;color:var(--muted);font-size:.85rem;margin-bottom:6px}
+.leg b{font:500 1.3rem var(--serif);color:var(--night)}
+.leg p{color:var(--muted);font-size:.93rem;margin-top:8px}
+@media (max-width:800px){.route{grid-template-columns:1fr 1fr}.leg{padding-left:0!important;padding-right:16px}}
+
+/* contact */
+.contact{background:var(--night);color:var(--on-night)}
+.contact h2{color:#fff}
+.contact .lede{color:var(--on-night-muted)}
+.cgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .full{grid-column:1/-1}
+form label{display:block;font-size:.85rem;color:var(--on-night-muted);margin-bottom:6px}
+form input,form select,form textarea{width:100%;font:400 1rem var(--sans);color:var(--ink);background:#fff;border:1px solid transparent;border-radius:5px;padding:11px 12px}
+form textarea{min-height:120px;resize:vertical}
+form input:focus,form select:focus,form textarea:focus{outline:none;box-shadow:0 0 0 3px var(--gold)}
+.form-note{font-size:.85rem;color:var(--on-night-muted)}
+@media (max-width:900px){.cgrid{grid-template-columns:1fr}}
+@media (max-width:560px){form{grid-template-columns:1fr}}
+
+footer{background:#0E1C39;color:var(--on-night-muted);padding:40px 0;font-size:.9rem}
+.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.foot b{color:#fff;font:600 1.05rem var(--serif)}
+
+/* hero load: one orchestrated moment */
+.hero .reveal{opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .reveal.d2{animation-delay:.15s}.hero .reveal.d3{animation-delay:.3s}.hero .record-wrap{opacity:0;animation:card 1s .35s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes card{from{opacity:0;transform:translateY(30px) rotate(3deg)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="African Digital Archives">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#1C3363"/><path d="M9 23 16 8l7 15M11.5 18h9" stroke="#C9A24B" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><b>ADA</b><span>African Digital Archives</span></div>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" data-i18n="menu">Menu</button>
+    <nav class="main" id="nav" aria-label="Navigation principale">
+      <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
+      <a href="#archiva360">ARCHIVA360</a>
+      <a href="#secteurs" data-i18n="nav.sectors">Secteurs</a>
+      <a href="#methode" data-i18n="nav.method">Méthode</a>
+      <a href="#cadre" data-i18n="nav.framework">Cadre</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="reveal"><span data-i18n="hero.t1">Préserver aujourd'hui.</span><span data-i18n="hero.t2">Transmettre demain.</span></h1>
+      <p class="lede reveal d2" data-i18n="hero.lede">La plateforme africaine de gestion, d'archivage et de préservation documentaire. Nous transformons vos archives papier et numériques en un patrimoine organisé, sécurisé et durable.</p>
+      <div class="ctas reveal d3">
+        <a class="btn gold" href="#contact" data-i18n="cta.audit">Demander un audit</a>
+        <a class="btn ghost" href="#archiva360" data-i18n="cta.product">Découvrir ARCHIVA360</a>
+      </div>
+      <p class="motto reveal d3" data-i18n="hero.motto">Nous ne stockons pas vos documents. Nous préservons votre mémoire.</p>
+    </div>
+
+    <div class="record-wrap">
+      <article class="record" aria-labelledby="rec-title">
+        <div class="rec-head">
+          <div>
+            <small id="rec-title" data-i18n="rec.label">Identifiant d'archive</small>
+            <div class="rec-id">CI-ABJ-PLT-2026-000457</div>
+          </div>
+          <svg class="qr" viewBox="0 0 21 21" role="img" aria-label="QR code" shape-rendering="crispEdges" id="qr"></svg>
+        </div>
+        <div class="rec-body">
+          <div>
+            <label for="doc-title" data-i18n="rec.title">Titre du document (essayez de le modifier)</label>
+            <input id="doc-title" value="Contrat fournisseur 2026-0045" autocomplete="off" spellcheck="false">
+          </div>
+          <div>
+            <span class="lbl" data-i18n="rec.location">Localisation de l'original</span>
+            <div class="loc">
+              <div><small data-i18n="loc.site">Site</small><b>Abidjan</b></div>
+              <div><small data-i18n="loc.building">Bât.</small><b>B</b></div>
+              <div><small data-i18n="loc.room">Salle</small><b>03</b></div>
+              <div><small data-i18n="loc.aisle">Rayon</small><b>12</b></div>
+              <div><small data-i18n="loc.shelf">Étag.</small><b>04</b></div>
+              <div><small data-i18n="loc.box">Boîte</small><b>457</b></div>
+            </div>
+          </div>
+          <div class="hash">
+            <span class="lbl" data-i18n="rec.hash">Empreinte SHA-256</span>
+            <code id="hash-out" aria-live="polite">…</code>
+            <div class="hash-note" id="hash-note"><span class="dot"></span><span data-i18n="rec.ok">Intègre : empreinte identique à l'original</span></div>
+          </div>
+        </div>
+        <div class="stamp" data-i18n="rec.stamp">Conservation : 10 ans</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="pb-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="pb-h" data-i18n="pb.h">Vos documents sont partout. Votre mémoire, nulle part.</h2>
+      <p class="lede" data-i18n="pb.p">La plupart des organisations accumulent en même temps des dossiers papier, des fichiers éparpillés et des documents introuvables. Personne ne sait combien de temps les garder, ni qui peut les consulter.</p>
+    </div>
+    <div class="chaos">
+      <div class="scatter" data-i18n-list="pb.scatter">
+        <span>Cartons de dossiers papier</span><span>Pièces jointes d'e-mails</span><span>Fichiers WhatsApp</span><span>Clés USB</span><span>Disques externes</span><span>Serveurs multiples</span><span>Doublons</span><span>Archives mal classées</span><span>Durées de conservation inconnues</span><span>Documents confidentiels trop exposés</span>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="order">
+        <h3 data-i18n="pb.order">Un patrimoine documentaire organisé</h3>
+        <ul data-i18n-list="pb.orderlist">
+          <li>Chaque document classé selon un plan clair</li>
+          <li>Retrouvé en quelques secondes</li>
+          <li>Accessible aux bonnes personnes seulement</li>
+          <li>Conservé le temps qu'il faut, prouvé intact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="solutions" aria-labelledby="ch-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="ch-h" data-i18n="ch.h">Une seule chaîne, du carton à la préservation</h2>
+      <p class="lede" data-i18n="ch.p">Au lieu de juxtaposer un scanner, un logiciel et un hébergeur, ADA prend en charge chaque étape de la vie de vos documents.</p>
+    </div>
+    <ol class="chain" data-i18n-steps="ch.steps">
+      <li><b>Archives papier</b><small>Inventaire et préparation</small></li>
+      <li><b>Numérisation</b><small>Scan et contrôle qualité</small></li>
+      <li><b>Organisation</b><small>Plan de classement</small></li>
+      <li><b>GED</b><small>Travail sur les documents</small></li>
+      <li><b>Archivage électronique</b><small>Règles et traçabilité</small></li>
+      <li><b>Conservation</b><small>Cycle de vie maîtrisé</small></li>
+      <li><b>Recherche</b><small>Plein texte et métadonnées</small></li>
+      <li><b>Preuve</b><small>Empreinte et horodatage</small></li>
+      <li><b>Préservation longue durée</b><small>Formats lisibles dans 30 ans</small></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="po-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="po-h" data-i18n="po.h">Quatre métiers, un seul interlocuteur</h2>
+      <p class="lede" data-i18n="po.p">Nous ne vendons pas qu'un logiciel. Nous associons conseil archivistique, numérisation, technologie et conservation de confiance.</p>
+    </div>
+    <div class="poles">
+      <div class="pole">
+        <h3 data-i18n="po.1.h">Conseil</h3>
+        <p data-i18n="po.1.p">Comprendre vos fonds et fixer les règles.</p>
+        <ul data-i18n-list="po.1.l"><li>Audit documentaire</li><li>Plan de classement</li><li>Politique d'archivage</li><li>Accompagnement conformité</li></ul>
+      </div>
+      <div class="pole">
+        <h3 data-i18n="po.2.h">Numérisation</h3>
+        <p data-i18n="po.2.p">Transformer le papier en information exploitable.</p>
+        <ul data-i18n-list="po.2.l"><li>Scan A4, A3, livres, plans</li><li>OCR et indexation</li><li>Contrôle qualité</li><li>Migration de fonds</li></ul>
+      </div>
+      <div class="pole">
+        <h3 data-i18n="po.3.h">Logiciel</h3>
+        <p data-i18n="po.3.p">Gérer, retrouver et archiver au quotidien.</p>
+        <ul data-i18n-list="po.3.l"><li>Plateforme ARCHIVA360</li><li>GED et SAE</li><li>Workflows et courrier</li><li>Application mobile</li></ul>
+      </div>
+      <div class="pole">
+        <h3 data-i18n="po.4.h">Confiance et préservation</h3>
+        <p data-i18n="po.4.p">Garantir l'intégrité sur la durée.</p>
+        <ul data-i18n-list="po.4.l"><li>Coffre-fort numérique</li><li>Empreinte et horodatage</li><li>Sauvegarde 3-2-1</li><li>Préservation des formats</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block product" id="archiva360" aria-labelledby="ar-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="ar-h" data-i18n="ar.h">ARCHIVA360, la plateforme</h2>
+      <p class="lede" data-i18n="ar.p">Un seul outil pour capturer, gérer, archiver et préserver, conçu pour les organisations africaines et leurs réalités : archives physiques et numériques, plusieurs pays, français et anglais.</p>
+    </div>
+    <div class="stack">
+      <div class="layer"><h3 data-i18n="ar.cap">Capture</h3><div class="tags" data-i18n-list="ar.cap.l"><span>Scanner</span><span>OCR</span><span>E-mail</span><span>Mobile</span><span>API</span></div></div>
+      <div class="layer"><h3 data-i18n="ar.man">Gestion</h3><div class="tags" data-i18n-list="ar.man.l"><span>GED</span><span>Dossiers</span><span>Workflows</span><span>Recherche</span><span>Partage</span><span>Courrier</span></div></div>
+      <div class="layer"><h3 data-i18n="ar.arc">Archivage</h3><div class="tags" data-i18n-list="ar.arc.l"><span>SAE</span><span>Règles de conservation</span><span>Cycle de vie</span><span>Preuve</span><span>Intégrité</span></div></div>
+      <div class="layer ai"><h3>ARCHIVA AI</h3><div class="tags" data-i18n-list="ar.ai.l"><span>Lecture OCR</span><span>Classement automatique</span><span>Extraction de données</span><span>Recherche en langage naturel</span><span>Résumés</span><span>Détection des doublons</span></div></div>
+      <div class="layer vault"><h3>ARCHIVE VAULT</h3><div class="tags" data-i18n-list="ar.vault.l"><span>Chiffrement</span><span>MFA</span><span>Journal d'audit</span><span>Sauvegarde et réplication</span><span>Reprise après sinistre</span></div></div>
+    </div>
+
+    <div class="ai-rule">
+      <p data-i18n="ar.rule"><strong>Une règle non négociable :</strong> l'IA assiste, elle ne décide pas. Destruction, classement définitif et droits d'accès restent toujours validés par une personne habilitée, avec traçabilité.</p>
+    </div>
+
+    <div class="pillars3">
+      <p class="title" data-i18n="ar.ed">Trois éditions</p>
+      <div class="editions">
+        <div class="edition"><h3>Cloud</h3><p data-i18n="ed.1.p">PME, associations, cabinets, écoles et petites administrations. 100 % en ligne.</p></div>
+        <div class="edition"><h3>Enterprise</h3><p data-i18n="ed.2.p">Banques, assurances, grands groupes, industries et universités.</p><ul data-i18n-list="ed.2.l"><li>SSO et API</li><li>Intégration ERP</li><li>Stockage privé, haute disponibilité</li></ul></div>
+        <div class="edition"><h3>Government</h3><p data-i18n="ed.3.p">Ministères, mairies, collectivités et établissements publics.</p><ul data-i18n-list="ed.3.l"><li>Cloud souverain ou on-premise</li><li>Déploiement hybride</li><li>Portail d'archives publiques</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="ph-h">
+  <div class="wrap phys">
+    <div>
+      <h2 id="ph-h" data-i18n="ph.h">Le papier compte aussi</h2>
+      <p class="lede" style="margin-top:16px" data-i18n="ph.p">Beaucoup de dossiers sont hybrides : une partie sur papier, une partie en numérique. ARCHIVA360 suit les deux. Chaque boîte, dossier et étagère reçoit un identifiant et un QR code.</p>
+      <ul class="checks" data-i18n-list="ph.l">
+        <li>L'archiviste scanne le QR code et voit le contenu, le propriétaire et la durée de conservation</li>
+        <li>Le document numérique indique où se trouve son original</li>
+        <li>Chaque consultation et chaque déplacement sont tracés</li>
+      </ul>
+    </div>
+    <div class="box" aria-label="Exemple de boîte d'archives">
+      <div class="box-top">
+        <div class="box-label"><small data-i18n="ph.box">Boîte d'archives</small><b>CI-ABJ-PLT-2026-000457</b></div>
+        <svg class="qr" viewBox="0 0 21 21" aria-hidden="true" shape-rendering="crispEdges" id="qr2"></svg>
+      </div>
+      <dl>
+        <dt data-i18n="ph.dt1">Contenu</dt><dd data-i18n="ph.dd1">Contrats fournisseurs, 2024</dd>
+        <dt data-i18n="ph.dt2">Service</dt><dd data-i18n="ph.dd2">Direction juridique</dd>
+        <dt data-i18n="ph.dt3">Emplacement</dt><dd data-i18n="ph.dd3">Abidjan, bât. B, salle 03, rayon 12</dd>
+        <dt data-i18n="ph.dt4">Conservation</dt><dd data-i18n="ph.dd4">Jusqu'en 2034, puis examen</dd>
+        <dt data-i18n="ph.dt5">Statut</dt><dd data-i18n="ph.dd5">Numérisée, originaux conservés</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="secteurs" aria-labelledby="se-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="se-h" data-i18n="se.h">Pour les organisations qui ne peuvent pas perdre un document</h2>
+    </div>
+    <div class="sectors" data-i18n-list="se.l">
+      <span>Administrations et ministères</span><span>Mairies et collectivités</span><span>Banques</span><span>Assurances</span><span>Universités et écoles</span><span>Hôpitaux et cliniques</span><span>Cabinets juridiques</span><span>Industrie et énergie</span><span>Immobilier</span><span>ONG et organismes internationaux</span><span>Bibliothèques et musées</span>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="methode" aria-labelledby="me-h">
+  <div class="wrap pilot">
+    <div>
+      <h2 id="me-h" data-i18n="me.h">Commencer par un pilote</h2>
+      <p class="lede" style="margin-top:16px" data-i18n="me.p">Pas de grand projet à l'aveugle. Nous commençons par un audit et un fonds pilote pour que vous jugiez sur pièces.</p>
+      <p class="quote" data-i18n="me.q">« Nous analysons 10 000 dossiers de votre organisation, proposons un plan de classement et numérisons un fonds pilote de 1 000 dossiers. »</p>
+    </div>
+    <ol class="steps" data-i18n-steps="me.steps">
+      <li><div><b>Diagnostic</b><span>Un premier échange pour comprendre vos fonds et vos contraintes.</span></div></li>
+      <li><div><b>Audit documentaire</b><span>Volumes, lieux de stockage, accès, risques et sauvegardes.</span></div></li>
+      <li><div><b>Plan d'archivage</b><span>Plan de classement et règles de conservation, établis avec archiviste et juriste.</span></div></li>
+      <li><div><b>Projet pilote</b><span>Numérisation, OCR et indexation d'un premier fonds.</span></div></li>
+      <li><div><b>Démonstration ARCHIVA360</b><span>Vos propres documents, retrouvés en quelques secondes.</span></div></li>
+      <li><div><b>Déploiement et formation</b><span>Mise en service, formation des équipes et accompagnement.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block tint" id="cadre" aria-labelledby="ca-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="ca-h" data-i18n="ca.h">Construit sur des références reconnues</h2>
+      <p class="lede" data-i18n="ca.p">Notre méthode s'appuie sur les normes internationales de l'archivage et sur le cadre ivoirien de l'archivage électronique, premier marché d'ADA.</p>
+    </div>
+    <div class="std">
+      <div>
+        <h3 data-i18n="ca.int">Normes internationales</h3>
+        <table>
+          <tr><th>ISO 15489</th><td data-i18n="std.15489">Records management</td></tr>
+          <tr><th>ISO 14721 (OAIS)</th><td data-i18n="std.14721">Préservation numérique à long terme</td></tr>
+          <tr><th>ISO 23081</th><td data-i18n="std.23081">Métadonnées des documents d'activité</td></tr>
+          <tr><th>ISO 19005 (PDF/A)</th><td data-i18n="std.19005">Format de préservation électronique</td></tr>
+          <tr><th>ISO 27001</th><td data-i18n="std.27001">Sécurité de l'information</td></tr>
+          <tr><th>ISO 22301</th><td data-i18n="std.22301">Continuité d'activité</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3 data-i18n="ca.ci">Cadre ivoirien</h3>
+        <table>
+          <tr><th data-i18n="law.1">Loi n°2013-546</th><td data-i18n="law.1d">Transactions électroniques et archivage électronique sécurisé</td></tr>
+          <tr><th data-i18n="law.2">Loi n°2013-450</th><td data-i18n="law.2d">Protection des données à caractère personnel</td></tr>
+          <tr><th data-i18n="law.3">Décret n°2014-106</th><td data-i18n="law.3d">Écrit et signature électroniques</td></tr>
+          <tr><th data-i18n="law.4">Décret n°2016-851</th><td data-i18n="law.4d">Mise en œuvre de l'archivage électronique</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="caution" data-i18n="ca.note">Les durées de conservation et les exigences de conformité propres à votre secteur sont toujours définies avec un archiviste et un juriste. Nous ne les inventons pas.</p>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="ex-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="ex-h" data-i18n="ex.h">Né en Côte d'Ivoire, pensé pour l'Afrique</h2>
+      <p class="lede" data-i18n="ex.p">Un même cœur logiciel, adapté à chaque pays : règles, métadonnées, durées, langues et hébergement.</p>
+    </div>
+    <div class="route" data-i18n-route="ex.route">
+      <div class="leg"><small>Étape 1</small><b>Côte d'Ivoire</b><p>Abidjan, premier centre de numérisation</p></div>
+      <div class="leg"><small>Étape 2</small><b>UEMOA</b><p>Sénégal, Bénin, Togo, Burkina Faso</p></div>
+      <div class="leg"><small>Étape 3</small><b>Afrique centrale</b><p>Cameroun, RDC, Gabon, Congo</p></div>
+      <div class="leg"><small>Étape 4</small><b>Afrique anglophone</b><p>Ghana, Nigeria, Kenya</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block contact" id="contact" aria-labelledby="co-h">
+  <div class="wrap cgrid">
+    <div>
+      <h2 id="co-h" data-i18n="co.h">Demander un audit</h2>
+      <p class="lede" style="margin-top:16px" data-i18n="co.p">Parlez-nous de vos archives. Nous revenons vers vous pour organiser un premier diagnostic.</p>
+    </div>
+    <form id="audit-form" novalidate>
+      <div><label for="f-name" data-i18n="f.name">Nom et prénom</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div><label for="f-org" data-i18n="f.org">Organisation</label><input id="f-org" name="org" autocomplete="organization" required></div>
+      <div><label for="f-email" data-i18n="f.email">E-mail professionnel</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="f-phone" data-i18n="f.phone">Téléphone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-sector" data-i18n="f.sector">Secteur</label>
+        <select id="f-sector" name="sector" data-i18n-options="f.sectors">
+          <option>Administration publique</option><option>Banque ou assurance</option><option>Entreprise privée</option><option>Éducation</option><option>Santé</option><option>ONG</option><option>Patrimoine et culture</option><option>Autre</option>
+        </select></div>
+      <div class="full"><label for="f-msg" data-i18n="f.msg">Vos archives en quelques mots</label><textarea id="f-msg" name="msg" data-i18n-ph="f.msgph" placeholder="Volumes, types de documents, lieux de stockage, urgence…"></textarea></div>
+      <div class="full" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+        <button class="btn gold" type="submit" data-i18n="f.send">Envoyer la demande</button>
+        <p class="form-note" id="form-note" data-i18n="f.note">Votre messagerie s'ouvre avec la demande prête à envoyer.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><b>African Digital Archives</b><br><span data-i18n="ft.tag">La mémoire numérique de l'Afrique.</span></div>
+    <div>© <span id="yr"></span> ADA · Abidjan, Côte d'Ivoire</div>
+  </div>
+</footer>
+
+<script>
+/* ---------- config ---------- */
+const CONTACT_EMAIL = "contact@example.com"; // TODO: replace with ADA's real address
+
+/* ---------- translations (FR is the markup default) ---------- */
+const EN = {
+  "skip":"Skip to content","menu":"Menu",
+  "nav.solutions":"Solutions","nav.sectors":"Sectors","nav.method":"Approach","nav.framework":"Standards","nav.contact":"Contact",
+  "hero.t1":"Preserve today.","hero.t2":"Pass it on tomorrow.",
+  "hero.lede":"The African platform for document management, archiving and preservation. We turn your paper and digital archives into organized, secure and lasting heritage.",
+  "cta.audit":"Request an audit","cta.product":"Discover ARCHIVA360",
+  "hero.motto":"We don't just store your documents. We preserve your memory.",
+  "rec.label":"Archive ID","rec.title":"Document title (try editing it)","rec.location":"Location of the original","rec.hash":"SHA-256 fingerprint",
+  "rec.ok":"Intact: fingerprint matches the original","rec.changed":"Changed: fingerprint no longer matches the original","rec.stamp":"Retention: 10 years",
+  "loc.site":"Site","loc.building":"Bldg","loc.room":"Room","loc.aisle":"Aisle","loc.shelf":"Shelf","loc.box":"Box",
+  "pb.h":"Your documents are everywhere. Your memory, nowhere.",
+  "pb.p":"Most organizations pile up paper files, scattered digital files and documents nobody can find. No one knows how long to keep them, or who may see them.",
+  "pb.scatter":["Boxes of paper files","Email attachments","WhatsApp files","USB drives","External disks","Several servers","Duplicates","Misfiled archives","Unknown retention periods","Over-exposed confidential files"],
+  "pb.order":"Organized documentary heritage",
+  "pb.orderlist":["Every document filed under a clear plan","Found in seconds","Open only to the right people","Kept as long as needed, proven intact"],
+  "ch.h":"One chain, from the cardboard box to preservation",
+  "ch.p":"Instead of stitching together a scanner, a software and a host, ADA takes care of every stage of your documents' life.",
+  "ch.steps":[["Paper archives","Inventory and preparation"],["Digitization","Scanning and quality control"],["Organization","Filing plan"],["Document management","Day-to-day work"],["Electronic archiving","Rules and traceability"],["Retention","Managed life cycle"],["Search","Full text and metadata"],["Proof","Fingerprint and timestamp"],["Long-term preservation","Formats still readable in 30 years"]],
+  "po.h":"Four trades, one partner",
+  "po.p":"We don't only sell software. We combine archival consulting, digitization, technology and trusted preservation.",
+  "po.1.h":"Consulting","po.1.p":"Understand your holdings and set the rules.","po.1.l":["Records audit","Filing plan","Archiving policy","Compliance support"],
+  "po.2.h":"Digitization","po.2.p":"Turn paper into usable information.","po.2.l":["A4, A3, book and plan scanning","OCR and indexing","Quality control","Collection migration"],
+  "po.3.h":"Software","po.3.p":"Manage, find and archive every day.","po.3.l":["ARCHIVA360 platform","DMS and archiving system","Workflows and mail","Mobile app"],
+  "po.4.h":"Trust and preservation","po.4.p":"Guarantee integrity over time.","po.4.l":["Digital vault","Fingerprint and timestamp","3-2-1 backup","Format preservation"],
+  "ar.h":"ARCHIVA360, the platform",
+  "ar.p":"One tool to capture, manage, archive and preserve, designed for African organizations and their realities: physical and digital archives, several countries, French and English.",
+  "ar.cap":"Capture","ar.man":"Management","ar.arc":"Archiving",
+  "ar.cap.l":["Scanner","OCR","Email","Mobile","API"],
+  "ar.man.l":["Documents","Folders","Workflows","Search","Sharing","Mail"],
+  "ar.arc.l":["Archiving system","Retention rules","Life cycle","Proof","Integrity"],
+  "ar.ai.l":["OCR reading","Automatic filing","Data extraction","Natural-language search","Summaries","Duplicate detection"],
+  "ar.vault.l":["Encryption","MFA","Audit log","Backup and replication","Disaster recovery"],
+  "ar.rule":"<strong>One non-negotiable rule:</strong> AI assists, it does not decide. Destruction, final classification and access rights are always approved by an authorized person, with a full trail.",
+  "ar.ed":"Three editions",
+  "ed.1.p":"SMEs, associations, firms, schools and small administrations. Fully online.",
+  "ed.2.p":"Banks, insurers, large groups, industry and universities.","ed.2.l":["SSO and API","ERP integration","Private storage, high availability"],
+  "ed.3.p":"Ministries, city halls, local and public bodies.","ed.3.l":["Sovereign cloud or on-premise","Hybrid deployment","Public archives portal"],
+  "ph.h":"Paper counts too",
+  "ph.p":"Many files are hybrid: part paper, part digital. ARCHIVA360 tracks both. Every box, folder and shelf gets an ID and a QR code.",
+  "ph.l":["The archivist scans the QR code and sees contents, owner and retention period","The digital document shows where its original is kept","Every consultation and move is logged"],
+  "ph.box":"Archive box","ph.dt1":"Contents","ph.dd1":"Supplier contracts, 2024","ph.dt2":"Department","ph.dd2":"Legal department","ph.dt3":"Location","ph.dd3":"Abidjan, bldg B, room 03, aisle 12","ph.dt4":"Retention","ph.dd4":"Until 2034, then review","ph.dt5":"Status","ph.dd5":"Digitized, originals kept",
+  "se.h":"For organizations that cannot afford to lose a document",
+  "se.l":["Administrations and ministries","City halls and local government","Banks","Insurers","Universities and schools","Hospitals and clinics","Law firms","Industry and energy","Real estate","NGOs and international bodies","Libraries and museums"],
+  "me.h":"Start with a pilot",
+  "me.p":"No big project in the dark. We start with an audit and a pilot collection so you can judge on evidence.",
+  "me.q":"“We review 10,000 of your organization's files, propose a filing plan and digitize a pilot collection of 1,000 files.”",
+  "me.steps":[["Diagnosis","A first conversation to understand your holdings and constraints."],["Records audit","Volumes, storage locations, access, risks and backups."],["Archiving plan","Filing plan and retention rules, set with an archivist and a lawyer."],["Pilot project","Digitization, OCR and indexing of a first collection."],["ARCHIVA360 demo","Your own documents, found in seconds."],["Rollout and training","Go-live, team training and ongoing support."]],
+  "ca.h":"Built on recognized references",
+  "ca.p":"Our approach rests on international archiving standards and on the Ivorian electronic archiving framework, ADA's first market.",
+  "ca.int":"International standards","ca.ci":"Ivorian framework",
+  "std.15489":"Records management","std.14721":"Long-term digital preservation","std.23081":"Metadata for records","std.19005":"Electronic preservation format","std.27001":"Information security","std.22301":"Business continuity",
+  "law.1":"Law no. 2013-546","law.1d":"Electronic transactions and secure electronic archiving",
+  "law.2":"Law no. 2013-450","law.2d":"Personal data protection",
+  "law.3":"Decree no. 2014-106","law.3d":"Electronic writing and signatures",
+  "law.4":"Decree no. 2016-851","law.4d":"Implementation of electronic archiving",
+  "ca.note":"Retention periods and compliance requirements for your sector are always set with an archivist and a lawyer. We never make them up.",
+  "ex.h":"Born in Côte d'Ivoire, built for Africa",
+  "ex.p":"One software core, adapted to each country: rules, metadata, retention periods, languages and hosting.",
+  "ex.route":[["Stage 1","Côte d'Ivoire","Abidjan, first digitization center"],["Stage 2","WAEMU","Senegal, Benin, Togo, Burkina Faso"],["Stage 3","Central Africa","Cameroon, DRC, Gabon, Congo"],["Stage 4","English-speaking Africa","Ghana, Nigeria, Kenya"]],
+  "co.h":"Request an audit","co.p":"Tell us about your archives. We'll get back to you to set up a first diagnosis.",
+  "f.name":"Full name","f.org":"Organization","f.email":"Work email","f.phone":"Phone","f.sector":"Sector",
+  "f.sectors":["Public administration","Bank or insurer","Private company","Education","Health","NGO","Heritage and culture","Other"],
+  "f.msg":"Your archives in a few words","f.msgph":"Volumes, document types, storage locations, urgency…",
+  "f.send":"Send request","f.note":"Your email app opens with the request ready to send.",
+  "f.err":"Fill in your name, organization and a valid email.",
+  "ft.tag":"Africa's digital memory."
+};
+const FR = {"rec.changed":"Modifié : l'empreinte ne correspond plus à l'original","f.err":"Renseignez votre nom, votre organisation et un e-mail valide."};
+
+/* snapshot French defaults from the markup */
+const q = (s, r=document) => [...r.querySelectorAll(s)];
+q("[data-i18n]").forEach(el => FR[el.dataset.i18n] ??= el.innerHTML);
+q("[data-i18n-list]").forEach(el => FR[el.dataset.i18nList] = [...el.children].map(c => c.textContent));
+q("[data-i18n-steps]").forEach(el => FR[el.dataset.i18nSteps] = [...el.children].map(li => [...li.querySelectorAll("b,small,span")].map(n => n.textContent)));
+q("[data-i18n-route]").forEach(el => FR[el.dataset.i18nRoute] = [...el.children].map(d => [...d.children].map(n => n.textContent)));
+q("[data-i18n-options]").forEach(el => FR[el.dataset.i18nOptions] = [...el.options].map(o => o.textContent));
+q("[data-i18n-ph]").forEach(el => FR[el.dataset.i18nPh] = el.placeholder);
+
+let lang = "fr";
+function t(k){ return (lang === "en" ? EN : FR)[k]; }
+function applyLang(l){
+  lang = l;
+  const D = l === "en" ? EN : FR;
+  document.documentElement.lang = l;
+  q("[data-i18n]").forEach(el => { if (D[el.dataset.i18n] != null) el.innerHTML = D[el.dataset.i18n]; });
+  q("[data-i18n-list]").forEach(el => (D[el.dataset.i18nList]||[]).forEach((txt,i) => el.children[i] && (el.children[i].textContent = txt)));
+  q("[data-i18n-steps]").forEach(el => (D[el.dataset.i18nSteps]||[]).forEach((pair,i) => { const n = el.children[i] && [...el.children[i].querySelectorAll("b,small,span")]; if (n) pair.forEach((txt,j) => n[j] && (n[j].textContent = txt)); }));
+  q("[data-i18n-route]").forEach(el => (D[el.dataset.i18nRoute]||[]).forEach((row,i) => row.forEach((txt,j) => el.children[i].children[j].textContent = txt)));
+  q("[data-i18n-options]").forEach(el => (D[el.dataset.i18nOptions]||[]).forEach((txt,i) => el.options[i].textContent = txt));
+  q("[data-i18n-ph]").forEach(el => el.placeholder = D[el.dataset.i18nPh]);
+  q(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === l)));
+  document.getElementById("nav").setAttribute("aria-label", l === "en" ? "Main navigation" : "Navigation principale");
+  if (typeof updateHash === "function") updateHash(false);
+  try { localStorage.setItem("ada-lang", l); } catch(e) {}
+}
+q(".lang button").forEach(b => b.addEventListener("click", () => applyLang(b.dataset.lang)));
+let saved = null;
+try { saved = localStorage.getItem("ada-lang"); } catch(e) {}
+if (!saved && (navigator.language||"").toLowerCase().startsWith("en")) saved = "en";
+
+/* ---------- mobile menu ---------- */
+const menuBtn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
+menuBtn.addEventListener("click", () => { const o = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); });
+q("#nav a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); }));
+
+/* ---------- decorative QR-style marks ---------- */
+function drawQR(svg, seed){
+  let s = seed, rnd = () => (s = (s * 16807) % 2147483647) / 2147483647, cells = "";
+  const finder = (x,y) => `<rect x="${x}" y="${y}" width="7" height="7" fill="#13254A"/><rect x="${x+1}" y="${y+1}" width="5" height="5" fill="#fff"/><rect x="${x+2}" y="${y+2}" width="3" height="3" fill="#13254A"/>`;
+  for (let y=0;y<21;y++) for (let x=0;x<21;x++){
+    const inF = (x<8&&y<8)||(x>12&&y<8)||(x<8&&y>12);
+    if (!inF && rnd() > .52) cells += `<rect x="${x}" y="${y}" width="1" height="1" fill="#13254A"/>`;
+  }
+  svg.innerHTML = `<rect width="21" height="21" fill="#fff"/>${cells}${finder(0,0)}${finder(14,0)}${finder(0,14)}`;
+}
+drawQR(document.getElementById("qr"), 457);
+drawQR(document.getElementById("qr2"), 457);
+
+/* ---------- live SHA-256 integrity demo ---------- */
+const input = document.getElementById("doc-title"), out = document.getElementById("hash-out"), note = document.getElementById("hash-note");
+const ORIGINAL = input.value;
+let originalHash = null;
+async function sha256(txt){
+  if (!(window.crypto && crypto.subtle)) return null;
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(txt));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,"0")).join("").toUpperCase();
+}
+async function updateHash(animate = true){
+  const h = await sha256(input.value);
+  if (h === null) { out.textContent = "—"; return; }
+  if (originalHash === null) originalHash = await sha256(ORIGINAL);
+  out.textContent = h.replace(/(.{8})/g, "$1 ").trim();
+  if (animate) { out.classList.remove("flash"); void out.offsetWidth; out.classList.add("flash"); }
+  const same = h === originalHash;
+  note.classList.toggle("changed", !same);
+  note.lastElementChild.textContent = t(same ? "rec.ok" : "rec.changed");
+}
+input.addEventListener("input", () => updateHash(true));
+
+/* ---------- audit form → mailto ---------- */
+document.getElementById("audit-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target, v = n => f.elements[n].value.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("email"));
+  const noteEl = document.getElementById("form-note");
+  if (!v("name") || !v("org") || !emailOk) { noteEl.textContent = t("f.err"); noteEl.style.color = "#F3C98B"; (!v("name") ? f.elements.name : !v("org") ? f.elements.org : f.elements.email).focus(); return; }
+  noteEl.textContent = t("f.note"); noteEl.style.color = "";
+  const subject = (lang === "en" ? "Audit request: " : "Demande d'audit : ") + v("org");
+  const body = [`${t("f.name")}: ${v("name")}`, `${t("f.org")}: ${v("org")}`, `${t("f.email")}: ${v("email")}`, `${t("f.phone")}: ${v("phone")}`, `${t("f.sector")}: ${f.elements.sector.value}`, "", v("msg")].join("\n");
+  location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+applyLang(saved === "en" ? "en" : "fr");
+updateHash(false);
+</script>
+</body>
+</html>
