@@ -15,6 +15,11 @@ SITE = {
     "tagline": "La mémoire numérique de l'Afrique",
     # TODO: remplacer par l'adresse réelle d'ADA (formulaires, lettre d'information)
     "email": "contact@example.com",
+    # Optionnel : adresse d'un service de réception de formulaires (ex. https://formspree.io/f/xxxxxxx).
+    # Vide = les formulaires ouvrent la messagerie du visiteur avec un message prérempli.
+    "form_endpoint": "",
+    # Liens des réseaux sociaux : seuls ceux renseignés sont affichés dans le pied de page.
+    "social": {"linkedin": "", "facebook": "", "youtube": "", "whatsapp": ""},
     "city": "Abidjan, Côte d'Ivoire",
     "base_url": "https://paledebouna-lang.github.io/african-digital-archives/",
     "theme": "wp-content/themes/ada-archives/",
@@ -97,7 +102,8 @@ MENU = [
             ("archiva360/archiva-ai/", "ARCHIVA AI", "L'assistant documentaire", "sparkles"),
             ("archiva360/archiva-go/", "ARCHIVA GO", "L'application mobile", "smartphone"),
             ("archiva360/offres-et-tarifs/", "Offres et tarifs", "Start, Business, Enterprise, Government", "briefcase"),
-            ("archiva360/demo/", "Demander une démonstration", "Sur vos propres documents", "play"),
+            ("archiva360/demo-interactive/", "Démo interactive", "Essayez la plateforme maintenant", "play"),
+            ("archiva360/demo/", "Démonstration personnalisée", "Sur vos propres documents", "users"),
         ],
     },
     {
@@ -378,6 +384,13 @@ def _header(page):
 </header>'''
 
 
+def _social():
+    names = {"linkedin": "LinkedIn", "facebook": "Facebook", "youtube": "YouTube", "whatsapp": "WhatsApp"}
+    links = "".join(f'<a href="{html.escape(u, quote=True)}" aria-label="{names[k]}" target="_blank" rel="noopener">{icon(k)}</a>'
+                    for k, u in SITE["social"].items() if u)
+    return f'<div class="social-links">{links}</div>' if links else ""
+
+
 def _footer(page):
     def col(title, links):
         lis = "".join(f'<li><a href="~/{u}">{t}</a></li>' for u, t in links)
@@ -396,12 +409,7 @@ def _footer(page):
     <section class="widget widget_about">
       <a href="~/" class="custom-logo-link" rel="home">{LOGO_LIGHT}<span class="site-title-wrap"><span class="site-title">ADA</span><span class="site-description">African Digital Archives</span></span></a>
       <p>ADA accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques en un patrimoine documentaire sécurisé, organisé, accessible et durable.</p>
-      <div class="social-links">
-        <a href="#" aria-label="LinkedIn">{icon("linkedin")}</a>
-        <a href="#" aria-label="Facebook">{icon("facebook")}</a>
-        <a href="#" aria-label="YouTube">{icon("youtube")}</a>
-        <a href="#" aria-label="WhatsApp">{icon("whatsapp")}</a>
-      </div>
+      {_social()}
     </section>
     {col("Solutions", sol)}
     {col("Secteurs", sec)}
@@ -449,7 +457,7 @@ def render(page):
     canonical = SITE["base_url"] + page.path
     body_class = f"{page.body_class} page-id-{page.id} wp-custom-logo wp-embed-responsive"
     og_type = "article" if page.kind == "post" else "website"
-    settings = json.dumps({"contactEmail": SITE["email"], "root": r or "./"}, ensure_ascii=False)
+    settings = json.dumps({"contactEmail": SITE["email"], "formEndpoint": SITE["form_endpoint"], "root": r or "./"}, ensure_ascii=False)
     schema = ""
     if page.path == "":
         schema = ('<script type="application/ld+json" class="yoast-schema-graph">' + json.dumps({
@@ -457,7 +465,25 @@ def render(page):
             "alternateName": "ADA", "url": SITE["base_url"], "slogan": SITE["tagline"],
             "address": {"@type": "PostalAddress", "addressLocality": "Abidjan", "addressCountry": "CI"}},
             ensure_ascii=False) + "</script>")
-    main_open = "" if page.kind == "raw" else ""
+    if page.kind == "app":
+        doc = f'''<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(seo)}</title>
+<meta name="description" content="{desc}">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="~/{SITE['theme']}assets/css/archiva360-demo.css?ver={SITE['version']}">
+<link rel="icon" href="~/wp-content/uploads/2026/09/cropped-ada-icon-32x32.png" sizes="32x32">
+</head>
+<body class="{body_class}">
+{page.body}
+{page.scripts}
+</body>
+</html>
+'''
+        return doc.replace('href="~/', f'href="{r or "./"}').replace('src="~/', f'src="{r or "./"}')
     doc = f'''<!doctype html>
 <html lang="fr-FR">
 <head>

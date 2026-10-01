@@ -210,15 +210,35 @@ def build():
              body=section('<div class="posts-grid cols-3">' + "".join(post_card(p) for p in guides) + "</div>"),
              nav="ressources"))
 
-    wps = [("Archiver en Côte d'Ivoire", "Cadre juridique, bonnes pratiques et points de vigilance pour l'archivage électronique.", "scale"),
-           ("De la GED à la préservation", "Construire une stratégie documentaire complète, étape par étape.", "layers"),
-           ("Numériser un fonds d'archives", "Préparer, chiffrer et piloter un projet de numérisation de masse.", "scan")]
+    from .whitepapers import WHITEPAPERS
+    import os
+    pdf_dir = "wp-content/uploads/2026/10/"
+    def pdf_info(w):
+        path = os.path.join(os.path.dirname(__file__), "../..", pdf_dir, w["slug"] + ".pdf")
+        return (f"PDF · {os.path.getsize(path) // 1024} Ko") if os.path.exists(path) else "PDF"
+    cards_wp = [f'<div class="resource-card"><div class="resource-card__type">LIVRE BLANC</div><div><h3>{w["title"]}</h3><p>{w["summary"]}</p>'
+                f'<div class="btns" style="display:flex;gap:14px;flex-wrap:wrap"><a class="more-link" href="~/ressources/livres-blancs/{w["slug"]}/">Lire en ligne {icon("arrow-right")}</a>'
+                f'<a class="more-link" href="~/{pdf_dir}{w["slug"]}.pdf" download>Télécharger ({pdf_info(w)}) {icon("download")}</a></div></div></div>' for w in WHITEPAPERS]
     add(Page("ressources/livres-blancs", "Livres blancs",
-             description="Livres blancs ADA sur l'archivage électronique en Côte d'Ivoire, la stratégie documentaire et la numérisation de masse.",
-             hero=page_hero("Livres blancs", "Des dossiers approfondis, rédigés par nos archivistes et consultants.", [("Ressources", "ressources/"), ("Livres blancs", None)], "Ressources", light=True),
-             body=section(cols(*[f'<div class="resource-card"><div class="resource-card__type">LIVRE BLANC</div><div><span class="badge is-v3">À paraître</span><h3 class="mt-m">{t}</h3><p>{d}</p><a class="more-link" href="~/contact/?sujet=livre-blanc">Être prévenu de la parution {icon("arrow-right")}</a></div></div>' for t, d, _ in wps], n=3))
-             + section(notice("Nos livres blancs sont en cours de rédaction. Inscrivez-vous à la lettre d'information en bas de page pour les recevoir dès leur parution."), "white", "is-compact"),
+             description="Livres blancs ADA : archiver en Côte d'Ivoire, de la GED à la préservation, numériser un fonds d'archives. Lecture en ligne et PDF.",
+             hero=page_hero("Livres blancs", "Des dossiers approfondis, rédigés à partir de notre méthode et des normes de référence. À lire en ligne ou à télécharger en PDF, gratuitement.", [("Ressources", "ressources/"), ("Livres blancs", None)], "Ressources", light=True),
+             body=section(cols(*cards_wp, n=3)),
              nav="ressources"))
+    for i, w in enumerate(WHITEPAPERS):
+        toc = "".join(f'<li><a href="#s{j}">{h}</a></li>' for j, (h, _) in enumerate(w["sections"], 1))
+        content = "".join(f'<h2 id="s{j}">{h}</h2>{body}' for j, (h, body) in enumerate(w["sections"], 1))
+        others = [x for x in WHITEPAPERS if x is not w]
+        others_html = "".join('<li><a href="~/ressources/livres-blancs/' + o["slug"] + '/">' + o["title"] + '</a></li>' for o in others)
+        add(Page(f"ressources/livres-blancs/{w['slug']}", w["title"],
+                 f'<div class="container"><div class="content-area-with-sidebar"><article class="entry-content">'
+                 f'<nav class="toc"><p>Sommaire</p><ol>{toc}</ol></nav>{content}'
+                 f'<div class="notice mt-l"><p>Ce livre blanc a une valeur informative et ne constitue pas un conseil juridique. Pour un diagnostic de votre situation, <a href="~/contact/?sujet=audit">demandez un audit</a>.</p></div></article>'
+                 f'<aside class="widget-area"><section class="widget widget_cta"><h3>Version PDF</h3><p>{w["subtitle"]}.</p>{btn("Télécharger le PDF", "~/" + pdf_dir + w["slug"] + ".pdf", "white", small=True, attrs=" download")}</section>'
+                 f'<section class="widget"><h2 class="widget-title">Autres livres blancs</h2><ul>{others_html}</ul></section></aside></div></div>',
+                 description=w["summary"],
+                 hero=page_hero(w["title"], w["subtitle"] + ".", [("Ressources", "ressources/"), ("Livres blancs", "ressources/livres-blancs/"), (w["title"], None)], "Livre blanc",
+                                buttons(btn("Télécharger le PDF", "~/" + pdf_dir + w["slug"] + ".pdf", "white", attrs=" download"))),
+                 nav="ressources"))
 
     webs = [("Introduction à l'archivage pour les dirigeants", "Pourquoi l'archivage est un sujet de direction, et par où commencer.", "45 min"),
             ("GED ou SAE : bien choisir", "Comprendre les différences et construire le bon cahier des charges.", "45 min"),
@@ -274,29 +294,3 @@ def build():
                             [("Ressources", "ressources/"), ("Document Health Check", None)], "Outil gratuit"),
              body=section(f'<form id="healthcheck-form" class="healthcheck" onsubmit="return false"><div>{qhtml}</div>{result}</form>', "mist"),
              nav="ressources"))
-
-    # ------------------------------------------------------------------ academy
-    levels = [("Introduction à l'archivage", "Vocabulaire, types d'archives (papier, numériques, hybrides), enjeux pour l'organisation.", "Tous publics"),
-              ("Gestion documentaire", "GED, GEC, classement, nommage, versions, partage.", "Utilisateurs, assistants"),
-              ("Records management", "Plan de classement, métadonnées, cycle de vie, règles de conservation.", "Archivistes, référents"),
-              ("Archivage électronique", "SAE, intégrité, traçabilité, horodatage, signature, cadre ivoirien.", "Archivistes, juristes, IT"),
-              ("Préservation numérique", "OAIS, formats pérennes, migration, contrôle d'intégrité.", "Archivistes, IT"),
-              ("Administration ARCHIVA360", "Paramétrage, rôles, règles, workflows, sécurité, sauvegardes.", "Administrateurs")]
-    lv = "".join(f'<div class="academy-level"><span class="academy-level__num">{i:02d}</span><div><h3>Niveau {i} — {t}</h3><p>{d}</p></div><span class="badge">{w}</span></div>' for i, (t, d, w) in enumerate(levels, 1))
-    weeks = ["Vocabulaire archivistique", "GED / GEC / SAE", "Records management", "Métadonnées", "Cycle de vie documentaire", "Numérisation / OCR",
-             "Préservation numérique / OAIS", "Sécurité", "Cadre ivoirien", "Modèle économique", "Architecture logicielle", "Vente aux entreprises"]
-    add(Page("academy", "ARCHIVA Academy",
-             description="ARCHIVA Academy : six niveaux de formation à l'archivage, du vocabulaire de base à l'administration d'ARCHIVA360, avec certificats internes.",
-             hero=page_hero("ARCHIVA Academy", "Former les archivistes, documentalistes, équipes informatiques et utilisateurs dont l'Afrique a besoin pour préserver sa mémoire documentaire.",
-                            [("ARCHIVA Academy", None)], "Formation", buttons(btn("Demander le programme", "~/contact/?sujet=formation", "white"))),
-             body=section(intro("Six niveaux progressifs", "Chaque niveau se conclut par une évaluation et un certificat interne ARCHIVA Academy.", "Parcours", split=True) + lv)
-             + section('<div class="wp-block-columns cols-2 gap-lg" style="--cols:2"><div class="wp-block-column">'
-                       + intro("Parcours dirigeant : 12 semaines", "Pour les dirigeants qui débutent dans l'archivage. Vous n'avez pas besoin de devenir archiviste : vous devez comprendre suffisamment le domaine pour prendre les bonnes décisions.", "Programme")
-                       + '</div><div class="wp-block-column"><ol class="wp-block-list is-style-columns" style="padding-left:1.4em">' + "".join(f"<li><strong>Semaine {i}</strong> — {w}</li>" for i, w in enumerate(weeks, 1)) + "</ol></div></div>", "mist")
-             + section(intro("Formats", "", "Modalités") + cols(*[feature(t, d, ic) for t, d, ic in [
-                 ("En présentiel à Abidjan", "Sessions interentreprises ou dans vos locaux.", "users"),
-                 ("À distance", "Classes virtuelles pour les équipes réparties dans plusieurs pays.", "globe"),
-                 ("Sur mesure", "Programme adapté à votre organisation et à ARCHIVA360.", "compass")]], n=3))
-             + section(cta_band("ARCHIVA Certified Partner", "À terme, nous certifierons des intégrateurs partenaires au Sénégal, au Bénin, au Togo, au Cameroun, au Burkina Faso, au Ghana, au Kenya, au Maroc et ailleurs.",
-                                btn("Devenir partenaire", "~/contact/?sujet=partenariat", "white"))),
-             nav="academy"))

@@ -156,9 +156,33 @@
 			var org = form.querySelector( '[name=organisation]' );
 			if ( org && org.value.trim() ) subject += ' — ' + org.value.trim();
 			var href = 'mailto:' + ( settings.contactEmail || '' ) + '?subject=' + encodeURIComponent( subject ) + '&body=' + encodeURIComponent( lines.join( '\n' ) );
-			output.classList.add( 'is-success' );
-			output.textContent = 'Merci. Votre messagerie s’ouvre avec votre demande prête à être envoyée.';
-			window.location.href = href;
+			var viaMail = function () {
+				output.classList.add( 'is-success' );
+				output.textContent = 'Merci. Votre messagerie s’ouvre avec votre demande prête à être envoyée.';
+				window.location.href = href;
+			};
+			if ( ! settings.formEndpoint || ! window.fetch ) { viaMail(); return; }
+			var submit = $( '[type=submit]', form );
+			if ( submit ) submit.disabled = true;
+			output.classList.remove( 'is-success' );
+			output.textContent = 'Envoi en cours…';
+			var data = { _subject: subject, message_complet: lines.join( '\n' ) };
+			$$( '[name]', form ).forEach( function ( f ) {
+				if ( ( f.type === 'checkbox' || f.type === 'radio' ) && ! f.checked ) return;
+				if ( f.type !== 'submit' && f.value.trim() ) data[ f.name ] = f.value.trim();
+			} );
+			fetch( settings.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify( data ) } )
+				.then( function ( r ) {
+					if ( ! r.ok ) throw new Error( r.status );
+					output.classList.add( 'is-success' );
+					output.textContent = 'Merci, votre demande a bien été envoyée. Nous vous répondons sous deux jours ouvrés.';
+					form.reset();
+				} )
+				.catch( function () {
+					output.textContent = 'L’envoi n’a pas abouti. Votre messagerie va s’ouvrir pour envoyer la demande autrement.';
+					setTimeout( viaMail, 1200 );
+				} )
+				.then( function () { if ( submit ) submit.disabled = false; } );
 		} );
 	} );
 

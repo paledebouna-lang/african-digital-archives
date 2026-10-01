@@ -63,7 +63,7 @@ def build():
         hero=page_hero("ARCHIVA360, la plateforme documentaire pensée pour l'Afrique",
                        "Capturer, gérer, archiver et préserver vos documents papier et numériques dans un seul outil, en français et en anglais, dans le cloud ou dans votre propre infrastructure.",
                        [("ARCHIVA360", None)], "Plateforme",
-                       buttons(btn("Demander une démonstration", "~/archiva360/demo/", "white"), btn("Offres et tarifs", "~/archiva360/offres-et-tarifs/", "outline")),
+                       buttons(btn("Essayer la démo interactive", "~/archiva360/demo-interactive/", "white"), btn("Offres et tarifs", "~/archiva360/offres-et-tarifs/", "outline")),
                        media=img("archiva360-tableau-de-bord.png", "Tableau de bord ARCHIVA360", frame=True, lazy=False)),
         body=section(feat_html)
         + section('<div class="wp-block-columns cols-2 gap-lg is-vertically-aligned-center" style="--cols:2"><div class="wp-block-column">'
@@ -211,6 +211,7 @@ def build():
                          ("La préparation", "Vous nous confiez quelques documents anonymisés ; nous les chargeons dans un espace de démonstration."),
                          ("La démonstration", "Capture, recherche, classement, conservation et audit sur vos propres exemples."),
                          ("La proposition", "Une proposition de périmètre et de budget, sans engagement.")]) + "</ol>"
+                     + '<div class="card is-flat mt-l"><h3>Pas le temps d\'attendre ?</h3><p>La démo interactive fonctionne tout de suite dans votre navigateur : import de documents, OCR, recherche, empreintes, conservation, archives physiques, audit trail.</p>' + btn("Ouvrir la démo interactive", "~/archiva360/demo-interactive/", small=True) + '</div>'
                      + '</div><div class="wp-block-column">' + _form("demo") + "</div></div>"),
         nav="archiva360"))
 
