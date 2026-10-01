@@ -207,6 +207,10 @@ function mock(req, res) {
 
   // Site sans projet configuré
   const plain = await browser.newPage();
+  await plain.route(/archiva360\/connexion\/$/, async route => {
+    const r = await route.fetch();
+    route.fulfill({ response: r, body: (await r.text()).replace(/"endpoint": "[^"]*", "project": "[^"]*"/, '"endpoint": "", "project": ""') });
+  });
   await plain.goto(L); await plain.waitForSelector('#auth-card .notice');
   check('Sans configuration : message « en cours d’activation »', (await plain.textContent('#auth-card')).includes('activation'));
   check('Aucune erreur JavaScript', !errs.length, errs.slice(0, 2).join(' | '));
