@@ -45,9 +45,9 @@ node tools/test_site.js           # rejoue les tests automatiques (site servi su
 
 ## Réglages (`tools/ada/core.py` → `SITE`)
 
-- `email` : adresse de contact (**à remplacer** : `contact@example.com`).
+- `email` : adresse de contact (actuellement `assa@eletude.org`).
 - `form_endpoint` : adresse d'un service de réception de formulaires (Formspree ou équivalent). Vide, les formulaires
   ouvrent la messagerie du visiteur avec un message prérempli.
 - `social` : liens LinkedIn, Facebook, YouTube, WhatsApp. Seuls les liens renseignés s'affichent.
 
-Reste aussi à compléter les mentions légales (RCCM, forme juridique, directeur de la publication).
+Les informations légales de la société (forme, capital, RCCM, compte contribuable, directeur de la publication, déclaration ARTCI) se complètent dans `tools/ada/pages_legal.py` → `COMPANY`.

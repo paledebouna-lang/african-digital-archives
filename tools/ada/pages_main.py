@@ -275,32 +275,8 @@ def build_contact():
 
 
 def build_legal():
-    add(Page("mentions-legales", "Mentions légales",
-             description="Mentions légales du site African Digital Archives (ADA).",
-             hero=page_hero("Mentions légales", "", [("Mentions légales", None)], light=True),
-             body=section('<div class="legal-content entry-content">'
-                          + "<h2>Éditeur du site</h2><p>African Digital Archives (ADA), société en cours de constitution, Abidjan, Côte d'Ivoire.<br>"
-                          + f'E-mail : <a href="mailto:{SITE["email"]}">{SITE["email"]}</a></p>'
-                          + "<p><em>Forme juridique, capital, numéro RCCM, compte contribuable et directeur de la publication : à compléter après l'immatriculation.</em></p>"
-                          + "<h2>Hébergement</h2><p>GitHub Pages, GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>"
-                          + "<h2>Propriété intellectuelle</h2><p>L'ensemble des contenus de ce site (textes, visuels, captures d'écran, logos, marques ADA, ARCHIVA360, ARCHIVA AI, ARCHIVA GO) est protégé. Toute reproduction sans autorisation écrite est interdite. Les noms de produits et de marques sont soumis à vérification de disponibilité et de dépôt.</p>"
-                          + "<h2>Captures d'écran</h2><p>Les captures d'écran d'ARCHIVA360 présentées sur ce site illustrent l'interface de la plateforme avec des données fictives (organisation de démonstration, noms et montants d'exemple).</p>"
-                          + "<h2>Responsabilité</h2><p>Les informations publiées, notamment sur le cadre juridique, ont une valeur informative et ne constituent pas un conseil juridique. Les tarifs affichés sont des tarifs de lancement indicatifs.</p>"
-                          + "</div>"),
-             nav="", search=False))
-    add(Page("politique-de-confidentialite", "Politique de confidentialité",
-             description="Politique de confidentialité et cookies du site ADA, conformément à la loi ivoirienne n°2013-450 relative à la protection des données à caractère personnel.",
-             hero=page_hero("Politique de confidentialité", "Comment nous traitons les données que vous nous confiez sur ce site.", [("Politique de confidentialité", None)], light=True),
-             body=section('<div class="legal-content entry-content">'
-                          + "<p>ADA attache une importance particulière à la protection des données personnelles, conformément à la loi ivoirienne n°2013-450 du 19 juin 2013 relative à la protection des données à caractère personnel.</p>"
-                          + "<h2>Données collectées</h2><p>Via les formulaires : nom, organisation, fonction, e-mail, téléphone, pays, secteur, volume d'archives et message. Via la lettre d'information : adresse e-mail.</p>"
-                          + "<h2>Finalités</h2><ul><li>Répondre à vos demandes (audit, démonstration, devis, questions).</li><li>Vous adresser la lettre d'information si vous l'avez demandée.</li></ul>"
-                          + "<h2>Mode de transmission</h2><p>Les formulaires de ce site ouvrent votre messagerie avec un message prérempli : aucune donnée n'est stockée par le site lui-même. Vos réponses au Document Health Check sont calculées dans votre navigateur et ne nous sont pas transmises, sauf si vous choisissez de nous écrire.</p>"
-                          + "<h2>Durée de conservation</h2><p>Les échanges commerciaux sont conservés trois ans après le dernier contact, sauf obligation légale contraire.</p>"
-                          + f'<h2>Vos droits</h2><p>Vous disposez d\'un droit d\'accès, de rectification, d\'opposition et de suppression. Écrivez-nous à <a href="mailto:{SITE["email"]}">{SITE["email"]}</a>. Vous pouvez également saisir l\'ARTCI, autorité de protection des données en Côte d\'Ivoire.</p>'
-                          + '<h2 id="cookies">Cookies</h2><p>Ce site n\'utilise que le stockage local du navigateur pour mémoriser votre choix concernant les cookies. Aucun cookie publicitaire n\'est déposé. Si une mesure d\'audience est ajoutée, elle ne sera activée qu\'avec votre accord.</p>'
-                          + "</div>"),
-             nav="", search=False))
+    from .pages_legal import build
+    build()
 
 
 def build_utility():
