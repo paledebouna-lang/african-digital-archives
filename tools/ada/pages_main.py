@@ -260,12 +260,10 @@ def build_contact():
              description="Espace client ARCHIVA360.",
              hero=page_hero("Espace client", "Accédez à votre espace ARCHIVA360 : archives, utilisateurs, workflows, demandes, statistiques, factures, politiques de conservation et audits.", [("Espace client", None)], "Connexion", light=True),
              body=section('<div class="container is-narrow" style="padding:0"><div class="wp-block-columns gap-lg" style="--cols:2"><div class="wp-block-column"><div class="form-card">'
-                          + '<h2 style="font-size:1.4rem">Connexion</h2><form class="login-form" onsubmit="event.preventDefault();document.getElementById(\'login-msg\').hidden=false">'
-                          + '<p><label for="user_login">Identifiant ou adresse e-mail</label><input type="text" id="user_login" autocomplete="username"></p>'
-                          + '<p><label for="user_pass">Mot de passe</label><input type="password" id="user_pass" autocomplete="current-password"></p>'
-                          + '<p class="wpcf7-acceptance" style="margin-bottom:18px"><input type="checkbox" id="rememberme"> <label for="rememberme" style="display:inline;font-weight:400">Se souvenir de moi</label></p>'
-                          + '<input type="submit" class="button" value="Se connecter" style="width:100%">'
-                          + '<p id="login-msg" class="notice is-warning mt-m" hidden>Le portail client ARCHIVA360 ouvrira avec les premiers déploiements : vos accès vous seront communiqués par votre chef de projet ADA. En attendant, essayez la <a href="~/archiva360/demo-interactive/">démo interactive</a>.</p></form></div></div>'
+                          + '<h2 style="font-size:1.4rem">Connexion</h2>'
+                          + '<p>Connectez-vous à votre espace ARCHIVA360 avec l\'adresse e-mail à laquelle vous avez reçu votre invitation.</p>'
+                          + btn("Se connecter à ARCHIVA360", "~/archiva360/connexion/")
+                          + '<p class="has-muted-color mt-m">Mot de passe oublié ? Utilisez le lien « Mot de passe oublié » de la page de connexion. Les comptes sont créés par l\'administrateur de votre organisation, depuis « Utilisateurs et rôles ».</p></div></div>'
                           + '<div class="wp-block-column"><div class="notice is-success"><p><strong>Envie d\'essayer dès maintenant ?</strong> La démo interactive ARCHIVA360 fonctionne dans votre navigateur, avec un espace d\'exemple prêt à l\'emploi.</p></div>'
                           + btn("Ouvrir la démo interactive", "~/archiva360/demo-interactive/")
                           + '<h3 class="mt-l">Dans votre espace</h3>'

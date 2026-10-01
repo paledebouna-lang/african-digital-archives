@@ -53,6 +53,7 @@ def main():
     pages_services.build()
     pages_academy.build()
     pages_demo.build()
+    pages_demo.build_accounts()
     pages_main.build_company()
     pages_main.build_contact()
     pages_main.build_legal()

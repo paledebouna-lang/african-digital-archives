@@ -18,3 +18,38 @@ def build():
              description="Essayez ARCHIVA360 dans votre navigateur : import, OCR, recherche, empreintes, conservation, archives physiques, audit trail.",
              kind="app", nav="archiva360", search=False, body_class="archiva360-demo",
              scripts=f'<script src="~/{SITE["theme"]}assets/js/archiva360-demo.js?ver={SITE["version"]}"></script>'))
+
+
+def _aw_config():
+    import json
+    aw = SITE["appwrite"]
+    cfg = {"endpoint": aw["endpoint"], "project": aw["project"], "team": aw["team"],
+           "orgName": SITE["name"], "contact": SITE["email"]}
+    return '<script type="application/json" id="aw-config">' + json.dumps(cfg, ensure_ascii=False) + '</script>'
+
+
+def build_accounts():
+    """Real online accounts (Appwrite): sign-in page and signed-in workspace."""
+    script = f'{_aw_config()}<script src="~/{SITE["theme"]}assets/js/archiva360-auth.js?ver={SITE["version"]}"></script>'
+    login = f'''<div class="auth">
+<a class="auth-brand" href="~/"><i>A</i>ARCHIVA360</a>
+<div class="auth-card" id="auth-card" aria-live="polite"><p class="sub">Chargement…</p></div>
+<p class="auth-foot"><a href="~/">← Retour au site African Digital Archives</a> · <a href="~/politique-de-confidentialite/">Confidentialité</a></p>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><p style="padding:20px">La connexion à ARCHIVA360 nécessite JavaScript.</p></noscript>'''
+    add(Page("archiva360/connexion", "Connexion à ARCHIVA360", login,
+             seo_title="Connexion | ARCHIVA360", description="Connexion à votre espace ARCHIVA360.",
+             kind="app", nav="archiva360", search=False, body_class="archiva360-demo archiva360-login", scripts=script))
+    espace = '''<div class="app is-espace">
+<aside class="side"><div class="brand"><i>A</i>ARCHIVA360</div><div class="org"><span>Organisation</span><b>African Digital Archives</b></div>
+<nav class="nav" id="nav" aria-label="Espace"></nav><div class="foot"><a href="~/">← Retour au site</a></div></aside>
+<div class="main"><div class="top"><span class="top-title">Espace ARCHIVA360</span>
+<div class="who"><span class="av" id="who-av">…</span><span class="who-txt"><b id="who-name"></b><small id="who-role"></small></span>
+<button class="btn sm o" type="button" data-act="logout">Se déconnecter</button></div></div>
+<main class="content" id="view" tabindex="-1" aria-live="polite"><p class="sub">Chargement de votre espace…</p></main></div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><p style="padding:20px">L'espace ARCHIVA360 nécessite JavaScript.</p></noscript>'''
+    add(Page("archiva360/espace", "Espace ARCHIVA360", espace,
+             seo_title="Espace | ARCHIVA360", description="Votre espace ARCHIVA360.",
+             kind="app", nav="archiva360", search=False, body_class="archiva360-demo archiva360-espace", scripts=script))

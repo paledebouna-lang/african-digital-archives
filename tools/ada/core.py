@@ -20,11 +20,14 @@ SITE = {
     "form_endpoint": "",
     # Liens des réseaux sociaux : seuls ceux renseignés sont affichés dans le pied de page.
     "social": {"linkedin": "", "facebook": "", "youtube": "", "whatsapp": ""},
+    # Comptes en ligne ARCHIVA360 (Appwrite Cloud, offre gratuite) — voir README, section « Comptes en ligne ».
+    # Vide = les pages de connexion affichent « comptes en cours d'activation ».
+    "appwrite": {"endpoint": "", "project": "", "team": "archiva360"},
     "city": "Abidjan, Côte d'Ivoire",
     "base_url": "https://paledebouna-lang.github.io/african-digital-archives/",
     "theme": "wp-content/themes/ada-archives/",
     "uploads": "wp-content/uploads/2026/09/",
-    "version": "1.4.2",
+    "version": "1.5.0",
 }
 
 PAGES = []          # every generated page, in registration order
@@ -553,10 +556,10 @@ def write_all(out_dir):
         f.write(js)
     # sitemap + robots
     urls = "".join(
-        f"<url><loc>{SITE['base_url']}{p.path}</loc></url>" for p in PAGES if p.kind != "404")
+        f"<url><loc>{SITE['base_url']}{p.path}</loc></url>" for p in PAGES if p.kind != "404" and not p.path.startswith(("archiva360/espace/", "archiva360/connexion/")))
     with open(os.path.join(out_dir, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                 + urls + "</urlset>\n")
     with open(os.path.join(out_dir, "robots.txt"), "w", encoding="utf-8") as f:
-        f.write(f"User-agent: *\nDisallow: /tools/\nDisallow: /espace-client/\n\nSitemap: {SITE['base_url']}sitemap.xml\n")
+        f.write(f"User-agent: *\nDisallow: /tools/\nDisallow: /espace-client/\nDisallow: /archiva360/espace/\n\nSitemap: {SITE['base_url']}sitemap.xml\n")
     return len(PAGES)
