@@ -27,7 +27,7 @@ SITE = {
     "base_url": "https://paledebouna-lang.github.io/african-digital-archives/",
     "theme": "wp-content/themes/ada-archives/",
     "uploads": "wp-content/uploads/2026/09/",
-    "version": "1.5.0",
+    "version": "1.6.0",
 }
 
 PAGES = []          # every generated page, in registration order
@@ -479,6 +479,7 @@ def render(page):
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="~/{SITE['theme']}assets/css/archiva360-demo.css?ver={SITE['version']}">
 <link rel="icon" href="~/wp-content/uploads/2026/09/cropped-ada-icon-32x32.png" sizes="32x32">
+{page.extra_head}
 </head>
 <body class="{body_class}">
 {page.body}

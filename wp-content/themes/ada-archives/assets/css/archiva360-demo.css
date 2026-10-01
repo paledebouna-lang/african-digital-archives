@@ -201,3 +201,15 @@ mark{background:#FFF1B8;color:inherit;padding:0 1px}
 .is-espace .grid{display:grid;gap:16px}
 .is-espace td .inp{width:auto;min-width:150px}
 @media (max-width:600px){.who-txt{display:none}.auth-card{padding:22px}}
+
+/* Application installable */
+.install-btn{margin-top:16px;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.35)}
+.install-btn:hover{background:rgba(255,255,255,.18);border-color:#fff}
+.install-help{position:fixed;inset:0;background:rgba(6,13,44,.6);display:flex;align-items:flex-end;justify-content:center;padding:16px;z-index:90}
+.install-help__card{background:#fff;border-radius:14px;padding:22px;max-width:420px;width:100%}
+.install-help__card ol{padding-left:20px;margin:10px 0 12px}
+.install-help__card li{margin-bottom:6px}
+.install-help__card p{color:var(--muted);font-size:13px;margin:0 0 14px}
+.is-standalone .demo-banner .sp a[href$="archiva360/"]{display:none}
+@media (min-width:600px){.install-help{align-items:center}}
+@media (max-width:600px){.who .btn.sm{padding:5px 8px}}

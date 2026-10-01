@@ -121,7 +121,8 @@ function mock(req, res) {
   const browser = await playwright.chromium.launch({ args: ['--disable-features=LocalNetworkAccessChecks,PrivateNetworkAccessRespectPreflightResults'] });
   const errs = [];
   async function context() {
-    const ctx = await browser.newContext({ viewport: { width: 1280, height: 860 } });
+    // Service worker bloqué : sinon les pages qu'il sert échapperaient à la réécriture de configuration ci-dessous.
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 860 }, serviceWorkers: 'block' });
     // Branche la page sur le faux serveur (le site publié n'a pas encore de projet configuré).
     await ctx.route(/archiva360\/(connexion|espace)\/(\?.*)?$/, async route => {
       const r = await route.fetch();

@@ -33,7 +33,8 @@ node tools/test_site.js           # rejoue les tests automatiques (site servi su
 
 ## Fonctions interactives
 
-- **ARCHIVA Academy** (`/academy/`) : 6 niveaux, 24 modules, quiz corrigés (75 %), examen final de 15 questions
+- **ARCHIVA Academy** (`/academy/`) : 6 niveaux (24 modules) et le **Parcours dirigeant** de 12 semaines
+  (`/academy/parcours-dirigeant/`, contenus dans `tools/ada/academy_dirigeant*.py`, examen de 20 questions) ;, quiz corrigés (75 %), examen final de 15 questions
   tirées au hasard (70 %), certificat imprimable avec code de vérification SHA-256 (`/academy/verifier/`).
   La progression est enregistrée dans le navigateur de l'apprenant.
 - **Démo interactive ARCHIVA360** (`/archiva360/demo-interactive/`) : import de documents, extraction de texte (PDF,
@@ -44,6 +45,9 @@ node tools/test_site.js           # rejoue les tests automatiques (site servi su
 - **Comptes en ligne ARCHIVA360** (`/archiva360/connexion/`, `/archiva360/espace/`) : connexion, mot de passe
   oublié, invitation par e-mail, « Mon compte » et « Utilisateurs et rôles » (Administrateur, Archiviste, Records
   manager, Employé, Auditeur). Les comptes sont hébergés sur Appwrite Cloud (offre gratuite) ; voir ci-dessous.
+- **Application installable ARCHIVA GO / ARCHIVA360** (PWA) : `archiva360/manifest.webmanifest` et `archiva360/sw.js`
+  sont générés par `tools/build.py`. Bouton « Installer l'application » sur Android, mode d'emploi sur iPhone,
+  écrans disponibles hors connexion. Icônes : `wp-content/uploads/2026/09/archiva360-app-*.png`.
 - **Document Health Check**, recherche interne, glossaire filtrable, démonstration d'empreinte.
 
 ## Réglages (`tools/ada/core.py` → `SITE`)

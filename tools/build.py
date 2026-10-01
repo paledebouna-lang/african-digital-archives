@@ -60,6 +60,7 @@ def main():
     pages_main.build_utility()
     pages_main.build_sitemap()
     n = core.write_all(ROOT)
+    pages_demo.write_pwa(ROOT)
     print(f"{n} pages générées")
 
 

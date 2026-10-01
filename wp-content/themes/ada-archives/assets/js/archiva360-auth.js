@@ -245,7 +245,9 @@
 		}
 		// Déjà connecté ? Direction l'espace.
 		view( '<p class="sub">Chargement…</p>' );
-		aw.me().then( function () { window.location.replace( ESPACE ); }, function () { loginView(); } );
+		aw.me().then( function () { window.location.replace( ESPACE ); }, function ( err ) {
+			loginView( err.code === 0 ? '<div class="notice warn">Vous êtes hors connexion. La connexion sera possible dès le retour du réseau.</div>' : '' );
+		} );
 	}
 
 	/* ======================================================================
@@ -415,7 +417,11 @@
 		aw.me().then( function ( u ) {
 			state.me = u;
 			return reloadMembers().then( null, function ( err ) { if ( err.code !== 401 && err.code !== 404 ) throw err; } );
-		}, function () { window.location.replace( LOGIN ); throw null; } ).then( function () {
+		}, function ( err ) {
+			// Hors connexion : on ne déconnecte pas l'utilisateur, on l'informe.
+			if ( err.code === 0 ) throw new AwError( { message: 'Vous êtes hors connexion. Votre espace se rechargera dès le retour du réseau ; la démo interactive reste utilisable.' }, 0 );
+			window.location.replace( LOGIN ); throw null;
+		} ).then( function () {
 			if ( ! state.mine ) {
 				view.innerHTML = '<div class="box"><h1>Compte sans organisation</h1><p>Votre compte <b>' + esc( state.me.email ) + '</b> n’est rattaché à aucune organisation ARCHIVA360. Demandez une invitation à votre administrateur.</p>'
 					+ '<div class="btns"><button class="btn o" type="button" data-act="logout">Se déconnecter</button></div></div>';
@@ -424,7 +430,10 @@
 			paintUser();
 			render();
 		} ).catch( function ( err ) {
-			if ( err ) view.innerHTML = '<div class="notice bad">' + esc( err.message ) + '</div>';
+			if ( ! err ) return;
+			view.innerHTML = '<div class="notice ' + ( err.code === 0 ? 'warn' : 'bad' ) + '">' + esc( err.message ) + '</div>'
+				+ ( err.code === 0 ? '<div class="btns"><a class="btn o" href="' + here( '../demo-interactive/' ) + '">Ouvrir la démo interactive</a></div>' : '' );
+			if ( err.code === 0 ) window.addEventListener( 'online', function () { window.location.reload(); }, { once: true } );
 		} );
 	}
 
