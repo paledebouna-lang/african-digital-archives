@@ -117,7 +117,7 @@
 		function paint() {
 			var passed = 0, started = 0;
 			cards.forEach( function ( c ) {
-				var p = progressOf( c.getAttribute( 'data-level' ), 4 );
+				var p = progressOf( c.getAttribute( 'data-level' ), parseInt( c.getAttribute( 'data-modules' ) || '4', 10 ) );
 				$( '[data-bar]', c ).style.width = p.pct + '%';
 				$( '[data-progress-label]', c ).textContent = p.pct + ' % terminé';
 				var st = $( '[data-status]', c );
@@ -132,7 +132,7 @@
 			if ( nameInput && ! nameInput.value ) nameInput.value = n || '';
 			$( '#learner-greeting' ).textContent = n ? 'Bonjour ' + n : 'Bienvenue dans l’Academy';
 			$( '#learner-summary' ).textContent = n
-				? ( passed + ' niveau' + ( passed > 1 ? 'x' : '' ) + ' certifié' + ( passed > 1 ? 's' : '' ) + ', ' + started + ' commencé' + ( started > 1 ? 's' : '' ) + ' sur 6. Votre progression est enregistrée dans ce navigateur.' )
+				? ( passed + ' certificat' + ( passed > 1 ? 's' : '' ) + ' obtenu' + ( passed > 1 ? 's' : '' ) + ', ' + started + ' parcours commencé' + ( started > 1 ? 's' : '' ) + ' sur ' + cards.length + '. Votre progression est enregistrée dans ce navigateur.' )
 				: 'Votre progression est enregistrée dans ce navigateur. Indiquez votre nom tel qu’il doit figurer sur vos certificats.';
 		}
 		var form = $( '#learner-form' );
@@ -153,6 +153,7 @@
 		var C = JSON.parse( dataEl.textContent );
 		var slug = C.slug;
 		var nM = C.modules.length;
+		var week = C.unit === 'Semaine';
 		var views = $$( '[data-view-id]', root );
 
 		function lv() { return level( state, slug ); }
@@ -176,7 +177,7 @@
 			if ( resume ) {
 				var next = firstTodo();
 				resume.setAttribute( 'href', '#' + next );
-				resume.firstChild.textContent = p.started ? 'Reprendre où j’en étais ' : 'Commencer le module 1 ';
+				resume.firstChild.textContent = p.started ? 'Reprendre où j’en étais ' : ( week ? 'Commencer la semaine 1 ' : 'Commencer le module 1 ' );
 			}
 		}
 		function allQuizzesPassed() {
@@ -242,11 +243,11 @@
 				form.classList.add( 'is-graded' );
 				$( 'button[type=submit]', form ).textContent = 'Recommencer le quiz';
 				var next = idx + 1 < nM ? '#m' + ( idx + 2 ) : '#examen';
-				var nextLabel = idx + 1 < nM ? 'Module suivant' : 'Aller à l’examen final';
+				var nextLabel = idx + 1 < nM ? ( week ? 'Semaine suivante' : 'Module suivant' ) : 'Aller à l’examen final';
 				resBox.hidden = false;
 				resBox.className = 'quiz-result ' + ( passed ? 'is-pass' : 'is-fail' );
 				resBox.innerHTML = '<p class="quiz-result__score">' + r.score + ' / ' + r.total + ' <span>(' + pct + ' %)</span></p><p>' +
-					( passed ? 'Module validé. Bravo !' : 'Pas encore : il faut ' + C.quizPass + ' %. Relisez la leçon puis recommencez.' ) + '</p>' +
+					( passed ? ( week ? 'Semaine validée. Bravo !' : 'Module validé. Bravo !' ) : 'Pas encore : il faut ' + C.quizPass + ' %. Relisez la leçon puis recommencez.' ) + '</p>' +
 					'<div class="wp-block-buttons">' + ( passed ? '<div class="wp-block-button"><a class="wp-block-button__link" href="' + next + '">' + nextLabel + '</a></div>' : '<div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="#m' + ( idx + 1 ) + '">Relire la leçon</a></div>' ) + '</div>';
 				paintNav();
 				resBox.scrollIntoView( { block: 'nearest' } );
@@ -321,7 +322,7 @@
 				box.hidden = false;
 				box.className = 'quiz-result ' + ( passed ? 'is-pass' : 'is-fail' );
 				box.innerHTML = '<p class="quiz-result__score">' + r.score + ' / ' + r.total + ' <span>(' + pct + ' %)</span></p>' +
-					( passed ? '<p><strong>Félicitations, vous avez réussi le niveau ' + C.num + ' — ' + esc( C.title ) + '.</strong> Votre certificat est prêt.</p>' +
+					( passed ? '<p><strong>Félicitations, vous avez réussi : ' + esc( C.label || ( 'Niveau ' + C.num + ' — ' + C.title ) ) + '.</strong> Votre certificat est prêt.</p>' +
 						'<div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link" href="' + $( '#cert-link' ).getAttribute( 'href' ) + '#' + slug + '">Voir mon certificat</a></div></div>'
 						: '<p>Il faut ' + C.examPass + ' % pour réussir. Revoyez les corrections ci-dessus, puis repassez l’examen : les questions seront tirées à nouveau.</p>' +
 						'<div class="wp-block-buttons"><div class="wp-block-button"><button class="wp-block-button__link" type="button" id="exam-retry">Repasser l’examen</button></div></div>' );
@@ -347,7 +348,7 @@
 		$( '#cert-empty' ).hidden = earned.length > 0;
 		list.innerHTML = earned.map( function ( s ) {
 			var e = state.levels[ s ].exam;
-			return '<a class="cert-chip" href="#' + s + '" data-cert="' + s + '"><b>Niveau ' + LV[ s ].num + '</b><span>' + esc( LV[ s ].title ) + '</span><small>' + frDate( e.date ) + ' · ' + e.score + ' %</small></a>';
+			return '<a class="cert-chip" href="#' + s + '" data-cert="' + s + '"><b>' + esc( LV[ s ].short || ( 'Niveau ' + LV[ s ].num ) ) + '</b><span>' + esc( LV[ s ].short === LV[ s ].title ? '12 semaines' : LV[ s ].title ) + '</span><small>' + frDate( e.date ) + ' · ' + e.score + ' %</small></a>';
 		} ).join( '' );
 		function view() {
 			var s = location.hash.slice( 1 );
@@ -359,7 +360,7 @@
 			$( '#certificate' ).innerHTML =
 				'<div class="certificate__inner"><div class="certificate__brand"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="10" fill="#0A1541"/><path d="M13 35 24 11l11 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.4 26.5h13.2" stroke="#006EEF" stroke-width="3.4" stroke-linecap="round"/><rect x="31" y="31" width="6" height="6" rx="1.2" fill="#006EEF"/></svg><span>ARCHIVA Academy<small>African Digital Archives</small></span></div>' +
 				'<p class="certificate__kicker">Certificat de réussite</p><p class="certificate__lead">décerné à</p><p class="certificate__name">' + esc( e.name ) + '</p>' +
-				'<p class="certificate__lead">pour la réussite de l’examen final du</p><p class="certificate__level">Niveau ' + LV[ s ].num + ' — ' + esc( LV[ s ].title ) + '</p>' +
+				'<p class="certificate__lead">pour la réussite de l’examen final du</p><p class="certificate__level">' + esc( LV[ s ].label || ( 'Niveau ' + LV[ s ].num + ' — ' + LV[ s ].title ) ) + '</p>' +
 				'<div class="certificate__meta"><div><span>Date</span><b>' + frDate( e.date ) + '</b></div><div><span>Score</span><b>' + e.score + ' %</b></div><div><span>Code de vérification</span><b class="certificate__code">' + esc( e.code ) + '</b></div></div>' +
 				'<p class="certificate__foot">Certificat interne ARCHIVA Academy. Vérification : ' + esc( location.origin + location.pathname.replace( /certificat\/(index\.html)?$/, 'verifier/' ) ) + '</p></div>';
 		}

@@ -95,41 +95,48 @@ function linkCheck(list) {
   const wpPdf = await ctx.request.get(BASE + 'wp-content/uploads/2026/10/archiver-en-cote-divoire.pdf');
   check('Livres blancs : PDF téléchargeable', wpPdf.ok() && (await wpPdf.body()).slice(0, 4).toString() === '%PDF');
 
-  // ARCHIVA Academy : parcours complet du niveau 1
+  // ARCHIVA Academy : parcours complets (niveau 1 et Parcours dirigeant)
   await page.goto(BASE + 'academy/');
   await page.fill('#learner-name', 'Test Apprenant');
   await page.click('#learner-form button');
-  await page.goto(BASE + 'academy/niveau-1/#m1');
-  const data = JSON.parse(await page.textContent('#course-data'));
-  for (let m = 0; m < data.modules.length; m++) {
-    await page.goto(BASE + `academy/niveau-1/#m${m + 1}-quiz`);
-    const f = `[data-quiz-form="${m}"]`;
-    if (await page.locator(`${f}.is-graded`).count()) await page.click(`${f} button[type=submit]`);
-    const qs = data.modules[m].quiz;
-    for (let i = 0; i < qs.length; i++) for (const a of qs[i].a) await page.check(`${f} input[name="niveau-1-q${m}-${i}"][value="${a}"]`);
-    await page.click(`${f} button[type=submit]`);
+  async function runCourse(slug, label) {
+    await page.goto(BASE + `academy/${slug}/#m1`);
+    const data = JSON.parse(await page.textContent('#course-data'));
+    for (let m = 0; m < data.modules.length; m++) {
+      await page.goto(BASE + `academy/${slug}/#m${m + 1}-quiz`);
+      const f = `[data-quiz-form="${m}"]`;
+      if (await page.locator(`${f}.is-graded`).count()) await page.click(`${f} button[type=submit]`);
+      const qs = data.modules[m].quiz;
+      for (let i = 0; i < qs.length; i++) for (const a of qs[i].a) await page.check(`${f} input[name="${slug}-q${m}-${i}"][value="${a}"]`);
+      await page.click(`${f} button[type=submit]`);
+    }
+    await page.goto(BASE + `academy/${slug}/#examen`);
+    check(`${label} : examen déverrouillé après les quiz`, await page.isHidden('#exam-locked'));
+    await page.click('#exam-start');
+    const pool = [].concat(...data.modules.map(m => m.quiz), data.examExtra);
+    const legends = await page.$$eval('#exam-form .quiz-q legend', ls => ls.map(l => l.childNodes[1].textContent));
+    check(`${label} : ${data.examSize} questions d’examen`, legends.length === data.examSize, String(legends.length));
+    for (let i = 0; i < legends.length; i++) for (const a of pool.find(q => q.q === legends[i]).a) await page.check(`#exam-form input[name="${slug}-exam-${i}"][value="${a}"]`);
+    await page.click('#exam-form button[type=submit]');
+    await page.waitForSelector('#exam-result:not([hidden])');
+    check(`${label} : examen réussi`, (await page.textContent('#exam-result')).includes('Félicitations'));
+    await page.click('#exam-result a');
+    await page.waitForSelector('.certificate__code');
+    const code = await page.textContent('.certificate__code');
+    const exam = await page.evaluate(s => JSON.parse(localStorage.getItem('ada_academy_v1')).levels[s].exam, slug);
+    check(`${label} : certificat généré`, /^[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}$/.test(code) && (await page.textContent('.certificate__level')).includes(data.label), code);
+    await page.goto(BASE + 'academy/verifier/');
+    await page.fill('#v-name', 'test apprenant'); await page.selectOption('#v-level', slug); await page.fill('#v-date', exam.date); await page.fill('#v-score', String(exam.score)); await page.fill('#v-code', code);
+    await page.click('#verify-form button');
+    await page.waitForSelector('#verify-result .notice');
+    check(`${label} : certificat vérifié`, (await page.textContent('#verify-result')).includes('authentique'));
+    await page.fill('#v-score', String(exam.score - 1)); await page.click('#verify-form button'); await page.waitForTimeout(200);
+    check(`${label} : certificat falsifié rejeté`, (await page.textContent('#verify-result')).includes('ne correspond pas'));
   }
-  await page.goto(BASE + 'academy/niveau-1/#examen');
-  check('Academy : examen déverrouillé après les quiz', await page.isHidden('#exam-locked'));
-  await page.click('#exam-start');
-  const pool = [].concat(...data.modules.map(m => m.quiz), data.examExtra);
-  const legends = await page.$$eval('#exam-form .quiz-q legend', ls => ls.map(l => l.childNodes[1].textContent));
-  for (let i = 0; i < legends.length; i++) for (const a of pool.find(q => q.q === legends[i]).a) await page.check(`#exam-form input[name="niveau-1-exam-${i}"][value="${a}"]`);
-  await page.click('#exam-form button[type=submit]');
-  await page.waitForSelector('#exam-result:not([hidden])');
-  check('Academy : examen réussi', (await page.textContent('#exam-result')).includes('Félicitations'));
-  await page.click('#exam-result a');
-  await page.waitForSelector('.certificate__code');
-  const code = await page.textContent('.certificate__code');
-  const exam = await page.evaluate(() => JSON.parse(localStorage.getItem('ada_academy_v1')).levels['niveau-1'].exam);
-  check('Academy : certificat généré', /^[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}$/.test(code), code);
-  await page.goto(BASE + 'academy/verifier/');
-  await page.fill('#v-name', 'test apprenant'); await page.fill('#v-date', exam.date); await page.fill('#v-score', String(exam.score)); await page.fill('#v-code', code);
-  await page.click('#verify-form button');
-  await page.waitForSelector('#verify-result .notice');
-  check('Academy : certificat vérifié', (await page.textContent('#verify-result')).includes('authentique'));
-  await page.fill('#v-score', String(exam.score - 1)); await page.click('#verify-form button'); await page.waitForTimeout(200);
-  check('Academy : certificat falsifié rejeté', (await page.textContent('#verify-result')).includes('ne correspond pas'));
+  await runCourse('niveau-1', 'Academy niveau 1');
+  await runCourse('parcours-dirigeant', 'Parcours dirigeant');
+  await page.goto(BASE + 'academy/');
+  check('Parcours dirigeant : statut « Certifié » au catalogue', (await page.textContent('[data-level="parcours-dirigeant"] [data-status]')) === 'Certifié');
 
   // Démo ARCHIVA360
   const D = BASE + 'archiva360/demo-interactive/';

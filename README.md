@@ -33,7 +33,8 @@ node tools/test_site.js           # rejoue les tests automatiques (site servi su
 
 ## Fonctions interactives
 
-- **ARCHIVA Academy** (`/academy/`) : 6 niveaux, 24 modules, quiz corrigés (75 %), examen final de 15 questions
+- **ARCHIVA Academy** (`/academy/`) : 6 niveaux (24 modules) et le **Parcours dirigeant** de 12 semaines
+  (`/academy/parcours-dirigeant/`, contenus dans `tools/ada/academy_dirigeant*.py`, examen de 20 questions) ;, quiz corrigés (75 %), examen final de 15 questions
   tirées au hasard (70 %), certificat imprimable avec code de vérification SHA-256 (`/academy/verifier/`).
   La progression est enregistrée dans le navigateur de l'apprenant.
 - **Démo interactive ARCHIVA360** (`/archiva360/demo-interactive/`) : import de documents, extraction de texte (PDF,
