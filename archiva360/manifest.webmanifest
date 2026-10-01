@@ -1,0 +1,52 @@
+{
+  "id": "./espace/",
+  "name": "ARCHIVA360",
+  "short_name": "ARCHIVA360",
+  "description": "ARCHIVA360 par African Digital Archives : vos archives, vos utilisateurs et vos rôles, depuis votre téléphone.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "./espace/",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0A1541",
+  "theme_color": "#0A1541",
+  "categories": [
+    "business",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "../wp-content/uploads/2026/09/archiva360-app-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../wp-content/uploads/2026/09/archiva360-app-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../wp-content/uploads/2026/09/archiva360-app-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Utilisateurs et rôles",
+      "url": "./espace/#utilisateurs"
+    },
+    {
+      "name": "Mon compte",
+      "url": "./espace/#compte"
+    },
+    {
+      "name": "Démo interactive",
+      "url": "./demo-interactive/"
+    }
+  ]
+}

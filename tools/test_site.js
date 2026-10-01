@@ -169,6 +169,27 @@ function linkCheck(list) {
   await page.goto(D + '#dashboard'); await page.reload(); await page.waitForSelector('.kpi');
   check('Démo : données conservées après rechargement', Number(await page.textContent('.kpi b')) >= 13);
 
+  // Application installable (PWA)
+  const man = await (await ctx.request.get(BASE + 'archiva360/manifest.webmanifest')).json();
+  const iconsOk = await Promise.all(man.icons.map(async i => (await ctx.request.get(new URL(i.src, BASE + 'archiva360/').href)).ok()));
+  check('Application : manifeste et icônes', man.display === 'standalone' && man.icons.some(i => i.sizes === '512x512' && i.purpose === 'maskable') && iconsOk.every(Boolean));
+  const app = await ctx.newPage();
+  await app.goto(BASE + 'archiva360/connexion/');
+  const scope = await app.evaluate(() => navigator.serviceWorker.ready.then(r => r.scope));
+  check('Application : service worker actif', scope === BASE + 'archiva360/', scope);
+  await app.reload(); await app.waitForFunction(() => navigator.serviceWorker.controller);
+  await ctx.setOffline(true);
+  await app.goto(BASE + 'archiva360/demo-interactive/#dashboard'); await app.waitForSelector('.kpi', { timeout: 15000 });
+  await app.goto(BASE + 'archiva360/connexion/'); await app.waitForSelector('#auth-card h1');
+  check('Application : écrans disponibles hors connexion', (await app.textContent('#auth-card')).length > 20);
+  await ctx.setOffline(false); await app.close();
+  const iphone = await browser.newContext({ viewport: { width: 390, height: 844 }, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1' });
+  const ip = await iphone.newPage();
+  await ip.goto(BASE + 'archiva360/connexion/');
+  await ip.click('.install-btn');
+  check('Application : mode d’emploi d’installation sur iPhone', (await ip.textContent('#install-help')).includes('Sur l’écran d’accueil'));
+  await iphone.close();
+
   await browser.close();
   const failed = results.filter(r => !r.ok);
   console.log(`\n${results.length - failed.length}/${results.length} tests réussis`);

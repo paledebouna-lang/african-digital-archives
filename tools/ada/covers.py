@@ -57,6 +57,33 @@ COVERS = [
 ]
 
 
+def app_icon(size, safe=False):
+    """ARCHIVA360 home-screen icon (opaque, so it also works as a maskable / Apple touch icon)."""
+    k = size / 512
+    tile = (250 if safe else 300) * k
+    return f'''<style>{BASE}body{{width:{size}px;height:{size}px;display:grid;place-items:center;
+background:radial-gradient(circle at 50% 30%,#1B3A9E 0%,#0A1541 70%)}}
+.t{{width:{tile}px;height:{tile}px;border-radius:{tile*.24}px;background:linear-gradient(150deg,#2F8BFF,#006EEF 60%,#0057C2);
+display:grid;place-items:center;box-shadow:0 {18*k}px {44*k}px rgba(0,0,0,.35);position:relative}}
+.t b{{color:#fff;font-weight:800;font-size:{tile*.62}px;letter-spacing:-.04em;line-height:1;margin-top:-{tile*.06}px}}
+.t i{{position:absolute;bottom:{tile*.1}px;left:0;right:0;text-align:center;color:#CFE2FD;font-style:normal;font-weight:700;font-size:{tile*.13}px;letter-spacing:.08em}}
+</style><div class="t"><b>A</b><i>360</i></div>'''
+
+
+APP_ICONS = [("archiva360-app-192.png", 192, False), ("archiva360-app-512.png", 512, False),
+             ("archiva360-app-maskable-512.png", 512, True), ("archiva360-app-180.png", 180, False)]
+
+
+def build_app_icons(out_dir):
+    jobs = []
+    for name, size, safe in APP_ICONS:
+        p = os.path.join(out_dir, name + ".html")
+        with open(p, "w", encoding="utf-8") as f:
+            f.write("<!doctype html><meta charset=utf-8>" + app_icon(size, safe))
+        jobs.append({"html": p, "png": name, "w": size, "h": size, "dpr": 1})
+    return jobs
+
+
 def build(out_dir):
     jobs = []
     for i, (name, ic, label) in enumerate(COVERS):
@@ -73,4 +100,5 @@ def build(out_dir):
         with open(p, "w", encoding="utf-8") as f:
             f.write("<!doctype html><meta charset=utf-8>" + favicon(s))
         jobs.append({"html": p, "png": f"cropped-ada-icon-{s}x{s}.png", "w": s, "h": s, "dpr": 1, "transparent": True})
+    jobs += build_app_icons(out_dir)
     return jobs

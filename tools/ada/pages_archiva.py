@@ -76,7 +76,7 @@ def build():
                   + "".join(f'<div class="wp-block-column">{stat(v, l)}</div>' for v, l in [("20", "modules fonctionnels"), ("3", "éditions : Cloud, Enterprise, Government"), ("4", "modes de déploiement"), ("2", "langues au lancement : français, anglais")])
                   + "</div>", "white", "is-compact")
         + section(media_text(img("archiva-go-mobile.png", "Application ARCHIVA GO", 420, 860, cls="is-mobile"),
-                             f'<span class="eyebrow">Mobile</span><h2>ARCHIVA GO, vos archives dans la poche</h2><p class="lead">Scanner un document, retrouver un contrat, valider une étape de workflow ou vérifier une boîte d\'archives avec son QR code, depuis Android ou iOS.</p>{ul(["Scanner et photographier avec OCR", "Consulter, approuver, signer via intégration", "Notifications et suivi des demandes d’accès", "Scan des QR codes des boîtes"])}<a class="more-link" href="~/archiva360/archiva-go/">Découvrir ARCHIVA GO {icon("arrow-right")}</a>'), "mist")
+                             f'<span class="eyebrow">Mobile</span><h2>ARCHIVA GO, vos archives dans la poche</h2><p class="lead">Scanner un document, retrouver un contrat, valider une étape de workflow ou vérifier une boîte d\'archives avec son QR code, depuis Android ou iPhone, en l\'installant directement depuis le navigateur.</p>{ul(["Scanner et photographier avec OCR", "Consulter, approuver, signer via intégration", "Notifications et suivi des demandes d’accès", "Scan des QR codes des boîtes"])}<a class="more-link" href="~/archiva360/archiva-go/">Découvrir ARCHIVA GO {icon("arrow-right")}</a>'), "mist")
         + section(cta_band("Voyez ARCHIVA360 avec vos propres documents", "Nous préparons une démonstration sur un échantillon de vos documents : vous jugez sur pièces.",
                            btn("Demander une démonstration", "~/archiva360/demo/", "white"))),
         nav="archiva360"))
@@ -144,22 +144,33 @@ def build():
     # ARCHIVA GO
     add(Page(
         "archiva360/archiva-go", "ARCHIVA GO — l'application mobile",
-        description="ARCHIVA GO, l'application mobile d'ARCHIVA360 pour Android et iOS : scanner, rechercher, consulter, approuver, signer, scanner les QR codes des boîtes.",
-        hero=page_hero("ARCHIVA GO, l'archive dans votre poche", "L'application Android et iOS d'ARCHIVA360, pour les équipes sur le terrain, les directions en déplacement et les archivistes dans les magasins.",
+        description="ARCHIVA GO, l'application mobile d'ARCHIVA360 : installable dès aujourd'hui depuis le navigateur sur Android et iPhone, sans passer par un store.",
+        hero=page_hero("ARCHIVA GO, l'archive dans votre poche", "L'application mobile d'ARCHIVA360 s'installe dès aujourd'hui depuis votre navigateur, sur Android comme sur iPhone : gratuite, sans store, toujours à jour.",
                        [("ARCHIVA360", "archiva360/"), ("ARCHIVA GO", None)], "Application mobile",
-                       buttons(btn("Être informé du lancement", "~/contact/?sujet=demo", "white")),
+                       buttons(btn("Ouvrir et installer l'application", "~/archiva360/connexion/", "white"),
+                               btn("Essayer la démo", "~/archiva360/demo-interactive/", "outline")),
                        media=img("archiva-go-mobile.png", "Application ARCHIVA GO", 420, 860, cls="is-mobile", lazy=False)),
-        body=section(intro("Ce que vous pouvez faire", "", "Fonctions") + cols(*[feature(t, d, ic) for t, d, ic in [
-            ("Scanner", "Photographiez un document : recadrage, OCR et envoi dans le bon dossier.", "scan"),
-            ("Rechercher et consulter", "Toute la recherche d'ARCHIVA360, avec vos droits habituels.", "search"),
-            ("Approuver", "Validez une étape de workflow en un geste.", "check-circle"),
-            ("Signer", "Signature électronique via le prestataire intégré.", "pen"),
-            ("Scanner un QR code", "Identifiez une boîte ou un dossier physique et ouvrez sa fiche.", "qr"),
-            ("Vérifier une archive", "Contrôlez l'intégrité d'un document archivé.", "fingerprint"),
-            ("Notifications", "Soyez prévenu des tâches, échéances et demandes.", "inbox"),
-            ("Demander un accès", "Demandez l'accès à un dossier et suivez la réponse.", "key"),
-            ("Travail hors connexion", "Capturez sans réseau, envoyez dès que la connexion revient.", "cloud")]], n=3, cls="gap-lg"))
-        + section(notice("ARCHIVA GO fait partie de la version 2 de la plateforme. Les organisations pilotes peuvent participer aux tests.", ""), "mist", "is-compact"),
+        body=section(intro("Installer en 30 secondes", "Ouvrez la page de connexion ARCHIVA360 sur votre téléphone, puis ajoutez-la à votre écran d'accueil. L'icône ARCHIVA360 apparaît et l'application s'ouvre en plein écran.", "Installation")
+                     + cols('<h3>Sur Android (Chrome)</h3>' + steps([
+                                ("Ouvrez la page de connexion", "Rendez-vous sur la page « Connexion à ARCHIVA360 » depuis Chrome."),
+                                ("Touchez « Installer l'application »", "Le bouton apparaît sous le formulaire. À défaut : menu ⋮, puis « Installer l'application » ou « Ajouter à l'écran d'accueil »."),
+                                ("Confirmez", "ARCHIVA360 rejoint vos applications, avec son icône.")]),
+                            '<h3>Sur iPhone et iPad (Safari)</h3>' + steps([
+                                ("Ouvrez la page dans Safari", "L'installation sur iPhone passe obligatoirement par Safari."),
+                                ("Touchez « Partager »", "Le carré avec une flèche vers le haut, en bas de l'écran."),
+                                ("Choisissez « Sur l'écran d'accueil »", "Puis « Ajouter » : l'icône ARCHIVA360 apparaît sur votre écran d'accueil.")]), n=2, cls="gap-lg")
+                     + buttons(btn("Ouvrir la page de connexion", "~/archiva360/connexion/")))
+        + section(intro("Ce que vous pouvez faire", "", "Fonctions") + cols(*[feature(t, d, ic) for t, d, ic in [
+            ("Se connecter et gérer son compte", "Connexion sécurisée, mot de passe oublié, profil. <b>Disponible.</b>", "key"),
+            ("Gérer les utilisateurs et les rôles", "Inviter, attribuer un rôle, retirer un accès, depuis le téléphone. <b>Disponible.</b>", "users"),
+            ("Scanner", "Photographier un document : OCR et métadonnées proposées. <b>Disponible dans la démo.</b>", "scan"),
+            ("Rechercher et consulter", "La recherche en langage naturel d'ARCHIVA360. <b>Disponible dans la démo.</b>", "search"),
+            ("Scanner un QR code", "Identifier une boîte ou un dossier physique et ouvrir sa fiche. <b>À venir.</b>", "qr"),
+            ("Approuver", "Valider une étape de workflow en un geste. <b>À venir.</b>", "check-circle"),
+            ("Signer", "Signature électronique via le prestataire intégré. <b>À venir.</b>", "pen"),
+            ("Notifications", "Être prévenu des tâches, échéances et demandes. <b>À venir.</b>", "inbox"),
+            ("Travail hors connexion", "Les écrans s'ouvrent sans réseau ; l'envoi reprend au retour de la connexion. <b>Disponible pour les écrans, à venir pour l'envoi.</b>", "cloud")]], n=3, cls="gap-lg"), "mist")
+        + section(notice("Versions Google Play et App Store : en préparation. L'application installable depuis le navigateur offre déjà les mêmes écrans et se met à jour automatiquement, sans téléchargement.", ""), "white", "is-compact"),
         nav="archiva360"))
 
     # Offres et tarifs
