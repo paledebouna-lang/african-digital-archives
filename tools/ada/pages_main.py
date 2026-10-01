@@ -265,8 +265,10 @@ def build_contact():
                           + '<p><label for="user_pass">Mot de passe</label><input type="password" id="user_pass" autocomplete="current-password"></p>'
                           + '<p class="wpcf7-acceptance" style="margin-bottom:18px"><input type="checkbox" id="rememberme"> <label for="rememberme" style="display:inline;font-weight:400">Se souvenir de moi</label></p>'
                           + '<input type="submit" class="button" value="Se connecter" style="width:100%">'
-                          + '<p id="login-msg" class="notice is-warning mt-m" hidden>Le portail client ARCHIVA360 ouvrira avec les premiers déploiements. Vos accès vous seront communiqués par votre chef de projet ADA.</p></form></div></div>'
-                          + '<div class="wp-block-column"><h3>Dans votre espace</h3>'
+                          + '<p id="login-msg" class="notice is-warning mt-m" hidden>Le portail client ARCHIVA360 ouvrira avec les premiers déploiements : vos accès vous seront communiqués par votre chef de projet ADA. En attendant, essayez la <a href="~/archiva360/demo-interactive/">démo interactive</a>.</p></form></div></div>'
+                          + '<div class="wp-block-column"><div class="notice is-success"><p><strong>Envie d\'essayer dès maintenant ?</strong> La démo interactive ARCHIVA360 fonctionne dans votre navigateur, avec un espace d\'exemple prêt à l\'emploi.</p></div>'
+                          + btn("Ouvrir la démo interactive", "~/archiva360/demo-interactive/")
+                          + '<h3 class="mt-l">Dans votre espace</h3>'
                           + ul(["Mes archives", "Mes utilisateurs", "Mes workflows", "Mes demandes", "Mes statistiques", "Mes factures", "Mes politiques de conservation", "Mes audits"])
                           + f'<p class="has-muted-color">Pas encore client ? <a href="~/contact/?sujet=demo">Demandez une démonstration</a>.</p></div></div></div>'),
              nav="", search=False))

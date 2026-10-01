@@ -563,7 +563,7 @@ a.card:hover,.card.is-linked:hover{box-shadow:var(--shadow-2);transform:translat
 /* ==========================================================================
    10. Forms (Contact Form 7 look)
    ========================================================================== */
-input[type=text],input[type=email],input[type=tel],input[type=search],input[type=password],input[type=url],input[type=number],select,textarea{
+input:not([type]),input[type=date],input[type=text],input[type=email],input[type=tel],input[type=search],input[type=password],input[type=url],input[type=number],select,textarea{
   width:100%;font:400 16px/1.4 var(--wp--preset--font-family--inter);color:var(--wp--preset--color--ink);
   background:#fff;border:1px solid #CDD3E0;border-radius:var(--radius-sm);padding:13px 15px;transition:border-color .15s,box-shadow .15s;
 }
@@ -823,3 +823,139 @@ label{display:block;font-weight:600;font-size:14.5px;color:var(--wp--preset--col
 .card .wp-block-list.is-style-check li{padding-left:28px}
 .card .wp-block-list.is-style-check li::before{width:18px;height:18px;background-size:18px}
 .chaos-order__box .chips li{font-size:13.5px}
+
+/* ==========================================================================
+   18. ARCHIVA Academy
+   ========================================================================== */
+.button.is-secondary,button.button.is-secondary{background:#fff;color:var(--wp--preset--color--navy);border-color:#C6CCDB}
+.button.is-secondary:hover{background:var(--wp--preset--color--mist);color:var(--wp--preset--color--navy);border-color:var(--wp--preset--color--navy)}
+.button svg{width:16px;height:16px}
+.mb-0{margin-bottom:0!important}
+
+.learner-bar{display:grid;grid-template-columns:1fr minmax(280px,420px);gap:32px;align-items:end;background:var(--wp--preset--color--mist);border-radius:12px;padding:28px 30px;margin-bottom:64px}
+.learner-bar__title{font-size:1.5rem;margin:6px 0 6px}
+.learner-form label{margin-bottom:6px}
+.learner-form__row{display:flex;gap:8px}
+.learner-form__row input{flex:1;min-width:0}
+@media (max-width:860px){.learner-bar{grid-template-columns:1fr;gap:18px;padding:22px 20px}}
+
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:1024px){.course-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.course-grid{grid-template-columns:1fr}}
+.course-card{background:#fff;border:1px solid var(--wp--preset--color--line);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.course-card__head{display:flex;justify-content:space-between;align-items:center}
+.course-card__num{font-size:34px;font-weight:800;letter-spacing:-.04em;color:var(--wp--preset--color--blue-soft);-webkit-text-stroke:1.4px var(--wp--preset--color--blue);line-height:1}
+.course-card h3{font-size:1.15rem;margin:4px 0 0}
+.course-card h3 a{color:var(--wp--preset--color--navy)}
+.course-card h3 a:hover{color:var(--wp--preset--color--blue)}
+.course-card p{font-size:15px;color:var(--wp--preset--color--muted);margin:0}
+.course-meta{list-style:none;padding:0;margin:4px 0 6px;display:flex;flex-direction:column;gap:5px;font-size:13.5px;color:var(--wp--preset--color--body)}
+.course-meta li{margin:0;display:flex;gap:8px;align-items:center}
+.course-meta svg{width:15px;height:15px;color:var(--wp--preset--color--blue)}
+.course-card__foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:6px}
+.course-status{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 9px;border-radius:4px;background:var(--wp--preset--color--mist);color:var(--wp--preset--color--muted)}
+.course-status.is-started{background:var(--wp--preset--color--blue-soft);color:var(--wp--preset--color--blue-dark)}
+.course-status.is-passed{background:var(--wp--preset--color--green-soft);color:var(--wp--preset--color--green)}
+.course-progress{height:6px;border-radius:4px;background:var(--wp--preset--color--line);overflow:hidden}
+.course-progress i{display:block;height:100%;background:var(--wp--preset--color--blue);border-radius:4px;transition:width .4s}
+
+.course-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:56px;padding:48px 0 96px;align-items:start}
+@media (max-width:1024px){.course-layout{grid-template-columns:1fr;gap:28px;padding-top:28px}}
+.course-nav{position:sticky;top:110px;border:1px solid var(--wp--preset--color--line);border-radius:10px;padding:18px 16px;background:#fff;max-height:calc(100vh - 130px);overflow:auto}
+@media (max-width:1024px){.course-nav{position:static;max-height:none}}
+.course-nav__progress{display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--wp--preset--color--muted);padding:0 4px 14px;border-bottom:1px solid var(--wp--preset--color--line);margin-bottom:10px}
+.course-nav ol{list-style:none;margin:0;padding:0}
+.course-nav__module{margin:0 0 6px}
+.course-nav__label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--wp--preset--color--muted);padding:10px 6px 4px}
+.course-nav a{display:grid;grid-template-columns:18px 1fr;column-gap:10px;padding:8px 8px;border-radius:6px;font-size:14.5px;font-weight:500;color:var(--wp--preset--color--navy);line-height:1.35}
+.course-nav a small{grid-column:2;font-size:12px;color:var(--wp--preset--color--muted);font-weight:400}
+.course-nav a:hover{background:var(--wp--preset--color--mist)}
+.course-nav a.is-current{background:var(--wp--preset--color--blue-soft);color:var(--wp--preset--color--blue-dark)}
+.course-nav a.is-quiz,.course-nav a.is-exam{font-weight:500}
+.course-nav__state{width:16px;height:16px;border-radius:50%;border:2px solid #C6CCDB;margin-top:2px;grid-row:span 2;background:#fff}
+.course-nav__state.is-done{border-color:var(--wp--preset--color--green);background:var(--wp--preset--color--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.3l2.2 2.2 4.8-4.8' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.course-nav__state.is-failed{border-color:var(--wp--preset--color--amber);background:var(--wp--preset--color--amber-soft)}
+.course-nav__state.is-locked{border-style:dashed}
+.course-nav__cert{display:flex!important;align-items:center;gap:8px;margin-top:10px;border-top:1px solid var(--wp--preset--color--line);border-radius:0!important;padding-top:14px!important}
+.course-nav__cert svg{width:16px;height:16px;color:var(--wp--preset--color--gold)}
+
+.course-main{min-width:0}
+.course-view h2{font-size:clamp(1.6rem,2.6vw,2.1rem)}
+.course-view.lesson{font-size:17.5px;line-height:1.75;max-width:780px}
+.course-view.lesson h3{font-size:1.25rem;margin-top:1.6em}
+.course-view.lesson table{font-size:15px;margin:1em 0 1.6em;border:1px solid var(--wp--preset--color--line)}
+.course-view.lesson th{background:var(--wp--preset--color--mist);color:var(--wp--preset--color--navy);text-align:left;padding:10px 14px;font-size:14px}
+.course-view.lesson td{padding:10px 14px;border-top:1px solid var(--wp--preset--color--line);vertical-align:top}
+.course-view.lesson code{background:var(--wp--preset--color--mist);padding:2px 6px;border-radius:4px}
+.lesson-key,.lesson-practice{border-radius:10px;padding:20px 24px;margin:1.8em 0;font-size:16px}
+.lesson-key{background:var(--wp--preset--color--blue-soft)}
+.lesson-practice{background:var(--wp--preset--color--amber-soft)}
+.lesson-key p:first-child,.lesson-practice p:first-child{margin-bottom:6px;color:var(--wp--preset--color--navy)}
+.lesson-key ul{margin:0}
+.lesson-practice p:last-child{margin:0}
+.lesson-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--wp--preset--color--line);padding-top:24px;margin-top:36px}
+.lesson-nav .button[disabled]{opacity:.7;cursor:default}
+.course-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0}
+.course-facts div{background:var(--wp--preset--color--mist);border-radius:8px;padding:16px}
+.course-facts b{display:block;color:var(--wp--preset--color--navy);font-size:15.5px;line-height:1.3}
+.course-facts span{font-size:13px;color:var(--wp--preset--color--muted)}
+@media (max-width:760px){.course-facts{grid-template-columns:1fr 1fr}}
+.course-pager{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--wp--preset--color--line);margin-top:56px;padding-top:22px;font-weight:600;font-size:15px;flex-wrap:wrap}
+
+.quiz{max-width:780px}
+.quiz-q{border:1px solid var(--wp--preset--color--line);border-radius:10px;padding:20px 22px;margin:0 0 14px;background:#fff}
+.quiz-q legend{display:flex;gap:12px;font-weight:600;color:var(--wp--preset--color--navy);font-size:16.5px;padding:0;margin-bottom:12px;flex-wrap:wrap}
+.quiz-q__num{width:28px;height:28px;border-radius:50%;background:var(--wp--preset--color--blue-soft);color:var(--wp--preset--color--blue);font-size:13.5px;display:grid;place-items:center;flex-shrink:0}
+.quiz-q__hint{flex-basis:100%;font-size:12.5px;font-weight:500;color:var(--wp--preset--color--muted);padding-left:40px}
+.quiz-q__options{display:grid;gap:8px}
+.quiz-opt{display:flex;gap:12px;align-items:flex-start;border:1px solid #D5DAE6;border-radius:8px;padding:11px 14px;font-weight:400;font-size:15.5px;color:var(--wp--preset--color--ink);cursor:pointer;margin:0}
+.quiz-opt input{margin-top:4px;accent-color:var(--wp--preset--color--blue);width:16px;height:16px;flex-shrink:0}
+.quiz-opt:hover{border-color:var(--wp--preset--color--blue)}
+.quiz-opt:has(input:checked){border-color:var(--wp--preset--color--blue);background:var(--wp--preset--color--blue-soft)}
+.quiz-q.is-correct{border-color:#9ED9BF}
+.quiz-q.is-wrong{border-color:#F0B9B3}
+.quiz-opt.is-answer{border-color:var(--wp--preset--color--green)!important;background:var(--wp--preset--color--green-soft)!important}
+.quiz-opt.is-chosen-wrong{border-color:var(--wp--preset--color--red)!important;background:#FBE7E5!important}
+.quiz-opt:has(input:disabled){cursor:default}
+.quiz-q__feedback{margin-top:12px;font-size:14.5px;line-height:1.55;padding:12px 14px;border-radius:8px;background:var(--wp--preset--color--mist)}
+.quiz-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px}
+.quiz-msg{margin:0;color:var(--wp--preset--color--red);font-size:14.5px;font-weight:500}
+.quiz-result{border-radius:12px;padding:24px 26px;margin-top:20px}
+.quiz-result.is-pass{background:var(--wp--preset--color--green-soft)}
+.quiz-result.is-fail{background:var(--wp--preset--color--amber-soft)}
+.quiz-result__score{font-size:2rem;font-weight:800;color:var(--wp--preset--color--navy);letter-spacing:-.03em;margin:0 0 4px}
+.quiz-result__score span{font-size:1rem;font-weight:600;color:var(--wp--preset--color--muted);letter-spacing:0}
+.quiz-name{max-width:420px;margin:8px 0 4px}
+
+.cert-page{padding:48px 24px 96px}
+.cert-list{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.cert-chip{display:flex;flex-direction:column;border:1px solid var(--wp--preset--color--line);border-radius:8px;padding:12px 16px;color:var(--wp--preset--color--navy);min-width:220px}
+.cert-chip span{font-size:14px}
+.cert-chip small{font-size:12.5px;color:var(--wp--preset--color--muted)}
+.cert-chip.is-current{border-color:var(--wp--preset--color--blue);background:var(--wp--preset--color--blue-soft)}
+.cert-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.certificate{background:#fff;border:1px solid var(--wp--preset--color--line);box-shadow:var(--shadow-2);aspect-ratio:1.414;max-width:1000px;padding:18px;position:relative}
+.certificate__inner{height:100%;border:2px solid var(--wp--preset--color--navy);outline:1px solid var(--wp--preset--color--gold);outline-offset:-8px;padding:5% 7%;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:6px;background:radial-gradient(circle at 50% 0,rgba(0,110,239,.06),rgba(255,255,255,0) 60%)}
+.certificate__brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.certificate__brand svg{width:46px;height:46px}
+.certificate__brand span{font-weight:800;font-size:18px;color:var(--wp--preset--color--navy);text-align:left;line-height:1.1}
+.certificate__brand small{display:block;font-weight:500;font-size:12px;color:var(--wp--preset--color--muted)}
+.certificate__kicker{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--wp--preset--color--gold);font-weight:700;margin:0}
+.certificate__lead{margin:0;color:var(--wp--preset--color--muted);font-size:15px}
+.certificate__name{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:800;color:var(--wp--preset--color--navy);letter-spacing:-.02em;margin:4px 0 8px;line-height:1.1;border-bottom:1px solid var(--wp--preset--color--line);padding-bottom:10px;min-width:60%}
+.certificate__level{font-size:clamp(1.05rem,2.2vw,1.5rem);font-weight:700;color:var(--wp--preset--color--blue);margin:2px 0 14px}
+.certificate__meta{display:flex;gap:40px;justify-content:center;flex-wrap:wrap}
+.certificate__meta span{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--wp--preset--color--muted)}
+.certificate__meta b{font-size:15px;color:var(--wp--preset--color--navy)}
+.certificate__code{font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em}
+.certificate__foot{font-size:11px;color:var(--wp--preset--color--muted);margin:16px 0 0;word-break:break-all}
+@media (max-width:640px){.certificate{aspect-ratio:auto}.certificate__inner{padding:28px 16px}.certificate__meta{gap:16px}}
+@media print{
+  @page{size:A4 landscape;margin:10mm}
+  body.academy-cert .top-bar,body.academy-cert .site-header,body.academy-cert .page-hero,body.academy-cert .site-footer,body.academy-cert #cookie-notice,body.academy-cert #scroll-up,body.academy-cert .cert-list,body.academy-cert .cert-toolbar,body.academy-cert #cert-empty{display:none!important}
+  body.academy-cert .cert-page{padding:0}
+  body.academy-cert .certificate{box-shadow:none;border:0;max-width:none;width:100%;height:185mm;aspect-ratio:auto;padding:0}
+  .certificate__inner{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.quiz-q legend{float:left;width:100%}
+.quiz-q legend+*{clear:both}
