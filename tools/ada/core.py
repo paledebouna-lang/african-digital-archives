@@ -13,8 +13,8 @@ SITE = {
     "name": "African Digital Archives",
     "short": "ADA",
     "tagline": "La mémoire numérique de l'Afrique",
-    # TODO: remplacer par l'adresse réelle d'ADA (formulaires, lettre d'information)
-    "email": "contact@example.com",
+    # Adresse de contact (formulaires, lettre d'information, pages légales)
+    "email": "assa@eletude.org",
     # Optionnel : adresse d'un service de réception de formulaires (ex. https://formspree.io/f/xxxxxxx).
     # Vide = les formulaires ouvrent la messagerie du visiteur avec un message prérempli.
     "form_endpoint": "",

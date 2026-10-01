@@ -959,3 +959,10 @@ label{display:block;font-weight:600;font-size:14.5px;color:var(--wp--preset--col
 }
 .quiz-q legend{float:left;width:100%}
 .quiz-q legend+*{clear:both}
+.todo-field{display:inline-block;font-size:.9em;font-style:italic;color:var(--wp--preset--color--muted);background:var(--wp--preset--color--mist);border-radius:4px;padding:1px 8px}
+.legal-content table{font-size:15px;margin:1em 0 1.6em;border:1px solid var(--wp--preset--color--line)}
+.legal-content th{background:var(--wp--preset--color--mist);color:var(--wp--preset--color--navy);text-align:left;padding:10px 14px;font-size:14px}
+.legal-content td{padding:10px 14px;border-top:1px solid var(--wp--preset--color--line);vertical-align:top}
+.legal-content td:first-child{color:var(--wp--preset--color--muted);white-space:nowrap}
+.legal-content h3{font-size:1.1rem;margin-top:1.4em}
+@media (max-width:600px){.legal-content td:first-child{white-space:normal}}
