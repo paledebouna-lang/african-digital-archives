@@ -91,3 +91,14 @@ LOGO = ('<svg class="custom-logo" viewBox="0 0 48 48" aria-hidden="true">'
         '<rect x="31" y="31" width="6" height="6" rx="1.2" fill="#006EEF"/></svg>')
 
 LOGO_LIGHT = LOGO.replace('fill="#0A1541"', 'fill="#1A2B6D"')
+
+
+# Logo ADA (fichier fourni par ADA, détouré) : emblème « AD » et logotype complet.
+import os as _os
+MARK_FILE = _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..", "..", "wp-content/uploads/2026/09/ada-logo-mark.png"))
+MARK_RATIO = 806 / 470   # largeur / hauteur de l'emblème
+
+
+def mark_file_img(h):
+    """Emblème pour les rendus hors site (images de partage, PDF), chargé depuis le disque."""
+    return f'<img src="file://{MARK_FILE}" style="height:{h}px;width:{round(h * MARK_RATIO)}px;display:block" alt="">'

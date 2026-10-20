@@ -1,7 +1,7 @@
-"""Illustrated covers (blog featured images, Open Graph image, favicons)."""
+"""Illustrated covers (blog featured images, Open Graph image, app icons)."""
 import os
 
-from .icons import icon, LOGO
+from .icons import icon, mark_file_img
 from .mockups import FONT
 
 BASE = """@font-face{font-family:Inter;src:url(file://%s) format("woff2");font-weight:100 900}
@@ -35,12 +35,8 @@ def og():
 .l b{{font-size:40px;letter-spacing:-.02em}}.l span{{display:block;font-size:18px;color:#AEB8DA;font-weight:500}}
 h1{{position:relative;font-size:62px;letter-spacing:-.035em;line-height:1.08;margin-top:70px;max-width:900px}}
 h1 em{{font-style:normal;color:#6FB1FF}}p{{position:relative;margin-top:22px;font-size:24px;color:#C3CBE6}}</style>
-<div class="glow"></div><div class="l">{LOGO}<div><b>ADA</b><span>African Digital Archives</span></div></div>
+<div class="glow"></div><div class="l">{mark_file_img(64)}<div><b>ADA</b><span>African Digital Archives</span></div></div>
 <h1>Préserver aujourd'hui. <em>Transmettre demain.</em></h1><p>Gestion documentaire, archivage et préservation pour l'Afrique.</p>'''
-
-
-def favicon(size):
-    return f'<style>{BASE}body{{width:{size}px;height:{size}px;background:transparent}}svg{{width:{size}px;height:{size}px;display:block}}</style>{LOGO}'
 
 
 COVERS = [
@@ -95,10 +91,6 @@ def build(out_dir):
     with open(p, "w", encoding="utf-8") as f:
         f.write("<!doctype html><meta charset=utf-8>" + og())
     jobs.append({"html": p, "png": "og-ada.png", "w": 1200, "h": 630, "dpr": 1})
-    for s in (32, 180, 192):
-        p = os.path.join(out_dir, f"fav{s}.html")
-        with open(p, "w", encoding="utf-8") as f:
-            f.write("<!doctype html><meta charset=utf-8>" + favicon(s))
-        jobs.append({"html": p, "png": f"cropped-ada-icon-{s}x{s}.png", "w": s, "h": s, "dpr": 1, "transparent": True})
+    # Les favicons (cropped-ada-icon-*.png) sont désormais tirés du logo ADA fourni : ils ne sont plus générés ici.
     jobs += build_app_icons(out_dir)
     return jobs

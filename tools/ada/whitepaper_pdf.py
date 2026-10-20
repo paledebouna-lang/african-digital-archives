@@ -1,7 +1,7 @@
 """Print layout for the white papers (rendered to PDF by tools/shoot_pdf.js)."""
 import os
 
-from .icons import LOGO
+from .icons import mark_file_img
 from .mockups import FONT
 from .whitepapers import WHITEPAPERS
 
@@ -39,7 +39,7 @@ def html(w):
     secs = "".join(f'<h2><span class="n">{i:02d}</span>{h}</h2>{b}' for i, (h, b) in enumerate(w["sections"], 1))
     toc = "".join(f"<li>{h}</li>" for h, _ in w["sections"])
     return f"""<!doctype html><html lang="fr"><meta charset="utf-8"><title>{w['title']}</title><style>{CSS.replace('__FONT__', FONT)}</style>
-<section class="cover"><div class="brand">{LOGO}<span>ADA<small>African Digital Archives</small></span></div>
+<section class="cover"><div class="brand">{mark_file_img(44)}<span>ADA<small>African Digital Archives</small></span></div>
 <div class="kind">Livre blanc</div><h1>{w['title']}</h1><p>{w['subtitle']}</p>
 <div class="foot">African Digital Archives · Abidjan, Côte d'Ivoire · Édition octobre 2026</div></section>
 <section class="toc"><h2>Sommaire</h2><ol>{toc}</ol>
