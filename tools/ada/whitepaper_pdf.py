@@ -46,7 +46,7 @@ def html(w):
 <p style="margin-top:20px;color:#6C728D">{w['summary']}</p>
 <p style="color:#6C728D;font-size:9.5pt">Ce document a une valeur informative et ne constitue pas un conseil juridique. Chaque organisation doit faire valider son dispositif par un juriste selon son secteur.</p></section>
 {secs}
-<div class="end">African Digital Archives (ADA) accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques. Diagnostic, audit, numérisation, plateforme ARCHIVA360 : paledebouna-lang.github.io/african-digital-archives</div>
+<div class="end">African Digital Archives (ADA) accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques. Diagnostic, audit, numérisation, plateforme ARCHIVA360 : adarchives.pro</div>
 </html>"""
 
 
