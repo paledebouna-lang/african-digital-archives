@@ -3,4 +3,4 @@ Disallow: /tools/
 Disallow: /espace-client/
 Disallow: /archiva360/espace/
 
-Sitemap: https://paledebouna-lang.github.io/african-digital-archives/sitemap.xml
+Sitemap: https://adarchives.pro/sitemap.xml

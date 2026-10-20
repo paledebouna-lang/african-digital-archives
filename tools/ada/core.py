@@ -24,7 +24,7 @@ SITE = {
     # Vide = les pages de connexion affichent « comptes en cours d'activation ».
     "appwrite": {"endpoint": "https://fra.cloud.appwrite.io/v1", "project": "6abdbd56000fbe8e3bc7", "team": "archiva360"},
     "city": "Abidjan, Côte d'Ivoire",
-    "base_url": "https://paledebouna-lang.github.io/african-digital-archives/",
+    "base_url": "https://adarchives.pro/",
     "theme": "wp-content/themes/ada-archives/",
     "uploads": "wp-content/uploads/2026/09/",
     "version": "1.6.0",

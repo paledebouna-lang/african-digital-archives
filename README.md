@@ -65,7 +65,7 @@ Les informations légales de la société (forme, capital, RCCM, compte contribu
 
 1. Créez un compte sur [cloud.appwrite.io](https://cloud.appwrite.io) (offre *Free*), puis un projet « ARCHIVA360 »
    (région Francfort par exemple). Notez son **Project ID** et son **API endpoint** (Settings).
-2. Dans le projet, *Overview → Apps → Add app → Web* : nom « Site ADA », hostname `paledebouna-lang.github.io`
+2. Dans le projet, *Overview → Apps → Add app → Web* : nom « Site ADA », hostname `adarchives.pro` (et `www.adarchives.pro`)
    (ajoutez aussi votre futur nom de domaine). Sans cela, le navigateur refuse les connexions.
 3. *Overview → API keys → Add API key* avec les portées `users.read`, `users.write`, `teams.read`, `teams.write`.
    Gardez-la pour vous : elle ne sert qu'à l'installation et ne doit jamais être publiée.
