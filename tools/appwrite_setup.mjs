@@ -7,7 +7,7 @@
 //   APPWRITE_ENDPOINT=https://fra.cloud.appwrite.io/v1 \
 //   APPWRITE_PROJECT=<ID du projet> \
 //   APPWRITE_API_KEY=<clé API : portées users.read, users.write, teams.read, teams.write> \
-//   ADMIN_EMAIL=assa@eletude.org ADMIN_NAME="Assa" \
+//   ADMIN_EMAIL=contact@adarchives.pro ADMIN_NAME="Assa" \
 //   node tools/appwrite_setup.mjs
 //
 // Le script peut être relancé sans risque : ce qui existe déjà est conservé.
@@ -18,7 +18,7 @@ const ENDPOINT = (env.APPWRITE_ENDPOINT || '').replace(/\/$/, '');
 const PROJECT = env.APPWRITE_PROJECT;
 const KEY = env.APPWRITE_API_KEY;
 const TEAM = env.APPWRITE_TEAM || 'archiva360';
-const EMAIL = (env.ADMIN_EMAIL || 'assa@eletude.org').toLowerCase();
+const EMAIL = (env.ADMIN_EMAIL || 'contact@adarchives.pro').toLowerCase();
 const NAME = env.ADMIN_NAME || 'Administrateur ADA';
 
 if (!ENDPOINT || !PROJECT || !KEY) {

@@ -91,7 +91,8 @@
 		this.message = MESSAGES[ this.type ] || ( body && body.message ) || 'Le service est momentanément indisponible.';
 	}
 	function api( method, path, data ) {
-		var headers = { 'X-Appwrite-Project': CFG.project, 'Content-Type': 'application/json', 'X-Appwrite-Response-Format': '1.6.0' };
+		// X-Appwrite-Locale : Appwrite envoie alors les e-mails (invitation, mot de passe oublié) dans leur version française.
+		var headers = { 'X-Appwrite-Project': CFG.project, 'Content-Type': 'application/json', 'X-Appwrite-Response-Format': '1.6.0', 'X-Appwrite-Locale': 'fr' };
 		// Navigateurs qui bloquent les cookies tiers : Appwrite renvoie la session dans X-Fallback-Cookies.
 		var fallback = storage( 'cookieFallback' );
 		if ( fallback ) headers[ 'X-Fallback-Cookies' ] = fallback;

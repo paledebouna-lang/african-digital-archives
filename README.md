@@ -52,7 +52,7 @@ node tools/test_site.js           # rejoue les tests automatiques (site servi su
 
 ## Réglages (`tools/ada/core.py` → `SITE`)
 
-- `email` : adresse de contact (actuellement `assa@eletude.org`).
+- `email` : adresse de contact (actuellement `contact@adarchives.pro`).
 - `form_endpoint` : adresse d'un service de réception de formulaires (Formspree ou équivalent). Vide, les formulaires
   ouvrent la messagerie du visiteur avec un message prérempli.
 - `appwrite` : projet Appwrite des comptes en ligne (`endpoint`, `project`, `team`). Vide, la page de connexion
@@ -73,7 +73,7 @@ Les informations légales de la société (forme, capital, RCCM, compte contribu
 
    ```sh
    APPWRITE_ENDPOINT=https://fra.cloud.appwrite.io/v1 APPWRITE_PROJECT=<Project ID> \
-   APPWRITE_API_KEY=<clé API> ADMIN_EMAIL=assa@eletude.org ADMIN_NAME="Votre nom" \
+   APPWRITE_API_KEY=<clé API> ADMIN_EMAIL=contact@adarchives.pro ADMIN_NAME="Votre nom" \
    node tools/appwrite_setup.mjs
    ```
 
@@ -82,5 +82,5 @@ Les informations légales de la société (forme, capital, RCCM, compte contribu
 6. Connectez-vous sur `/archiva360/connexion/`, changez le mot de passe (« Mon compte »), puis invitez les autres
    personnes depuis « Utilisateurs et rôles ». Chacune reçoit un e-mail et choisit son mot de passe.
 
-Facultatif : dans *Auth → Templates*, personnalisez en français les e-mails d'invitation et de récupération.
+E-mails en français : les modèles à coller dans *Auth → Templates* sont dans `tools/appwrite-emails.md`.
 Tests : `node tools/test_accounts.js` rejoue tout le parcours contre un faux serveur Appwrite local.

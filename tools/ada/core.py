@@ -14,7 +14,7 @@ SITE = {
     "short": "ADA",
     "tagline": "La mémoire numérique de l'Afrique",
     # Adresse de contact (formulaires, lettre d'information, pages légales)
-    "email": "assa@eletude.org",
+    "email": "contact@adarchives.pro",
     # Optionnel : adresse d'un service de réception de formulaires (ex. https://formspree.io/f/xxxxxxx).
     # Vide = les formulaires ouvrent la messagerie du visiteur avec un message prérempli.
     "form_endpoint": "",
@@ -27,7 +27,7 @@ SITE = {
     "base_url": "https://adarchives.pro/",
     "theme": "wp-content/themes/ada-archives/",
     "uploads": "wp-content/uploads/2026/09/",
-    "version": "1.7.0",
+    "version": "1.7.1",
 }
 
 PAGES = []          # every generated page, in registration order
