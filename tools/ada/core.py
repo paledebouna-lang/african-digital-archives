@@ -4,7 +4,7 @@ import json
 import os
 import re
 
-from .icons import icon, LOGO, LOGO_LIGHT
+from .icons import icon
 
 # ---------------------------------------------------------------------------
 # Site settings — edit here
@@ -27,7 +27,7 @@ SITE = {
     "base_url": "https://adarchives.pro/",
     "theme": "wp-content/themes/ada-archives/",
     "uploads": "wp-content/uploads/2026/09/",
-    "version": "1.6.1",
+    "version": "1.6.2",
 }
 
 PAGES = []          # every generated page, in registration order
@@ -362,7 +362,7 @@ def _header(page):
   <div class="container">
     <div class="site-branding">
       <a href="~/" class="custom-logo-link" rel="home" aria-label="{SITE["name"]} — accueil">
-        {LOGO}
+        <img class="custom-logo" src="~/{SITE["uploads"]}ada-logo-mark.png" width="72" height="42" alt="">
         <span class="site-title-wrap"><span class="site-title">ADA</span><span class="site-description">African Digital Archives</span></span>
       </a>
     </div>
@@ -410,7 +410,7 @@ def _footer(page):
     return f'''<footer id="colophon" class="site-footer">{footer_cta}
   <div class="footer-widgets"><div class="container">
     <section class="widget widget_about">
-      <a href="~/" class="custom-logo-link" rel="home">{LOGO_LIGHT}<span class="site-title-wrap"><span class="site-title">ADA</span><span class="site-description">African Digital Archives</span></span></a>
+      <a href="~/" class="footer-logo" rel="home"><img src="~/{SITE["uploads"]}ada-logo-lockup.png" width="118" height="84" alt="AdArchives.pro — African Digital Archives" loading="lazy"></a>
       <p>ADA accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques en un patrimoine documentaire sécurisé, organisé, accessible et durable.</p>
       {_social()}
     </section>
