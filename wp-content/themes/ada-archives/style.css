@@ -985,3 +985,7 @@ label{display:block;font-weight:600;font-size:14.5px;color:var(--wp--preset--col
 .legal-content td:first-child{color:var(--wp--preset--color--muted);white-space:nowrap}
 .legal-content h3{font-size:1.1rem;margin-top:1.4em}
 @media (max-width:600px){.legal-content td:first-child{white-space:normal}}
+
+/* Zones tactiles : au moins 24 px de haut sur mobile */
+.footer-widgets .menu a,.site-info a,.cat-links a,.post-categories a{display:inline-block;padding:3px 0}
+.footer-widgets .menu li{margin-bottom:4px}

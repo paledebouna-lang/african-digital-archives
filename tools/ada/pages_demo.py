@@ -40,7 +40,7 @@ def build_accounts():
 <div class="toast" id="toast" role="status" hidden></div>
 <noscript><p style="padding:20px">La connexion à ARCHIVA360 nécessite JavaScript.</p></noscript>'''
     add(Page("archiva360/connexion", "Connexion à ARCHIVA360", login,
-             seo_title="Connexion | ARCHIVA360", description="Connexion à votre espace ARCHIVA360.",
+             seo_title="Connexion | ARCHIVA360", description="Connectez-vous à votre espace ARCHIVA360 par African Digital Archives : comptes, rôles, documents et formations de votre organisation.",
              kind="app", nav="archiva360", search=False, body_class="archiva360-demo archiva360-login", extra_head=pwa_head(), scripts=script))
     espace = '''<div class="app is-espace">
 <aside class="side"><div class="brand"><i>A</i>ARCHIVA360</div><div class="org"><span>Organisation</span><b>African Digital Archives</b></div>
@@ -52,7 +52,7 @@ def build_accounts():
 <div class="toast" id="toast" role="status" hidden></div>
 <noscript><p style="padding:20px">L'espace ARCHIVA360 nécessite JavaScript.</p></noscript>'''
     add(Page("archiva360/espace", "Espace ARCHIVA360", espace,
-             seo_title="Espace | ARCHIVA360", description="Votre espace ARCHIVA360.",
+             seo_title="Espace | ARCHIVA360", description="Votre espace ARCHIVA360 : tableau de bord, gestion de votre compte, utilisateurs et rôles de votre organisation.",
              kind="app", nav="archiva360", search=False, body_class="archiva360-demo archiva360-espace", extra_head=pwa_head(), scripts=script))
 
 

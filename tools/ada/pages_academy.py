@@ -152,7 +152,7 @@ def build():
 <div id="cert-view" hidden><div class="cert-toolbar"><button class="button" type="button" id="cert-print">{icon("download")}Imprimer / enregistrer en PDF</button><button class="button is-secondary" type="button" id="cert-copy">{icon("link")}Copier le code</button><span id="cert-copy-msg" class="has-small-font-size has-muted-color" aria-live="polite"></span></div>
 <div class="certificate" id="certificate"></div></div></div>
 <script type="application/json" id="levels-data">{levels_js}</script>''',
-             description="Vos certificats ARCHIVA Academy.",
+             description="Retrouvez, imprimez et enregistrez en PDF les certificats ARCHIVA Academy obtenus dans ce navigateur, avec leur code de vérification.",
              hero=page_hero("Mes certificats", "Les certificats obtenus dans ce navigateur. Imprimez-les ou enregistrez-les en PDF.", [("ARCHIVA Academy", "academy/"), ("Mes certificats", None)], light=True),
              nav="academy", search=False, body_class="page academy-cert", scripts=_scripts()))
 

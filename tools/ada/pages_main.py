@@ -43,7 +43,7 @@ def build_home():
 <p class="home-hero__lead">La plateforme africaine de gestion, d'archivage et de préservation documentaire. ADA transforme vos archives papier et numériques en un patrimoine organisé, sécurisé et durable.</p>
 {buttons(btn("Demander un audit", "~/contact/?sujet=audit"), btn("Découvrir ARCHIVA360", "~/archiva360/", "outline"))}
 <p class="home-hero__note">{icon("shield")}Hébergement en Côte d'Ivoire, en cloud privé ou dans vos locaux.</p></div>
-<div class="home-hero__media">{img("archiva360-tableau-de-bord.png", "Tableau de bord de la plateforme ARCHIVA360", frame=True, lazy=False)}</div>
+<div class="home-hero__media">{img("archiva360-tableau-de-bord.webp", "Tableau de bord de la plateforme ARCHIVA360", frame=True, lazy=False)}</div>
 </div></section>
 <div class="standards-strip"><div class="container"><p class="standards-strip__label">Une démarche fondée sur les références reconnues</p><ul>
 <li><b>ISO 15489</b><span>Records management</span></li><li><b>ISO 14721</b><span>Préservation (OAIS)</span></li><li><b>ISO 23081</b><span>Métadonnées</span></li>
@@ -67,16 +67,16 @@ def build_home():
                         ("Recherche", "Plein texte et métadonnées"), ("Preuve", "Empreinte et horodatage"), ("Préservation", "Lisible dans 30 ans")]) + "</ol>", "mist")
 
     poles = [
-        ("consulting", "Consulting", "compass", "archiva360-plan-de-classement.png", "Comprendre vos fonds et fixer les règles",
+        ("consulting", "Consulting", "compass", "archiva360-plan-de-classement.webp", "Comprendre vos fonds et fixer les règles",
          "Audit documentaire, plan de classement, politique d'archivage et conformité. Nos archivistes et juristes posent les règles avant de choisir l'outil.",
          ["Audit documentaire et cartographie des fonds", "Plan de classement et référentiel de conservation", "Politique d'archivage", "Accompagnement à la conformité"], "services/conseil/"),
-        ("digitalisation", "Digitalisation", "scan", "archiva360-document-ocr.png", "Transformer le papier en information exploitable",
+        ("digitalisation", "Digitalisation", "scan", "archiva360-document-ocr.webp", "Transformer le papier en information exploitable",
          "Notre centre de numérisation d'Abidjan prend en charge vos fonds : préparation, scan, OCR, indexation, contrôle qualité et import dans ARCHIVA360.",
          ["Scan A4, A3, livres, plans et grands formats", "OCR et indexation", "Contrôle qualité", "Migration de fonds existants"], "services/numerisation/"),
-        ("software", "Software", "blocks", "archiva360-recherche-intelligente.png", "ARCHIVA360, la plateforme",
+        ("software", "Software", "blocks", "archiva360-recherche-intelligente.webp", "ARCHIVA360, la plateforme",
          "GED, archivage électronique, records management, archives physiques et IA documentaire dans un seul outil, en SaaS ou sur site.",
          ["20 modules, de la capture au portail public", "Recherche en langage naturel", "Workflows, courrier et signature", "Application mobile ARCHIVA GO"], "archiva360/"),
-        ("trust", "Trust & Preservation", "shield", "archiva360-compliance-center.png", "Garantir l'intégrité dans la durée",
+        ("trust", "Trust & Preservation", "shield", "archiva360-compliance-center.webp", "Garantir l'intégrité dans la durée",
          "Coffre-fort numérique, empreinte et horodatage, sauvegarde 3-2-1, plan de reprise et préservation des formats selon le modèle OAIS.",
          ["Chiffrement, MFA, journal d'audit", "Empreinte SHA-256 et horodatage", "Sauvegarde 3-2-1 et reprise d'activité", "Préservation numérique OAIS"], "solutions/preservation-numerique/"),
     ]
@@ -97,7 +97,7 @@ def build_home():
             ("Records management", "Règles de conservation et échéances automatiques.", "hourglass"),
             ("Archives physiques", "Boîtes localisées et QR codes.", "qr")]], n=2, cls="gap-sm")
         + buttons(btn("Découvrir ARCHIVA360", "~/archiva360/", "white"), btn("Les 20 modules", "~/archiva360/modules/", "outline")).replace('class="wp-block-buttons', 'class="wp-block-buttons mt-l')
-        + '</div><div class="wp-block-column">' + img("archiva360-archives-physiques.png", "Fiche d'une boîte d'archives dans ARCHIVA360", frame=True) + "</div></div>"
+        + '</div><div class="wp-block-column">' + img("archiva360-archives-physiques.webp", "Fiche d'une boîte d'archives dans ARCHIVA360", frame=True) + "</div></div>"
         + notice("<strong>Une règle non négociable :</strong> l'IA assiste, elle ne décide pas. Destruction, classement définitif et droits d'accès sont toujours validés par une personne habilitée, avec traçabilité.").replace('class="notice"', 'class="notice mt-l"'), "navy")
 
     sectors = section(intro("Pour les organisations qui ne peuvent pas perdre un document", "Administrations, banques, assurances, hôpitaux, universités, industries : chaque secteur a ses documents et ses obligations.", "Secteurs", split=True)
@@ -141,7 +141,7 @@ def build_home():
                    + "</div></div>", "mist")
 
     p = add(Page("", "Accueil", problem + chain + poles_html + product + stats + sectors + method + africa + news + faqs,
-                 seo_title="African Digital Archives (ADA) — Gestion documentaire, archivage et préservation en Afrique",
+                 seo_title="ADA — Archivage, GED et préservation numérique en Afrique",
                  description="ADA accompagne les organisations africaines dans la transformation de leurs archives physiques et numériques : conseil, numérisation, plateforme ARCHIVA360, archivage électronique et préservation.",
                  hero=hero, body_class="home page-template-front-page", nav="home"))
     return p
@@ -257,7 +257,7 @@ def build_contact():
              nav="contact"))
 
     add(Page("espace-client", "Espace client",
-             description="Espace client ARCHIVA360.",
+             description="Accédez à votre espace client ARCHIVA360 : connexion sécurisée, utilisateurs et rôles, démo interactive et formations ARCHIVA Academy.",
              hero=page_hero("Espace client", "Accédez à votre espace ARCHIVA360 : archives, utilisateurs, workflows, demandes, statistiques, factures, politiques de conservation et audits.", [("Espace client", None)], "Connexion", light=True),
              body=section('<div class="container is-narrow" style="padding:0"><div class="wp-block-columns gap-lg" style="--cols:2"><div class="wp-block-column"><div class="form-card">'
                           + '<h2 style="font-size:1.4rem">Connexion</h2>'
@@ -282,7 +282,7 @@ def build_utility():
              '<div class="container is-narrow" style="padding-top:48px;padding-bottom:96px">'
              + '<form role="search" method="get" class="search-form" action="~/recherche/"><label style="flex:1"><span class="screen-reader-text">Rechercher :</span><input type="search" id="search-page-field" class="search-field" name="s" placeholder="Rechercher…"></label><button type="submit" class="search-submit button">Rechercher</button></form>'
              + '<div class="search-results-list" id="search-results"></div></div>',
-             description="Rechercher sur le site ADA.",
+             description="Recherchez une solution, un article, un guide ou une formation sur le site African Digital Archives.",
              hero='<header class="page-hero is-light"><div class="container"><nav class="yoast-breadcrumbs" aria-label="Fil d\'Ariane"><span><span><a href="~/">Accueil</a></span> <span class="sep">›</span> <span class="breadcrumb_last">Recherche</span></span></nav><h1 class="page-title" id="search-title">Rechercher sur le site</h1></div></header>',
              body_class="search search-results", nav="", search=False,
              scripts=f'<script src="~/{SITE["theme"]}assets/js/search-index.js?ver={SITE["version"]}"></script>'))
@@ -309,5 +309,5 @@ def build_sitemap():
         title = labels.get(key, "Informations")
         html_ += f'<li><strong>{title}</strong><ul>' + "".join(f'<li><a href="~/{p.path}">{p.title}</a></li>' for p in ps) + "</ul></li>"
     html_ += "</ul>"
-    add(Page("plan-du-site", "Plan du site", section(html_), description="Plan du site African Digital Archives.",
+    add(Page("plan-du-site", "Plan du site", section(html_), description="Toutes les pages du site African Digital Archives : solutions, ARCHIVA360, secteurs, services, ressources, Academy et entreprise.",
              hero=page_hero("Plan du site", "", [("Plan du site", None)], light=True), nav="", search=False))

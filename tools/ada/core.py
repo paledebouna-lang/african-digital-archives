@@ -27,7 +27,7 @@ SITE = {
     "base_url": "https://adarchives.pro/",
     "theme": "wp-content/themes/ada-archives/",
     "uploads": "wp-content/uploads/2026/09/",
-    "version": "1.6.2",
+    "version": "1.7.0",
 }
 
 PAGES = []          # every generated page, in registration order
@@ -353,7 +353,7 @@ def _header(page):
       <a class="top-bar__item" href="~/espace-client/">{icon("user")}Espace client</a>
       <div class="lang-switcher" aria-label="Langue">
         <span class="current-lang" lang="fr" aria-current="true">FR</span>
-        <span class="lang-soon" lang="en" title="English version coming soon">EN</span>
+        <span class="lang-soon" lang="en" title="Version anglaise en préparation">EN</span>
       </div>
     </div>
   </div>
@@ -440,7 +440,7 @@ def _footer(page):
 </footer>
 <div id="cookie-notice" role="dialog" aria-live="polite" aria-label="Cookies">
   <p class="cn-title">Votre vie privée</p>
-  <p>Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement et, avec votre accord, des cookies de mesure d'audience. <a href="~/politique-de-confidentialite/#cookies">En savoir plus</a></p>
+  <p>Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience : seulement le stockage technique nécessaire à son fonctionnement (progression de formation, démo, ce choix). <a href="~/politique-de-confidentialite/#cookies">En savoir plus</a></p>
   <div class="cn-buttons">
     <button class="button cn-button" data-cookie-set="accept">Accepter</button>
     <button class="button cn-button cn-refuse" data-cookie-set="refuse">Refuser</button>
@@ -456,7 +456,10 @@ def render(page):
         from urllib.parse import urlparse
         r = urlparse(SITE["base_url"]).path
     seo = page.seo_title or f"{page.title} | {SITE['name']}"
-    desc = html.escape(page.description, quote=True)
+    desc = page.description.strip()
+    if len(desc) > 160:   # longueur affichée par les moteurs de recherche
+        desc = desc[:157].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
+    desc = html.escape(desc, quote=True)
     canonical = SITE["base_url"] + page.path
     body_class = f"{page.body_class} page-id-{page.id} wp-custom-logo wp-embed-responsive"
     og_type = "article" if page.kind == "post" else "website"
@@ -496,7 +499,7 @@ def render(page):
 <link rel="profile" href="https://gmpg.org/xfn/11">
 <title>{html.escape(seo)}</title>
 <meta name="description" content="{desc}">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="{"noindex, follow" if page.path in ("recherche/", "espace-client/") else "index, follow, max-image-preview:large"}">
 <link rel="canonical" href="{canonical}">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:type" content="{og_type}">
@@ -557,7 +560,7 @@ def write_all(out_dir):
         f.write(js)
     # sitemap + robots
     urls = "".join(
-        f"<url><loc>{SITE['base_url']}{p.path}</loc></url>" for p in PAGES if p.kind != "404" and not p.path.startswith(("archiva360/espace/", "archiva360/connexion/")))
+        f"<url><loc>{SITE['base_url']}{p.path}</loc></url>" for p in PAGES if p.kind != "404" and not p.path.startswith(("archiva360/espace/", "archiva360/connexion/", "recherche/", "espace-client/")))
     with open(os.path.join(out_dir, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                 + urls + "</urlset>\n")

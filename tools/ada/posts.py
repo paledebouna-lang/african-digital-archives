@@ -4,7 +4,7 @@ POSTS = [
     {
         "slug": "ged-sae-records-management-difference",
         "title": "GED, SAE, records management : ne plus confondre",
-        "cat": ("guides", "Guides"), "date": "2026-09-28", "cover": "cover-ged-sae-records.png", "read": 7,
+        "cat": ("guides", "Guides"), "date": "2026-09-28", "cover": "cover-ged-sae-records.webp", "read": 7,
         "tags": ["GED", "SAE", "Records management"],
         "excerpt": "Trois notions souvent mélangées, trois besoins différents. Comprendre la différence évite d'acheter le mauvais outil.",
         "body": """
@@ -30,7 +30,7 @@ POSTS = [
     {
         "slug": "regle-3-2-1-sauvegarde-archives",
         "title": "La règle 3-2-1 : protéger vos archives contre l'incendie et le ransomware",
-        "cat": ("securite", "Sécurité"), "date": "2026-09-24", "cover": "cover-regle-3-2-1.png", "read": 5,
+        "cat": ("securite", "Sécurité"), "date": "2026-09-24", "cover": "cover-regle-3-2-1.webp", "read": 5,
         "tags": ["Sauvegarde", "Sécurité", "Reprise d'activité"],
         "excerpt": "Trois copies, deux supports, une copie hors site : une règle simple qui sauve des décennies d'archives.",
         "body": """
@@ -52,7 +52,7 @@ POSTS = [
     {
         "slug": "archivage-electronique-cote-divoire-cadre-juridique",
         "title": "Archivage électronique en Côte d'Ivoire : ce que disent les textes",
-        "cat": ("conformite", "Conformité"), "date": "2026-09-21", "cover": "cover-cadre-ivoirien.png", "read": 6,
+        "cat": ("conformite", "Conformité"), "date": "2026-09-21", "cover": "cover-cadre-ivoirien.webp", "read": 6,
         "tags": ["Côte d'Ivoire", "Conformité", "Signature électronique"],
         "excerpt": "Transactions électroniques, signature, archivage, données personnelles, sécurité des systèmes : les repères du cadre ivoirien.",
         "body": """
@@ -76,7 +76,7 @@ POSTS = [
     {
         "slug": "blockchain-archives-empreinte-pas-document",
         "title": "Blockchain et archives : pourquoi nous ancrons l'empreinte, pas le document",
-        "cat": ("innovation", "Innovation"), "date": "2026-09-17", "cover": "cover-blockchain-preuve.png", "read": 5,
+        "cat": ("innovation", "Innovation"), "date": "2026-09-17", "cover": "cover-blockchain-preuve.webp", "read": 5,
         "tags": ["Blockchain", "Intégrité", "Preuve"],
         "excerpt": "Mettre des documents sur une blockchain est coûteux et souvent inutile. Y inscrire leur empreinte peut en revanche prouver beaucoup.",
         "body": """
@@ -95,7 +95,7 @@ POSTS = [
     {
         "slug": "numeriser-3-millions-de-pages-methode",
         "title": "Numériser 3 millions de pages : la méthode en 10 étapes",
-        "cat": ("numerisation", "Numérisation"), "date": "2026-09-12", "cover": "cover-numerisation-mairie.png", "read": 8,
+        "cat": ("numerisation", "Numérisation"), "date": "2026-09-12", "cover": "cover-numerisation-mairie.webp", "read": 8,
         "tags": ["Numérisation", "OCR", "Administrations"],
         "excerpt": "Une mairie, des armoires pleines et des décennies de registres. Comment passer du carton à la recherche en quelques secondes.",
         "body": """
@@ -120,7 +120,7 @@ POSTS = [
     {
         "slug": "durees-de-conservation-ne-jamais-inventer",
         "title": "Durées de conservation : pourquoi une plateforme ne doit jamais les inventer",
-        "cat": ("records-management", "Records management"), "date": "2026-09-08", "cover": "cover-durees-conservation.png", "read": 5,
+        "cat": ("records-management", "Records management"), "date": "2026-09-08", "cover": "cover-durees-conservation.webp", "read": 5,
         "tags": ["Conservation", "Records management", "Conformité"],
         "excerpt": "5, 10, 30 ans ou permanent ? La réponse dépend de votre secteur, de vos obligations et de vos documents. Pas d'un logiciel.",
         "body": """
@@ -138,7 +138,7 @@ POSTS = [
     {
         "slug": "oais-preservation-numerique-expliquee",
         "title": "OAIS expliqué simplement : préserver un fichier pendant 30 ans",
-        "cat": ("preservation", "Préservation"), "date": "2026-09-03", "cover": "cover-oais.png", "read": 6,
+        "cat": ("preservation", "Préservation"), "date": "2026-09-03", "cover": "cover-oais.webp", "read": 6,
         "tags": ["OAIS", "Préservation", "Formats"],
         "excerpt": "Un fichier lisible aujourd'hui peut ne plus l'être demain. Le modèle OAIS décrit comment l'éviter.",
         "body": """
@@ -155,7 +155,7 @@ POSTS = [
     {
         "slug": "ia-documentaire-ce-quelle-fait-et-ne-doit-pas-faire",
         "title": "IA documentaire : ce qu'elle fait bien, ce qu'elle ne doit jamais faire",
-        "cat": ("innovation", "Innovation"), "date": "2026-08-29", "cover": "cover-ia-documentaire.png", "read": 5,
+        "cat": ("innovation", "Innovation"), "date": "2026-08-29", "cover": "cover-ia-documentaire.webp", "read": 5,
         "tags": ["IA", "OCR", "Gouvernance"],
         "excerpt": "Lire, classer, extraire, résumer : l'IA fait gagner des heures. Détruire, décider, ouvrir des droits : jamais sans un humain.",
         "body": """
@@ -170,7 +170,7 @@ POSTS = [
     {
         "slug": "guide-construire-plan-de-classement",
         "title": "Guide : construire votre premier plan de classement",
-        "cat": ("guides", "Guides"), "date": "2026-08-25", "cover": "cover-guide-plan-classement.png", "read": 9,
+        "cat": ("guides", "Guides"), "date": "2026-08-25", "cover": "cover-guide-plan-classement.webp", "read": 9,
         "tags": ["Plan de classement", "Méthode", "Records management"],
         "excerpt": "Une méthode en six étapes pour passer de dossiers partagés désordonnés à une structure commune.",
         "body": """
@@ -192,7 +192,7 @@ POSTS = [
     {
         "slug": "guide-metadonnees-essentielles",
         "title": "Guide : les métadonnées essentielles d'un document archivé",
-        "cat": ("guides", "Guides"), "date": "2026-08-20", "cover": "cover-guide-metadonnees.png", "read": 6,
+        "cat": ("guides", "Guides"), "date": "2026-08-20", "cover": "cover-guide-metadonnees.webp", "read": 6,
         "tags": ["Métadonnées", "ISO 23081", "Méthode"],
         "excerpt": "Sans métadonnées, un document archivé est introuvable et sans contexte. Voici celles qu'il ne faut jamais oublier.",
         "body": """

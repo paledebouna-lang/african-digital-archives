@@ -37,10 +37,10 @@ def build():
 <div class="archi__box is-vault"><h4>Archive Vault</h4><ul><li>Sécurité</li><li>Sauvegarde</li><li>Audit</li><li>Chiffrement</li><li>Réplication</li><li>Reprise d'activité</li></ul></div></div>'''
 
     features = [
-        ("archiva360-document-ocr.png", "Capture", "Le papier devient une information exploitable", "Scannez, importez ou photographiez. ARCHIVA360 reconnaît le texte, identifie le type de document, extrait les données clés et propose un classement. Vous validez.", ["OCR en français et en anglais", "Extraction : dates, montants, parties, numéros", "Séparation automatique des lots", "Capture e-mail, mobile et API"], "solutions/capture-numerisation/"),
-        ("archiva360-recherche-intelligente.png", "Recherche", "Retrouver un document en quelques secondes", "« Contrats de construction signés en 2024 », « Factures supérieures à 5 millions FCFA », « Tous les dossiers concernant le projet X ». La recherche comprend la question et ne montre que ce que vous avez le droit de voir.", ["Plein texte, OCR et métadonnées", "Filtres par service, période, montant, type", "Recherche dans les boîtes physiques", "Résultats en moins d'une seconde"], "solutions/ged/"),
-        ("archiva360-retention-center.png", "Archivage", "Chaque document a une durée de vie maîtrisée", "Les règles de conservation définies avec votre archiviste s'appliquent automatiquement. Le Retention Center affiche les échéances ; les décisions restent humaines et tracées.", ["Plan de classement et règles de conservation", "Échéances calculées automatiquement", "Gel juridique", "Empreinte SHA-256 et horodatage"], "solutions/sae/"),
-        ("archiva360-compliance-center.png", "Pilotage", "Savoir où vous en êtes, à tout moment", "Le Compliance Center signale les documents sans métadonnées, les droits excessifs, les échéances et les sauvegardes non vérifiées. Le Security Center surveille les connexions et les anomalies.", ["Score de conformité par organisation", "Alertes et plans d'action", "Rapports pour la direction et les auditeurs", "Journal d'audit exportable"], "solutions/securite/"),
+        ("archiva360-document-ocr.webp", "Capture", "Le papier devient une information exploitable", "Scannez, importez ou photographiez. ARCHIVA360 reconnaît le texte, identifie le type de document, extrait les données clés et propose un classement. Vous validez.", ["OCR en français et en anglais", "Extraction : dates, montants, parties, numéros", "Séparation automatique des lots", "Capture e-mail, mobile et API"], "solutions/capture-numerisation/"),
+        ("archiva360-recherche-intelligente.webp", "Recherche", "Retrouver un document en quelques secondes", "« Contrats de construction signés en 2024 », « Factures supérieures à 5 millions FCFA », « Tous les dossiers concernant le projet X ». La recherche comprend la question et ne montre que ce que vous avez le droit de voir.", ["Plein texte, OCR et métadonnées", "Filtres par service, période, montant, type", "Recherche dans les boîtes physiques", "Résultats en moins d'une seconde"], "solutions/ged/"),
+        ("archiva360-retention-center.webp", "Archivage", "Chaque document a une durée de vie maîtrisée", "Les règles de conservation définies avec votre archiviste s'appliquent automatiquement. Le Retention Center affiche les échéances ; les décisions restent humaines et tracées.", ["Plan de classement et règles de conservation", "Échéances calculées automatiquement", "Gel juridique", "Empreinte SHA-256 et horodatage"], "solutions/sae/"),
+        ("archiva360-compliance-center.webp", "Pilotage", "Savoir où vous en êtes, à tout moment", "Le Compliance Center signale les documents sans métadonnées, les droits excessifs, les échéances et les sauvegardes non vérifiées. Le Security Center surveille les connexions et les anomalies.", ["Score de conformité par organisation", "Alertes et plans d'action", "Rapports pour la direction et les auditeurs", "Journal d'audit exportable"], "solutions/securite/"),
     ]
     feat_html = ""
     for i, (shot, eb, h, p, li, link) in enumerate(features):
@@ -64,7 +64,7 @@ def build():
                        "Capturer, gérer, archiver et préserver vos documents papier et numériques dans un seul outil, en français et en anglais, dans le cloud ou dans votre propre infrastructure.",
                        [("ARCHIVA360", None)], "Plateforme",
                        buttons(btn("Essayer la démo interactive", "~/archiva360/demo-interactive/", "white"), btn("Offres et tarifs", "~/archiva360/offres-et-tarifs/", "outline")),
-                       media=img("archiva360-tableau-de-bord.png", "Tableau de bord ARCHIVA360", frame=True, lazy=False)),
+                       media=img("archiva360-tableau-de-bord.webp", "Tableau de bord ARCHIVA360", frame=True, lazy=False)),
         body=section(feat_html)
         + section('<div class="wp-block-columns cols-2 gap-lg is-vertically-aligned-center" style="--cols:2"><div class="wp-block-column">'
                   + intro("Une architecture, cinq briques", "Capture, gestion et archivage s'appuient sur deux couches communes : l'intelligence artificielle, qui lit et classe, et le coffre-fort, qui sécurise et prouve.", "Architecture")
@@ -75,7 +75,7 @@ def build():
         + section('<div class="wp-block-columns cols-4" style="--cols:4">'
                   + "".join(f'<div class="wp-block-column">{stat(v, l)}</div>' for v, l in [("20", "modules fonctionnels"), ("3", "éditions : Cloud, Enterprise, Government"), ("4", "modes de déploiement"), ("2", "langues au lancement : français, anglais")])
                   + "</div>", "white", "is-compact")
-        + section(media_text(img("archiva-go-mobile.png", "Application ARCHIVA GO", 420, 860, cls="is-mobile"),
+        + section(media_text(img("archiva-go-mobile.webp", "Application ARCHIVA GO", 420, 860, cls="is-mobile"),
                              f'<span class="eyebrow">Mobile</span><h2>ARCHIVA GO, vos archives dans la poche</h2><p class="lead">Scanner un document, retrouver un contrat, valider une étape de workflow ou vérifier une boîte d\'archives avec son QR code, depuis Android ou iPhone, en l\'installant directement depuis le navigateur.</p>{ul(["Scanner et photographier avec OCR", "Consulter, approuver, signer via intégration", "Notifications et suivi des demandes d’accès", "Scan des QR codes des boîtes"])}<a class="more-link" href="~/archiva360/archiva-go/">Découvrir ARCHIVA GO {icon("arrow-right")}</a>'), "mist")
         + section(cta_band("Voyez ARCHIVA360 avec vos propres documents", "Nous préparons une démonstration sur un échantillon de vos documents : vous jugez sur pièces.",
                            btn("Demander une démonstration", "~/archiva360/demo/", "white"))),
@@ -124,10 +124,10 @@ def build():
         hero=page_hero("ARCHIVA AI : l'intelligence au service de l'archiviste", "Des heures de saisie et de recherche en moins, sans jamais perdre le contrôle de vos archives.",
                        [("ARCHIVA360", "archiva360/"), ("ARCHIVA AI", None)], "Intelligence artificielle",
                        buttons(btn("Voir une démonstration", "~/archiva360/demo/", "white")),
-                       media=img("archiva360-archiva-ai.png", "Assistant ARCHIVA AI", frame=True, lazy=False)),
+                       media=img("archiva360-archiva-ai.webp", "Assistant ARCHIVA AI", frame=True, lazy=False)),
         body=section(intro("Dix fonctions, une seule identité", "ARCHIVA AI regroupe toutes les capacités d'intelligence artificielle de la plateforme.", "Sous-modules")
                      + cols(*[card(t, d, ic) for t, d, ic in subs], n=5, cls="gap-sm"))
-        + section(media_text(img("archiva360-recherche-intelligente.png", "Recherche intelligente", frame=True),
+        + section(media_text(img("archiva360-recherche-intelligente.webp", "Recherche intelligente", frame=True),
                              f'<span class="eyebrow">Exemples</span><h2>Posez la question comme à un collègue</h2>{ul(["« Trouve-moi tous les contrats fournisseurs de 2022 »", "« Toutes les factures supérieures à 10 millions FCFA »", "« Tous les dossiers du personnel arrivant à échéance en 2027 »", "« Tous les documents concernant le projet autoroute Abidjan–Lagos »", "« Compare ces deux contrats » · « Trouve les doublons »"], "dash")}'), "mist")
         + section('<div class="wp-block-columns cols-2 gap-lg" style="--cols:2"><div class="wp-block-column">'
                   + intro("Nos garde-fous", "Une IA utile dans l'archivage est une IA encadrée.", "Gouvernance")
@@ -149,7 +149,7 @@ def build():
                        [("ARCHIVA360", "archiva360/"), ("ARCHIVA GO", None)], "Application mobile",
                        buttons(btn("Ouvrir et installer l'application", "~/archiva360/connexion/", "white"),
                                btn("Essayer la démo", "~/archiva360/demo-interactive/", "outline")),
-                       media=img("archiva-go-mobile.png", "Application ARCHIVA GO", 420, 860, cls="is-mobile", lazy=False)),
+                       media=img("archiva-go-mobile.webp", "Application ARCHIVA GO", 420, 860, cls="is-mobile", lazy=False)),
         body=section(intro("Installer en 30 secondes", "Ouvrez la page de connexion ARCHIVA360 sur votre téléphone, puis ajoutez-la à votre écran d'accueil. L'icône ARCHIVA360 apparaît et l'application s'ouvre en plein écran.", "Installation")
                      + cols('<h3>Sur Android (Chrome)</h3>' + steps([
                                 ("Ouvrez la page de connexion", "Rendez-vous sur la page « Connexion à ARCHIVA360 » depuis Chrome."),

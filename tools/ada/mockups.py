@@ -407,5 +407,5 @@ def build(out_dir):
     p = os.path.join(out_dir, "archiva-go-mobile.html")
     with open(p, "w", encoding="utf-8") as f:
         f.write(f"<!doctype html><meta charset=utf-8><style>{css}{mcss}</style>{body}")
-    jobs.append({"html": p, "png": "archiva-go-mobile.png", "w": 420, "h": 860, "transparent": True})
+    jobs.append({"html": p, "png": "archiva-go-mobile.webp", "w": 420, "h": 860, "transparent": True})
     return jobs

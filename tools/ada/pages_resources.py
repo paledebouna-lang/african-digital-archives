@@ -149,7 +149,7 @@ def build():
             continue
         add(Page(f"blog/categorie/{c}", f"Catégorie : {n}",
                  f'<div class="container"><div class="content-area-with-sidebar"><div class="posts-area"><div class="posts-grid">{"".join(post_card(p, "h2") for p in ps)}</div></div>{sidebar()}</div></div>',
-                 description=f"Articles de la catégorie {n} du blog ADA.",
+                 description=f"Tous les articles du blog ADA dans la catégorie {n} : méthodes, retours d'expérience et conseils pour archiver et gérer vos documents.",
                  hero=page_hero(n, f"{len(ps)} article{'s' if len(ps) > 1 else ''} dans cette catégorie.", [("Blog", "blog/"), (n, None)], "Catégorie", light=True),
                  body_class="archive category", nav="blog", search=False))
 
