@@ -27,7 +27,7 @@ SITE = {
     "base_url": "https://adarchives.pro/",
     "theme": "wp-content/themes/ada-archives/",
     "uploads": "wp-content/uploads/2026/09/",
-    "version": "1.6.0",
+    "version": "1.6.1",
 }
 
 PAGES = []          # every generated page, in registration order

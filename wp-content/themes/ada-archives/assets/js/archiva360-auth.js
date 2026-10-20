@@ -296,8 +296,9 @@
 				+ '<div class="box"><h2>Modules documentaires</h2><p>Le dépôt de documents, la recherche, les règles de conservation et l’audit trail seront ouverts sur cet espace au fil du déploiement de votre organisation.</p>'
 				+ '<p class="muted">En attendant, vous pouvez vous exercer dans la démo interactive (données fictives, stockées dans votre navigateur).</p>'
 				+ '<div class="btns"><a class="btn o" href="' + here( '../demo-interactive/' ) + '">Ouvrir la démo interactive</a></div></div>'
-				+ '<div class="box"><h2>Se former</h2><p>ARCHIVA Academy : six niveaux de formation, du classement à l’administration d’ARCHIVA360, avec certificat vérifiable.</p>'
-				+ '<div class="btns"><a class="btn o" href="' + here( '../../academy/' ) + '">Accéder à l’Academy</a></div></div></div>';
+				+ '<div class="box"><h2>Se former</h2><p>ARCHIVA Academy : six niveaux de formation, du classement à l’administration d’ARCHIVA360, et le Parcours dirigeant en 12 semaines pour gouverner l’information de votre organisation. Certificats vérifiables.</p>'
+				+ '<div class="btns">' + ( role === 'admin' ? '<a class="btn" href="' + here( '../../academy/parcours-dirigeant/' ) + '">Parcours dirigeant (12 semaines)</a>' : '' )
+				+ '<a class="btn o" href="' + here( '../../academy/' ) + '">Accéder à l’Academy</a></div></div></div>';
 		}
 
 		function vAccount() {
