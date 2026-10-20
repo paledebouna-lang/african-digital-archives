@@ -28,6 +28,8 @@ def images():
     with open(jf, "w") as f:
         json.dump(jobs, f)
     subprocess.run(["node", os.path.join(HERE, "shoot.js"), jf, os.path.join(ROOT, core.SITE["uploads"])], check=True)
+    # captures et couvertures en WebP (les icônes, logos et l'image de partage restent en PNG)
+    subprocess.run(["node", os.path.join(HERE, "webp.js"), os.path.join(ROOT, core.SITE["uploads"])], check=True)
 
 
 def pdfs():

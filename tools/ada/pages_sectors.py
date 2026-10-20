@@ -13,7 +13,7 @@ SECTORS = [
                      ("Portail citoyen", "Recherche, demande, autorisation, consultation : l'accès aux archives ouvertes, dans le respect des règles de communicabilité.", "globe"),
                      ("Archivage réglementaire", "Règles de conservation par type d'acte, sort final, versement aux archives historiques.", "archive")],
         "case": ("Exemple : une mairie et ses 3 millions de pages", "Audit, classement, inventaire, numérisation, OCR, indexation, contrôle qualité, import dans ARCHIVA360, création des règles de conservation, mise en ligne des archives autorisées. Résultat : un document retrouvé en quelques secondes au lieu d'heures de recherche dans les armoires.", "blog/numeriser-3-millions-de-pages-methode/"),
-        "shot": "archiva360-archives-physiques.png",
+        "shot": "archiva360-archives-physiques.webp",
     },
     {
         "slug": "banque", "name": "Banque et microfinance", "short": "Banque", "icon": "bank", "edition": "Enterprise",
@@ -25,7 +25,7 @@ SECTORS = [
                      ("Alertes d'échéance", "Garanties, contrats et pièces arrivant à échéance signalés à l'avance.", "clock"),
                      ("Audit trail", "Qui a consulté quel dossier, quand, depuis où : prêt pour les contrôles.", "eye")],
         "case": ("La recherche au service de la conformité", "« Toutes les garanties expirant avant le 31/12 », « Dossiers de crédit supérieurs à 50 millions FCFA » : la recherche intelligente répond en quelques secondes, dans le respect des droits de chacun.", "solutions/ia-documentaire/"),
-        "shot": "archiva360-security-center.png",
+        "shot": "archiva360-security-center.webp",
     },
     {
         "slug": "assurance", "name": "Assurance", "short": "Assurance", "icon": "umbrella", "edition": "Enterprise",
@@ -37,7 +37,7 @@ SECTORS = [
                      ("Workflows de validation", "Circuits d'indemnisation avec seuils, validations et signature.", "workflow"),
                      ("Documents audiovisuels", "Photos, vidéos et enregistrements gérés comme des documents, avec métadonnées.", "play")],
         "case": ("Des circuits adaptés aux montants", "Un workflow peut ajouter une étape de validation au-delà d'un certain montant d'indemnisation, puis archiver automatiquement le dossier clos avec sa règle de conservation.", "solutions/workflow-courrier/"),
-        "shot": "archiva360-workflow.png",
+        "shot": "archiva360-workflow.webp",
     },
     {
         "slug": "sante", "name": "Santé", "short": "Santé", "icon": "heart-pulse", "edition": "Enterprise ou Government",
@@ -49,7 +49,7 @@ SECTORS = [
                      ("Hébergement maîtrisé", "Installation sur site ou cloud privé pour les établissements qui le souhaitent.", "server"),
                      ("Traçabilité complète", "Chaque consultation de dossier est enregistrée et contrôlable.", "eye")],
         "case": ("HEALTH ARCHIVE, un module dédié", "Pour les établissements autorisés, le module HEALTH ARCHIVE organise dossiers, comptes rendus, examens, images, prescriptions et documents administratifs, avec des règles d'accès renforcées.", "solutions/securite/"),
-        "shot": "archiva360-security-center.png",
+        "shot": "archiva360-security-center.webp",
         "note": "Les projets dans le secteur de la santé font systématiquement l'objet d'une étude préalable de protection des données, menée avec votre délégué à la protection des données et un juriste.",
     },
     {
@@ -62,7 +62,7 @@ SECTORS = [
                      ("Bibliothèque numérique", "Mémoires et thèses consultables en plein texte, selon les droits de diffusion.", "library"),
                      ("Conservation permanente", "Préservation numérique des registres et procès-verbaux historiques.", "layers")],
         "case": ("Un diplôme vérifiable en quelques secondes", "Chaque diplôme numérisé ou émis peut recevoir une empreinte cryptographique. Un employeur vérifie qu'il correspond bien à l'original enregistré.", "blog/blockchain-archives-empreinte-pas-document/"),
-        "shot": "archiva360-recherche-intelligente.png",
+        "shot": "archiva360-recherche-intelligente.webp",
     },
     {
         "slug": "industrie", "name": "Industrie, énergie et BTP", "short": "Industrie", "icon": "factory", "edition": "Enterprise",
@@ -74,7 +74,7 @@ SECTORS = [
                      ("Capture sur chantier", "ARCHIVA GO, y compris hors connexion, pour les équipes sur le terrain.", "smartphone"),
                      ("Documents liés", "Un équipement, ses plans, ses certificats et ses rapports de maintenance reliés.", "link")],
         "case": ("Un dossier par ouvrage", "Chaque ouvrage ou installation dispose d'un dossier structuré : études, plans, permis, réception, maintenance. Il se transmet sans perte d'un exploitant à l'autre.", "services/numerisation/"),
-        "shot": "archiva360-plan-de-classement.png",
+        "shot": "archiva360-plan-de-classement.webp",
     },
     {
         "slug": "immobilier", "name": "Immobilier et foncier", "short": "Immobilier", "icon": "home", "edition": "Cloud ou Enterprise",
@@ -86,7 +86,7 @@ SECTORS = [
                      ("Dossier par bien", "Toutes les pièces d'un bien réunies, du titre aux photos.", "home"),
                      ("Partage sécurisé", "Partage limité et temporaire avec acquéreurs, notaires et banques.", "link")],
         "case": ("Connecté à votre écosystème", "ARCHIVA360 peut se connecter à vos outils de gestion immobilière par API, pour que chaque bien dispose automatiquement de son dossier documentaire.", "solutions/ged/"),
-        "shot": "archiva360-archives-physiques.png",
+        "shot": "archiva360-archives-physiques.webp",
     },
     {
         "slug": "juridique", "name": "Juridique", "short": "Juridique", "icon": "scale", "edition": "Cloud ou Enterprise",
@@ -98,7 +98,7 @@ SECTORS = [
                      ("Gel juridique", "Suspension des destructions pour les dossiers en contentieux.", "lock"),
                      ("Signature électronique", "Circuits de validation et signature avec horodatage.", "pen")],
         "case": ("Chronologie d'un dossier", "ARCHIVA AI construit la chronologie d'un dossier de contentieux à partir de ses pièces, avec les références de chaque document. L'avocat vérifie et complète.", "solutions/ia-documentaire/"),
-        "shot": "archiva360-archiva-ai.png",
+        "shot": "archiva360-archiva-ai.webp",
     },
     {
         "slug": "ong", "name": "ONG et organismes internationaux", "short": "ONG", "icon": "hands", "edition": "Cloud ou Enterprise",
@@ -110,7 +110,7 @@ SECTORS = [
                      ("Français et anglais", "Interface bilingue pour les équipes et les partenaires.", "users"),
                      ("Offre Cloud", "Démarrage rapide, sans infrastructure, avec un abonnement adapté.", "cloud")],
         "case": ("Un audit bailleur préparé en quelques heures", "Toutes les pièces d'un projet réunies, classées et exportables avec leur journal d'accès : l'auditeur reçoit un accès limité et temporaire.", "solutions/sae/"),
-        "shot": "archiva360-audit-trail.png",
+        "shot": "archiva360-audit-trail.webp",
     },
     {
         "slug": "patrimoine", "name": "Patrimoine et culture", "short": "Patrimoine", "icon": "library", "edition": "Heritage",
@@ -122,7 +122,7 @@ SECTORS = [
                      ("DIGITAL LIBRARY", "Bibliothèque numérique avec recherche plein texte.", "library"),
                      ("Portail public", "Mise en ligne des fonds autorisés pour les chercheurs et le public.", "globe")],
         "case": ("ARCHIVA Heritage", "Une offre dédiée aux institutions patrimoniales : numérisation, description, préservation et diffusion. Pour que la mémoire documentaire africaine reste accessible aux générations futures.", "solutions/preservation-numerique/"),
-        "shot": "archiva360-recherche-intelligente.png",
+        "shot": "archiva360-recherche-intelligente.webp",
     },
 ]
 

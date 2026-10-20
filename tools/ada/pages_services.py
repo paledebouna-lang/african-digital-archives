@@ -71,7 +71,7 @@ def build():
         hero=page_hero("Numérisation : du carton au document exploitable", "Nos équipes numérisent vos fonds dans notre centre d'Abidjan ou directement dans vos locaux, avec préparation, contrôle qualité et indexation.",
                        [("Services", "services/"), ("Numérisation", None)], "Service",
                        buttons(btn("Demander un devis", "~/contact/?sujet=numerisation", "white")),
-                       media=img("archiva360-document-ocr.png", "Document numérisé et indexé", frame=True, lazy=False)),
+                       media=img("archiva360-document-ocr.webp", "Document numérisé et indexé", frame=True, lazy=False)),
         body=section(intro("Cinq niveaux de service", "Choisissez le niveau adapté à vos fonds et à votre budget.", "Offres")
                      + cols(*[f'<div class="card"><span class="eyebrow">{a}</span><h3>{b}</h3><p>{c}</p></div>' for a, b, c in offers], n=5, cls="gap-sm"))
         + section(intro("Notre chaîne de numérisation", "Dix étapes maîtrisées, du rayonnage à la conservation.", "Méthode", center=True)
