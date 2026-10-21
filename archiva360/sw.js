@@ -1,16 +1,16 @@
 // ARCHIVA360 — service worker (généré par tools/build.py, ne pas modifier à la main).
 // Pages : réseau d'abord, copie locale si hors connexion. Fichiers du thème : copie locale, mise à jour en arrière-plan.
 // Les appels à Appwrite (autre domaine) ne passent jamais par le cache.
-const CACHE = 'archiva360-v1.7.1';
+const CACHE = 'archiva360-v1.8.0';
 const PRECACHE = [
   "./connexion/",
   "./espace/",
   "./demo-interactive/",
   "./manifest.webmanifest",
-  "../wp-content/themes/ada-archives/assets/css/archiva360-demo.css?ver=1.7.1",
-  "../wp-content/themes/ada-archives/assets/js/archiva360-auth.js?ver=1.7.1",
-  "../wp-content/themes/ada-archives/assets/js/archiva360-pwa.js?ver=1.7.1",
-  "../wp-content/themes/ada-archives/assets/js/archiva360-demo.js?ver=1.7.1",
+  "../wp-content/themes/ada-archives/assets/css/archiva360-demo.css?ver=1.8.0",
+  "../wp-content/themes/ada-archives/assets/js/archiva360-auth.js?ver=1.8.0",
+  "../wp-content/themes/ada-archives/assets/js/archiva360-pwa.js?ver=1.8.0",
+  "../wp-content/themes/ada-archives/assets/js/archiva360-demo.js?ver=1.8.0",
   "../wp-content/themes/ada-archives/assets/fonts/inter-latin.woff2",
   "../wp-content/uploads/2026/09/archiva360-app-192.png",
   "../wp-content/uploads/2026/09/archiva360-app-180.png",

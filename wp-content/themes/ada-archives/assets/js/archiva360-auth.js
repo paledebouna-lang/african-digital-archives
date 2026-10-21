@@ -13,6 +13,8 @@
 	var CFG = cfgEl ? JSON.parse( cfgEl.textContent ) : {};
 	var READY = !! ( CFG.endpoint && CFG.project );
 	var TEAM = CFG.team || 'archiva360';
+	// Fonction Appwrite « archiva360-mail » : quand elle est configurée, les e-mails partent de l'adresse ADA (voir tools/appwrite-function).
+	var FN = CFG.fn || '';
 
 	var ROLES = [
 		{ id: 'admin', label: 'Administrateur', desc: 'Tous les droits, dont la gestion des utilisateurs et des rôles' },
@@ -123,7 +125,20 @@
 		logout: function ( all ) {
 			return api( 'DELETE', all ? '/account/sessions' : '/account/sessions/current' ).then( function ( r ) { storage( 'cookieFallback', null ); return r; } );
 		},
-		recover: function ( email ) { return api( 'POST', '/account/recovery', { email: email, url: here( '../connexion/' ) + '?reset=1' } ); },
+		// Exécution synchrone de la fonction d'envoi d'e-mails ; sa réponse est relue comme une réponse d'API.
+		fn: function ( data ) {
+		return api( 'POST', '/functions/' + FN + '/executions', { body: JSON.stringify( data ), async: false, method: 'POST', path: '/' } ).then( function ( ex ) {
+		var body = {};
+		try { body = JSON.parse( ex.responseBody || '{}' ); } catch ( e ) {}
+		if ( ex.status === 'completed' && ex.responseStatusCode >= 200 && ex.responseStatusCode < 300 ) return body;
+		throw new AwError( { message: body.message || 'L’envoi de l’e-mail a échoué.' }, ex.responseStatusCode || 500 );
+		} );
+		},
+		recover: function ( email ) {
+		if ( FN ) return aw.fn( { action: 'recover', email: email } );
+		return api( 'POST', '/account/recovery', { email: email, url: here( '../connexion/' ) + '?reset=1' } );
+		},
+		tokenSession: function ( userId, secret ) { return api( 'POST', '/account/sessions/token', { userId: userId, secret: secret } ); },
 		resetPassword: function ( userId, secret, password ) { return api( 'PUT', '/account/recovery', { userId: userId, secret: secret, password: password } ); },
 		setName: function ( name ) { return api( 'PATCH', '/account/name', { name: name } ); },
 		setPassword: function ( password, oldPassword ) {
@@ -132,8 +147,10 @@
 			return api( 'PATCH', '/account/password', d );
 		},
 		members: function () { return api( 'GET', '/teams/' + TEAM + '/memberships', { 'queries[]': '{"method":"limit","values":[100]}' } ); },
+		pending: function () { return FN ? api( 'GET', '/teams/' + TEAM + '/prefs' ).then( function ( p ) { return p.pending || {}; }, function () { return {}; } ) : Promise.resolve( {} ); },
 		invite: function ( email, name, role ) {
-			return api( 'POST', '/teams/' + TEAM + '/memberships', { email: email, name: name, roles: rolesFor( role ), url: here( '../connexion/' ) + '?invite=1' } );
+		if ( FN ) return aw.fn( { action: 'invite', email: email, name: name, role: role } );
+		return api( 'POST', '/teams/' + TEAM + '/memberships', { email: email, name: name, roles: rolesFor( role ), url: here( '../connexion/' ) + '?invite=1' } );
 		},
 		setRole: function ( id, role ) { return api( 'PATCH', '/teams/' + TEAM + '/memberships/' + id, { roles: rolesFor( role ) } ); },
 		remove: function ( id ) { return api( 'DELETE', '/teams/' + TEAM + '/memberships/' + id ); },
@@ -219,16 +236,35 @@
 				var p1 = $( '#p1' ).value, p2 = $( '#p2' ).value, bad = checkPassword( p1, p2 );
 				if ( bad ) return say( msg, 'bad', bad );
 				busy( f, true );
-				var job = f.id === 'reset-form'
-					? aw.resetPassword( p.get( 'userId' ), p.get( 'secret' ), p1 ).then( function () {
+				var job = f.id === 'reset-form' && p.get( 'tk' )
+				// Lien envoyé par la fonction : la session est déjà ouverte, la fonction enregistre le nouveau mot de passe.
+				? aw.fn( { action: 'setPassword', password: p1 } ).then( function () { return aw.logout( true ); } ).then( function () {
+				window.history.replaceState( null, '', here( './' ) );
+				loginView( '<div class="notice ok">Mot de passe modifié. Connectez-vous avec votre nouveau mot de passe.</div>' );
+				} )
+				: f.id === 'reset-form'
+				? aw.resetPassword( p.get( 'userId' ), p.get( 'secret' ), p1 ).then( function () {
 						window.history.replaceState( null, '', here( './' ) );
 						loginView( '<div class="notice ok">Mot de passe modifié. Connectez-vous avec votre nouveau mot de passe.</div>' );
 					} )
-					: aw.setPassword( p1 ).then( function () { window.location.href = ESPACE + '?bienvenue=1'; } );
+					: aw.setPassword( p1 ).then( function () { return FN ? aw.fn( { action: 'activated' } ).then( null, function () {} ) : null; } ).then( function () { window.location.href = ESPACE + '?bienvenue=1'; } );
 				job.catch( function ( err ) { busy( f, false ); say( msg, 'bad', esc( err.message ) ); } );
 			}
 		} );
 
+		// Liens envoyés par la fonction d'e-mails : un jeton ouvre la session, puis l'utilisateur choisit son mot de passe
+		if ( ( p.get( 'invite' ) || p.get( 'reset' ) ) && p.get( 'tk' ) && p.get( 'userId' ) && p.get( 'secret' ) ) {
+		var isInvite = !! p.get( 'invite' );
+		view( '<h1>' + ( isInvite ? 'Invitation' : 'Mot de passe' ) + '</h1><p class="sub">Vérification du lien…</p>' );
+		aw.tokenSession( p.get( 'userId' ), p.get( 'secret' ) ).then( function () {
+		window.history.replaceState( null, '', here( './' ) + ( isInvite ? '?invite=1' : '?reset=1&tk=1' ) );
+		if ( isInvite ) passwordView( 'Bienvenue dans ARCHIVA360', 'Votre invitation est acceptée. Choisissez maintenant le mot de passe de votre compte.', 'invite-form', 'Activer mon compte' );
+		else passwordView( 'Nouveau mot de passe', 'Choisissez le mot de passe de votre compte ARCHIVA360.', 'reset-form', 'Enregistrer le mot de passe' );
+		}, function ( err ) {
+		loginView( '<div class="notice bad">' + ( err.code === 401 ? 'Ce lien n’est plus valide. Demandez-en un nouveau.' : esc( err.message ) ) + '</div>' );
+		} );
+		return;
+		}
 		// Lien reçu par e-mail : réinitialisation du mot de passe
 		if ( p.get( 'reset' ) && p.get( 'userId' ) && p.get( 'secret' ) ) {
 			return passwordView( 'Nouveau mot de passe', 'Choisissez le mot de passe de votre compte ARCHIVA360.', 'reset-form', 'Enregistrer le mot de passe' );
@@ -257,11 +293,12 @@
 	function espacePage() {
 		var LOGIN = here( '../connexion/' );
 		if ( ! READY ) { window.location.replace( LOGIN ); return; }
-		var state = { me: null, mine: null, members: [] };
+		var state = { me: null, mine: null, members: [], pending: {} };
+		function isPending( m ) { return ! m.confirm || !! state.pending[ m.userId ]; }
 		var view = $( '#view' );
 
 		function isAdmin() { return roleOf( state.mine ) === 'admin'; }
-		function adminCount() { return state.members.filter( function ( m ) { return m.confirm && roleOf( m ) === 'admin'; } ).length; }
+		function adminCount() { return state.members.filter( function ( m ) { return ! isPending( m ) && roleOf( m ) === 'admin'; } ).length; }
 
 		function nav() {
 			var items = [ [ 'accueil', 'Tableau de bord' ], [ 'compte', 'Mon compte' ] ];
@@ -277,6 +314,7 @@
 			return [ 'accueil', 'compte', 'utilisateurs' ].indexOf( h ) > -1 ? h : 'accueil';
 		}
 		function render() {
+			if ( ! state.me || ! state.mine ) return;   // changement de # avant la fin du chargement
 			nav();
 			var v = currentView();
 			( { accueil: vHome, compte: vAccount, utilisateurs: vUsers } )[ v ]();
@@ -287,8 +325,8 @@
 			var role = roleOf( state.mine );
 			var welcome = params().get( 'bienvenue' ) ? '<div class="notice ok">Votre compte est activé. Bienvenue !</div>' : '';
 			var admin = isAdmin()
-				? '<div class="box"><h2>Votre équipe</h2><p><b>' + state.members.filter( function ( m ) { return m.confirm; } ).length + '</b> membre(s) actif(s), <b>'
-					+ state.members.filter( function ( m ) { return ! m.confirm; } ).length + '</b> invitation(s) en attente.</p>'
+				? '<div class="box"><h2>Votre équipe</h2><p><b>' + state.members.filter( function ( m ) { return ! isPending( m ); } ).length + '</b> membre(s) actif(s), <b>'
+				+ state.members.filter( isPending ).length + '</b> invitation(s) en attente.</p>'
 					+ '<div class="btns"><a class="btn" href="#utilisateurs">Gérer les utilisateurs et les rôles</a></div></div>'
 				: '';
 			view.innerHTML = welcome + '<h1>Bonjour ' + esc( state.me.name || state.me.email ) + '</h1><p class="sub">Espace ' + esc( CFG.orgName ) + ' · rôle : <span class="tag b">' + roleLabel( role ) + '</span></p>'
@@ -319,10 +357,11 @@
 				var role = roleOf( m ), self = m.userId === state.me.$id;
 				var sel = '<label class="sr" for="r-' + m.$id + '">Rôle de ' + esc( m.userName || m.userEmail ) + '</label><select class="inp" id="r-' + m.$id + '" data-role="' + m.$id + '"' + ( self ? ' disabled title="Vous ne pouvez pas modifier votre propre rôle"' : '' ) + '>'
 					+ ROLES.map( function ( r ) { return '<option value="' + r.id + '"' + ( r.id === role ? ' selected' : '' ) + '>' + r.label + '</option>'; } ).join( '' ) + '</select>';
+				var pend = isPending( m );
 				return '<tr data-member="' + m.$id + '"><td><div class="fi"><span class="av">' + esc( initials( m.userName, m.userEmail ) ) + '</span><div><b>' + esc( m.userName || '—' ) + '</b>' + ( self ? ' <span class="tag">vous</span>' : '' )
 					+ '<div class="muted">' + esc( m.userEmail ) + '</div></div></div></td><td>' + sel + '</td><td>'
-					+ ( m.confirm ? '<span class="tag g">Actif</span><div class="muted">depuis le ' + fmtDate( m.joined ) + '</div>' : '<span class="tag a">Invitation envoyée</span><div class="muted">le ' + fmtDate( m.invited ) + '</div>' )
-					+ '</td><td>' + ( self ? '' : '<button class="btn sm danger o" type="button" data-act="remove" data-id="' + m.$id + '">' + ( m.confirm ? 'Retirer' : 'Annuler l’invitation' ) + '</button>' ) + '</td></tr>';
+					+ ( ! pend ? '<span class="tag g">Actif</span><div class="muted">depuis le ' + fmtDate( m.joined ) + '</div>' : '<span class="tag a">Invitation envoyée</span><div class="muted">le ' + fmtDate( state.pending[ m.userId ] || m.invited ) + '</div>' )
+					+ '</td><td>' + ( self ? '' : ( pend && FN ? '<button class="btn sm o" type="button" data-act="resend" data-id="' + m.$id + '">Renvoyer</button> ' : '' ) + '<button class="btn sm danger o" type="button" data-act="remove" data-id="' + m.$id + '">' + ( ! pend ? 'Retirer' : 'Annuler l’invitation' ) + '</button>' ) + '</td></tr>';
 			} ).join( '' );
 			view.innerHTML = '<h1>Utilisateurs et rôles</h1><p class="sub">Invitez les personnes de votre organisation et attribuez-leur un rôle. Chaque invitation est envoyée par e-mail ; la personne choisit elle-même son mot de passe.</p>'
 				+ '<div class="grid g21"><div class="box"><h2>Membres <small>' + state.members.length + '</small></h2><div class="tbl"><table><thead><tr><th>Utilisateur</th><th>Rôle</th><th>Statut</th><th></th></tr></thead><tbody>' + rows + '</tbody></table></div></div>'
@@ -343,7 +382,8 @@
 			return aw.members().then( function ( r ) {
 				state.members = ( r.memberships || [] ).sort( function ( a, b ) { return String( a.userName || a.userEmail ).localeCompare( String( b.userName || b.userEmail ), 'fr' ); } );
 				state.mine = state.members.filter( function ( m ) { return m.userId === state.me.$id; } )[ 0 ] || null;
-			} );
+				return aw.pending().then( function ( pd ) { state.pending = pd; } );
+				} );
 		}
 
 		document.addEventListener( 'click', function ( e ) {
@@ -355,11 +395,16 @@
 			if ( act === 'logout' || act === 'logout-all' ) {
 				a.disabled = true;
 				aw.logout( act === 'logout-all' ).then( null, function () {} ).then( function () { window.location.href = LOGIN; } );
+			} else if ( act === 'resend' ) {
+			var rm = state.members.filter( function ( x ) { return x.$id === a.dataset.id; } )[ 0 ];
+			if ( ! rm ) return;
+			a.disabled = true;
+			aw.invite( rm.userEmail, rm.userName, roleOf( rm ) ).then( function () { a.disabled = false; toast( 'Invitation renvoyée à ' + rm.userEmail + '.' ); }, function ( err ) { a.disabled = false; toast( err.message ); } );
 			} else if ( act === 'remove' ) {
-				var m = state.members.filter( function ( x ) { return x.$id === a.dataset.id; } )[ 0 ];
-				if ( ! m ) return;
-				if ( m.confirm && roleOf( m ) === 'admin' && adminCount() < 2 ) return toast( 'Impossible : l’organisation doit garder au moins un administrateur.' );
-				if ( ! window.confirm( ( m.confirm ? 'Retirer ' : 'Annuler l’invitation de ' ) + ( m.userName || m.userEmail ) + ' ?' ) ) return;
+			var m = state.members.filter( function ( x ) { return x.$id === a.dataset.id; } )[ 0 ];
+			if ( ! m ) return;
+			if ( ! isPending( m ) && roleOf( m ) === 'admin' && adminCount() < 2 ) return toast( 'Impossible : l’organisation doit garder au moins un administrateur.' );
+				if ( ! window.confirm( ( ! isPending( m ) ? 'Retirer ' : 'Annuler l’invitation de ' ) + ( m.userName || m.userEmail ) + ' ?' ) ) return;
 				a.disabled = true;
 				aw.remove( m.$id ).then( reloadMembers ).then( function () { toast( 'Accès retiré.' ); render(); }, function ( err ) { a.disabled = false; toast( err.message ); } );
 			}
@@ -370,7 +415,7 @@
 			var id = e.target.dataset && e.target.dataset.role;
 			if ( ! id ) return;
 			var m = state.members.filter( function ( x ) { return x.$id === id; } )[ 0 ], sel = e.target;
-			if ( roleOf( m ) === 'admin' && sel.value !== 'admin' && m.confirm && adminCount() < 2 ) {
+			if ( roleOf( m ) === 'admin' && sel.value !== 'admin' && ! isPending( m ) && adminCount() < 2 ) {
 				sel.value = 'admin';
 				return toast( 'Impossible : l’organisation doit garder au moins un administrateur.' );
 			}
