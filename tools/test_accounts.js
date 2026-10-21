@@ -23,7 +23,7 @@ const now = () => new Date().toISOString();
 const COOKIE = 'a_session_' + PROJECT;
 function mock(req, res) {
   const cors = { 'Access-Control-Allow-Origin': req.headers.origin || '*', 'Access-Control-Allow-Credentials': 'true',
-    'Access-Control-Allow-Headers': 'Content-Type, X-Appwrite-Project, X-Appwrite-Key, X-Fallback-Cookies, X-Appwrite-Response-Format',
+    'Access-Control-Allow-Headers': 'Content-Type, X-Appwrite-Project, X-Appwrite-Key, X-Fallback-Cookies, X-Appwrite-Response-Format, X-Appwrite-Locale',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE', 'Access-Control-Expose-Headers': 'X-Fallback-Cookies' };
   const send = (code, body, extra) => { res.writeHead(code, Object.assign({ 'Content-Type': 'application/json' }, cors, extra || {})); res.end(code === 204 ? '' : JSON.stringify(body)); };
   const fail = (code, type, message) => send(code, { code, type, message: message || type });
@@ -114,7 +114,7 @@ function mock(req, res) {
   const out = await run({ APPWRITE_ENDPOINT: ENDPOINT, APPWRITE_PROJECT: PROJECT, APPWRITE_API_KEY: KEY, ADMIN_EMAIL: 'assa@eletude.org', ADMIN_NAME: 'Assa Admin' });
   const pass = (out.match(/Mot de passe provisoire : (\S+)/) || [])[1];
   check('Installation : équipe et administrateur créés', pass && db.memberships[0].roles.includes('owner'));
-  const again = await run({ APPWRITE_ENDPOINT: ENDPOINT, APPWRITE_PROJECT: PROJECT, APPWRITE_API_KEY: KEY });
+  const again = await run({ APPWRITE_ENDPOINT: ENDPOINT, APPWRITE_PROJECT: PROJECT, APPWRITE_API_KEY: KEY, ADMIN_EMAIL: 'assa@eletude.org' });
   check('Installation : relance sans doublon', /déjà présent/.test(again) && db.users.length === 1 && db.memberships.length === 1);
 
   // Les pages réécrites par route.fulfill n'ont pas d'espace d'adresses connu : on lève le contrôle d'accès au réseau local.
