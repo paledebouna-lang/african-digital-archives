@@ -24,12 +24,12 @@ SITE = {
     # Vide = les pages de connexion affichent « comptes en cours d'activation ».
     "appwrite": {"endpoint": "https://fra.cloud.appwrite.io/v1", "project": "6abdbd56000fbe8e3bc7", "team": "archiva360",
                  # Identifiant de la fonction « archiva360-mail » (e-mails envoyés depuis contact@adarchives.pro). Vide = e-mails génériques Appwrite.
-                 "function": ""},
+                 "function": "6ad81717002e3ba2d39f"},
     "city": "Abidjan, Côte d'Ivoire",
     "base_url": "https://adarchives.pro/",
     "theme": "wp-content/themes/ada-archives/",
     "uploads": "wp-content/uploads/2026/09/",
-    "version": "1.8.0",
+    "version": "1.8.1",
 }
 
 PAGES = []          # every generated page, in registration order
