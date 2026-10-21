@@ -150,6 +150,20 @@ async function setPassword(api, body, callerId) {
   return [200, { ok: true }];
 }
 
+// Message compréhensible pour l'administrateur, selon l'étape qui a échoué.
+function explain(e) {
+  const m = String(e.message || '');
+  if (m.startsWith('Brevo 401')) return 'Brevo refuse la clé API : vérifiez la variable BREVO_API_KEY de la fonction.';
+  if (m.startsWith('Brevo 400') && /sender/i.test(m)) return 'Brevo refuse l’expéditeur : confirmez contact@adarchives.pro dans Brevo (Expéditeurs) et vérifiez SENDER_EMAIL.';
+  if (m.startsWith('Brevo 4')) return 'Brevo a refusé l’envoi : ' + m.replace(/^Brevo \d+ /, '').slice(0, 160);
+  if (m.startsWith('Brevo')) return 'Brevo est momentanément indisponible. Réessayez dans quelques instants.';
+  if (e.status === 401) return 'Appwrite refuse la clé API de la fonction : vérifiez APPWRITE_API_KEY et ses portées (users.read, users.write, teams.read, teams.write).';
+  if (e.status === 404 && /team/i.test(m)) return 'Équipe introuvable : vérifiez la variable TEAM_ID (archiva360).';
+  if (e.status) return 'Appwrite a répondu « ' + m.slice(0, 160) + ' ».';
+  if (!env('BREVO_API_KEY') || !env('APPWRITE_API_KEY') || !env('SENDER_EMAIL')) return 'Variables manquantes dans la fonction : BREVO_API_KEY, APPWRITE_API_KEY ou SENDER_EMAIL.';
+  return 'L’envoi a échoué : ' + m.slice(0, 160);
+}
+
 export default async ({ req, res, log, error }) => {
   const api = appwrite();
   let body = {};
@@ -165,6 +179,6 @@ export default async ({ req, res, log, error }) => {
     return res.json(out[1], out[0]);
   } catch (e) {
     error(String(e.stack || e));
-    return res.json({ message: e.status === 401 ? 'Clé API de la fonction invalide ou insuffisante.' : 'L’envoi a échoué. Réessayez dans quelques instants.' }, 500);
+    return res.json({ message: explain(e), detail: String(e.message || e).slice(0, 300) }, 500);
   }
 };
