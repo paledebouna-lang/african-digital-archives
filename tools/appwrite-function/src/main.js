@@ -32,9 +32,12 @@ function appwrite() {
 }
 
 async function sendMail(to, toName, subject, html, text) {
+  const key = env('BREVO_API_KEY').replace(/^["']|["']$/g, '');
+  if (!key) throw new Error('Brevo config: la variable BREVO_API_KEY est vide ou absente (variables définies : ' + Object.keys(process.env).filter(k => /BREVO|SENDER|SITE_URL|TEAM_ID|ORG_NAME|APPWRITE_API_KEY/.test(k)).join(', ') + ')');
+  if (!/^xkeysib-/.test(key)) throw new Error('Brevo config: BREVO_API_KEY ne ressemble pas à une clé API Brevo (elle doit commencer par xkeysib-, pas xsmtpsib-) ; valeur reçue : ' + key.slice(0, 6) + '… (' + key.length + ' caractères)');
   const res = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'api-key': env('BREVO_API_KEY') },
+    headers: { 'Content-Type': 'application/json', 'api-key': key },
     body: JSON.stringify({
       sender: { email: env('SENDER_EMAIL'), name: env('SENDER_NAME', 'ARCHIVA360') },
       replyTo: { email: env('SENDER_EMAIL') },
@@ -153,7 +156,8 @@ async function setPassword(api, body, callerId) {
 // Message compréhensible pour l'administrateur, selon l'étape qui a échoué.
 function explain(e) {
   const m = String(e.message || '');
-  if (m.startsWith('Brevo 401')) return 'Brevo refuse la clé API : vérifiez la variable BREVO_API_KEY de la fonction.';
+  if (m.startsWith('Brevo config:')) return m.slice(14);
+  if (m.startsWith('Brevo 401')) return 'Brevo ne reconnaît pas la clé (« Key not found ») : générez une nouvelle clé API dans Brevo (SMTP et API → Clés API) et collez-la entièrement dans BREVO_API_KEY.';
   if (m.startsWith('Brevo 400') && /sender/i.test(m)) return 'Brevo refuse l’expéditeur : confirmez contact@adarchives.pro dans Brevo (Expéditeurs) et vérifiez SENDER_EMAIL.';
   if (m.startsWith('Brevo 4')) return 'Brevo a refusé l’envoi : ' + m.replace(/^Brevo \d+ /, '').slice(0, 160);
   if (m.startsWith('Brevo')) return 'Brevo est momentanément indisponible. Réessayez dans quelques instants.';
