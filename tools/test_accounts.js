@@ -21,7 +21,7 @@ const db = { users: [], teams: [], memberships: [], sessions: {}, mail: [], toke
 const FN = 'mailfn';
 // La fonction d'e-mails (tools/appwrite-function) tourne dans ce processus, branchée sur le faux Appwrite et un faux Brevo.
 process.env.APPWRITE_FUNCTION_API_ENDPOINT = ENDPOINT; process.env.APPWRITE_FUNCTION_PROJECT_ID = PROJECT; process.env.APPWRITE_API_KEY = KEY;
-process.env.BREVO_API_KEY = 'brevo-test'; process.env.SENDER_EMAIL = 'contact@adarchives.pro'; process.env.SITE_URL = BASE.replace(/\/$/, ''); process.env.TEAM_ID = 'archiva360';
+process.env.BREVO_API_KEY = 'xkeysib-test'; process.env.SENDER_EMAIL = 'contact@adarchives.pro'; process.env.SITE_URL = BASE.replace(/\/$/, ''); process.env.TEAM_ID = 'archiva360';
 const realFetch = global.fetch;
 global.fetch = async (url, opts) => {
   if (String(url).startsWith('https://api.brevo.com/')) {
