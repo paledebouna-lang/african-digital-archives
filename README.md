@@ -82,5 +82,6 @@ Les informations légales de la société (forme, capital, RCCM, compte contribu
 6. Connectez-vous sur `/archiva360/connexion/`, changez le mot de passe (« Mon compte »), puis invitez les autres
    personnes depuis « Utilisateurs et rôles ». Chacune reçoit un e-mail et choisit son mot de passe.
 
-E-mails en français : les modèles à coller dans *Auth → Templates* sont dans `tools/appwrite-emails.md`.
+E-mails : Appwrite les envoie en français depuis son adresse générique. Pour les envoyer depuis `contact@adarchives.pro`
+(gratuit, via Brevo), suivez `tools/appwrite-function/README.md`.
 Tests : `node tools/test_accounts.js` rejoue tout le parcours contre un faux serveur Appwrite local.

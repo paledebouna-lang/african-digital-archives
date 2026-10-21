@@ -1,0 +1,8 @@
+{
+  "name": "archiva360-mail",
+  "version": "1.0.0",
+  "description": "ARCHIVA360 : e-mails d'invitation et de réinitialisation envoyés depuis contact@adarchives.pro (Brevo).",
+  "type": "module",
+  "main": "src/main.js",
+  "private": true
+}

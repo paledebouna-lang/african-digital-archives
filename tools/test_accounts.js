@@ -17,7 +17,27 @@ const results = [];
 function check(name, ok, detail) { results.push({ ok: !!ok }); console.log(`${ok ? '✔' : '✘'} ${name}${detail ? ' — ' + detail : ''}`); }
 
 /* ---------- Faux Appwrite ---------- */
-const db = { users: [], teams: [], memberships: [], sessions: {}, mail: [] };
+const db = { users: [], teams: [], memberships: [], sessions: {}, mail: [], tokens: {}, prefs: {} };
+const FN = 'mailfn';
+// La fonction d'e-mails (tools/appwrite-function) tourne dans ce processus, branchée sur le faux Appwrite et un faux Brevo.
+process.env.APPWRITE_FUNCTION_API_ENDPOINT = ENDPOINT; process.env.APPWRITE_FUNCTION_PROJECT_ID = PROJECT; process.env.APPWRITE_API_KEY = KEY;
+process.env.BREVO_API_KEY = 'brevo-test'; process.env.SENDER_EMAIL = 'contact@adarchives.pro'; process.env.SITE_URL = BASE.replace(/\/$/, ''); process.env.TEAM_ID = 'archiva360';
+const realFetch = global.fetch;
+global.fetch = async (url, opts) => {
+  if (String(url).startsWith('https://api.brevo.com/')) {
+    const m = JSON.parse(opts.body);
+    db.mail.push({ to: m.to[0].email, from: m.sender.email, subject: m.subject, link: (m.textContent.match(/https?:\/\/\S+connexion\/\?\S+/) || [''])[0], brevo: true });
+    return new Response('{}', { status: 201 });
+  }
+  return realFetch(url, opts);
+};
+let fnHandler = null;
+async function runFunction(body, userId) {
+  if (!fnHandler) fnHandler = (await import(path.join(__dirname, 'appwrite-function/src/main.js'))).default;
+  let out = { code: 500, obj: {} };
+  await fnHandler({ req: { bodyJson: body, headers: { 'x-appwrite-user-id': userId || '' } }, res: { json: (obj, code) => { out = { obj, code: code || 200 }; } }, log: () => {}, error: e => console.error('  [fonction]', e) });
+  return { $id: id(), status: 'completed', responseStatusCode: out.code, responseBody: JSON.stringify(out.obj) };
+}
 const id = () => crypto.randomBytes(8).toString('hex');
 const now = () => new Date().toISOString();
 const COOKIE = 'a_session_' + PROJECT;
@@ -44,6 +64,28 @@ function mock(req, res) {
     const M = m => { const x = db.users.find(y => y.$id === m.userId); return Object.assign({}, m, { userName: x.name, userEmail: x.email, secret: undefined }); };
 
     if (p === '/health/version') return send(200, { version: 'mock' });
+    if (p === `/functions/${FN}/executions` && req.method === 'POST') {
+      let body = {}; try { body = JSON.parse(b.body || '{}'); } catch (e) {}
+      return runFunction(body, me ? me.$id : '').then(ex => send(201, ex));
+    }
+    const userRoute = p.match(/^\/users\/([^/]+)(\/tokens|\/password)?$/);
+    if (userRoute && server) {
+      const x = db.users.find(y => y.$id === userRoute[1]); if (!x) return fail(404, 'user_not_found');
+      if (userRoute[2] === '/tokens') { const secret = id(); db.tokens[secret] = { userId: x.$id, expire: Date.now() + (b.expire || 3600) * 1000 }; return send(201, { $id: id(), userId: x.$id, secret }); }
+      if (userRoute[2] === '/password') { x.password = b.password; return send(200, publicUser(x)); }
+      if (req.method === 'GET') return send(200, publicUser(x));
+    }
+    if (p === '/account/sessions/token' && req.method === 'POST') {
+      const t = db.tokens[b.secret];
+      if (!t || t.userId !== b.userId || t.expire < Date.now()) return fail(401, 'user_invalid_token');
+      delete db.tokens[b.secret]; return send(201, { $id: id() }, session(db.users.find(x => x.$id === t.userId)));
+    }
+    const prefs = p.match(/^\/teams\/([^/]+)\/prefs$/);
+    if (prefs) {
+      const t = prefs[1];
+      if (req.method === 'GET') { if (!server && !(me && ms(t).some(m => m.userId === me.$id))) return fail(401, 'user_unauthorized'); return send(200, db.prefs[t] || {}); }
+      if (req.method === 'PUT') { if (!isOwner(t)) return fail(401, 'user_unauthorized'); db.prefs[t] = b.prefs || {}; return send(200, db.prefs[t]); }
+    }
     if (p === '/__mail') return send(200, db.mail);
     if (p === '/teams' && req.method === 'POST' && server) {
       if (db.teams.some(t => t.$id === b.teamId)) return fail(409, 'team_already_exists');
@@ -120,16 +162,16 @@ function mock(req, res) {
   // Les pages réécrites par route.fulfill n'ont pas d'espace d'adresses connu : on lève le contrôle d'accès au réseau local.
   const browser = await playwright.chromium.launch({ args: ['--disable-features=LocalNetworkAccessChecks,PrivateNetworkAccessRespectPreflightResults'] });
   const errs = [];
-  async function context() {
+  async function context(withFn) {
     // Service worker bloqué : sinon les pages qu'il sert échapperaient à la réécriture de configuration ci-dessous.
     const ctx = await browser.newContext({ viewport: { width: 1280, height: 860 }, serviceWorkers: 'block' });
     // Branche la page sur le faux serveur (le site publié n'a pas encore de projet configuré).
     await ctx.route(/archiva360\/(connexion|espace)\/(\?.*)?$/, async route => {
       const r = await route.fetch();
-      const html = (await r.text()).replace(/"endpoint": "[^"]*", "project": "[^"]*"/, `"endpoint": "${ENDPOINT}", "project": "${PROJECT}"`);
+      const html = (await r.text()).replace(/"endpoint": "[^"]*", "project": "[^"]*"/, `"endpoint": "${ENDPOINT}", "project": "${PROJECT}"`).replace(/"fn": "[^"]*"/, `"fn": "${withFn ? FN : ''}"`);
       route.fulfill({ response: r, body: html });
     });
-    ctx.on('page', pg => { pg.on('pageerror', e => errs.push(e.message)); pg.on('console', m => process.env.DEBUG && console.log('  [console]', m.text())); });
+    ctx.on('page', pg => { pg.on('pageerror', e => errs.push(pg.url().replace(BASE, '/') + ' → ' + e.message + ' @ ' + String(e.stack || '').split('\n')[1])); pg.on('console', m => process.env.DEBUG && console.log('  [console]', m.text())); });
     ctx.on('dialog', d => d.accept());
     return ctx;
   }
@@ -205,6 +247,41 @@ function mock(req, res) {
   check('Utilisateurs : accès retiré', !db.memberships.includes(awaM));
   await awa.reload(); await awa.waitForSelector('#view h1');
   check('Accès retiré : plus aucun accès à l’organisation', (await awa.textContent('#view')).includes('aucune organisation'));
+
+  // ---- Avec la fonction d'e-mails (expéditeur contact@adarchives.pro) ----
+  const adm2 = await (await context(true)).newPage();
+  await adm2.goto(L); await adm2.waitForSelector('#login-form');
+  await adm2.fill('#l-email', 'assa@eletude.org'); await adm2.fill('#l-pass', pass); await adm2.click('#login-form button');
+  await adm2.waitForURL(/espace/); await adm2.goto(E + '#utilisateurs'); await adm2.waitForSelector('#invite-form');
+  await adm2.fill('#i-name', 'Bob Diallo'); await adm2.fill('#i-email', 'bob@example.org'); await adm2.selectOption('#i-role', 'records');
+  await adm2.click('#invite-form button'); await adm2.waitForSelector('#inv-msg .notice.ok');
+  const bobMail = db.mail.filter(m => m.to === 'bob@example.org').at(-1);
+  check('Fonction : invitation envoyée depuis contact@adarchives.pro', bobMail && bobMail.brevo && bobMail.from === 'contact@adarchives.pro' && /Invitation/.test(bobMail.subject) && bobMail.link.includes('invite=1&tk=1'), bobMail && bobMail.subject);
+  const bobRow = await adm2.textContent('#view tbody');
+  check('Fonction : invitation « en attente » avec bouton Renvoyer', bobRow.includes('Invitation envoyée') && (await adm2.locator('[data-act="resend"]').count()) === 1);
+  await adm2.click('[data-act="resend"]'); await adm2.waitForSelector('#toast:not([hidden])');
+  check('Fonction : invitation renvoyée', db.mail.filter(m => m.to === 'bob@example.org').length === 2);
+  const bob = await (await context(true)).newPage();
+  await bob.goto(db.mail.filter(m => m.to === 'bob@example.org').at(-1).link); await bob.waitForSelector('#invite-form');
+  await bob.fill('#p1', 'Records2026!'); await bob.fill('#p2', 'Records2026!'); await bob.click('#invite-form button');
+  await bob.waitForURL(/espace/); await bob.waitForSelector('#view h1');
+  check('Fonction : compte activé avec le bon rôle', (await bob.textContent('#view')).includes('Records manager'));
+  await adm2.reload(); await adm2.waitForSelector('#invite-form');
+  check('Fonction : membre actif après activation', !(await adm2.textContent('#view tbody')).includes('Invitation envoyée'));
+  await bob.click('.top [data-act="logout"]'); await bob.waitForURL(/connexion/); await bob.waitForSelector('[data-act="forgot"]');
+  await bob.click('[data-act="forgot"]'); await bob.fill('#f-email', 'bob@example.org'); await bob.click('#forgot-form button'); await bob.waitForSelector('#auth-msg .notice.ok');
+  const rec = db.mail.filter(m => m.to === 'bob@example.org').at(-1);
+  check('Fonction : e-mail de réinitialisation depuis contact@adarchives.pro', rec.brevo && rec.from === 'contact@adarchives.pro' && rec.link.includes('reset=1&tk=1'));
+  await bob.goto(rec.link); await bob.waitForSelector('#reset-form');
+  await bob.fill('#p1', 'Nouveau2026x'); await bob.fill('#p2', 'Nouveau2026x'); await bob.click('#reset-form button'); await bob.waitForSelector('#login-form');
+  await bob.fill('#l-email', 'bob@example.org'); await bob.fill('#l-pass', 'Nouveau2026x'); await bob.click('#login-form button');
+  await bob.waitForURL(/espace/); await bob.waitForSelector('#view h1');
+  check('Fonction : nouveau mot de passe accepté', (await bob.textContent('#view')).includes('Bonjour'));
+  await bob.goto(rec.link); await bob.waitForSelector('#login-form');
+  check('Fonction : lien de réinitialisation à usage unique', (await bob.textContent('#auth-card')).includes('plus valide'));
+  const forged = await runFunction({ action: 'invite', email: 'x@example.org', name: 'X', role: 'admin' }, db.users.find(u => u.email === 'bob@example.org').$id);
+  check('Fonction : un non-administrateur ne peut pas inviter', forged.responseStatusCode === 401);
+  await bob.close(); await adm2.close();
 
   // Site sans projet configuré
   const plain = await browser.newPage();

@@ -23,7 +23,7 @@ def build():
 def _aw_config():
     import json
     aw = SITE["appwrite"]
-    cfg = {"endpoint": aw["endpoint"], "project": aw["project"], "team": aw["team"],
+    cfg = {"endpoint": aw["endpoint"], "project": aw["project"], "team": aw["team"], "fn": aw.get("function", ""),
            "orgName": SITE["name"], "contact": SITE["email"]}
     return '<script type="application/json" id="aw-config">' + json.dumps(cfg, ensure_ascii=False) + '</script>'
 
