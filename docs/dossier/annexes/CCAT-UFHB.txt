@@ -1,0 +1,1515 @@
+﻿
+
+3.	Cahier des Clauses Techniques
+
+        3.1 Spécifications Techniques 
+3-1-1- INTRODUCTION
+
+Dans le cadre de sa transformation digitale amorcée depuis quelques années et en adéquation avec la stratégie de la Direction de L’UFHB compte accéléré cette transformation dans le domaine de ses processus métiers en s’appuyant sur l’essor des outils de Gestion électronique des documents, d’Intelligence artificielle et d’exploitation des données de ces dernières années. 
+
+Le marché sujet de ce cahier des charges a pour objet d’exprimer les besoins fonctionnels et techniques de l’UFHB pour l’acquisition d’une application ou d’une solution globale clef en main de Gestion Electronique de Correspondances (GEC), Gestion Electronique de Documents, et d’automatisation / digitalisation des processus métier (WORKFLOW).
+Les objectifs stratégiques sont les suivants : 
+    • Dématérialiser les flux entrants et sortants (papier et électroniques) issus de différents canaux et de supports différents ;
+    • Modéliser, digitaliser des flux métiers ;
+    • Fluidifier les échanges électroniques entre les différentes directions et services de l’UFHB ;
+    • Automatiser et uniformiser les méthodes et procédures ;
+    • Réduire les délais, optimiser les coûts et atteindre ainsi une performance opérationnelle et économique ;
+    • Permettre la transparence et la traçabilité des documents ;
+    • Mettre en place des tableaux de bord et Indicateurs de Performances (KPI’s) nécessaires permettant le suivi de l’activité et le calcul de ses performances ;
+    • Permettre une couverture complète de la chaîne de valeur (de la capture des contenus jusqu’à
+L’archivage, l’exploitation, la signature électronique).
+
+3-1-2- EXECUTION DU MARCHE
+    A. DELAI D’EXECUTION DU MARCHE
+Le prestataire devra réaliser les services désignés en objet dans un délai de quatre (4) mois soit 120 jours.
+Le délai de la réalisation court à partir du lendemain de la date de notification de l’attribution du marché. Ce délai s’applique à l’achèvement de toutes les prestations incombant au titulaire.
+
+    B. RECEPTIONS ET GARANTIES 
+RECEPTION PROVISOIRE ET DEFINITIVE 
+A l’achèvement des prestations de services, le maître d’ouvrage l’UFHB s’assure en présence du prestataire de services de la conformité des prestations de services aux spécifications techniques du marché et prononcera la réception partielle ou provisoire.
+
+Cette réception sera sanctionnée par l’établissement d’un procès-verbal de réception partielle ou provisoire.
+S’il constate que les prestations de services présentent des insuffisances ou des défauts ou ne sont pas conformes aux spécifications du marché, le prestataire de services procédera aux ajustements ou rectifications nécessaires conformément aux règles de l’art. A défaut, la réception ne sera pas prononcée, et le délai d’exécution ne sera pas prorogé pour autant. 
+La réception des prestations objet du présent marché sera conclu comme suit :
+    1. Réception provisoire partielle : Une réception partielle sera prononcée à la fin de chaque phase du projet citée et ce après validation par le CO-DIR ou Conseil de Gestion de l’ensemble des livrables y correspondant. Le Procès-Verbal de réception provisoire partielle sera dûment cosigné par le CO-DIR ou Conseil de Gestion et le titulaire du marché.
+
+    2. Réception provisoire globale : sera prononcée après la réception provisoire partielle de la totalité des phases du projet. Elle sera constatée par un Procès-verbal de réception provisoire globale dûment signé par le CO-DIR ou Conseil de Gestion et le titulaire du marché. 
+
+    3. Réception définitive : La réception définitive sera prononcée après la réception provisoire globale et à l'expiration de toutes les périodes de garantie. Elle sera constatée par un Procès-Verbal de réception définitive dûment cosigné par le CO-DIR ou Conseil de Gestion et le titulaire du marché.
+    C. DELAI DE GARANTIE
+Le délai de garantie est fixé à douze (12) mois à compter de la date de la réception provisoire.
+Pendant le délai de garantie, le prestataire de services sera tenu de procéder aux rectifications qui lui seraient demandées en cas d’anomalies ou imperfections constatées et de remédier à l’ensemble des anomalies, dysfonctionnements ou bugs affectant la solution, sans pour autant que ces prestations de services supplémentaires puissent donner lieu à paiement.
+
+Pendant la période de garantie, la résolution des incidents et des dysfonctionnements doit être faite dans un délai de 4h et ce à compter de l’heure de signalisation de l’incident. Le prestataire doit fournir des solutions de contournement provisoires ou remplacement en attendant la résolution totale du problème.
+
+    D. Suivi des prestations
+Le titulaire travaillera en étroite collaboration avec le responsable de la cellule de suivi du projet et le CO-DIR ou Conseil de Gestion qui seront désignés par le maitre d’ouvrage. Le suivi sera assuré par : 
+    • Comité projet : ou comité opérationnel
+Il fait un suivi régulier (Hebdo ou par quinzaine) afin de s’assurer de l’avancement des travaux.
+Il remonte un reporting régulier (par quinzaine ou mensuel) sur l’état d’avancement des réalisations du projet.
+    • Comité de pilotage
+Il se réunit après chaque phase et chaque fois que cela est nécessaire pour examiner et approuver les documents livrables fournis et prononcer la validation et la réception (provisoire partielle, provisoire Globale ou définitive).
+
+    2- 
+    3- 
+        3-1- 
+            3-1-3- OBJECTIF ET PERIMETRE DU MARCHE
+    A. OBJECTIF DU MARCHE
+Le projet s’inscrit dans un chantier global qui concerne la simplification des procédures par le biais de la digitalisation. 
+L'objectif escompté de ce projet est :
+    a. Acquérir la capacité à centraliser, gérer, structurer, harmoniser, sécuriser et conserver l’ensemble des documents échangés ;
+    b. Fluidifier, contrôler et qualifier les procédures de gestion des documents internes (inter-structures administratives), entrantes ou sortantes échangées avec d’autres structures administratives ou des tiers externes ;
+    c. Offrir une solution ergonomique, intuitive et évolutive ;
+    d. Enrichir l’expérience utilisateur avec un usage simple du parapheur électronique et de la signature électronique, ainsi que la mobilité ;
+    e. Permettre aux décideurs un suivi temps réel de l’activité à travers des tableaux de bord personnalisés.
+
+Concrètement il sera question de la mise en place d’une solution clé en main, qui a fait ses preuves grâce à des expériences similaires, pour la Gestion Electronique des Correspondances (GEC), la Gestion Electronique de Documents (GED) et l’automatisation de processus métier (BPM WORFLOWS), aussi riche pour être facilement adaptée aux spécificités de nos méthodes et procédures de travail afin d’optimiser les opérations et améliorer le service en interne et en relation avec nos échanges avec le monde extérieur. Cette application à mettre en place sera désignée en ce qui suit par « La Solution ».
+
+                    B. RESULTATS ATTENDUS
+
+        a. Une dimension réformatrice importante attendue suite à la mise en place de « La Solution » : 
+
+            ▪ Optimisation des coûts (papier, matériel, consommables, …) : 
+        ◦ Plus de photocopie ; le document papier capturée et digitalisé (scan en masse) puis distribuée. La copie originale est archivée à la source ; 
+        ◦ Réduction des impressions ; les structures collaborent sur la base du document électronique avec la gestion de versionning et la gestion des accès concurrents. Qui a fait quoi et quand, sont des informations électroniquement auditables.
+        ◦ Réduction des déplacements pour des courriers entre les directions et services.
+
+            ▪ Optimisation des délais
+        ◦ Le disptaching / la ventilation est instantanée entre directions et services et même entre nos sites géographiquement distants ; ainsi qu’un gain important en termes de délais de réception et de traitement ;
+        ◦ Le gain est visible au niveau de la distribution électronique, et aussi au niveau du traitement grâce au travail collaboratif (WORKFLOW),
+
+            ▪ Centralisation de tous les flux malgré leurs hétérogénéité (documents papiers et ceux numériques : e-mail, Fax numérique issus d’un fax server, formulaire de contact, …) : 
+        ◦ Tous les flux seront nativement capturés et référencés dans la solution GEC ; Un identifiant unique est attribué et qualifié avec un QR CODE ou et code barre.
+        ◦ Traçabilité et journal d’audit assuré pour tout document peu importe son support ; Garant d’un pilotage performant de l’activité.
+
+            ▪ Place à l’acquittement électronique qui remplace désormais la décharge papier pour les documents internes; 
+        ◦ Une transformation et une optimisation des procédures de travail en interne ;
+
+            ▪ Efficacité même en mobilité ou en cas d’absence
+        ◦ En déplacement, les managers auront accès à leurs documents grâce à la composante mobilité de La Solution pour consulter, traiter ou dispatcher le document ; 
+        ◦ Minimiser voire réduire les goulots d’étranglement dans les points de décision ;
+        ◦ En absence d’un responsable ou collaborateur, la tâche de traitement d’un document est automatiquement déléguée grâce à une gestion d’intérimaires ; fluidité et continuité du service même en période de congé ;
+
+            ▪ Un document électronique à valeur probante, conforme
+        ◦ Plus de besoin de parapheurs papier. Ils seront désormais remplacés par des parapheurs électroniques simple d’usage pour une conduite de changement souple et garant de plus d’efficacité ;
+        ◦ Le document est signé électroniquement via une signature avancée selon les standards internationaux qui tiennent compte de la règlementation en vigueur en Côte D’Ivoire en la matière.
+        ◦ assurant ainsi un document numérique à valeur probante ;
+
+        b. Des bénéfices pour tous : 
+Pour le service courrier de l’UFHB: 
+        ◦ Enregistrement distribution industrialisé,
+        ◦ Optimisation des équipes et redéfinition des rôles pour une valeur ajoutée augmentée,
+        ◦ Consolidation de toutes les correspondances sur la même Solution GEC,
+        ◦ Mutualisation de ses équipes.
+
+Pour les structures métiers
+        ◦ Modélisation des flux d’information métier,
+        ◦ Accès rapide à l’information sans avoir besoin de demander une communication auprès du service d’archive ou bien du service bureau d’ordre, ou tout autre service producteur,
+        ◦ Gestion simple des affectations/ventilation des documents aux collaborateurs / ordonnancement.
+        ◦ Les alertes et les priorités, et les échéances.
+        ◦ Suivi simple du cycle de vie des documents ainsi que les actions demandées,
+        ◦ Gestion des intérimaires.
+
+Pour les IT : 
+        ◦ Une solution unique sécurisée, avec une gestion multisite ;
+        ◦ Une solution évolutive avec une roadmap produit claire ;
+        ◦ Une administration full WEB ;
+        ◦ Des outils clé en main pour modélisation de nouveaux processus à mettre en production ;
+        ◦ Un déploiement rapide de nouvelles structures ;
+        ◦ Un accompagnement continue ;
+
+Pour les documents : 
+        ◦ Respect des normes archivistiques et standards d’archivage des documents ;
+        ◦ Intégration des outils archivistiques (Classification Archivistiques et Calendrier de Conservation) ;
+        ◦ Gestion du cycle de vie des documents en respect des délais réglementaires ;
+        ◦ Automatisation et digitalisation des procédures de transfert et de versement des archives.
+
+Pour le management
+        ◦ Vue 360° sur l’ensemble des documents ;
+        ◦ Annotation électronique (avec préservation de l’original) ;
+        ◦ Dispatching numérique des documents vers les directions destinataires ;
+        ◦ Tableau de bord de suivi de l’activité ;
+        ◦ Expérience utilisateur riche avec l’introduction du e-Parapheur et de la signature électronique : ergonomie et facilité d’usage ;
+        ◦ Bénéficier de la composante de mobilité pour travailler en déplacement ; 
+        ◦ Accès simple et rapide à un document via une recherche simple et multicritères ;
+        ◦ Pilotage de la performance, indicateurs de performances : délais de traitement, documents électroniques échangés, …
+
+Un processus de fourniture de service de « La Solution » clé en main, auditable, traçable, mesurable, industrialisable et garantissant les SLA attendues dans toutes ses phases et répondants aux exigences de sécurité et de fiabilité.
+
+C- PERIMETRE DES PRESTATIONS 
+
+Le projet vise la mise en place de La Solution en mode on premise pour L’UFHB
+
+        a. Volumétrie et dimensionnement
+
+Le nombre d’utilisateurs cible de La solution GEC est estimé à environ 150 utilisateurs.
+Pour le besoin de dimensionnement de l’infrastructure, nous donnons ci-dessous une estimation du flux documentaires des documents échangé annuellement : 
+Documents 
+Volumétrie estimée par an
+Courriers
+11 000 courriers entrants (papier) par an
+En moyenne 5 pages par courrier
+Documents métier :
+40 000 Factures entrantes, rapport par an,  ….
+
+        b. Parapheur / Signature électronique / Mobilité
+
+    • Le nombre des utilisateurs signataires qui auront besoin du module e-Parapheur pour la signature électronique sont estimée à environ 25 utilisateurs (population des membres du Comité de direction, directeurs et assimilés). 
+    • Le nombre des utilisateurs qui bénéficieront du module de mobilité est estimé à 25 utilisateurs (population des membres du Comité de direction, directeurs et assimilés). 
+
+        c. Solution Multi-Instances
+
+La solution doit être multi-Instance et multi sociétés permettant de garantir une étanchéité des données inter-instances. Le système d’instances doit obligatoirement reposer sur la même solution du même éditeur ; Un roll out auprès des filiales de L’UFHB pourrait être envisagé ultérieurement. 
+
+            D- LES PHASES DU PROJET
+
+Les prestations à réaliser seront définies en trois (3) phases selon le découpage ci-dessous.
+En exécutant cette mission, le titulaire du marché devra produire obligatoirement à chaque étape du projet les livrables décrits ci-dessous.
+
+Ces livrables doivent être soumis au maitre d’ouvrage sur support électronique, en temps opportun et en respectant le planning convenu tenant compte des délais d'exécution précisés dans ce cahier de charge, pour validation par le CO-DIR ou Conseil de Gestion.
+
+La validation des livrables fournis par le titulaire du marché interviendra dans un délai de dix (10) jours ouvrables au maximum à partir de la date de leur remise au maitre d’ouvrage. 
+Sauf stipulation contraire, l’ensemble des documents produits spécifiquement dans le cadre du projet de type texte sont à produire en Français dans un format MS Word (docx) ou et MS Excel.
+
+No.
+Phase
+Livrables
+1
+PHASE 1 : Etude de l’existant et conception
+L1. Planning Global et planning détaillé  
+L2. Le cahier de spécifications fonctionnelles
+L3. Document d’architecture détaillée de la Solution à mettre en place,
+2
+PHASE 2 : Réalisation (configuration de la solution), tests et recette
+L4. Contrats de licences des produits logiciels de la solution
+L5. Solution Installée (PV), 
+L6. Document d’installation,
+L7. Rapport de Test
+L8. Document de paramétrage
+L9. Cahier de recette
+L10. PV de recette
+3
+PHASE 3 : Transfert de compétences, Mise en production et assistance au démarrage
+L11. Le Planning de formation,
+L12. Le Programme détaillé de formation
+ L13. Support de formation,
+L14. PV de mise en production
+L15.PV d’assistance pour chaque intervention d’assistance (avec description de chaque intervention)
+L16. Un plan de conduite de changement
+
+            E- DELAIS D’EXECUTION DETAILLE PAR PHASE
+
+Le délai de réalisation de ce projet est fixé à 120 Jours calendaires à compter du lendemain de la notification du marché prescrivant de commencer les prestations.
+Ce délai est réparti entre les trois phases du projet comme suit : 
+
+No.
+Phase
+Durée
+1
+PHASE 1 : Etude de l’existant et conception
+30 Jours
+2
+PHASE 2 : Réalisation (configuration de la solution), tests et recette
+60 Jours
+3
+PHASE 3 : Transfert de compétences, Mise en production et assistance au démarrage
+30 Jours
+
+Les délais d’approbation ne sont pas en pris en considération dans le délai contractuel.
+
+            F- MODALITES DE PAIMENT
+
+Les paiements seront effectués par L’UFHB par virement bancaire au compte ouvert au nom du titulaire du marché sur présentation des factures, des procès-verbaux de réception correspondants.
+Les paiements seront effectués somme suit : 
+
+No.
+Phase
+Modalité
+1
+A la réception de la « PHASE 1 : Etude de l’existant et conception »
+30% du montant du marché
+2
+PHASE 2 : Réalisation (configuration de la solution), tests et recette
+50% du montant du marché
+3
+A la réception de la « PHASE 3 : Transfert de compétences, Mise en production et assistance au démarrage »
+20% du montant du marché
+
+            3-1-4- PERIMETRE FONCTIONNEL
+    A. Besoins généraux
+
+La solution proposée doit offrir les composantes logicielles suivantes : 
+    • Capture Multi Canal (Papier, e-mail, Formulaire Web, Fax Server, Application, XML, …)
+    • Enregistrement et distribution électronique des correspondances,
+    • Une composante Workflow permettant : le design et l’orchestration des processus workflow métier,
+    • Classement Intelligent de document sous forme de vue arborescentes,
+    • Archivage électronique normé,
+    • Recherche par mots clés, recherche multicritères et recherches enregistrés,
+    • Audit, sécurité et traçabilité,
+    • Tableaux de bord personnalisés,
+    • Composante BI pour la mise en place de rapports de statistiques
+    • La solution logicielle proposée doit être complètement WEB, modulaire et intuitive. Personnalisable, par profil utilisateur/entité métier, sous forme de tableau de bord dynamique à base de widgets avec indicateurs de pilotage selon les usages professionnels susceptibles de changer avec le temps et le contexte professionnel.
+
+    • Pour garantir la pérennité, l'évolutivité et l'interopérabilité de La Solution, cette dernière doit être basée sur des logiciels éditeurs utilisables sous licence et couverts par des contrats de maintenance correctives et évolutives de leur éditeur. Ainsi, les solutions libres (open source) ne sont pas acceptées dans le cadre du présent marché.
+
+    B. specification de la solution
+
+La Solution doit être : 
+    • Intégrée et modulaire, du même éditeur, couvrant le périmètre définit par le présent cahier de charge et composée d'un système évolué de 
+
+        ◦ Gestion Electronique des Correspondances GEC ;
+        ◦ Gestion Electronique de Documents GED ; 
+        ◦ Un moteur de modélisation graphique et automatisation des processus métiers (moteur Workflow) BPM;
+        ◦ Un moteur d’automatisation des processus les plus répétitifs et chronophages (Robotic Process Automation) RPA
+        ◦ Gestion des contrats (Processus /SI)
+        ◦ Gestion des appels d’offres (Processus /SI)
+        ◦ Gestion des factures (Processus et SI) 
+
+    • Full web compatible avec tous les navigateurs. Interface conviviale et fluide afin de garantir une expérience utilisateur réussie. L’accès web à la solution doit obligatoirement être sécurisé en HTTPS/TLS 1.2 ;
+    • Mobile : La solution doit avoir son application mobile dédiée compatible Android/iOS et téléchargeable sur les stores correspondants (pas d’utilisation par navigateur sur mobile). Elle doit offrir les fonctionnalités suivantes : 
+        ◦ Accès aux espaces de travail,
+        ◦ Recherche de correspondances,
+        ◦ Accès aux tâches à traiter,
+        ◦ Transfert de tâche à un autre acteur,
+        ◦ Notification par mail aux intervenants d’un processus
+    • Permettre l'intégration de la signature électronique ;
+    • Multilingue et multi-caractères ;
+    • Multi sites ou société/multi-instances : Un site ou société est une entité autonome qui a son propre organigramme, ses propres référentiels et ses propres documents. La solution proposée doit être capable d’équiper différents sites ou sociétés/instances avec toutes les fonctionnalités requises et demandées dans ce cahier de charge tout en garantissant les exigences suivantes :  
+        ◦ Etanchéité de chaque site ou société/instance,
+        ◦ Echange sécurisé et crypté inter-sites ou société/inter-instance,
+        ◦ La mise en place doit être assurée sans aucun développement spécifique ; ça doit être proposé par les fonctionnalités standards de base de la solution afin de garantir la scalabilité en termes de mise en œuvre ultérieure de nouveaux sites/instances.
+L’UFHB envisage ultérieurement un roll out de la solution vers ses filiales.
+    • Appréhendée, pour chaque acteur, par un tableau de bord de pilotage, collaboration et prise de décision/action qui permet de rassembler les informations et outils essentiels adaptés à son profil et à son métier. Le tableau de bord en question doit être :
+        ◦ Facilement et complétement personnalisable pour une rapide appropriation et meilleure expérience utilisateur ;
+        ◦ A base de widgets prêts à l’emploi :
+            ▪ Le suivi des tâches, des processus et des documents ;
+            ▪ La création de contenus : création d’un courrier et déclenchement d’un processus en un clic (drag and drop) ;
+            ▪ Indicateurs de pilotage, actions et états ;
+            ▪ Notifications et alertes ;
+            ▪ Statistiques
+
+    • La solution proposée doit intégrer un « Espace web documentaire d’aide en ligne » accessible par les utilisateurs : 
+        ◦ Fonctions de recherche par rubrique, par mot clés sur tous les sujets d’utilisation de la solution avec une navigation simple et intuitive ;
+        ◦ Offrir des ressources d’aide en ligne : 
+            ▪ Documentation PDF téléchargeable en ligne depuis l’espace documentaire ;
+            ▪ Tutoriaux Vidéo expliquant les différentes fonctions d’utilisation et d’exploitation de la solution.
+
+Vu l’importance de l’organigramme en tant qu’élément organisationnel incontournable, la solution doit supporter une administration full web de l’organigramme de chaque structure en précisant les fonctionnalités attendues suivantes :
+    • Déclarer/modéliser l’organigramme selon une arborescence respectant la hiérarchie de la structure : utilisateurs, services, départements, directeurs, directeurs généraux adjoint, directeur général ; Ainsi que pour des raisons de gestion des accès, rôles, profils, droits et traçabilité ;
+    • La création et gestion des différentes entités métiers dans l’organigramme doit être simple et intuitive ;
+    • Pour chaque entité métier, renseigner un nom et un code/abréviation ;
+    • La solution doit proposer la possibilité d’administrer tout ou une partie de l’organigramme selon des droits d’accès/profils ;
+    • Pour des raisons d’audit, toutes les opérations d’administration de l’organigramme (ajout, modification, suppression) doivent être journalisées ;
+
+    C. Capture multi-canal
+La solution proposée doit être capable de capturer les flux entrants à travers plusieurs canaux. Nous détaillons dans ce qui suit les différents canaux ainsi que les fonctionnalités attendues et requises pour le traitement du flux capturé à travers chaque canal.
+        a. Capture du flux papier
+La solution proposée pour la capture (par scan) des flux papier doit être compatible avec tous les périphériques de scan du marché (scanner et Multifonctions). La fonction de capture doit être indépendante du modèle/marque du périphérique de scan en question.
+
+        b. Capture du flux email
+La capture des emails doit être opérable avec les protocoles : POP/POPS et iMAP/iMAPS.
+La solution proposée doit offrir la capture des emails avec deux modes opérationnels :
+
+            i. Capture en masse des emails :
+        ◦ Paramétrer une capture automatique et en masse de tous les emails entrants, pour certains comptes de messagerie, et de les publier dans la solution.
+        ◦ Pour chaque compte de messagerie, un processus spécifique pré-paramétré est lancé automatiquement afin de traiter chaque mail entrant capturé.
+        ◦ Cette capture doit être proposée nativement avec simple paramétrage (sans développement spécifique). 
+        ◦ L’administrateur, via une administration WEB, devrait être capable de paramétrer autant de comptes de messagerie pour la capture en masse ainsi que les Workflow qui lui sont associés.
+
+            ii. Capture sélective des e-mails :
+Cette capture doit offrir, à partir du client mail Outlook, une interface simple et conviviale offrant les fonctions suivantes : 
+        ◦ Possibilité d’instruire l’e-mail à capturer avec d’autres informations complémentaires (importance, urgence, confidentialité, …)
+        ◦ Possibilité d’instancier sur le mail capturé : 
+            ▪ Un processus pré-paramétré (conçu d’avance),
+            ▪ Un processus manuel, crée à la volée au moment de la capture sélective.
+    • Cette fonctionnalité de capture sélective doit être proposée nativement avec simple paramétrage (sans aucun développement spécifique) ; à chaque ajout d’un compte de messagerie, ce dernier doit hériter de cette fonctionnalité sans aucune intégration ni installation locale sur poste client.
+
+            iii. Capture automatique des documents numériques issus des applications métiers
+La solution doit être capable, via du simple paramétrage, de capturer tous les flux documentaires (PDF) issus d’applications métiers. Elle doit offrir une solution LAD/RAD pour ces documents permettant de :
+    • Reconnaitre le type du flux ;
+    • Extraire et indexer des métadonnées spécifiques (des zones du document) ;
+    • Créer automatiquement les flux dans La Solution ;
+    • Démarrer automatiquement les Workflows correspondants ;
+
+Toutes les actions demandées ci-dessus doivent être prises en charge nativement et par conséquent réalisées par du simple paramétrage.
+
+            iv. Capture de flux XML
+Afin de s’interfacer avec le Système d’Information, la solution proposée doit être capable de capturer des flux XML.
+Le résultat de la capture sera : 
+    • Un flux documentaire crée dans la solution,
+    • Un workflow correspondant est automatiquement lancé.
+
+La capture des flux XML devra se faire, sans développement spécifique, par simple paramétrage qui sera requis afin d’assurer ce fonctionnement.
+
+            v. Serveur de capture et autres fonctionnalités
+Pour une gestion optimale et un accompagnement prévisionnel de la montée en charge de la volumétrie de stockage liée à la numérisation des documents, il est demandé au prestataire de :
+
+        ◦ Séparer la volumétrie de stockage de numérisation (serveur centralisé dédié et bien dimensionné en ressources CPU/RAM/Disque) de celle des documents incorporés dans un cycle de vie GEC/GED/Workflow/Archivage (But : alléger le serveur principal hébergeant la solution) ;
+        ◦ S’interfacer avec des serveurs de stockage en supportant les protocoles réseaux suivants : NFS, CIFS, SMB ; 
+        ◦ Supporter la numérisation multisite : plateforme centrale d’acquisition de documents indépendante des périphériques utilisés pour la numérisation qui peuvent être répartis géographiquement (sites distants). La solution de numérisation doit être compatible avec tous type/marque de scanners disponibles sur le marché ;
+        ◦ Numérisation en couleur en préservant la qualité visuelle du document (Compression optimale). Détection et élimination des pages blanches ;
+        ◦ Supervision des chaines de numérisation centralisées ou éclatées ;
+        ◦ Capture numérique par une lecture OCR-multilingue pour Indexer et rechercher dans le contenu plein-texte des documents PDF numérisés ;
+        ◦ Numérisation par lot (capture en masse) et contextualisation des documents à base d’intercalaire de séparation identifié par un code à barre (Réclamations, Factures, Correspondances de partenaires ou de nos ministères de tutelles …) pour une réduction du temps de pré-tri manuel des documents physiques, groupement de documents par logique métier, rapidité d’enregistrement et de routage workflow ;
+
+            vi. Casiers virtuels :
+        ◦ Routage automatique des documents numérisés dans des casiers virtuels pour enregistrement ;
+        ◦ Association automatique de métadonnées et de processus de traitement à chaque casier ainsi qu’une affectation automatique d’échéance de traitement et calcul automatique des dates d’échéances et dates d’alertes selon le type de document dans le casier ;
+        ◦ Personnalisation des casiers : par Services / départements /direction, par support (papier, email…), par flux métiers (Commun, Technique, …) ;
+        ◦ Format de fichiers :
+        ◦ Prise en charge des formats standards suivants : TIFF/multipages, PDF image ou texte, 
+        ◦ Prise en charge du format PDF/A (ISO 19005-1) et la conversion automatique des fichiers Office en ce format pour des besoins de signature électronique et d’archivage à long terme ;
+
+    D. Digitalisation du processus de Gestion du courrier entrant, sortant et interne
+
+La dématérialisation de ce processus doit permettre, entres autres, de répondre aux besoins et aux opérations suivantes :
+    • Enregistrer le courrier « Arrivée », « Départ » et « Interne » ;
+    • Attribution automatique d’un numéro chronologique au courrier paramétrable par année et par type de courrier ;
+    • Permettre de gérer plusieurs bureaux d'ordre (par exemple un bureau d'ordre central auquel seront rattachés des bureaux d'ordres secondaires) ;
+    • Générer automatiquement les accusés de réception en exigeant un accusé de réception lors des phases de diffusion, d'affectation ou de validation des courriers ;
+    • Tenu automatique des registres arrivé /départ / interne ;
+    • Permettre de lier automatiquement les courriers arrivés et courriers départs ;
+    • Distribuer le courrier d’une manière sécurisée via un workflow de suivi et de validation (Enregistrement du courrier et de ses pièces jointes associées) ;
+    • Possibilité de paramétrer plusieurs profils d’enregistrement par type de courrier : papier, email, fax ;
+    • Gérer le courrier qualifié de confidentiel ;
+    • Utiliser des modèles-types pour garantir des réponses standards au courrier ;
+    • Fournir des tableaux de bord d’avancement des courriers suivant différents critères et des statistiques globales de traitement du courrier ;
+    • Annotations : Permettre l'assignation d’instructions sur les courriers pour les destinataires désignés afin de spécifier que le courrier nécessite une réponse ou un traitement particulier. Une annotation accompagnant le courrier sous forme de commentaire, ou bien saisie dans le document scanné qui doit automatiquement générer une nouvelle version. La version originale restera accessible au niveau de l’historique des versions ;
+    • Permettre de spécifier au niveau du paramétrage les destinataires par défaut par type de documents ;
+    • Suite à la réception d'un courrier, le système doit permettre d'initier un processus collaboratif permettant à plusieurs utilisateurs de pouvoir participer au traitement d'un même courrier :
+        ◦ Traitement direct du courrier ;
+        ◦ Transfert interne du courrier vers une autre entité ;
+        ◦ Transfert interne d’un groupe de courrier (selon les groupes définis au niveau du paramétrage) ;
+        ◦ Classement du courrier ;
+        ◦ Renvoi du courrier à l’expéditeur en cas d'erreur ;
+    • Permettre d'accéder à tout moment à l'état d'avancement du traitement du courrier sous forme d’interface graphique de suivi. Elle devra aussi afficher tous les commentaires/annotations relatives aux traitements du courrier en question par les différents acteurs/intervenants du processus ;
+    • Une fois initié, un courrier départ doit passer par un processus de validation hiérarchique avant de pouvoir être validé, signé et envoyé au bureau d'ordre en charge de son expédition ;
+    • Lors de l'élaboration d'un courrier départ, le système doit mémoriser les versions traitées et modifiées durant le processus de l’élaboration d’un courrier départ ;
+    • Permettre la notification automatique du signataire du courrier lors de l’expédition de ce dernier par le bureau d'ordre ;
+    • Proposer une interface de recherche et un système de Reporting et statistiques propres à la gestion du courrier permettant d'évaluer les délais et l'état de son traitement (traité, en instance, en retard …).
+
+    E. Automatisation des processus métier (WORKFLOW)
+        a. Modélisation et création des processus
+La solution doit intégrer nativement un moteur graphique de modélisation et automatisation des processus métier en générant un enchainement de tâches et d'actions selon un diagramme séquentiel et/ou parallèle. 	
+Le moteur Workflow doit être souple et s’adapter aux imprévus et à des cas complexes : Processus dynamiques pouvant être enrichis en temps réel. Le moteur doit permettre au besoin de concevoir un nombre illimité de processus Workflow pour les besoins actuels et futurs.
+
+Les processus workflow modélisés peuvent :
+    • Être uniquement mises à jour par les administrateurs fonctionnels ou techniques surtout pour des processus complexes largement transverses faisant intervenir plusieurs acteurs sur plusieurs étapes de validation ;
+    • Être crée à l’initiative des acteurs, selon leurs profils/droits respectifs, pour des processus simples à périmètre de validation réduit ; 
+
+Parmi les éléments de modélisation à prendre en compte :
+    • Acteurs, étapes et tâches du processus ;
+    • Liens entre les étapes (Actions) ;
+    • Formulaires de saisie (tous types de champs : Texte, numérique, date, liste, pièce-jointe, etc.) ;
+    • Gestion des délais ;
+    • Demandes d’actions/tâches aux services ou aux collaborateurs ;
+    • Gestion de catégories d’actions (attribution, contribution, information) et de sous-catégories personnalisables ;
+    • Gestion des refus ;
+
+L'outil de conception graphique doit offrir les fonctionnalités suivantes :
+    • Insérer des éléments graphiques (tâche, action, ...) depuis une barre d’outils ;
+    • La saisie des informations se fait directement sur les objets graphiques dans le panneau de propriétés ;
+    • Possibilité de réaliser des formulaires. Les types de champs suivants pris en compte seront :
+        ◦ Texte (mono ou multi lignes) ;
+        ◦ Nombre (valeur min. et max. possible)
+        ◦ Date (avec ou sans heure) ;
+        ◦ Période (une date de début et une date de fin avec contrôle de cohérence avec ou sans heure) ;
+        ◦ Liste (mono ou multi valeurs). Une liste se présente par défaut sous la forme d'un combo box mais peut aussi être représentée sous forme de case ou des boutons radios. Les valeurs possibles pour une liste peuvent être de type "interne" (gérées depuis l'interface d'administration) ou (alimentées par une requête SQL) ;
+        ◦ Pièces jointes ;
+        ◦ Liste de personne (choix d'une personne depuis l'annuaire) ;
+        ◦ Rôle (choix des intervenants d'une étape) ;
+        ◦ Contrôle de cohérence, affichage en lecture et en saisie ;
+    • Possibilité de choisir comme acteurs des processus : des utilisateurs individuels ou des entités métiers ;
+    • Intégrer des modèles de documents (Template) qui seront paramétrés avec des champs de saisie proposés et à renseigner par les différents intervenants dans le processus ;
+
+        b. Suivi des processus :
+    • Contrôler l’état des processus en cours à tout moment :
+        ◦ Une tâche peut être accomplie par une ou plusieurs personnes ;
+        ◦ L’intervenant voit les tâches réalisées et peut agir sur toutes les métadonnées du document selon son rôle/profil/droits ;
+        ◦ Un délai de traitement global peut être paramétré pour le processus ;
+        ◦ De réaliser une action de routage ;
+
+        c. Délégation et relance des interventions
+La solution doit offrir à chaque utilisateur la possibilité de déclarer son absence et ainsi, sur une période donnée, de gérer ses intérimaires/délégataires.
+
+    • Gestion des absences et de la délégation/intérim : 
+        ◦ Sans avoir recours à changer le profil ou bien de communiquer les informations d’authentification à l’utilisateur intérimaire ;
+        ◦ Permettre à chaque utilisateur, en cas d’absence temporaire, la désignation d’un intérimaire pour prendre en charge le traitement de ses correspondances en instance ou nouvellement reçus.
+    • Les intervenants doivent avoir la possibilité flexible de déléguer leurs interventions concernant : 
+        ◦ Une étape, ou sur l’ensemble du processus ;
+        ◦ Une ou plusieurs tâches répondant à des critères de filtre (importance, priorité, sens, …) ;
+        ◦ Plusieurs délégations selon par exemple le niveau de confidentialité (non confidentiel à User2 et confidentiel au supérieur hiérarchique) ;
+        ◦ Les intervenants qui ont délégué peuvent à tout moment annuler la délégation qu'ils ont mise en place ;
+        ◦ Pouvoir assigner manuellement les tâches, ou automatiquement au système, groupe ou personne appropriés ;
+
+    • Pour une meilleure souplesse, il est à considérer les points importants suivants : 
+        ◦ La délégation n’est pas exclusive : le propriétaire de l’action ainsi que son délégataire auront accès tous les deux au droit de traitement,
+        ◦ Possibilités de déclarer, pour la même personne et/ou service plusieurs délégataires,
+        ◦ On peut définir un délégataire selon plusieurs critères : urgence, confidentialité, type de document, …
+        ◦ On peut manuellement désactiver la délégation.
+
+    F. GESTION ELECTRONIQUE DES DOCUMENTS
+
+La solution doit offrir la possibilité de créer des flux/entité documentaires (documents métiers, des correspondances, …), de les typer et de leur associer des fichiers joints. Chaque entité documentaire est enrichie par plusieurs métadonnées et peut avoir plus qu’un fichier joint qui lui est rattaché.
+
+La solution proposée doit supporter en standard les fonctionnalités lors de manipulation des documents numériques :
+    • Apposer et gérer des commentaires et annotations sur chaque document ;
+    • Gestion des consignes pour chaque action/tâche ;
+    • Intégration de pièces jointes utiles au traitement ;
+    • Gestion de fonctions utiles au traitement : demandes d’information, transferts de document, envois et relances par email ;
+    • Alertes automatiques selon les échéances ;
+    • Conserver et tracer les différentes versions de documents ;
+
+        a. Formulaire, Métadonnées et Thésaurus
+La solution doit disposer d’une interface de création et administration des formulaires web et des métadonnées :
+
+            i. Interface d’administration des formulaires web :
+        ◦ Création des formulaires ;
+        ◦ Gestion des règles selon le type de champs : contrôle de saisie, champs obligatoires ;
+        ◦ Affectation des formulaires aux types de documents ;
+        ◦ Création des documents à base de modèles en gérant le publipostage et l’expédition ;
+        ◦ Publipostage à partir des métadonnées associées à la fiche documentaire globale ;
+        ◦ Possibilité d’ajouter des métadonnées supplémentaires par type de document ;
+
+            ii. Interface d’administration des métadonnées :
+La solution proposée doit offrir un module d’administration WEB des métadonnées à affecter aux formulaires.
+        ◦ Chaque document produit peut avoir plusieurs métadonnées. Ces derniers doivent être paramétrables au niveau du module d'administration WEB.
+        ◦ Le paramétrage des métadonnées doit se faire sans arrêt de service de la production, 
+        ◦ Le paramétrage des métadonnées doit être simple, et offre les possibilités de :  
+            ▪ Définir des champs de plusieurs types : 
+                • Texte, 
+                • Liste de valeurs, 
+                • Date et intervalle de date, 
+                • Email, 
+                • Montant & intervalle de montants, 
+                • Numéro de Tel, 
+                • Champ de saisie d’une direction (depuis le référentiel : organigramme),
+                • Champ de saisie d’un contact du carnet d’adresse (depuis le référentiel : carnets d’adresse)
+                • Champ de sélection d’un terme de Thésaurus (pointer vers une source de données de type thésaurus)
+            ▪ Offrir aussi la possibilité de définir des masques sur les champs, 
+                • Chaque champ peut être Obligatoire ou Facultatif, 
+                • Chaque champ peut être intégré dans les formulaires de recherche Multicritères ;
+        ◦ La solution doit offrir la possibilité de définir des droits d'accès spécifiques pour chaque champ d'un document.
+
+            iii. Module de gestion des champs de type « Thésaurus » :
+Sachant qu’un Thésaurus est un répertoire structuré en arborescence de termes (mots-clés) pour l'analyse de contenu et le classement de documents.
+La solution doit offrir un outil permettant de paramétrer des champs dans des formulaires de type « Thésaurus ».
+La prise en charge de Thésaurus doit concerner : 
+        ◦ L’ajout d’un thésaurus,
+        ◦ Modifier / Supprimer un Thésaurus,
+        ◦ Exporter le thésaurus sous plusieurs formats : CSV, HTML, …,
+        ◦ Importer un Thésaurus,
+        ◦ Offrir plusieurs modes de recherche de termes ou mots-clés dans un thésaurus : 
+            ▪ Navigation Arborescente,
+            ▪ Liste Alphabétique,
+            ▪ Recherche sur Critère
+        ◦ Proposer deux modes d’affichage du Thésaurus en deux vues : 
+            ▪ Vue « Visualisation Graphiques »,
+            ▪ Vue « relations » : une retranscription textuelle de la vue graphique,
+
+La solution doit ainsi proposer en standard deux thésaurus : 
+        ◦ Un thésaurus de classification archivistique conforme au modèle de classification des archives,
+        ◦ Un thésaurus de localisation physique selon le modèle de localisation existant.
+
+        b. Création et Contrôle
+    • Au niveau des champs des formulaires, la solution doit permettre de créer des règles de saisie sur les champs de type : email, montant, numériques ou alphanumérique avec des expressions régulières de contrôle de saisie ;
+    • Tous les champs “date” doivent être saisis à partir d’un calendrier, sauf spécification contraire ;
+    • Permettre la création des listes déroulantes paramétrables ;
+    • Permettre la création de champs de type thésaurus :
+        ◦ Visualisation de liste de valeurs en format arborescent ; 
+        ◦ Permettre aussi la multi-sélection ;
+    • Chaque document doit posséder :
+        ◦ Une référence unique ;
+        ◦ Une ou plusieurs versions ;
+    • Création de modèles de documents avec fusion de champs, injection de code-barres et champs « signature » … ; Ex : Demande d’achat, PV de réception, Ordre de paiement, … ; avec le respect de la charte documentaire interne et sortante de l’administration ;
+    • Afin de créer un maillage automatique de l’information sans aucune intervention humaine, la solution doit offrir la possibilité de lier de multiples documents pour constituer un fond de dossier relatif à un contexte professionnel bien précis. 
+
+Le dossier en question s’alimente au fur et à mesure des étapes d’un ou plusieurs workflows le concernant. Exemple : Dossier fournisseur contenant les documents suivants : Appel d’offre, Engagement, proposition d’achat, Bon de commande, PV de réception, Facture, …). Permettre de retrouver rapidement une facture liée à un bon de commande, un devis, un contrat, une réclamation et/ou une demande d’achat ;
+
+    • Rassembler les documents créés autour d’une thématique projet (présentation, compte-rendu, devis, enquête, rapports, livrables…)
+
+        c. Gestion des documents entrants et sortants
+
+    • Documents entrants:
+        ◦ Génération d’un identifiant unique,
+        ◦ Horodatage du système de scan (date / heure / minute / seconde)
+    • Documents sortants :
+        ◦ Lien automatique entre le document entrant et sa réponse ;
+        ◦ Gestion d’une base de modèles : accusés de réception, réponses, rapports, notes internes, PV de réception, …
+        ◦ Insertion de codes-barres dans les documents sortants pour des raisons de traçabilité et identification ;
+        ◦ Processus de validation associés aux documents sortants ;
+        ◦ Automatisation de l’expédition par email : envoi du document et des documents liés convertis au format PDF avec intégration éventuelle de la signature électronique ;
+
+        d. Traitement en masse:
+Afin de fluidifier les traitements, la solution doit proposer des mécanismes de traitement en masse :
+        ◦ Clôture en masse de plusieurs traitements/tâches de processus,
+        ◦ Transférer en masse de plusieurs traitements/tâches de processus,
+        ◦ Signature en masse de plusieurs correspondances,
+
+        e. Historique des versions
+    • Gestion des versions avec historique de version au niveau de chaque correspondance ;
+    • La liste des différentes versions d'un document est accessible directement depuis le formulaire de propriétés d’une des versions ;
+    • Le suivi des modifications permet de tracer toutes les actions effectuées sur une version ;
+
+        f. Réservation des documents
+La solution doit offrir un système de réservation pour garantir l’accès concurrentiel à un document en édition. La réservation peut être :
+    • Implicite : Lorsqu’un utilisateur ayant droit est entrain de modifier un document, ce dernier est réservé (verrouillé) pour lui. Le verrou est levé à la fin de l’édition du document ;
+    • Explicite : un utilisateur peut utiliser une fonction « Réserver » qui permet de verrouiller le document pour lui ;
+
+        g. Intégration avec les Système d’Information
+L’intégration de la solution avec le Système d’Information (SI) est importante afin de fluidifier les processus de traitement des documents et éviter la double saisie de l’information.
+
+    • La solution doit reposer sur des Webservices à consommer depuis les SI ;
+    • Capture automatique de documents issus du SI (création/mise à jour) : reconnaissance du type de document, extraction des métadonnées et publication dans la solution (document et métadonnées). Cette capture doit être suivie par un monitoring web ;
+
+La solution doit mettre à disposition un SDK (Kit de développement logiciel) de ce WebService avec toute la documentation correspondante.
+Il est aussi fortement recommandé d’offrir pour l’administrateur une interface de test des Webservices afin de manipuler tous les appels possibles offerts pour les consommer.
+
+        h. Intégration avec la suite bureautique Microsoft Office
+La première source de création de documents numériques est la suite bureautique Microsoft Office. Par conséquent, la solution doit complétement et facilement s’intégrer nativement avec cette dernière :
+    • Intégration au client de messagerie Microsoft Outlook (Addin-Outlook) : Transformer les flux d’e-mails entrants en documents centralisés. Déclencher un processus métier sans quitter le client de messagerie. Transfert des e-mails et des pièces jointes vers la solution avec rattachement aux contacts et détection des doublons ;
+    • Intégration au traitement de texte Microsoft Word (Addin-Word) afin d’injecter les documents sortants au niveau de la solution ;
+    • Générer des modèles-types de documents en simplifiant l’édition et le travail collaboratif. Un document Office édité et modifié est enregistré et sauvegardé directement dans l’entrepôt documentaire centralisé de la solution (Edition en mode Web). La génération en question peut être faite via :
+        ◦ Une action manuelle : l’utilisateur choisit le modèle disponible et lance la création du document via ce modèle.
+        ◦ Une action automatique : c’est le Système qui lance automatiquement la génération du document via un modèle prédéfini si des conditions précises sont vérifiées.
+
+        i. Travail collaboratif :
+La solution proposée doit offrir de base un ensemble d’actions de traitement prédéfinies :
+        ◦ Démarrer le traitement d’une tâche ;
+        ◦ Assigner une tâche à un collaborateur de mon équipe,
+        ◦ Transférer une tâche à un autre acteur (utilisateur ou service) ;
+        ◦ Lecture d’un document ;
+        ◦ Action de validation ou Non Validation d’un document ;
+        ◦ Action de Signature d’un document ;
+
+        j. Signature d’un document
+La solution proposée doit offrir la possibilité d’affecter des tâches de signature sur un document.
+L’acteur signataire doit être capable de signer le document ou bien de refuser la signature avec toute la gestion automatique du processus « marche arrière » en cas de « Non-Signature ».
+La solution doit être aussi capable de remonter au niveau du ‘tableau de bord’ des utilisateurs un indicateur sur tous les documents objets de signature.
+    • Signature Physique :
+Pour certains documents à signer physiquement, la solution doit être ouverte pour signer physiquement le document.
+Vue le nombre important de documents à signer, la solution doit présenter un mécanisme efficace pour l’automatisation de l’opération de capture et de rattachement automatique et intelligent des documents signés scannés au bon dossier.
+    • Signature électronique :
+La solution doit offrir un module de Signature électronique capable de : 
+        ◦ Faire une simple signature visuelle en utilisant un spécimen de signature. Le document résultant doit être audité dans le système en tant que document signé en précisant le signataire et l’horodatage de la signature faite.
+        ◦ Faire une signature avancée en utilisant un certificat de signature valable et non révoqué délivré par l’autorité de certification reconnue (ARTCI).
+        ◦ Possibilité de faire de la signature en masse de plusieurs documents (que ce soit avec de la signature simple ou avancée)
+
+        k. Indexation, Recherche et Classement
+
+            iv. Indexation :
+
+    • Indexation plein texte du contenu des documents numérisés grâce à un scan OCR afin de faire de la recherche sur le contenu et de pouvoir sélectionner le texte du document image scanné :
+        ◦ Recherche simple, par mots-clés dans les métadonnées et le contenu d’un document, structurée avec filtres et tris multicritères ;
+        ◦ Recherche multicritère à l’aide d’une interface de recherche avancée ;
+        ◦ Possibilité d’enregistrer les recherches pertinentes ou récurrentes pour des utilisations ultérieures ;
+        ◦ Conserver un historique des recherches et classer des documents par dossier ;
+    • Indexer, en lot, certaines informations spécifiques pour des documents PDF similaires issues du SI selon certaines métadonnées ;
+
+    • Supporter plusieurs langues : concernant la saisie des documents, des rapports, et bénéficiant de toutes les fonctionnalités offertes par la recherche ;
+
+    • Auto-classement des documents dans des vues dynamiques pour faciliter la recherche d’information et l’exploration des données : représentation des documents dans une vue arborescente de dossiers / sous dossiers/ … Le classement doit être automatique selon des critères variables de classement. Ces critères sont paramétrables pour couvrir tous les besoins de l’administration en termes d’évolutivité et la pertinence de sa politique interne de classement des documents) ;
+
+            v. Recherche :
+    • La solution devra offrir plusieurs manières de rechercher un document :
+        ◦ La recherche par critères, en utilisant un langage de requête sur une combinaison de mots-clés ou métadonnées définis durant la phase d'indexation ;
+        ◦ Les critères doivent être combinés avec des opérateurs logiques (ET, OU, SAUF) ;
+        ◦ La recherche par type de document, par catégorie ;
+        ◦ La recherche sur le contenu (recherche en texte intégral multilingue) pour permettre de retrouver une information à l'intérieur du document.
+        ◦ Le formulaire de recherche doit être extensible pour intégrer de nouveaux critères de recherche correspondants à de nouveaux champs/métadonnées ajoutés par l’administrateur ;
+    • La solution doit proposer deux modes de recherche documentaires :
+        ◦ Une recherche rapide (plein texte) dans le contenu du document, la référence ou le titre de chaque document ;
+        ◦ Une recherche avancée sur toutes les métadonnées relatives au document et contenu des fichiers qui lui sont rattachés ;
+    • Dans une logique de recherche productive, il est fortement demandé de disposer du mécanisme de ‘zone de persistance’. Chaque utilisateur, suite à une recherche peut placer un ou plusieurs documents dans cette zone de travail pour des besoins de traitement ultérieure. La zone en question ne doit pas être volatile par session (persistance).
+
+            vi. Classement :
+    • La solution devra intégrer une fonction de gestion du référentiel de classement et disposer d'une structure appropriée : 
+        ◦ Cette fonction s'appuiera sur le plan de classement de documents validé par l’équipe projet.
+        ◦ Une arborescence hiérarchique de dossiers doit pouvoir être paramétrée afin d'organiser les documents stockés dans un référentiel et de gérer les liens entre les documents. 
+
+    G. PARAPHEUR ELECTRONIQUE
+
+Le parapheur électronique requiert une importance particulière car son utilité est primordiale et indispensable pour les managers de L’UFHB. En effet il constitue un conteneur d’apport et préservation de la valeur probante aux documents numériques par le biais de la signature, son stockage, sa vérification, sa traçabilité et sa sécurité. 
+Le parapheur électronique permet ainsi de remplacer la signature manuscrite par une signature digitale (manuscrite tactile) ou électronique à valeur probante afin d’authentifier le signataire pour montrer que le document a été approuvé par une personne identifiée.
+
+Pour cela la présentation par le prestataire d’un certificat d’homologation du parapheur électronique par une entité gouvernementale de certification électronique est obligatoire.
+La solution doit proposer nativement un « Parapheur Electronique » ayant les fonctionnalités suivantes :
+    • Assurer le même objectif que le parapheur papier :
+        ◦ Contenir l’ensemble des documents soumis à validation et/ou à la signature.
+        ◦ Répondre aux exigences suivantes lors de la circulation de documents : confidentialité, sécurité, traçabilité.
+    • Utilité : annoter et signer des documents, en masse ou à l’unité, de manière dématérialisée indépendamment de la localisation de l’acteur en question (Bureau, domicile …) et en mode tactile (modifier et/ou signer avec un Stylet par exemple) :
+        ◦ Application d'une image scannée de signature,
+        ◦ Signature électronique du document avec certificat de signature,
+        ◦ Signature directement sur un périphérique tactile,
+    • Offrir la possibilité de Signature et Vérification : validité des informations de signature (autorité certifiante, validité du certificat, …) ;
+    • Possibilité de signer à plusieurs en mode collaboratif : co-signature ;
+    • Gestion de toutes les formes de signature : de l’apposition de l’image scannée avec cachet (signature digitale manuscrite) jusqu’au plus haut niveau de certification qualifiée délivrée sous forme de clé USB par l’autorité nationale de certification électronique ;
+    • La solution doit non seulement avoir une sécurité avancée mais aussi permettre une vérification multifactorielle pour identifier le signataire
+
+Ce module, clé en main, doit couvrir au minimum les besoins fonctionnels suivants : 
+    • Disposer d’un tableau de bord avec des KPI’s sur l’ensemble de tâches en attente (KPI sur les documents à signer, les documents à valider, …).
+    • Pour chaque utilisateur du parapheur électronique, il doit être capable de paramétrer ses spécimens de signature,
+    • Pouvoir modifier la langue (selon les langues définis par l’administrateur),
+    • Gérer des habilitations d’accès aux documents selon les droits de l’utilisateur connecté au parapheur électronique, 
+    • Accéder au cycle de vie du document à signer (étapes de processus) ainsi qu’à toutes les métadonnées descriptives de ce document,
+    • Signer un document en appliquant une image scannée de signature sur un champ d'emplacement prédéfini dans le document.
+    • Refuser une tâche de signature : Ce scénario permet d'indiquer un refus de signature du document. Cette action termine la tâche de signature et modifie le processus de traitement du document.
+    • Offrir la possibilité dans le cas où plusieurs utilisateurs doivent être signataires d'un même document, d'appliquer plusieurs images de signature sur le même document.
+    • Signer un lot de documents : 
+        ◦ Possible de signer en masse l'ensemble des documents d’un lot. 
+        ◦ Avant la signature en masse, offrir la possibilité de visualiser les documents à signer et/ou de retirer du lot les documents qui ne doivent pas être signés.
+        ◦ Pouvoir notifier les acteurs d’un processus suite à la signature.
+
+    H. Notifications et alertes
+
+Les notifications et alertes peuvent figurer dans le tableau de bord de chaque utilisateur ou envoyer en mode push à travers la messagerie électronique ;
+Exemple de notifications sur tableau de bord et/ou par mail :
+    • Changement d’étape dans le processus ;
+    • Mail d'information sur action automatique ;
+    • Mail d'information manuel (un utilisateur souhaite manuellement informer une autre personne) ;
+    • Non validation d’un document, urgence d’intervention non prise en compte …;
+
+La solution doit offrir les fonctions suivantes
+    • Paramétrer des dates échéances calculées par type de document,
+    • Paramétrer des alertes (notifications mail) avec des dates d’alertes calculés par type de document,
+    • Possibilité de remonter sur le tableau de bord un KPI sur les documents en retard de traitement,
+    • Possibilité de notifier (par email) tous les utilisateurs du système, d’une façon périodique, sous forme de récapitulatif hebdo, sur (la période doit être paramétrable) : 
+        ◦ Les documents avec échéance,
+        ◦ Les documents en retard de traitement,
+        ◦ Les documents en Alertes,
+
+    I. Statistiques et rapports
+
+La solution doit inclure un module analytique, statistiques et génération de rapports pour la supervision et l’aide à la prise de décision grâce notamment à des indicateurs graphiques de pilotage.
+
+La solution doit être suffisamment souple pour permettre à l’administrateur d’être autonome pour la conception et le déploiement de rapports personnalisés selon les besoins métiers et de vérification et contrôle. 
+
+    4- PERIMETRE TECHNIQUE
+        a. Architecture technique
+
+La solution proposée devra s’appuyer sur les standards suivants :
+    • Diffusion via un simple navigateur standard facilitant ainsi le déploiement sur les postes de travail ;
+    • Application mobile dédiée téléchargeable à partir des Stores Google Play et Apple ;
+    • Intégration avec les annuaires LDAP ;
+    • Un moteur de recherche unique pour tous les types d’informations, structurées ou non, en bases de données ou dans des documents ;
+
+Le prestataire doit aussi fournir l’infrastructure nécessaire pour monter la solution selon les SLA attendus par le maitre d’ouvrage. Tous les logiciels requis (OS, SGBD, …) sont aussi à la charge du prestataire.
+
+Multi-Environnements
+La solution proposée devra, également, être installée et mise en service sur les plateformes de développement, d’intégration et de production selon les bonnes pratiques.
+
+Serveur CMIS
+La solution proposée doit offrir un mode de connexion basé sur le standard CMIS (Content Management Interoperability Services) géré par le consortium OASIS (Organization for the Advancement of Structured Information Standards).
+Un service conforme aux normes de ce standard doit être disponible avec la solution proposée afin de permettre son utilisation depuis une interface externe.
+  
+Authentification SSO
+La solution doit permettre l’authentification automatique SSO des utilisateurs via : 
+    • Une Authentication Windows Intégrée (SSO Windows Active Directory) 
+    • ou bien une Authentification SSO via service d’authentfication externe ; la solution doit être compatible avec les standards d'authentification « SAML » et « OpenId Connect ».
+Une double Authentication (MFA)
+
+        b. Securité
+
+La gestion de la sécurité des informations doit être assurée au niveau le plus fin, de manière à garantir un haut niveau de confidentialité et une stricte ségrégation des droits d’accès. Afin d’assurer la sécurité des traitements au niveau du système, et des éléments de la plateforme technique, des dispositifs spécifiques de sécurité doivent être prévus. 
+
+Sécurité des accès
+Annuaire :
+L'ensemble des utilisateurs de la solution doivent être gérés depuis l’annuaire LDAP centralisé de L’UFHB :
+    • L'annuaire doit se composer d'organisations et de sous-organisations. 
+    • L'accès à l'interface doit nécessiter une authentification de l’administrateur ;
+
+Les accès :
+    • Le contrôle d’accès au système avec en particulier, la mise en place de dispositifs d’identification formelle et unique de tout utilisateur, de son authentification, de son habilitation à effectuer certaines opérations ;
+    • La gestion de l’identification et authentification en respectant les clauses de gestion des mots de passe et des sessions ;
+
+Groupes, profils utilisateurs et droits
+La gestion des profils doit tenir compte des granularités des accès.
+Groupes et profils :
+    • La solution doit permettre de créer des groupes (ou profils) d'utilisateurs ayant les mêmes droits. Les droits doivent permettre de différencier pour chaque utilisateur entre les actions qu'il a le droit d'effectuer.
+    • Possibilité de définir des permissions par utilisateur ou par groupe d’utilisateurs. 
+    • Un utilisateur peut cumuler différents profils, en fonction de son appartenance à un service, à un niveau hiérarchique, …;
+La solution doit distinguer deux types de profils administrateurs :
+    • Les profils de type administrateur fonctionnel : dédiés à l’aspect utilisation fonctionnelle du système ;
+    • Les profils de type administrateur techniques : dédiés aux tâches techniques et aux mises à jour logicielles, etc… ;
+Droits :
+La gestion des droits doit être suffisamment fine : par dossier d’arborescence et au niveau de chaque document ;
+    • Automatisation de la gestion des droits : L’organigramme de l’administration doit être le socle sur lequel doit reposer la structure de la solution en question. Permettant ainsi d’automatiser la gestion des droits d’accès et de mieux gérer la confidentialité des informations ;
+    • Matrice très fine et détaillée de droits par rôle applicables sur les documents (Confidentiel…) et jusqu’aux champs de la fiche documentaire ;
+    • La gestion des habilitations et des droits d’accès notamment par fonction, par profil, par groupe d’utilisateurs, par type de document et par type d’action à réaliser sur le document (visualisation, impression, import, export…) ;
+    • La gestion des profils et des droits d’accès : les droits de consultation, de traitement, de capture, de publication … ;
+
+Audit, traçabilité et journalisation
+Journalisation :
+La solution doit posséder un module de journalisation qui permet de journaliser automatiquement :
+        ◦ Les accès aux objets documentaires (exemple : dépôt, consultation, modification …) ;
+        ◦ Pour chaque opération, du nom ou le code de l'utilisateur qui a effectué l'opération, la date et l'heure d'exécution, la nature de l'opération, l’objet documentaire impliqué, etc ;
+        ◦ Suivi en temps réel des traitements via une interface graphique.
+        ◦ Historisation de chaque modification, 
+        ◦ Historique des échanges entre les intervenants.
+
+Traçabilité :
+La solution doit reposer sur une matrice de traçabilité complète : actions utilisateurs, déclenchement et déroulement des processus, cycle de vie intégrale des documents. (Qui a fait Quoi, Quand et Comment ?)
+La solution doit permettre de tracer les différentes opérations suivantes :
+    • Toutes les opérations effectuées sur un document ;
+    • Les changements de version ;
+    • Les demandes de modification ;
+    • Les distributions ;
+
+Paramétrage des droits :
+La solution proposée doit couvrir un module de gestion de droit afin de paramétrer les droits en se basant sur des rôles et des profils
+Confidentialité :
+La solution proposée doit offrir la possibilité de gérer :
+        ◦ La confidentialité des fiches documentaires,
+        ◦ La confidentialité des fichiers rattachés à une fiche documentaire.
+
+Extension de fichiers non autorisés :
+La solution doit être capable de filtrer sur les formats de fichiers uploadé.
+On doit être capable d’exclure l’upload de certains types de fichiers : « .exe », « .cmd », « .vbs », …
+Cette fonctionnalité doit être paramétrable par l’administrateur.
+
+Contrôle de signature avec certificat électronique
+Procédure de signature :
+        ◦ Permet de signer un fichier PDF ;
+        ◦ Considère la carte à puce/clé USB comme support de clé ;
+        ◦ Le signataire est authentifié par la saisie du code PIN ;
+        ◦ Prise en charge d’un magasin de certificats ;
+        ◦ Les attributs de signature doivent être automatiquement intégrés ;
+        ◦ Permet de visualiser le certificat de signature ;
+Procédure de vérification :
+        ◦ Vérification de l'expiration du certificat de signature ;
+        ◦ Vérification de l’état de révocation du certificat lors de la signature ;
+        ◦ D’autres points de vérifications doivent être précisés par le prestataire ;
+
+        c. HAUTE DISPONIBILITE ET EQUILIBRAGE DE CHARGE
+
+Le prestataire doit montrer la capacité de sa solution à monter plusieurs scénarios d’architectures afin de répondre à nos exigences de :
+        ◦ Haute disponibilité ;
+        ◦ Equilibrage de charge ;
+
+Les délais de réponse disposés par l’applicatif doivent répondre aux engagements de disponibilité et rapidité d’avoir l’information dont l’administration en a besoin. 
+
+        d. MISE en place de la solution, paramétrage et tests unitaires
+
+Mise en place du système :
+Le prestataire doit réaliser l’installation et le paramétrage de la solution sur les 3 environnements :
+    • Environnements de développement
+    • Environnement de Préproduction ou intégration ou de recette
+    • Environnement de Production
+
+Paramétrage et tests unitaires :
+Le prestataire sera responsable du paramétrage et de la mise en service de la solution dont les spécifications ont été validées dans la phase du cadrage.
+Après la finalisation du paramétrage, le prestataire est tenu de réaliser les tests unitaires et lancer la recette fonctionnelle.
+Recette fonctionnelle
+Pendant la phase de la recette fonctionnelle à réaliser par les utilisateurs clés, le prestataire assurera le suivi et la résolution des anomalies remontées jusqu’à validation de la recette et la signature du PV de recette.
+
+        e. Transfert de compétences
+
+Le prestataire s'engage à assurer les formations par des consultants/formateurs qualifiés, par l’éditeur sur la solution proposée. Ces formations seront découpées en 3 étapes de formations :
+
+        ◦ Etape 1 : Formation des référents
+Le principe de cette formation est de former des formateurs qui ensuite formeront les utilisateurs finaux de la solution. Elle doit porter sur l’ensemble des fonctionnalités du système (une session de 5 Jours par groupe de 10 personnes). 
+        ◦ Etape 2 : Formation des administrateurs fonctionnels pour environ 10 personnes
+Formation des administrateurs fonctionnels sur les aspects d’administration et d’exploitation quotidienne de la solution (administration de l’organigramme, administration des référentiels, types de documents, casier, formulaires de saisie, les processus de travail, ... 
+ 
+        ◦ Etape 3 : Formation des administrateurs techniques environ 5 personnes
+Formation administration technique pour qu’ils puissent assurer les tâches suivantes :
+            ▪ L’administration technique et l’exploitation de toutes les composantes techniques de la solution, 
+            ▪ L’utilisation de l’ensemble des fonctionnalités du système,
+        ◦ 
+
+        f. TERCE MAINTENANCE APPLICATIVE
+
+Le prestataire s’engage, à assurer une Maintenance (préventive, curative et évolutive) de la solution dans le cadre d’un contrat de TMA qu’il devra proposer, dans sa réponse et qui prendra effet après l’expiration de la période de garantie.
+
+Le délai du contrat est d’un an reconduit tacitement d’année en année.
+
+La non-reconduction du contrat de TMA est prise à l’initiative de l’une des deux parties au marché moyennant un préavis de 3 mois par lettre recommandée avec accusé donnant lieu à la résiliation du contrat de maintenance.
+
+La Tierce Maintenance Applicative comprendra : 
+            ▪ La Maintenance Corrective
+            ▪ La Maintenance Préventive
+            ▪ La Maintenance Evolutive, 
+            ▪ L’Assistance Utilisateurs (Helpdesk de niveau II)
+            ▪ L’administration du service de Tierce Maintenance Applicative
+            ▪ La gestion des demandes
+            ▪ Les projets (Tous types de Prestations dans le cadre de la Maintenance Evolutive dont la charge dépasse le seuil de 20 jours/homme, sauf exception conjointement approuvée par les Parties
+            ▪ La mise à jour de la documentation
+
+        g. TABLEAU DE CONFORMITE TECHNIQUE
+
+#
+Besoins fonctionnels et techniques
+Existe en standard
+Oui / Non
+Commentaire
+
+    A. BESOINS DE BASE
+
+(1)
+Tous les composants de la Solution doivent provenir du même éditeur
+
+(2)
+La solution doit être ouverte, modulaire, performante, robuste, paramétrable et évolutive tant au niveau architecture qu’au niveau fonctionnalités.
+
+(3)
+Solution basée sur des logiciels éditeurs utilisables sous licence et couverts par des contrats de maintenance corrective et évolutive de leur éditeur
+
+(4)
+Performances : La performance doit être maintenue malgré la montée en charge de la solution (nombre de connexions, nombre d’applications mises en exploitation, volume de données, …)
+
+(5)
+La solution doit supporter nativement la gestion d’une architecture multisite ou société/multi-instances : étanchéité et échange sécurisé et crypté inter-sites.
+
+(6)
+La solution doit offrir la possibilité de s’interfacer avec le serveur de messagerie POP/POPS/IMAP/IMPAS (pour la capture des mails) et SMTP (pour l’envoi des notifications)
+
+(7)
+La Solution doit être composée d'un système évolué de gestion électronique des correspondances GEC, de Gestion Electronique de Documents GED et d'un moteur WORKFLOW de modélisation graphique et automatisation des processus métiers (moteur Workflow) associé à de l’intelligence artificiel (IA).
+
+(!)
+Reposé sur un seul et unique entrepôt documentaire centralisé et sécurisé, centralisant tous les référentiels documentaires.
+
+(8)
+La solution proposée doit intégrer un espace web documentaire d’aide en ligne, par accès sécurisé, exploitable par les utilisateurs proposant des documents et vidéothèque d’apprentissage et prise en main de la solution.
+
+    B. INTERFACE ET MODE D’ACCES WEB/MOBILE
+
+(9)
+Multilingue (notamment, d’un point de vue interface et des documents)
+
+(10)
+Interface web utilisateur sous forme d’un espace de travail de type « tableau de bord » de prise de décision/action. Ce dernier doit être facilement et complétement personnalisable, à base de widgets, pour une rapide appropriation, prise en main facile et meilleure expérience utilisateur
+
+(11)
+Mode d’accès sur poste de travail : en full Web et uniquement par navigateur standard (Chrome, Firefox, Edge, Safari…). Interface web conviviale sous forme de tableau de bord dynamique à base de widgets avec indicateurs de pilotage
+
+(12)
+Mode d’accès sur périphérique mobile Android/iOS : uniquement par application mobile dédiée, pour une meilleure expérience utilisateur, téléchargeable sur les AppStores Google et Apple. Surtout pas d’accès par navigateur sur mobile.
+
+    C. FONCTIONNEL ET ORGANISATIONNEL
+
+(13)
+La solution doit être mise en place sur plusieurs instances distinctes ; une instance par site.
+
+(14)
+Vu l’importance de l’organigramme en tant qu’élément organisationnel incontournable, la solution doit proposer son administration en full web par modélisation graphique et accessible selon profils et droits
+
+-- REFERENTIELS METIERS --
+
+(15)
+Pour assurer une intégration optimale avec les différents entités métiers, la solution doit s’appuyer sur les référentiels métiers :
+    • Gestion intégrée d’une base de contacts tiers ;
+    • Gestion des acteurs internes basée sur l’organigramme ;
+    • Intégration des outils Archivistiques (Classification archivistique, calendrier de conservation)
+    • Intégration des modèles de documents 
+    • Les processus modèles de traitement des entrants et des sortants
+    • Le référentiel des casiers de distribution
+    • Les tableaux de de bord et KPI
+
+(16)
+La solution devra intégrer une fonction de gestion du référentiel de classement des documents (selon chaque entité métier) et disposer d’une structure appropriée : Une arborescence hiérarchique de dossiers doit pouvoir être paramétrée afin d’organiser les documents stockés dans un référentiel et de gérer les liens entre documents
+
+-- GESTION DU COURRIER ENTRANT ET SORTANT --
+
+(17)
+Attribution automatique d’un numéro chronologique au courrier paramétrable par année et par type de courrier
+
+(18)
+Possibilité d’attribuer un QR CODE ou et code barre
+
+(19)
+Tenu automatique des registres arrivé/départ
+
+(20)
+Lier automatiquement les courriers arrivés et courriers départs
+
+(21)
+Générer automatiquement des accusés de réception
+
+(22)
+Possibilité de paramétrer plusieurs profils d’enregistrement par type de courrier : papier, email, fax
+
+(23)
+Assembler des courriers sous forme de dossiers ou casiers
+
+(24)
+Chaque courrier doit être rattaché à un dossier de traitement permettant de partager l'information avec d'autres acteurs travaillant sur un même projet
+
+(25)
+Utiliser des modèles-types pour garantir des réponses standards au courrier
+
+(26)
+Annotation accompagnant le courrier sous forme de commentaire, assignation d’instructions, ou saisie dans le document scanné
+
+(27)
+Permettre de spécifier au niveau du paramétrage les destinataires par défaut par type de document
+
+(28)
+Permettre d'accéder à tout moment à l'état d'avancement du traitement du courrier sous forme de tableau de bord de suivi avec affichage de tous les commentaires /annotations relatives à son traitement par les différents acteurs/intervenants du processus
+
+(29)
+Le système doit mémoriser les versions traitées et modifiées durant le processus de l’élaboration d’un courrier départ
+
+(!)
+Permettre la notification automatique du signataire du courrier lors de l'émission de ce dernier par le bureau d'ordre
+
+(30)
+Proposer une interface de recherche et un système de Reporting et statistiques propres à la gestion du courrier permettant d'évaluer les délais et l'état de son traitement (traité, en instance, en retard …)
+
+(31)
+La gestion des échéances et des alertes : 
+    • Affectation automatique d’échéances : dates d’échéances et dates d’alertes automatiquement calculés.
+    • Avoir des KPI sur les courriers échus : en retard. Des Notifications par mail sur les courriers en retard de traitement
+
+-- GESTION ARCHIVISTIQUE DES DOCUMENTS --
+
+(32)
+Le module archivistique doit être intégré nativement avec la solution 
+
+(33)
+La solution doit respecter la classification documentaire des archives et la réglementation en vigueur
+
+(34)
+La solution doit s’appuyer sur des règles précises d’enregistrement, stockage, conservation et restitution des documents
+
+(35)
+Calcul et traitement automatique des documents selon un calendrier de conservation (Durée d’utilité Administrative et Sort du document)
+
+(36)
+Outils archivistiques : 
+            ▪ Classification archivistique,
+            ▪ Calendrier de conservation (Durée d’utilité Administrative et Sort du document),
+            ▪ Localisation physique,
+            ▪ Affecter la classe archivistique correspondante à chaque document,
+            ▪ Fournir des modèles de bordereau d’élimination, de transfert et de versement,
+            ▪ Offrir des vues de classifications archivistiques et de localisation,
+            ▪ Sélection des documents objet de traitement,
+            ▪ Export sur disque selon la norme SEDA (Standard d’échange de données pour l’archivage) des documents archivés et traités
+
+-- GESTION DU FLUX MULTICANAL --
+
+(37)
+Capture du flux papier :
+La solution proposée pour la capture (par scan) des flux papier doit être compatible avec tous les périphériques de scan du marché (scanner et Multifonctions). La fonction de capture doit être indépendante du modèle/marque du périphérique de scan en question.
+
+(38)
+Numérisation en couleur en préservant la qualité visuelle du document (Compression optimale). Détection et élimination des pages blanches
+
+(39)
+Capture du flux email :
+    • Capture en masse,
+    • Capture sélective.
+Le soumissionnaire doit détailler ce point selon le paragraphe correspondant.
+
+(40)
+Capture automatique des documents numériques issus du SI sans développement spécifique. Le soumissionnaire doit détailler ce point.
+
+(41)
+Capture de flux XML sans développement spécifique. Le soumissionnaire doit détailler ce point.
+
+(42)
+Serveur de capture et autres fonctionnalités :
+    • Serveur central dédié pour la capture de tous les flux de numérisation.
+    • Ce serveur doit être indépendant des périphériques utilisés pour la numérisation qui peuvent être répartis géographiquement 
+    • Supervision des chaines de numérisation centralisées ou éclatées
+
+(43)
+Numérisation par lot (capture en masse) : contextualisation des documents à base d’intercalaire de séparation identifié par code à barre ou QR-Code
+
+(44)
+Prise en charge des casiers virtuels :
+    • Routage automatique des documents numérisés dans des casiers virtuels pour enregistrement,
+    • Association automatique, à chaque casier, de : métadonnées, processus de traitement, échéance de traitement et calcul automatique des dates d’échéances et dates d’alertes selon le type de document dans le casier,
+    • Personnalisation des casiers : par Direction/ services par support (papier, email…), par flux métiers (Commun, Technique, …)
+
+(45)
+Format de fichiers prises en charge :
+    • TIFF/multipages, PDF image ou texte, 
+    • PDF/A (ISO 19005-1) pour des besoins de signature électronique et d’archivage à long terme.
+
+(46)
+S’interfacer avec des serveurs de stockage en supportant les protocoles réseaux suivants : NFS, CIFS, SMB
+
+    D. TRAITEMENT DES DOCUMENTS
+
+(47)
+Apposer et gérer des commentaires et annotations sur chaque document
+
+(48)
+Gestion des consignes pour chaque action/tâche
+
+(49)
+Intégration de pièces jointes utiles au traitement
+
+(50)
+Gestion de fonctions utiles au traitement : demandes d’information, transferts de document, envois et relances par email
+
+(51)
+Alertes automatiques selon les échéances
+
+(52)
+Conserver et tracer les différentes versions de documents
+
+-- FORMULAIRE, METADONNEES ET THESAURUS --
+
+(53)
+La solution doit disposer des interfaces web pour la gestion et l’administration de :
+    • Formulaires web,
+    • Métadonnées,
+    • Champs « Thésaurus ».
+
+-- CREATION ET CONTROLE --
+
+(54)
+Intégration et prise en charge native depuis le navigateur de la suite bureautique Microsoft Office
+
+(55)
+La solution doit permettre de créer des règles de saisie (expressions régulières) sur les champs de formulaire de type : email , montant, numériques ou alphanumérique
+
+(56)
+Tous les champs “date” doivent être saisis à partir d’un calendrier, sauf spécification contraire
+
+(57)
+Permettre la création des listes déroulantes paramétrables
+
+(58)
+Permettre la création de champs de type thésaurus :
+    • Visualisation de liste de valeurs en format arborescent,
+    • Permettre la multi-sélection depuis le champ thésaurus
+
+(59)
+Création de modèles de documents avec fusion de champs, injection de code-barres et champs « signature » …
+
+(60)
+La solution doit offrir la possibilité de lier de multiples documents pour constituer un fond de dossier relatif à un contexte professionnel donné. Le dossier en question s’alimente au fur et à mesure des étapes d’un ou plusieurs workflows le concernant
+
+(61)
+Rassembler les documents créés autour d’une thématique projet (présentation, compte-rendu, devis, enquête, rapports, livrables…)
+
+-- GESTION DES DOCUMENTS ENTRANTS ET SORTANTS --
+
+(62)
+Génération d’un identifiant unique par QR code ou code barre notamment pour les factures entrantes pour chaque facture numérisée.
+
+(63)
+Génération d’un identifiant unique pour chaque document numérisé
+
+(64)
+Horodatage du système de scan (date/heure/minute/ seconde)
+
+(65)
+Lien automatique entre le document entrant et sa réponse
+
+(66)
+Gestion d’une base de modèles : accusés de réception, réponses, rapports, notes internes, PV de réception, demande de congé, …
+
+(67)
+Insertion de codes-barres dans les documents sortants pour des raisons de traçabilité et identification
+
+(68)
+Processus de validation associés aux documents sortants
+
+(69)
+Traitement en masse :
+    • Clôture en masse de plusieurs traitements/tâches de processus,
+    • Transférer en masse de plusieurs traitements/tâches de processus,
+    • Signature en masse de plusieurs documents
+
+-- CYCLES DE VIE – HISTORIQUE DES VERSIONS --
+
+(70)
+La solution doit gérer le cycle de vie complet d’un document notamment, la création, la modification, le versionning, l’archivage, ...
+
+(71)
+Gestion des versions avec historique au niveau de chaque document
+
+(72)
+La liste des différentes versions d'un document est accessible directement depuis le formulaire de propriétés d’une des versions
+
+(73)
+Une seule version de document est applicable
+
+(74)
+Le suivi des modifications permet de tracer toutes les actions effectuées sur une version
+
+-- RESERVATION DES DOCUMENTS --
+
+(75)
+Implicite : Lorsqu’un utilisateur ayant droit est entrain de modifier un document, ce dernier est réservé (verrouillé) pour lui. Le verrou est levé à la fin de l’édition du document
+
+(76)
+Explicite : un utilisateur peut utiliser une fonction « Réserver » qui permet de verrouiller le document pour lui.
+A la fin du traitement, l’utilisateur doit avoir la possibilité d’annuler la réservation afin de libérer le document
+
+-- INEGRATION AVEC LE SI --
+
+(77)
+La solution GEC doit reposer sur des webservices à consommer depuis les SI. 
+Le soumissionnaire doit détailler ce point.
+
+(78)
+Capture automatique de documents issus du SI : reconnaissance du type de document, extraction des métadonnées et publication dans la solution (document et métadonnées). Cette capture doit être suivie par supervision web.
+
+(79)
+Fournir un SDK, avec la documentation correspondante, des Webservices en question
+
+-- INTEGRATION AVEC MICROSOFT OFFICE --
+
+(80)
+Intégration à Outlook (Addin sur l’interface outlook) : Capture d’emails
+
+(81)
+Intégration au traitement de texte Word (Addin) : Injection de documents depuis l’interface de Microsoft Word
+
+(82)
+Générer des modèles-types de documents (manuelle ou automatique)
+
+(83)
+Proposition d’actions prédéfinies pour un travail collaboratif :
+    • Démarrer le traitement d’une tâche,
+    • Assigner une tâche à un collaborateur,
+    • Transférer une tâche à un autre acteur,
+    • Lecture d’un document,
+    • Validation / Non-Validation d’un document,
+    • Signature d’un document
+
+-- SIGNATURE D’UN DOCUMENT --
+
+(84)
+La solution proposée doit offrir la possibilité d’affecter des tâches de signature sur un document
+
+(85)
+L’acteur signataire doit être capable de signer le document ou bien de refuser la signature avec toute la gestion automatique du processus « marche arrière » en cas de « Non-Signature »
+
+(86)
+La solution doit être aussi capable de remonter au niveau du ‘tableau de bord’ des utilisateurs un indicateur sur tous les documents objets de signature
+
+(87)
+Signature Physique :
+Vue le nombre important de documents à signer, la solution doit présenter un mécanisme efficace pour l’automatisation de l’opération de capture et de rattachement des documents signés physiquement et scannés ultérieurement.
+
+(88)
+La solution doit offrir un module de Signature électronique capable de : 
+                • Faire une simple signature visuelle en utilisant un spécimen de signature (signature manuscrite tactile + cachet). Le document résultant doit être audité dans le système en tant que document signé en précisant le signataire et l’horodatage de la signature faite.
+                • Faire une signature avancée en utilisant un certificat de signature valable et non révoqué délivré par l’autorité nationale de certification (ARTCI).
+                • Possibilité de faire de la signature en masse de plusieurs documents (que ce soit avec de la signature simple ou avancée)
+
+-- INDEXATION, RECHERCHE ET CLASSEMENT --
+
+(89)
+La solution doit supporter une indexation plein texte du contenu des documents numérisés grâce à un scan avec application d’un OCR.
+L’OCR doit être multilingue avec la capacité de traiter un document multilingue 
+
+(90)
+Ajouter des mots-clés permettant de faciliter les opérations de recherches
+
+(91)
+Indexer, en lot, certaines informations spécifiques pour des documents PDF similaires issues du SI selon certaines métadonnées
+
+(92)
+Création d’un fond de dossier :
+Permettre la création automatique des dossiers regroupant plusieurs types de documents ayant un ou plusieurs attributs en commun.
+
+(93)
+Possibilité de définir pour chaque type de document des clés d’index dont certains seront obligatoires
+
+(94)
+Supporter d’autre langue lors de l’indexation et la recherche
+
+(95)
+La solution devra permettre de : 
+    • Classer les documents dans une vue arborescente à plusieurs niveaux (dossiers, sous-dossiers, documents, …) ;
+    • Placer cette vue dans l’espace de travail de l’utilisateur ;
+    • Donner la possibilité selon le profil de l’utilisateur à accéder à cette vue, ou à en définir d’autres selon sa fonction/métier.
+
+(96)
+La solution devra permettre la création d’un thésaurus de classement des documents
+
+(97)
+La solution doit proposer deux modes de recherche : simple et avancée
+
+Auto-classement des documents dans des vues dynamiques
+
+(98)
+Permettre la gestion d'une arborescence (dossiers/sous dossiers/documents) selon un plan de classement dans des dossiers
+
+(99)
+Recherche :
+    • Par critères, en utilisant un langage de requête sur une combinaison de mots-clés ou métadonnées définis durant la phase d'indexation,
+    • Les critères doivent être combinés avec des opérateurs logiques (ET, OU, SAUF), par type/catégorie, …,
+    • Sur le contenu (recherche en texte intégral multi langue) pour permettre de retrouver une information à l'intérieur du document.
+    • Le formulaire de recherche doit être extensible pour intégrer de nouveaux critères de recherche correspondants à de nouveaux champs/métadonnées ajoutés par l’administrateur,
+    • Deux modes de recherche :
+        ◦ Rapide (plein texte) dans le contenu du document, la référence ou le titre de chaque document,
+        ◦ Avancée sur toutes les métadonnées relatives au document et contenu des fichiers qui lui sont rattachés,
+    • Dans une logique de recherche productive, il est fortement demandé de disposer du mécanisme de ‘zone de persistance’. Chaque utilisateur, suite à une recherche peut placer un ou plusieurs documents dans cette zone de travail pour des besoins de traitement ultérieure. La zone en question ne doit pas être volatile par session (persistance).
+
+(100)
+La solution doit permettre de trier le résultat d’une recherche selon différents critères (date, titre, auteur, …)
+
+(101)
+Classement :
+La solution devra intégrer une fonction de gestion du référentiel de classement et disposer d'une structure appropriée : 
+    • Cette fonction s'appuiera sur le plan de classement de documents en vigueur et validé par l’équipe projet,
+    • Une arborescence hiérarchique de dossiers doit être paramétrée afin d'organiser les documents stockés dans un référentiel et de gérer les liens entre les documents,
+
+    E. MOTEUR WORKFLOW
+
+(102)
+La solution doit intégrer nativement un designer WORKFLOW graphique pour la modélisation et l’automatisation des processus métiers
+
+-- MODELISATION ET CREATION DES PROCESSUS --
+
+(103)
+Générer un enchainement de tâches et d'actions selon un diagramme séquentiel et/ou parallèle
+
+(104)
+Le moteur doit permettre au besoin de concevoir un nombre illimité de processus Workflow pour les besoins actuels et futurs
+
+(105)
+Les processus workflow peuvent être crées à l’initiative des administrateurs et figés pour les cas complexes ou laissé à l’initiative des utilisateurs pour les cas simples à périmètre de validation réduit
+
+(106)
+Gestion des rôles : 
+Un rôle définit l'ensemble des acteurs chargés de réaliser une tâche du processus
+Intégrer des modèles de documents (Template) qui seront paramétrés avec des champs de saisie proposés et à renseigner par les différents intervenants dans le processus
+
+(107)
+Possibilité de choisir comme acteurs des processus des utilisateurs individuels ou des entités métiers
+
+(108)
+Parmi les éléments de modélisation à prendre en compte :
+    • Acteurs, étapes et tâches du processus ;
+    • Formulaires de saisie (tous types de champs : Texte, numérique, date, liste, pièce-jointe, etc.) ;
+    • Gestion des délais : Association à chaque action/tâche de dates d’échéance et de dates d’alerte ;
+    • Intervenants : Rôles/Profils ;
+    • Demandes d’actions/tâches aux services ou aux collaborateurs ;
+    • Gestion de catégories d’actions (attribution, contribution, information) et de sous-catégories personnalisables ;
+    • Gestion des refus
+
+(109)
+Possibilité de réaliser des formulaires ayant les champs importants suivants : Texte, Nombre, Date, Période, Pièces jointes, Acteurs, Contrôle de cohérence …
+
+(110)
+Intégrer des modèles de documents (Template) qui seront paramétrés avec des champs de saisie proposés et à renseigner par les différents intervenants dans le processus
+
+-- SUIVI DES PROCESSUS --
+
+(111)
+Contrôler l’état des processus en cours à tout moment : documents, intervenants, tâches/actions, délai de traitement global …
+
+(112)
+Possibilité de définir une durée maximale d’exécution pour chaque étape du processus avec notification de relance/alerte si un retard est signalé  
+
+(113)
+Déclenchement automatique d’actions Workflow spécifiques relatives à des métadonnées, état, échéance, urgence …
+
+-- DELEGATION ET RELANCE DES INTERVENTIONS --
+
+(114)
+La solution doit offrir à chaque utilisateur la possibilité de déclarer son absence et ainsi, sur une période donnée, de gérer ses intérimaires/délégataires
+
+(115)
+Gestion des absences et de la délégation/intérim sans avoir recours à changer de profil ou bien de communiquer les informations d’authentification à l’utilisateur intérimaire
+
+(116)
+Permettre à chaque utilisateur, en cas d’absence temporaire, de nommer un intérimaire pour prendre en charge le traitement de ses documents en instance ou nouvellement reçus
+
+(117)
+Les intervenants doivent avoir la possibilité flexible de déléguer leurs interventions selon des circonstances précises
+
+(118)
+Pouvoir assigner manuellement les tâches, ou automatiquement au système, groupe ou personne appropriés
+
+(119)
+Pour une meilleure souplesse, il est à considérer les points importants suivants : 
+    • La délégation n’est pas exclusive. Le propriétaire de l’action ainsi que son délégataire auront accès tous les deux au droit de traitement,
+    • Possibilités de déclarer, pour la même personne et/ou service plusieurs délégataires,
+    • On peut définir un délégataire selon plusieurs critères : urgence, confidentialité, type de document, …
+    • On peut manuellement désactiver la délégation
+
+-- PARAPHEUR NUMERIQUE --
+
+(120)
+La solution doit proposer nativement un « Parapheur Numérique »
+
+(121)
+Assurer le même objectif que le parapheur papier :
+    • Contenir l’ensemble des documents soumis à validation et donc à la signature.
+    • Répondre aux exigences suivantes lors de la circulation de documents : confidentialité, sécurité, traçabilité
+
+(122)
+Annoter et signer des documents, en masse ou à l’unité, de manière dématérialisée indépendamment de la localisation de l’acteur en question et en mode tactile (modifier et/ou signer avec un Stylet par exemple) :
+                • Application d'une image scannée de signature,
+                • Signature électronique du document avec certificat de signature,
+                • Signature directement sur un périphérique tactile,
+
+(123)
+Possibilité de signer à plusieurs en mode collaboratif : co-signature
+
+(124)
+Disposer d’un tableau de bord avec des KPI sur l’ensemble de tâches en attente (KPI sur les documents à signer, les documents à valider, …)
+
+(125)
+Pour chaque utilisateur du parapheur électronique, il doit être capable de paramétrer ses spécimens de signature
+
+(126)
+Gérer des habilitations d’accès aux documents selon les droits de l’utilisateur connecté au parapheur électronique
+
+(127)
+Accéder au cycle de vie du document à signer (étapes de processus) ainsi qu’à toutes les métadonnées descriptives de ce document
+
+(128)
+Signer automatiquement un fichier bureautique du document en appliquant une image scannée de signature sur un champ d'emplacement prédéfini dans le fichier
+
+(129)
+Refuser une tâche de signature. Cette action termine la tâche de signature et modifie le processus du document.
+
+(130)
+Signer un lot de documents :
+Avant la signature en masse, offrir la possibilité de visualiser les documents à signer et/ou de retirer du lot les documents qui ne doivent pas être signés
+
+(131)
+Pouvoir notifier les acteurs d’un processus suite à la signature
+
+(132)
+Gestion et vérification de toutes les formes de signature : d’une signature digitale manuscrite jusqu’à une signature électronique qualifiée
+
+    F. NOTIFICATIONS ET ALERTES
+
+(133)
+Visuel et personnalisable dans l’interface « Tableau de bord » de chaque utilisateur
+
+(134)
+Fonctionnalités demandées :
+                • Paramétrer des dates échéances calculées par type de document,
+                • Paramétrer des alertes (par mail) avec des dates d’alertes calculés par type de document,
+                • Afficher sur le tableau de bord un indicateur sur les documents en retard de traitement,
+                • Notifier (par email) tous les utilisateurs concernés, périodiquement, sous forme de récapitulatif hebdo, sur (la période doit être paramétrable) : 
+                    ◦ Les Documents avec échéance,
+                    ◦ Les Documents en retard de traitement,
+                    ◦ Les Documents en Alertes
+
+    G. STATISTIQUES ET RAPPORTS
+
+(135)
+La solution doit inclure un module analytique, statistiques et génération de rapports pour la supervision et l’aide à la prise de décision
+
+(136)
+La solution doit être suffisamment souple pour permettre à l’administrateur d’être autonome pour la conception et le déploiement de rapports personnalisés selon les besoins métiers
+
+    H. SECURITE
+
+(137)
+L’accès web à la solution doit être sécurisé en HTTPS/TLS 1.2
+
+-- SUPERVISION ET GESTION DES INCIDENTS --
+
+(138)
+La solution devra permettre de détecter des anomalies et les remonter aux administrateurs techniques
+
+-- SECURITE DES ACCES --
+
+(139)
+L'ensemble des utilisateurs de la solution doivent être gérés depuis un annuaire centralisé
+
+(140)
+Contrôle d’accès minutieux à la solution de l’authentification jusqu’aux habilitations à effectuer des opérations
+
+(141)
+La solution doit être compatible avec : 
+- SSO Windows Active Directory,
+- Authentification SAML ou OpenId Connect via un SSO tierce
+
+(142)
+Pour des besoins d’intéropérabilité la solution doit intégrer un serveur CMIS (spécification visant à améliorer l'interopérabilité entre les systèmes de Gestion de Contenu d'Entreprise).
+
+-- GROUPES, PROFILS UTILISATEURS ET DROITS --
+
+(143)
+La solution doit permettre de sécuriser les documents selon des critères précis (Matrice de droits approfondie et granulaire)
+
+(144)
+Possibilité de définir des permissions par utilisateur ou par groupe d’utilisateurs
+
+(145)
+Un utilisateur peut cumuler différents profils, en fonction de son appartenance à un service, à un niveau hiérarchique, mais également de son rôle par rapport aux processus transverses
+
+(146)
+La solution doit distinguer deux types de profils administrateurs : administrateur fonctionnel et administrateur technique
+
+(147)
+La gestion des droits doit être suffisamment fine : par dossier d’arborescence et au niveau de chaque document
+
+(148)
+La solution doit reposer sur l’organigramme de l’administration comme base importante centralisant la gestion des profils utilisateurs et les droits d’accès
+
+-- AUDIT, TRACABILITE ET JOURNALISATION --
+
+(149)
+La solution GEC doit intégrer un module de journalisation automatique :
+            ▪ Des accès aux objets documentaires ;
+            ▪ Pour chaque opération, du nom ou le code de l'utilisateur qui a effectué l'opération, la date et l'heure d'exécution, la nature de l'opération, l’objet documentaire impliqué, etc ;
+            ▪ L’ensemble des accès et opérations effectuées par les utilisateurs ;
+            ▪ Suivi en temps réel des traitements via une interface graphique.
+            ▪ Historisation de chaque modification aussi bien au niveau processus qu’au niveau document.
+            ▪ Historique des échanges entre les intervenants
+
+(150)
+Traçabilité :
+La solution doit reposer sur une matrice de traçabilité complète : actions utilisateurs, déclenchement et déroulement des processus, cycle de vie intégrale des documents et ses métadonnées. (Qui a fait Quoi, Quand et Comment ?)
+
+(151)
+Possibilité d’inclure un code à barre ou QR-Code comme identifiant unique d’un document créé, téléchargé ou imprimé à partir de la solution GEC
+
+(152)
+Le paramétrage des droits doit être flexible en se basant sur des rôles et des profils :
+        ◦ Paramétrage des droits d’accès aux menus et fonctions offertes par la solution,
+        ◦ Paramétrage des droits sur les documents,
+        ◦ Paramétrage des droits sur les métadonnées d’une fiche documentaire,
+        ◦ Paramétrage des droits sur les fichiers rattachés aux fiches documentaires
+
+(153)
+La solution proposée doit offrir la possibilité de gérer :
+        ◦ La confidentialité des fiches documentaires,
+        ◦ La confidentialité des fichiers rattachés à une fiche documentaire
+
+(154)
+Extension de fichiers non autorisés :
+La solution doit être capable de filtrer sur les formats de fichiers uploadé pour pouvoir exclure l’upload de certains types de fichiers : « .exe », « .cmd », « .vbs », … Cette fonctionnalité doit être paramétrable par l’administrateur
+
+CONTROLE DE SIGNATURE AVEC CERTIFICAT ELECTRONIQUE
+
+(155)
+Procédure de signature :
+        ◦ Permet de signer un fichier PDF/A ;
+        ◦ Considère la carte à puce/clé USB comme support de clé ;
+        ◦ Le signataire est authentifié par la saisie du code PIN ;
+        ◦ Prise en charge d’un magasin de certificats ;
+        ◦ Les attributs de signature doivent être automatiquement intégrés ;
+        ◦ Permet de visualiser le certificat de signature
+
+(156)
+Procédure de vérification :
+        ◦ Vérification de l'expiration du certificat de signature ;
+        ◦ Vérification de l’état de révocation du certificat lors de la signature ;
+        ◦ D’autres points de vérifications doivent être précisés par le prestataire
+
+    I. ARCHITECTURE TECHNIQUE
+
+-- ADMINISTRATION --
+
+(157)
+La solution doit offrir un point de contrôle central full web d’administration 
+
+(158)
+La solution doit offrir un ensemble d’indicateurs (KPIs) de pilotage de prise de décisions en temps réel
+
+AUTRES FONCTIONNALITES
+
+(159)
+Les modules de la solution de gestion de contenus doivent suivre le même cycle de mise à jour et d’Upgrade
+
+(160)
+Les composants de la solution doivent s’intégrer nativement. Aucune charge d’intégration supplémentaire ne doit apparaître dans le planning de réalisation
+
